@@ -287,7 +287,7 @@ CREATE TABLE shop_configuration (
   configuration_value text NOT NULL,
   PRIMARY KEY (configuration_id),
   KEY configuration_key (configuration_key)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO shop_configuration (configuration_id, configuration_key, configuration_value) VALUES (NULL, 'SHOP_OFFLINE', '');
 INSERT INTO shop_configuration (configuration_id, configuration_key, configuration_value) VALUES (NULL, 'SHOP_OFFLINE_MSG', '<p style="text-align: center;"><span style="font-size: large;"><font face="Arial">Unser Shop ist aufgrund von Wartungsarbeiten im Moment nicht erreichbar.<br /></font><font face="Arial">Bitte besuchen Sie uns zu einem sp&auml;teren Zeitpunkt noch einmal.<br /><br /><br /><br /></font></span><font><font><a href="login_admin.php"><font color="#808080">Login</font></a></font></font><span style="font-size: large;"><font face="Arial"><br /></font></span></p>');

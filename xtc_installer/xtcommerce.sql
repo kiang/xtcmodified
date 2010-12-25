@@ -51,7 +51,7 @@ CREATE TABLE address_book (
   address_last_modified DATETIME DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (address_book_id),
   KEY idx_address_book_customers_id (customers_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_memo;
 CREATE TABLE customers_memo (
@@ -62,7 +62,7 @@ CREATE TABLE customers_memo (
   memo_text TEXT NOT NULL,
   poster_id INT(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (memo_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_xsell;
 CREATE TABLE products_xsell (
@@ -72,7 +72,7 @@ CREATE TABLE products_xsell (
   xsell_id INT(10) UNSIGNED NOT NULL DEFAULT 1,
   sort_order INT(10) UNSIGNED NOT NULL DEFAULT 1,
   PRIMARY KEY (id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_xsell_grp_name;
 CREATE TABLE products_xsell_grp_name (
@@ -80,7 +80,7 @@ CREATE TABLE products_xsell_grp_name (
   xsell_sort_order INT(10) NOT NULL DEFAULT 0,
   language_id SMALLINT(6) NOT NULL DEFAULT 0,
   groupname VARCHAR(255) NOT NULL DEFAULT ''
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS campaigns;
 CREATE TABLE campaigns (
@@ -92,14 +92,14 @@ CREATE TABLE campaigns (
   last_modified DATETIME DEFAULT NULL,
   PRIMARY KEY (campaigns_id),
   KEY idx_campaigns_name (campaigns_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS campaigns_ip;
 CREATE TABLE campaigns_ip (
   user_ip VARCHAR(15) NOT NULL,
   TIME DATETIME NOT NULL,
   campaign VARCHAR(32) NOT NULL
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS address_format;
 CREATE TABLE address_format (
@@ -107,12 +107,12 @@ CREATE TABLE address_format (
   address_format VARCHAR(128) NOT NULL,
   address_summary VARCHAR(48) NOT NULL,
   PRIMARY KEY (address_format_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS database_version;
 CREATE TABLE database_version (
   version VARCHAR(32) NOT NULL
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 # Tomcraft - 2009-11-02 - set global customers-group-permissions (customers_group)
 # web28 - 2010-07-07 - set shop_offline parameter
@@ -198,7 +198,7 @@ CREATE TABLE admin_access (
   xajax INT(1) NOT NULL DEFAULT 1,
 
   PRIMARY KEY (customers_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 DROP TABLE IF EXISTS banktransfer;
@@ -212,7 +212,7 @@ CREATE TABLE banktransfer (
   banktransfer_prz CHAR(2) DEFAULT NULL,
   banktransfer_fax CHAR(2) DEFAULT NULL,
   KEY orders_id (orders_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 DROP TABLE IF EXISTS banners;
@@ -230,7 +230,7 @@ CREATE TABLE banners (
   date_status_change DATETIME DEFAULT NULL,
   status INT(1) DEFAULT 1 NOT NULL,
   PRIMARY KEY (banners_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS banners_history;
 CREATE TABLE banners_history (
@@ -240,7 +240,7 @@ CREATE TABLE banners_history (
   banners_clicked INT(5) NOT NULL DEFAULT 0,
   banners_history_date DATETIME NOT NULL,
   PRIMARY KEY (banners_history_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS categories;
 CREATE TABLE categories (
@@ -261,7 +261,7 @@ CREATE TABLE categories (
   last_modified DATETIME,
   PRIMARY KEY (categories_id),
   KEY idx_categories_parent_id (parent_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS categories_description;
 CREATE TABLE categories_description (
@@ -275,7 +275,7 @@ CREATE TABLE categories_description (
   categories_meta_keywords VARCHAR(255) NOT NULL,
   PRIMARY KEY (categories_id, language_id),
   KEY idx_categories_name (categories_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS configuration;
 CREATE TABLE configuration (
@@ -290,7 +290,7 @@ CREATE TABLE configuration (
   set_function VARCHAR(255) NULL,
   PRIMARY KEY (configuration_id),
   KEY idx_configuration_group_id (configuration_group_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS configuration_group;
 CREATE TABLE configuration_group (
@@ -300,19 +300,19 @@ CREATE TABLE configuration_group (
   sort_order INT(5) NULL,
   visible INT(1) DEFAULT 1 NULL,
   PRIMARY KEY (configuration_group_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS counter;
 CREATE TABLE counter (
   startdate CHAR(8),
   counter INT(12)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS counter_history;
 CREATE TABLE counter_history (
   month CHAR(8),
   counter INT(12)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS countries;
 CREATE TABLE countries (
@@ -324,7 +324,7 @@ CREATE TABLE countries (
   status INT(1) DEFAULT 1 NULL,
   PRIMARY KEY (countries_id),
   KEY IDX_COUNTRIES_NAME (countries_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS currencies;
 CREATE TABLE currencies (
@@ -339,7 +339,7 @@ CREATE TABLE currencies (
   value FLOAT(13,8),
   last_updated DATETIME NULL,
   PRIMARY KEY (currencies_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers;
 CREATE TABLE customers (
@@ -370,7 +370,7 @@ CREATE TABLE customers (
   customers_date_added DATETIME DEFAULT '0000-00-00 00:00:00',
   customers_last_modified DATETIME DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (customers_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_basket;
 CREATE TABLE customers_basket (
@@ -381,7 +381,7 @@ CREATE TABLE customers_basket (
   final_price DECIMAL(15,4) NOT NULL,
   customers_basket_date_added CHAR(8),
   PRIMARY KEY (customers_basket_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_basket_attributes;
 CREATE TABLE customers_basket_attributes (
@@ -391,7 +391,7 @@ CREATE TABLE customers_basket_attributes (
   products_options_id INT NOT NULL,
   products_options_value_id INT NOT NULL,
   PRIMARY KEY (customers_basket_attributes_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_info;
 CREATE TABLE customers_info (
@@ -402,7 +402,7 @@ CREATE TABLE customers_info (
   customers_info_date_account_last_modified DATETIME,
   global_product_notifications INT(1) DEFAULT 0,
   PRIMARY KEY (customers_info_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_ip;
 CREATE TABLE customers_ip (
@@ -415,7 +415,7 @@ CREATE TABLE customers_ip (
   customers_referer_url VARCHAR(255) DEFAULT NULL,
   PRIMARY KEY (customers_ip_id),
   KEY customers_id (customers_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_status;
 CREATE TABLE customers_status (
@@ -442,7 +442,7 @@ CREATE TABLE customers_status (
   customers_status_read_reviews INT(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (customers_status_id,language_id),
   KEY idx_orders_status_name (customers_status_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS customers_status_history;
 CREATE TABLE customers_status_history (
@@ -453,7 +453,7 @@ CREATE TABLE customers_status_history (
   date_added DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   customer_notified INT(1) DEFAULT 0,
   PRIMARY KEY (customers_status_history_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 # Tomcraft - 2009-11-08 - Added option to deactivate languages (status)
 DROP TABLE IF EXISTS languages;
@@ -468,7 +468,7 @@ CREATE TABLE languages (
   status INT(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (languages_id),
   KEY idx_languages_name (name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS manufacturers;
 CREATE TABLE manufacturers (
@@ -479,7 +479,7 @@ CREATE TABLE manufacturers (
   last_modified DATETIME NULL,
   PRIMARY KEY (manufacturers_id),
   KEY idx_manufacturers_name (manufacturers_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS manufacturers_info;
 CREATE TABLE manufacturers_info (
@@ -492,7 +492,7 @@ CREATE TABLE manufacturers_info (
   url_clicked INT(5) NOT NULL DEFAULT 0,
   date_last_click DATETIME NULL,
   PRIMARY KEY (manufacturers_id, languages_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS newsletters;
 CREATE TABLE newsletters (
@@ -505,7 +505,7 @@ CREATE TABLE newsletters (
   status INT(1),
   locked INT(1) DEFAULT 0,
   PRIMARY KEY (newsletters_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS newsletter_recipients;
 CREATE TABLE newsletter_recipients (
@@ -519,7 +519,7 @@ CREATE TABLE newsletter_recipients (
   mail_key VARCHAR(32) NOT NULL DEFAULT '',
   date_added DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (mail_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS newsletters_history;
 CREATE TABLE newsletters_history (
@@ -527,7 +527,7 @@ CREATE TABLE newsletters_history (
   news_hist_cs INT(11) NOT NULL DEFAULT 0,
   news_hist_cs_date_sent date DEFAULT NULL,
   PRIMARY KEY (news_hist_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (
@@ -603,7 +603,7 @@ CREATE TABLE orders (
   conversion_type INT(1) DEFAULT 0 NOT NULL,
   orders_ident_key VARCHAR(128),
   PRIMARY KEY (orders_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS card_blacklist;
 CREATE TABLE card_blacklist (
@@ -612,7 +612,7 @@ CREATE TABLE card_blacklist (
   date_added DATETIME DEFAULT NULL,
   last_modified DATETIME DEFAULT NULL,
   PRIMARY KEY blacklist_id (blacklist_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 # vr - 2010-04-21 add indices idx_orders_id, idx_products_id
 DROP TABLE IF EXISTS orders_products;
@@ -632,7 +632,7 @@ CREATE TABLE orders_products (
   PRIMARY KEY (orders_products_id),
   KEY idx_orders_id (orders_id),
   KEY idx_products_id (products_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders_status;
 CREATE TABLE orders_status (
@@ -641,7 +641,7 @@ CREATE TABLE orders_status (
   orders_status_name VARCHAR(32) NOT NULL,
   PRIMARY KEY (orders_status_id, language_id),
   KEY idx_orders_status_name (orders_status_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS shipping_status;
 CREATE TABLE shipping_status (
@@ -651,7 +651,7 @@ CREATE TABLE shipping_status (
   shipping_status_image VARCHAR(32) NOT NULL,
   PRIMARY KEY (shipping_status_id, language_id),
   KEY idx_shipping_status_name (shipping_status_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders_status_history;
 CREATE TABLE orders_status_history (
@@ -662,7 +662,7 @@ CREATE TABLE orders_status_history (
   customer_notified INT(1) DEFAULT 0,
   comments text,
   PRIMARY KEY (orders_status_history_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders_products_attributes;
 CREATE TABLE orders_products_attributes (
@@ -674,7 +674,7 @@ CREATE TABLE orders_products_attributes (
   options_values_price DECIMAL(15,4) NOT NULL,
   price_prefix CHAR(1) NOT NULL,
   PRIMARY KEY (orders_products_attributes_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders_products_download;
 CREATE TABLE orders_products_download (
@@ -685,7 +685,7 @@ CREATE TABLE orders_products_download (
   download_maxdays INT(2) NOT NULL DEFAULT 0,
   download_count INT(2) NOT NULL DEFAULT 0,
   PRIMARY KEY (orders_products_download_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders_total;
 CREATE TABLE orders_total (
@@ -698,7 +698,7 @@ CREATE TABLE orders_total (
   sort_order INT NOT NULL,
   PRIMARY KEY (orders_total_id),
   KEY idx_orders_total_orders_id (orders_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS orders_recalculate;
 CREATE TABLE orders_recalculate (
@@ -710,7 +710,7 @@ CREATE TABLE orders_recalculate (
   tax_rate DECIMAL(7,4) NOT NULL DEFAULT '0.0000',
   class VARCHAR(32) NOT NULL DEFAULT '',
   PRIMARY KEY (orders_recalculate_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
@@ -745,7 +745,7 @@ CREATE TABLE products (
   products_startpage_sort INT(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (products_id),
   KEY idx_products_date_added (products_date_added)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_attributes;
 CREATE TABLE products_attributes (
@@ -763,7 +763,7 @@ CREATE TABLE products_attributes (
   PRIMARY KEY (products_attributes_id),
   KEY idx_products_id (products_id),
   KEY idx_options (options_id, options_values_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_attributes_download;
 CREATE TABLE products_attributes_download (
@@ -772,7 +772,7 @@ CREATE TABLE products_attributes_download (
   products_attributes_maxdays INT(2) DEFAULT 0,
   products_attributes_maxcount INT(2) DEFAULT 0,
   PRIMARY KEY (products_attributes_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_description;
 CREATE TABLE products_description (
@@ -789,7 +789,7 @@ CREATE TABLE products_description (
   products_viewed INT(5) DEFAULT 0,
   PRIMARY KEY (products_id,language_id),
   KEY products_name (products_name)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_images;
 CREATE TABLE products_images (
@@ -798,7 +798,7 @@ CREATE TABLE products_images (
   image_nr SMALLINT NOT NULL,
   image_name VARCHAR(254) NOT NULL,
   PRIMARY KEY (image_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_notifications;
 CREATE TABLE products_notifications (
@@ -806,7 +806,7 @@ CREATE TABLE products_notifications (
   customers_id INT NOT NULL,
   date_added DATETIME NOT NULL,
   PRIMARY KEY (products_id, customers_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 # Tomcraft - 2009-11-07 - Added sortorder to products_options
 DROP TABLE IF EXISTS products_options;
@@ -816,7 +816,7 @@ CREATE TABLE products_options (
   products_options_name VARCHAR(32) NOT NULL DEFAULT '',
   products_options_sortorder INT(11) NOT NULL,
   PRIMARY KEY (products_options_id,language_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_options_values;
 CREATE TABLE products_options_values (
@@ -824,7 +824,7 @@ CREATE TABLE products_options_values (
   language_id INT NOT NULL DEFAULT 1,
   products_options_values_name VARCHAR(64) NOT NULL DEFAULT '',
   PRIMARY KEY (products_options_values_id,language_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_options_values_to_products_options;
 CREATE TABLE products_options_values_to_products_options (
@@ -832,7 +832,7 @@ CREATE TABLE products_options_values_to_products_options (
   products_options_id INT NOT NULL,
   products_options_values_id INT NOT NULL,
   PRIMARY KEY (products_options_values_to_products_options_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_graduated_prices;
 CREATE TABLE products_graduated_prices (
@@ -840,7 +840,7 @@ CREATE TABLE products_graduated_prices (
   quantity INT(11) NOT NULL DEFAULT 0,
   unitprice DECIMAL(15,4) NOT NULL DEFAULT 0.0000,
   KEY products_id (products_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 # DokuMan - 2010-10-13 add index idx_categories_id
 DROP TABLE IF EXISTS products_to_categories;
@@ -849,14 +849,14 @@ CREATE TABLE products_to_categories (
   categories_id INT NOT NULL,
   PRIMARY KEY (products_id,categories_id),
   KEY idx_categories_id (categories_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_vpe;
 CREATE TABLE products_vpe (
   products_vpe_id INT(11) NOT NULL DEFAULT 0,
   language_id INT(11) NOT NULL DEFAULT 0,
   products_vpe_name VARCHAR(32) NOT NULL DEFAULT ''
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews (
@@ -869,7 +869,7 @@ CREATE TABLE reviews (
   last_modified DATETIME,
   reviews_read INT(5) NOT NULL DEFAULT 0,
   PRIMARY KEY (reviews_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS reviews_description;
 CREATE TABLE reviews_description (
@@ -877,7 +877,7 @@ CREATE TABLE reviews_description (
   languages_id INT NOT NULL,
   reviews_text text NOT NULL,
   PRIMARY KEY (reviews_id, languages_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS sessions;
 CREATE TABLE sessions (
@@ -885,7 +885,7 @@ CREATE TABLE sessions (
   expiry INT(11) unsigned NOT NULL,
   value text NOT NULL,
   PRIMARY KEY (sesskey)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 # BOF - web28 - 2010-07-07 - set shop offline
 DROP TABLE IF EXISTS shop_configuration;
@@ -895,7 +895,7 @@ CREATE TABLE shop_configuration (
   configuration_value TEXT NOT NULL,
   PRIMARY KEY (configuration_id),
   KEY configuration_key (configuration_key)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO shop_configuration (configuration_id, configuration_key, configuration_value) VALUES(NULL, 'SHOP_OFFLINE', '');
 INSERT INTO shop_configuration (configuration_id, configuration_key, configuration_value) VALUES(NULL, 'SHOP_OFFLINE_MSG', '<p style="text-align: center;"><span style="font-size: large;"><font face="Arial">Unser Shop ist aufgrund von Wartungsarbeiten im Moment nicht erreichbar.<br /></font><font face="Arial">Bitte besuchen Sie uns zu einem sp&auml;teren Zeitpunkt noch einmal.<br /><br /><br /><br /></font></span><font><font><a href="login_admin.php"><font color="#808080">Login</font></a></font></font><span style="font-size: large;"><font face="Arial"><br /></font></span></p>');
@@ -914,7 +914,7 @@ CREATE TABLE specials (
   status INT(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (specials_id),
   KEY idx_specials_products_id (products_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS tax_class;
 CREATE TABLE tax_class (
@@ -924,7 +924,7 @@ CREATE TABLE tax_class (
   last_modified DATETIME NULL,
   date_added DATETIME NOT NULL,
   PRIMARY KEY (tax_class_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS tax_rates;
 CREATE TABLE tax_rates (
@@ -937,7 +937,7 @@ CREATE TABLE tax_rates (
   last_modified DATETIME NULL,
   date_added DATETIME NOT NULL,
   PRIMARY KEY (tax_rates_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS geo_zones;
 CREATE TABLE geo_zones (
@@ -947,7 +947,7 @@ CREATE TABLE geo_zones (
   last_modified DATETIME NULL,
   date_added DATETIME NOT NULL,
   PRIMARY KEY (geo_zone_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS whos_online;
 CREATE TABLE whos_online (
@@ -959,7 +959,7 @@ CREATE TABLE whos_online (
   time_last_click VARCHAR(14) NOT NULL,
   last_page_url VARCHAR(255) NOT NULL,
   http_referer VARCHAR(255) NOT NULL
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS zones;
 CREATE TABLE zones (
@@ -968,7 +968,7 @@ CREATE TABLE zones (
   zone_code VARCHAR(32) NOT NULL,
   zone_name VARCHAR(32) NOT NULL,
   PRIMARY KEY (zone_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS zones_to_geo_zones;
 CREATE TABLE zones_to_geo_zones (
@@ -979,7 +979,7 @@ CREATE TABLE zones_to_geo_zones (
  last_modified DATETIME NULL,
  date_added DATETIME NOT NULL,
  PRIMARY KEY (association_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS content_manager;
 CREATE TABLE content_manager (
@@ -1002,7 +1002,7 @@ CREATE TABLE content_manager (
   content_meta_keywords TEXT,
   PRIMARY KEY (content_id),
   FULLTEXT (content_meta_title,content_meta_description,content_meta_keywords)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS media_content;
 CREATE TABLE media_content (
@@ -1011,7 +1011,7 @@ CREATE TABLE media_content (
   new_filename TEXT NOT NULL,
   file_comment TEXT NOT NULL,
   PRIMARY KEY (file_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS products_content;
 CREATE TABLE products_content (
@@ -1025,7 +1025,7 @@ CREATE TABLE products_content (
   content_read INT(11) NOT NULL DEFAULT 0,
   file_comment TEXT NOT NULL,
   PRIMARY KEY (content_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS module_newsletter;
 CREATE TABLE module_newsletter (
@@ -1037,21 +1037,21 @@ CREATE TABLE module_newsletter (
   status INT(1) NOT NULL DEFAULT 0,
   body TEXT NOT NULL,
   PRIMARY KEY (newsletter_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS cm_file_flags;
 CREATE TABLE cm_file_flags (
   file_flag INT(11) NOT NULL,
   file_flag_name VARCHAR(32) NOT NULL,
   PRIMARY KEY (file_flag)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS payment_moneybookers_currencies;
 CREATE TABLE payment_moneybookers_currencies (
   mb_currID CHAR(3) NOT NULL DEFAULT '',
   mb_currName VARCHAR(255) NOT NULL DEFAULT '',
   PRIMARY KEY (mb_currID)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS payment_moneybookers;
 CREATE TABLE payment_moneybookers (
@@ -1063,14 +1063,14 @@ CREATE TABLE payment_moneybookers (
   mb_STATUS TINYINT(1) NOT NULL DEFAULT 0,
   mb_ORDERID INT(11) unsigned NOT NULL DEFAULT 0,
   PRIMARY KEY (mb_TRID)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS payment_moneybookers_countries;
 CREATE TABLE payment_moneybookers_countries (
   osc_cID INT(11) NOT NULL DEFAULT 0,
   mb_cID CHAR(3) NOT NULL DEFAULT '',
   PRIMARY KEY (osc_cID)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS coupon_email_track;
 CREATE TABLE coupon_email_track (
@@ -1082,7 +1082,7 @@ CREATE TABLE coupon_email_track (
   emailed_to VARCHAR(32) DEFAULT NULL,
   date_sent DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (unique_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS coupon_gv_customer;
 CREATE TABLE coupon_gv_customer (
@@ -1090,7 +1090,7 @@ CREATE TABLE coupon_gv_customer (
   amount DECIMAL(8,4) NOT NULL DEFAULT 0.0000,
   PRIMARY KEY (customer_id),
   KEY customer_id (customer_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS coupon_gv_queue;
 CREATE TABLE coupon_gv_queue (
@@ -1103,7 +1103,7 @@ CREATE TABLE coupon_gv_queue (
   release_flag CHAR(1) NOT NULL DEFAULT 'N',
   PRIMARY KEY (unique_id),
   KEY uid (unique_id,customer_id,order_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS coupon_redeem_track;
 CREATE TABLE coupon_redeem_track (
@@ -1114,7 +1114,7 @@ CREATE TABLE coupon_redeem_track (
   redeem_ip VARCHAR(32) NOT NULL DEFAULT '',
   order_id INT(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (unique_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS coupons;
 CREATE TABLE coupons (
@@ -1134,7 +1134,7 @@ CREATE TABLE coupons (
   date_created DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   date_modified DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (coupon_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS coupons_description;
 CREATE TABLE coupons_description (
@@ -1143,7 +1143,7 @@ CREATE TABLE coupons_description (
   coupon_name VARCHAR(32) NOT NULL DEFAULT '',
   coupon_description text,
   KEY coupon_id (coupon_id)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS personal_offers_by_customers_status_0;
 DROP TABLE IF EXISTS personal_offers_by_customers_status_1;
@@ -1808,8 +1808,8 @@ INSERT INTO countries VALUES (241,'Montenegro','ME','MNE',1,1);
 INSERT INTO currencies VALUES (1,'Euro','EUR','','EUR',',','.','2','1.0000', NOW());
 
 # BOF - Tomcraft - 2009-11-08 - Added option to deactivate languages (status 1)
-INSERT INTO languages VALUES (1,'English','en','icon.gif','english',2,'iso-8859-15',1);
-INSERT INTO languages VALUES (2,'Deutsch','de','icon.gif','german',1,'iso-8859-15',1);
+INSERT INTO languages VALUES (1,'English','en','icon.gif','english',2,'utf-8',1);
+INSERT INTO languages VALUES (2,'Deutsch','de','icon.gif','german',1,'utf-8',1);
 # EOF - Tomcraft - 2009-11-08 - Added option to deactivate languages (status 1)
 
 INSERT INTO orders_status VALUES (1,1,'Pending');

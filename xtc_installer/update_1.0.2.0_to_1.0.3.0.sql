@@ -49,7 +49,7 @@ CREATE TABLE gls_country_to_postal (
   gls_country CHAR(2) NOT NULL DEFAULT '',
   gls_postal_reference INT(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (gls_country)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS gls_postal_to_weight;
 CREATE TABLE gls_postal_to_weight (
@@ -58,7 +58,7 @@ CREATE TABLE gls_postal_to_weight (
   gls_to_postal VARCHAR(10) NOT NULL DEFAULT '',
   gls_weight_ref CHAR(3) NOT NULL DEFAULT '',
   PRIMARY KEY (gls_postal_reference,gls_from_postal)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS gls_weight;
 CREATE TABLE gls_weight (
@@ -67,7 +67,7 @@ CREATE TABLE gls_weight (
   gls_free_shipping_over DECIMAL(15,4) NOT NULL DEFAULT -1.0000,
   gls_shipping_subsidized DECIMAL(15,4) NOT NULL DEFAULT -1.0000,
   PRIMARY KEY (gls_weight_ref)
-) ENGINE=myisam DEFAULT CHARSET=latin1 COLLATE latin1_german1_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 #Dokuman - 2009-10-09 - added "erwartete Produkte" in "Artikelkatalog"
 ALTER TABLE admin_access ADD products_expected INT(1) NOT NULL DEFAULT 0 AFTER specials;

@@ -341,7 +341,7 @@ class googlebase {
                 $fp = fopen(DIR_FS_DOCUMENT_ROOT . 'export/' . $file, "rb");
                 $buffer = fread($fp, filesize(DIR_FS_DOCUMENT_ROOT . 'export/' . $file));
                 fclose($fp);
-                header('Content-type: application/x-octet-stream; charset=iso-8859-15');
+                header('Content-type: application/x-octet-stream; charset=utf-8');
                 header('Content-disposition: attachment; filename=' . $file);
                 echo $buffer;
                 exit;

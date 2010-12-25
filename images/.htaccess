@@ -1,0 +1,8 @@
+# $Id: .htaccess 1564 2010-12-09 15:26:29Z dokuman $
+#
+# Allow just image file formats for this folder and subfolders
+
+deny from all
+<FilesMatch "\.(png|jpeg|jpg|gif|bmp)$">
+  allow from all
+</FilesMatch>

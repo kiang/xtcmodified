@@ -349,7 +349,7 @@ if ($messageStack->size('index') > 0) {
      ?>
               <?php
 } else {
-    echo '<br/><strong>' . TEXT_INSTALLATION_NOT_POSSIBLE . '</strong><br/><br/><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_retry.gif" border="0" alt="refresh page"></a>';
+    echo '<br/><strong>' . TEXT_INSTALLATION_NOT_POSSIBLE . '</strong><br/><br/><a href="index.php"><img src="buttons/' . $lang . '/button_retry.gif" border="0" alt="refresh page"></a>';
 } ?>
               <br />
             </form>

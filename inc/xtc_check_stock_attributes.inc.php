@@ -15,31 +15,26 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_check_stock_attributes($attribute_id, $products_quantity) {
+function xtc_check_stock_attributes($attribute_id, $products_quantity) {
     $out_of_stock = '';
-
     //BOF - DokuMan - 2010-02-26 - security fix for attributes selection
-    /*   
+    /*
     $stock_query=xtc_db_query("SELECT
                              attributes_stock
                              FROM ".TABLE_PRODUCTS_ATTRIBUTES."
                              WHERE products_attributes_id='".$attribute_id."'");
     */
-    $stock_query=xtc_db_query("SELECT
+    $stock_query = xtc_db_query("SELECT
                              attributes_stock
-                             FROM ".TABLE_PRODUCTS_ATTRIBUTES."
-                             WHERE products_attributes_id=".(int)$attribute_id);
+                             FROM " . TABLE_PRODUCTS_ATTRIBUTES . "
+                             WHERE products_attributes_id=" . (int)$attribute_id);
     //EOF - DokuMan - 2010-02-26 - security fix for attributes selection
-
-    $stock_data=xtc_db_fetch_array($stock_query);
+    $stock_data = xtc_db_fetch_array($stock_query);
     $stock_left = $stock_data['attributes_stock'] - $products_quantity;
     $out_of_stock = '';
-
     if ($stock_left < 0) {
-      $out_of_stock = '<span class="markProductOutOfStock">' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . '</span>';
+        $out_of_stock = '<span class="markProductOutOfStock">' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . '</span>';
     }
-
     return $out_of_stock;
-  }
+}
 ?>

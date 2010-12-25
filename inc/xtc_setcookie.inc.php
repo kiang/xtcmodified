@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  function xtc_setcookie($name, $value = '', $expire = 0, $path = '/', $domain = '', $secure = 0) {
+function xtc_setcookie($name, $value = '', $expire = 0, $path = '/', $domain = '', $secure = 0) {
     setcookie($name, $value, $expire, $path, (xtc_not_null($domain) ? $domain : ''), $secure);
-  }
+}
 ?>

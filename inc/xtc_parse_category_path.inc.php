@@ -15,14 +15,13 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
- // include needed function
- require_once(DIR_FS_INC . 'xtc_string_to_int.inc.php');
- // Parse and secure the cPath parameter values
-  function xtc_parse_category_path($cPath) {
+// include needed function
+require_once (DIR_FS_INC . 'xtc_string_to_int.inc.php');
+// Parse and secure the cPath parameter values
+function xtc_parse_category_path($cPath) {
     // make sure the category IDs are integers
     $cPath_array = array_map('xtc_string_to_int', explode('_', $cPath));
-
     // make sure no duplicate category IDs exist which could lock the server in a loop
-	return array_unique($cPath_array);
-  }
+    return array_unique($cPath_array);
+}
 ?>

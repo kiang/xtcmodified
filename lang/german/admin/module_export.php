@@ -14,17 +14,12 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE_MODULES_EXPORT', 'XT-Module');
-
-
 define('TABLE_HEADING_MODULES', 'Module');
 define('TABLE_HEADING_SORT_ORDER', 'Reihenfolge');
 define('TABLE_HEADING_STATUS', 'Status');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_MODULE_DIRECTORY', 'Modul Verzeichnis:');
-
-define('TABLE_HEADING_FILENAME','Modulname (f&uuml;r internen Gebrauch)');
-define('ERROR_EXPORT_FOLDER_NOT_WRITEABLE','export/ Verzeichniss nicht beschreibbar!');
+define('TABLE_HEADING_FILENAME', 'Modulname (f&uuml;r internen Gebrauch)');
+define('ERROR_EXPORT_FOLDER_NOT_WRITEABLE', 'export/ Verzeichniss nicht beschreibbar!');
 ?>

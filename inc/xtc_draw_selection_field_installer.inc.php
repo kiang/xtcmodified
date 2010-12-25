@@ -14,15 +14,13 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_draw_selection_field_installer($name, $type, $value = '', $checked = false) {
+function xtc_draw_selection_field_installer($name, $type, $value = '', $checked = false) {
     $selection = '<input type="' . $type . '" name="' . $name . '"';
-    if ($value != '') $selection .= ' value="' . $value . '"';
-    if ( ($checked == true) || ($GLOBALS[$name] == 'on') || ($value == 'on') || ($value && $GLOBALS[$name] == $value) ) {
-      $selection .= ' checked="checked"';
+    if ($value != '') $selection.= ' value="' . $value . '"';
+    if (($checked == true) || ($GLOBALS[$name] == 'on') || ($value == 'on') || ($value && $GLOBALS[$name] == $value)) {
+        $selection.= ' checked="checked"';
     }
-    $selection .= ' />';
-
+    $selection.= ' />';
     return $selection;
-  }
- ?>
+}
+?>

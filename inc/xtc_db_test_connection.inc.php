@@ -14,26 +14,22 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 function xtc_db_test_connection($database) {
     global $db_error;
-
     $db_error = false;
-
     if (!$db_error) {
-      if (!@xtc_db_select_db($database)) {
-        $db_error = mysql_error();
-      } else {
-        if (!@xtc_db_query_installer('select count(*) from configuration')) {
-          $db_error = mysql_error();
+        if (!@xtc_db_select_db($database)) {
+            $db_error = mysql_error();
+        } else {
+            if (!@xtc_db_query_installer('select count(*) from configuration')) {
+                $db_error = mysql_error();
+            }
         }
-      }
     }
-
     if ($db_error) {
-      return false;
+        return false;
     } else {
-      return true;
+        return true;
     }
-  }
- ?>
+}
+?>

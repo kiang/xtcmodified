@@ -17,14 +17,12 @@
    ---------------------------------------------------------------------------------------*/
 $box_smarty = new smarty;
 //BOF - GTB - 2010-08-03 - Security Fix - Base
-$box_smarty->assign('tpl_path',DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/');
+$box_smarty->assign('tpl_path', DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/');
 //$box_smarty->assign('tpl_path', 'templates/' . CURRENT_TEMPLATE . '/');
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 $box_content = '';
-
 require_once (DIR_FS_INC . 'xtc_image_submit.inc.php');
 require_once (DIR_FS_INC . 'xtc_hide_session_id.inc.php');
-
 // BOF - GTB - 2010-09-20 - correct the Formular in dependences of the request type SSL / NONSSL
 $box_smarty->assign('FORM_ACTION', xtc_draw_form('quick_find', xtc_href_link(FILENAME_ADVANCED_SEARCH_RESULT, '', $request_type, false), 'get') . xtc_hide_session_id());
 //$box_smarty->assign('FORM_ACTION', xtc_draw_form('quick_find', xtc_href_link(FILENAME_ADVANCED_SEARCH_RESULT, '', 'NONSSL', false), 'get') . xtc_hide_session_id());
@@ -43,14 +41,14 @@ $box_smarty->assign('BOX_CONTENT', $box_content);
 $box_smarty->assign('language', $_SESSION['language']);
 // set cache ID
 if (!CacheCheck()) {
-  $box_smarty->caching = 0;
-  $box_search = $box_smarty->fetch(CURRENT_TEMPLATE . '/boxes/box_search.html');
+    $box_smarty->caching = 0;
+    $box_search = $box_smarty->fetch(CURRENT_TEMPLATE . '/boxes/box_search.html');
 } else {
-  $box_smarty->caching = 1;
-  $box_smarty->cache_lifetime = CACHE_LIFETIME;
-  $box_smarty->cache_modified_check = CACHE_CHECK;
-  $cache_id = $_SESSION['language'];
-  $box_search = $box_smarty->fetch(CURRENT_TEMPLATE.'/boxes/box_search.html', $cache_id);
+    $box_smarty->caching = 1;
+    $box_smarty->cache_lifetime = CACHE_LIFETIME;
+    $box_smarty->cache_modified_check = CACHE_CHECK;
+    $cache_id = $_SESSION['language'];
+    $box_search = $box_smarty->fetch(CURRENT_TEMPLATE . '/boxes/box_search.html', $cache_id);
 }
 $smarty->assign('box_SEARCH', $box_search);
 ?>

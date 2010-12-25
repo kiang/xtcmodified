@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_draw_hidden_field_installer($name, $value) {
+function xtc_draw_hidden_field_installer($name, $value) {
     return '<input type="hidden" name="' . $name . '" value="' . $value . '" />';
-  }
- ?>
+}
+?>

@@ -14,12 +14,11 @@
    (c) 2003	 nextcommerce (customer_memo.php,v 1.6 2003/08/18); www.nextcommerce.org
    
    --------------------------------------------------------------*/
-defined( '_VALID_XTC' ) or die( 'Direct Access to this location is not allowed.' );
-
+defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
 ?>
     <td valign="top" class="main"><?php echo ENTRY_MEMO; ?></td>
     <td class="main"><?php
-  $memo_query = xtc_db_query("SELECT
+$memo_query = xtc_db_query("SELECT
                                   *
                               FROM
                                   " . TABLE_CUSTOMERS_MEMO . "
@@ -27,7 +26,7 @@ defined( '_VALID_XTC' ) or die( 'Direct Access to this location is not allowed.'
                                   customers_id = '" . $_GET['cID'] . "'
                               ORDER BY
                                   memo_date DESC");
-  while ($memo_values = xtc_db_fetch_array($memo_query)) {
+while ($memo_values = xtc_db_fetch_array($memo_query)) {
     $poster_query = xtc_db_query("SELECT customers_firstname, customers_lastname FROM " . TABLE_CUSTOMERS . " WHERE customers_id = '" . $memo_values['poster_id'] . "'");
     $poster_values = xtc_db_fetch_array($poster_query);
 ?><table width="100%">
@@ -42,7 +41,7 @@ defined( '_VALID_XTC' ) or die( 'Direct Access to this location is not allowed.'
       </tr>
     </table>
 <?php
-  }
+}
 ?>
     <table width="100%">
       <tr>

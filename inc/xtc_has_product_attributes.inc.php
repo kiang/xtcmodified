@@ -15,18 +15,15 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 // Check if product has attributes
-  function xtc_has_product_attributes($products_id) {
-  
+function xtc_has_product_attributes($products_id) {
     $attributes_query = "select count(*) as count from " . TABLE_PRODUCTS_ATTRIBUTES . " where products_id = '" . (int)$products_id . "'";
     $attributes_query = xtDBquery($attributes_query);
-    $attributes = xtc_db_fetch_array($attributes_query,true);
-
+    $attributes = xtc_db_fetch_array($attributes_query, true);
     if ($attributes['count'] > 0) {
-      return true;
+        return true;
     } else {
-      return false;
+        return false;
     }
-  }
- ?>
+}
+?>

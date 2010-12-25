@@ -14,13 +14,9 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-  
-// This function makes a new password from a plaintext password. 
-  function xtc_encrypt_password($plain) {
-
-     $password=md5($plain);
-
+// This function makes a new password from a plaintext password.
+function xtc_encrypt_password($plain) {
+    $password = md5($plain);
     return $password;
-
-  }
- ?>
+}
+?>

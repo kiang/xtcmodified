@@ -8,21 +8,15 @@ version.
 See the online documentation for details.
 http://www.geckotribe.com/rss/carp/manual/
 */
-defined( '_VALID_XTC' ) or die( 'Direct Access to this location is not allowed.' );
-function MyCarpConfReset($set='default') {
-	global $carpconf;
-	CarpConfReset();
-	
-	// Override any settings you wish to change here
-	
-	
-	
-	// Create alternative configuration sets here
-	if ($set=='default') {
-		
-	} else if ($set=='style1') {
-		
-	}
+defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
+function MyCarpConfReset($set = 'default') {
+    global $carpconf;
+    CarpConfReset();
+    // Override any settings you wish to change here
+    // Create alternative configuration sets here
+    if ($set == 'default') {
+    } else if ($set == 'style1') {
+    }
 }
 MyCarpConfReset();
 ?>

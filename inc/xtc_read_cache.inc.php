@@ -14,37 +14,31 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 //! Read in seralized data.
 //  read_cache reads the serialized data in $filename and
 //  fills $var using unserialize().
 //  $var      -  The variable to be filled.
 //  $filename -  The name of the file to read.
-  function read_cache(&$var, $filename, $auto_expire = false){
+function read_cache(&$var, $filename, $auto_expire = false) {
     $filename = DIR_FS_CACHE . $filename;
     $success = false;
-
     if (($auto_expire == true) && file_exists($filename)) {
-      $now = time();
-      $filetime = filemtime($filename);
-      $difference = $now - $filetime;
-
-      if ($difference >= $auto_expire) {
-        return false;
-      }
+        $now = time();
+        $filetime = filemtime($filename);
+        $difference = $now - $filetime;
+        if ($difference >= $auto_expire) {
+            return false;
+        }
     }
-
-// try to open file
+    // try to open file
     if ($fp = @fopen($filename, 'r')) {
-// read in serialized data
-      $szdata = fread($fp, filesize($filename));
-      fclose($fp);
-// unserialze the data
-      $var = unserialize($szdata);
-
-      $success = true;
+        // read in serialized data
+        $szdata = fread($fp, filesize($filename));
+        fclose($fp);
+        // unserialze the data
+        $var = unserialize($szdata);
+        $success = true;
     }
-
     return $success;
-  }
- ?>
+}
+?>

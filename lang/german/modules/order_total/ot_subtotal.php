@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_TITLE', 'Zwischensumme');
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_TITLE_NO_TAX', 'Zwischensumme, netto');
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_DESCRIPTION', 'Zwischensumme der Bestellung');
-  
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_STATUS_TITLE','Zwischensumme');
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_STATUS_DESC','Anzeige der Zwischensumme?');
-  
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_SORT_ORDER_TITLE','Sortierreihenfolge');
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_SORT_ORDER_DESC','Anzeigereihenfolge.');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_TITLE', 'Zwischensumme');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_TITLE_NO_TAX', 'Zwischensumme, netto');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_DESCRIPTION', 'Zwischensumme der Bestellung');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_STATUS_TITLE', 'Zwischensumme');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_STATUS_DESC', 'Anzeige der Zwischensumme?');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_SORT_ORDER_TITLE', 'Sortierreihenfolge');
+define('MODULE_ORDER_TOTAL_SUBTOTAL_SORT_ORDER_DESC', 'Anzeigereihenfolge.');
 ?>

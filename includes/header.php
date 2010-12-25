@@ -32,8 +32,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=<?php echo $_SESSION['language_charset']; ?>" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<?php include(DIR_WS_MODULES.FILENAME_METATAGS); ?>
-<link rel="shortcut icon" href="<?php echo (($request_type == 'SSL') ? HTTPS_SERVER : HTTP_SERVER).DIR_WS_CATALOG.'templates/'.CURRENT_TEMPLATE.'/favicon.ico';?>" type="image/x-icon" />
+<?php include (DIR_WS_MODULES . FILENAME_METATAGS); ?>
+<link rel="shortcut icon" href="<?php echo (($request_type == 'SSL') ? HTTPS_SERVER : HTTP_SERVER) . DIR_WS_CATALOG . 'templates/' . CURRENT_TEMPLATE . '/favicon.ico'; ?>" type="image/x-icon" />
 <?php
 /*
   The following copyright announcement is in compliance
@@ -56,14 +56,15 @@
 //BOF - GTB - 2010-08-03 - Security Fix - Base
 /*<base href="<?php echo (($request_type == 'SSL') ? HTTPS_SERVER : HTTP_SERVER) . DIR_WS_CATALOG; ?>" />*/
 //EOF - GTB - 2010-08-03 - Security Fix - Base
-if (file_exists('templates/'.CURRENT_TEMPLATE.'/css/general.css.php')) {
-  require('templates/'.CURRENT_TEMPLATE.'/css/general.css.php');
-  } else {
+if (file_exists('templates/' . CURRENT_TEMPLATE . '/css/general.css.php')) {
+    require ('templates/' . CURRENT_TEMPLATE . '/css/general.css.php');
+} else {
     //Maintain backwards compatibility for older templates
     //BOF - GTB - 2010-08-03 - Security Fix - Base
-    echo '<link rel="stylesheet" type="text/css" href="'.DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/stylesheet.css" />';
+    echo '<link rel="stylesheet" type="text/css" href="' . DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/stylesheet.css" />';
     //echo '<link rel="stylesheet" type="text/css" href="templates/'.CURRENT_TEMPLATE.'/stylesheet.css" />';
     //EOF - GTB - 2010-08-03 - Security Fix - Base
+    
 }
 ?>
 
@@ -115,42 +116,40 @@ function popupImageWindow(url) {
 // require theme based javascript
 //BOF - DokuMan - 2010-02-25 - Enhance page loading time by putting CSS on TOP of page and JavaScript on BOTTOM of page
 //BOF - web28 - 2010-07-14 - change to TOP of page again because jquery view problems
-require('templates/'.CURRENT_TEMPLATE.'/javascript/general.js.php');
+require ('templates/' . CURRENT_TEMPLATE . '/javascript/general.js.php');
 //EOF - web28 - 2010-07-14 - change to TOP of page again because jquery view problems
 //EOF - DokuMan - 2010-02-25 - Enhance page loading time by putting CSS on TOP of page and JavaScript on BOTTOM of page
-
 // BOF - Hendrik - 2010-08-22 - xajax support
-if( XAJAX_SUPPORT=='true' ) {
-  // Include XAJAX JS Library
-  require ('xajax.common.php');
-  if ($imdxajax) {
-    $imdxajax->printJavascript('includes/');
-  }
+if (XAJAX_SUPPORT == 'true') {
+    // Include XAJAX JS Library
+    require ('xajax.common.php');
+    if ($imdxajax) {
+        $imdxajax->printJavascript('includes/');
+    }
 }
 // EOF - Hendrik - 2010-08-22 - xajax support
-
 if (strstr($PHP_SELF, FILENAME_CHECKOUT_PAYMENT)) {
- echo $payment_modules->javascript_validation();
+    echo $payment_modules->javascript_validation();
 }
 if (strstr($PHP_SELF, FILENAME_CREATE_ACCOUNT)) {
-require('includes/form_check.js.php');
+    require ('includes/form_check.js.php');
 }
-if (strstr($PHP_SELF, FILENAME_CREATE_GUEST_ACCOUNT )) {
-require('includes/form_check.js.php');
+if (strstr($PHP_SELF, FILENAME_CREATE_GUEST_ACCOUNT)) {
+    require ('includes/form_check.js.php');
 }
-if (strstr($PHP_SELF, FILENAME_ACCOUNT_PASSWORD )) {
-require('includes/form_check.js.php');
+if (strstr($PHP_SELF, FILENAME_ACCOUNT_PASSWORD)) {
+    require ('includes/form_check.js.php');
 }
-if (strstr($PHP_SELF, FILENAME_ACCOUNT_EDIT )) {
-require('includes/form_check.js.php');
+if (strstr($PHP_SELF, FILENAME_ACCOUNT_EDIT)) {
+    require ('includes/form_check.js.php');
 }
-if (strstr($PHP_SELF, FILENAME_ADDRESS_BOOK_PROCESS )) {
-  if (isset($_GET['delete']) == false) {
-    include('includes/form_check.js.php');
-  }
+if (strstr($PHP_SELF, FILENAME_ADDRESS_BOOK_PROCESS)) {
+    if (isset($_GET['delete']) == false) {
+        include ('includes/form_check.js.php');
+    }
 }
-if (strstr($PHP_SELF, FILENAME_CHECKOUT_SHIPPING_ADDRESS ) or strstr($PHP_SELF,FILENAME_CHECKOUT_PAYMENT_ADDRESS)) {
-require('includes/form_check.js.php');
+if (strstr($PHP_SELF, FILENAME_CHECKOUT_SHIPPING_ADDRESS) or strstr($PHP_SELF, FILENAME_CHECKOUT_PAYMENT_ADDRESS)) {
+    require ('includes/form_check.js.php');
 ?>
 <script type="text/javascript"><!--
 function check_form_optional(form_name) {
@@ -168,8 +167,7 @@ function check_form_optional(form_name) {
 //--></script>
 <?php
 }
-
-if (strstr($PHP_SELF, FILENAME_ADVANCED_SEARCH )) {
+if (strstr($PHP_SELF, FILENAME_ADVANCED_SEARCH)) {
 ?>
 <script type="text/javascript" src="includes/general.js"></script>
 <script type="text/javascript"><!--
@@ -232,8 +230,7 @@ function popupWindow(url) {
 //--></script>
 <?php
 }
-
-if (strstr($PHP_SELF, FILENAME_PRODUCT_REVIEWS_WRITE )) {
+if (strstr($PHP_SELF, FILENAME_PRODUCT_REVIEWS_WRITE)) {
 ?>
 
 <script type="text/javascript"><!--
@@ -263,7 +260,7 @@ function checkForm() {
 //--></script>
 <?php
 }
-if (strstr($PHP_SELF, FILENAME_POPUP_IMAGE )) {
+if (strstr($PHP_SELF, FILENAME_POPUP_IMAGE)) {
 ?>
 
 <script type="text/javascript"><!--
@@ -276,18 +273,16 @@ function resize() {
 //--></script>
 <?php
 }
-
 ?>
 </head>
 <?php
-if (strstr($PHP_SELF, FILENAME_POPUP_IMAGE )) {
-echo '<body onload="resize();"> ';
+if (strstr($PHP_SELF, FILENAME_POPUP_IMAGE)) {
+    echo '<body onload="resize();"> ';
 } else {
-echo '<body>';
+    echo '<body>';
 }
-
 // econda tracking
-if (TRACKING_ECONDA_ACTIVE=='true') {
+if (TRACKING_ECONDA_ACTIVE == 'true') {
 ?>
 <script type="text/javascript">
 <!--
@@ -297,103 +292,93 @@ var emos_kdnr='<?php echo TRACKING_ECONDA_ID; ?>';
 <a name="emos_sid" rel="<?php echo session_id(); ?>" rev=""></a>
 <a name="emos_name" title="siteid" rel="<?php echo $_SESSION['languages_id']; ?>" rev=""></a>
 <?php
-//  require_once(DIR_WS_INCLUDES . 'econda/econda.php');
+    //  require_once(DIR_WS_INCLUDES . 'econda/econda.php');
+    
 }
-
 if (strstr($PHP_SELF, FILENAME_CHECKOUT_SUCCESS) && GOOGLE_CONVERSION == 'true') {
-require('includes/google_conversiontracking.js.php');
+    require ('includes/google_conversiontracking.js.php');
 }
-
-  // include needed functions
-  require_once(DIR_FS_INC . 'xtc_output_warning.inc.php');
-  require_once(DIR_FS_INC . 'xtc_image.inc.php');
-  require_once(DIR_FS_INC . 'xtc_parse_input_field_data.inc.php');
-  require_once(DIR_FS_INC . 'xtc_draw_separator.inc.php');
-
+// include needed functions
+require_once (DIR_FS_INC . 'xtc_output_warning.inc.php');
+require_once (DIR_FS_INC . 'xtc_image.inc.php');
+require_once (DIR_FS_INC . 'xtc_parse_input_field_data.inc.php');
+require_once (DIR_FS_INC . 'xtc_draw_separator.inc.php');
 //  require_once('inc/xtc_draw_form.inc.php');
 //  require_once('inc/xtc_draw_pull_down_menu.inc.php');
-
-  // check if the 'install' directory exists, and warn of its existence
-  if (WARN_INSTALL_EXISTENCE == 'true') {
+// check if the 'install' directory exists, and warn of its existence
+if (WARN_INSTALL_EXISTENCE == 'true') {
     if (file_exists(dirname($_SERVER['SCRIPT_FILENAME']) . '/xtc_installer')) {
-      xtc_output_warning(WARNING_INSTALL_DIRECTORY_EXISTS);
+        xtc_output_warning(WARNING_INSTALL_DIRECTORY_EXISTS);
     }
-  }
-
-  // check if the configure.php file is writeable
-  if (WARN_CONFIG_WRITEABLE == 'true') {
-    if ( (file_exists(dirname($_SERVER['SCRIPT_FILENAME']) . '/includes/configure.php')) && (is_writeable(dirname($_SERVER['SCRIPT_FILENAME']) . '/includes/configure.php')) ) {
-      xtc_output_warning(WARNING_CONFIG_FILE_WRITEABLE);
+}
+// check if the configure.php file is writeable
+if (WARN_CONFIG_WRITEABLE == 'true') {
+    if ((file_exists(dirname($_SERVER['SCRIPT_FILENAME']) . '/includes/configure.php')) && (is_writeable(dirname($_SERVER['SCRIPT_FILENAME']) . '/includes/configure.php'))) {
+        xtc_output_warning(WARNING_CONFIG_FILE_WRITEABLE);
     }
-  }
-
-  // check if the session folder is writeable
-  if (WARN_SESSION_DIRECTORY_NOT_WRITEABLE == 'true') {
+}
+// check if the session folder is writeable
+if (WARN_SESSION_DIRECTORY_NOT_WRITEABLE == 'true') {
     if (STORE_SESSIONS == '') {
-      if (!is_dir(xtc_session_save_path())) {
-        xtc_output_warning(WARNING_SESSION_DIRECTORY_NON_EXISTENT);
-      } elseif (!is_writeable(xtc_session_save_path())) {
-        xtc_output_warning(WARNING_SESSION_DIRECTORY_NOT_WRITEABLE);
-      }
+        if (!is_dir(xtc_session_save_path())) {
+            xtc_output_warning(WARNING_SESSION_DIRECTORY_NON_EXISTENT);
+        } elseif (!is_writeable(xtc_session_save_path())) {
+            xtc_output_warning(WARNING_SESSION_DIRECTORY_NOT_WRITEABLE);
+        }
     }
-  }
-
-  // check session.auto_start is disabled
-  if ( (function_exists('ini_get')) && (WARN_SESSION_AUTO_START == 'true') ) {
+}
+// check session.auto_start is disabled
+if ((function_exists('ini_get')) && (WARN_SESSION_AUTO_START == 'true')) {
     if (ini_get('session.auto_start') == '1') {
-      xtc_output_warning(WARNING_SESSION_AUTO_START);
+        xtc_output_warning(WARNING_SESSION_AUTO_START);
     }
-  }
-
-  if ( (WARN_DOWNLOAD_DIRECTORY_NOT_READABLE == 'true') && (DOWNLOAD_ENABLED == 'true') ) {
+}
+if ((WARN_DOWNLOAD_DIRECTORY_NOT_READABLE == 'true') && (DOWNLOAD_ENABLED == 'true')) {
     if (!is_dir(DIR_FS_DOWNLOAD)) {
-      xtc_output_warning(WARNING_DOWNLOAD_DIRECTORY_NON_EXISTENT);
+        xtc_output_warning(WARNING_DOWNLOAD_DIRECTORY_NON_EXISTENT);
     }
-  }
-
-$smarty->assign('navtrail',$breadcrumb->trail(' &raquo; '));
+}
+$smarty->assign('navtrail', $breadcrumb->trail(' &raquo; '));
 // BOF - Hetfield - 2009-12-17 - added new links index and login for index.html
 if (isset($_SESSION['customer_id'])) {
-  $smarty->assign('logoff',xtc_href_link(FILENAME_LOGOFF, '', 'SSL'));
+    $smarty->assign('logoff', xtc_href_link(FILENAME_LOGOFF, '', 'SSL'));
 } else {
-  $smarty->assign('login',xtc_href_link(FILENAME_LOGIN, '', 'SSL'));
-  $smarty->assign('create_account',xtc_href_link(FILENAME_CREATE_ACCOUNT, '', 'SSL')); //DokuMan also assign create_account-link for new visitors
+    $smarty->assign('login', xtc_href_link(FILENAME_LOGIN, '', 'SSL'));
+    $smarty->assign('create_account', xtc_href_link(FILENAME_CREATE_ACCOUNT, '', 'SSL')); //DokuMan also assign create_account-link for new visitors
+    
 }
-$smarty->assign('index',xtc_href_link(FILENAME_DEFAULT));
+$smarty->assign('index', xtc_href_link(FILENAME_DEFAULT));
 // EOF - Hetfield - 2009-12-17 - added new links index and login for index.html
-
 //web28 - 2010-11-13 - define link_index
-$smarty->assign('LINK_INDEX',$link_index);
-
-if ( $_SESSION['account_type']=='0') {
-  $smarty->assign('account',xtc_href_link(FILENAME_ACCOUNT, '', 'SSL'));
+$smarty->assign('LINK_INDEX', $link_index);
+if ($_SESSION['account_type'] == '0') {
+    $smarty->assign('account', xtc_href_link(FILENAME_ACCOUNT, '', 'SSL'));
 }
-$smarty->assign('cart',xtc_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL')); // web28 - 2010-09-20 - change SSL -> NONSSL
-$smarty->assign('checkout',xtc_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
-$smarty->assign('store_name',TITLE);
-
+$smarty->assign('cart', xtc_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL')); // web28 - 2010-09-20 - change SSL -> NONSSL
+$smarty->assign('checkout', xtc_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
+$smarty->assign('store_name', TITLE);
 // BOF - Dokuman - 2009-05-27 - added htmlspecialchars
 //$smarty->assign('store_name',TITLE);
 $smarty->assign('store_name', htmlspecialchars(TITLE));
 // EOF - Dokuman - 2009-05-27 - added htmlspecialchars
-
 if (isset($_GET['error_message']) && xtc_not_null($_GET['error_message'])) {
-  $smarty->assign('error','<p class="errormessage">'. htmlspecialchars(urldecode($_GET['error_message'])).'</p>');
+    $smarty->assign('error', '<p class="errormessage">' . htmlspecialchars(urldecode($_GET['error_message'])) . '</p>');
 }
 if (isset($_GET['info_message']) && xtc_not_null($_GET['info_message'])) {
-  $smarty->assign('error','<p class="errormessage">'.htmlspecialchars($_GET['info_message']).'</p>');
+    $smarty->assign('error', '<p class="errormessage">' . htmlspecialchars($_GET['info_message']) . '</p>');
 }
-
-include(DIR_WS_INCLUDES.FILENAME_BANNER);
+include (DIR_WS_INCLUDES . FILENAME_BANNER);
 //BOF - web28- 2010-07-07 SHOP OFFLINE INFO
-require_once(DIR_FS_INC . 'xtc_get_shop_conf.inc.php');
-if(xtc_get_shop_conf('SHOP_OFFLINE') != 'checked' || $_SESSION['customers_status']['customers_status_id'] == 0) {
-  //Do nothing
+require_once (DIR_FS_INC . 'xtc_get_shop_conf.inc.php');
+if (xtc_get_shop_conf('SHOP_OFFLINE') != 'checked' || $_SESSION['customers_status']['customers_status_id'] == 0) {
+    //Do nothing
+    
 } else {
-  $smarty->assign('language', $_SESSION['language']);
-  $smarty->assign('shop_offline_msg', xtc_get_shop_conf('SHOP_OFFLINE_MSG'));
-    $smarty->display(CURRENT_TEMPLATE.'/offline.html');
-  EXIT;
+    $smarty->assign('language', $_SESSION['language']);
+    $smarty->assign('shop_offline_msg', xtc_get_shop_conf('SHOP_OFFLINE_MSG'));
+    $smarty->display(CURRENT_TEMPLATE . '/offline.html');
+    EXIT;
 }
 //EOF  - web28- 2010-07-07 SHOP OFFLINE INFO
+
 ?>

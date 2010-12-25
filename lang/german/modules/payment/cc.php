@@ -17,7 +17,6 @@
 
   Released under the GNU General Public License
 ------------------------------------------------------------------------------*/
-
 define('MODULE_PAYMENT_CC_TEXT_TITLE', 'Kreditkarte');
 define('MODULE_PAYMENT_CC_TEXT_DESCRIPTION', 'Kreditkarte Testinfo:<br /><br />CC#: 4111111111111111<br />G&uuml;ltig bis: Jederzeit');
 define('MODULE_PAYMENT_CC_TEXT_INFO', 'Bezahlen Sie bequem und Sicher per Kreditkarte.');
@@ -28,8 +27,8 @@ define('MODULE_PAYMENT_CC_TEXT_CREDIT_CARD_START', 'Kreditkarten-Startdatum:');
 define('MODULE_PAYMENT_CC_TEXT_CREDIT_CARD_EXPIRES', 'Kreditkarten-G&uuml;ltigkeitsdatum:');
 define('MODULE_PAYMENT_CC_TEXT_CREDIT_CARD_ISSUE', 'Kreditkarten-Vorgangsnummer:');
 define('MODULE_PAYMENT_CC_TEXT_CREDIT_CARD_CVV', '3-  oder 4-stelliger Sicherheitscode:');
-define('MODULE_PAYMENT_CC_TEXT_JS_CC_OWNER', '* Der Name des Karteninhabers muss aus mindestens'.CC_OWNER_MIN_LENGTH.' ZEichen bestehen.\n\n');
-define('MODULE_PAYMENT_CC_TEXT_JS_CC_NUMBER', '* Die Kreditkartennummer muss aus mindestens '.CC_NUMBER_MIN_LENGTH.' Ziffern bestehen.\n\n');
+define('MODULE_PAYMENT_CC_TEXT_JS_CC_OWNER', '* Der Name des Karteninhabers muss aus mindestens' . CC_OWNER_MIN_LENGTH . ' ZEichen bestehen.\n\n');
+define('MODULE_PAYMENT_CC_TEXT_JS_CC_NUMBER', '* Die Kreditkartennummer muss aus mindestens ' . CC_NUMBER_MIN_LENGTH . ' Ziffern bestehen.\n\n');
 define('MODULE_PAYMENT_CC_TEXT_ERROR', 'Kreditkartenfehler!');
 define('TEXT_CARD_NOT_ACZEPTED', 'Die Zahlung mit einer <b>%s</b> Karte ist nicht m&ouml;glich, bitte verwenden Sie eine andere Karte!<br />Folgende Karten werden von uns Akzeptiert: ');
 define('MODULE_PAYMENT_CC_TEXT_JS_CC_CVV', '* Der CVV Sicherheitscode ist ein Pflichtfeld und muss ausgef&uuml;llt werden.\n Bestellungen k&ouml;nnen ohne diesen Code nicht ausgef&uuml;hrt werden.\n Der CVV Code besteht aus 3 oder 4 (American Express) Ziffern und ist im Unterschriftsfeld\n auf der R&uuml;ckseite Ihrer Karte gedruckt.\n\n');
@@ -67,7 +66,6 @@ define('MODULE_PAYMENT_CC_EMAIL_DESC', 'Wenn eine E-Mailadresse angegeben worden
 define('TEXT_CCVAL_ERROR_INVALID_DATE', 'Das "G&uuml;ltig bis" Datum ist ung&uuml;ltig. Bitte korrigieren Sie Ihre Angaben.');
 define('TEXT_CCVAL_ERROR_INVALID_NUMBER', 'Die "Kreditkarten-Nummer", die Sie angegeben haben, ist ung&uuml;ltig. Bitte korrigieren Sie Ihre Angaben.');
 define('TEXT_CCVAL_ERROR_UNKNOWN_CARD', 'Die ersten 4 Ziffern Ihrer Kreditkarte sind: %s Wenn diese Angaben stimmen, wird dieser Kartentyp leider nicht akzeptiert. Bitte korrigieren Sie Ihre Angaben gegebenfalls.');
-
 define('MODULE_PAYMENT_CC_ACCEPT_DINERSCLUB_TITLE', 'DINERS CLUB akzeptieren');
 define('MODULE_PAYMENT_CC_ACCEPT_DINERSCLUB_DESC', 'DINERS CLUB akzeptieren');
 define('MODULE_PAYMENT_CC_ACCEPT_AMERICANEXPRESS_TITLE', 'AMERICAN EXPRESS akzeptieren');
@@ -94,9 +92,9 @@ define('MODULE_PAYMENT_CC_ACCEPT_MAESTRO_TITLE', 'MAESTRO akzeptieren');
 define('MODULE_PAYMENT_CC_ACCEPT_MAESTRO_DESC', 'MAESTRO akzeptieren');
 define('MODULE_PAYMENT_CC_ACCEPT_VISA_TITLE', 'VISA akzeptieren');
 define('MODULE_PAYMENT_CC_ACCEPT_VISA_DESC', 'VISA akzeptieren');
-
 // BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 define('MODULE_PAYMENT_CC_NEG_SHIPPING_TITLE', 'Ausschluß bei Versandmodulen');
 define('MODULE_PAYMENT_CC_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
 // EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
+
 ?>

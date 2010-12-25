@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Zones');
-
 define('TABLE_HEADING_COUNTRY_NAME', 'Country');
 define('TABLE_HEADING_ZONE_NAME', 'Zone');
 define('TABLE_HEADING_ZONE_CODE', 'Code');
 define('TABLE_HEADING_ACTION', 'Action');
-
 define('TEXT_INFO_EDIT_INTRO', 'Please make any necessary changes');
 define('TEXT_INFO_ZONES_NAME', 'Zones Name:');
 define('TEXT_INFO_ZONES_CODE', 'Zones Code:');

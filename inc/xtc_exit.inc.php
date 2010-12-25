@@ -14,9 +14,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-   function xtc_exit() {
-   xtc_session_close();
-   exit();
-  }
- ?>
+function xtc_exit() {
+    xtc_session_close();
+    exit();
+}
+?>

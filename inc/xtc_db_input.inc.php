@@ -14,17 +14,13 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-
-  function xtc_db_input($string, $link = 'db_link') {
-  global $$link;
-
-  if (function_exists('mysql_real_escape_string')) {
-    return mysql_real_escape_string($string, $$link);
-  } elseif (function_exists('mysql_escape_string')) {
-    return mysql_escape_string($string);
-  }
-
-  return addslashes($string);
+function xtc_db_input($string, $link = 'db_link') {
+    global $$link;
+    if (function_exists('mysql_real_escape_string')) {
+        return mysql_real_escape_string($string, $$link);
+    } elseif (function_exists('mysql_escape_string')) {
+        return mysql_escape_string($string);
+    }
+    return addslashes($string);
 }
- ?>
+?>

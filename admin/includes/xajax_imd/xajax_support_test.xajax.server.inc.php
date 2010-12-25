@@ -15,14 +15,11 @@
 
    Released under the GNU General Public License 
    ----------------------------------------------------------------------------------------- */
-   
-// this function generates any test output   
+// this function generates any test output
 function xajax_support_test_get_servertime($clienttime) {
-  
     $ctime_text = $clienttime;
     $stime_text = date('D d. M H:i:s');
-
-    $ret.= PROJECT_VERSION.' '.XAJAX_SUPPORT_VERSION."\n";
+    $ret.= PROJECT_VERSION . ' ' . XAJAX_SUPPORT_VERSION . "\n";
     $ret.= "\n";
     $ret.= "XAjax in Backend \n";
     $ret.= "XAjax-support is working. You can remove this test now and install your \n";
@@ -34,13 +31,8 @@ function xajax_support_test_get_servertime($clienttime) {
     $ret.= "Technical support:\n";
     $ret.= "http://www.xtc-modified.org/wiki/\n";
     $ret.= "http://www.xtc-modified.org/forum/\n";
-  
     $objResponse = new xajaxResponse();
-    $objResponse->alert( $ret );
+    $objResponse->alert($ret);
     return $objResponse;
 }
-
-
-
-  
 ?>

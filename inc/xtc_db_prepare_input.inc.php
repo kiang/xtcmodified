@@ -13,18 +13,18 @@
    (c) 2003	 nextcommerce (xtc_db_prepare_input.inc.php,v 1.4 2003/08/13); www.nextcommerce.org
 
    Released under the GNU General Public License 
-   ---------------------------------------------------------------------------------------*/  
-  function xtc_db_prepare_input($string) {
+   ---------------------------------------------------------------------------------------*/
+function xtc_db_prepare_input($string) {
     if (is_string($string)) {
-  return trim(stripslashes($string));
+        return trim(stripslashes($string));
     } elseif (is_array($string)) {
-      reset($string);
-      while (list($key, $value) = each($string)) {
-        $string[$key] = xtc_db_prepare_input($value);
-      }
-      return $string;
+        reset($string);
+        while (list($key, $value) = each($string)) {
+            $string[$key] = xtc_db_prepare_input($value);
+        }
+        return $string;
     } else {
-      return $string;
+        return $string;
     }
-  }
- ?>
+}
+?>

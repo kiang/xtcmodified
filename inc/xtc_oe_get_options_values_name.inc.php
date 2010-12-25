@@ -18,14 +18,10 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_oe_get_options_values_name($products_options_values_id, $language = '') {
-
+function xtc_oe_get_options_values_name($products_options_values_id, $language = '') {
     if (empty($language)) $language = $_SESSION['languages_id'];
-
     $product_query = xtc_db_query("select products_options_values_name from " . TABLE_PRODUCTS_OPTIONS_VALUES . " where products_options_values_id = '" . $products_options_values_id . "' and language_id = '" . $language . "'");
     $product = xtc_db_fetch_array($product_query);
-
     return $product['products_options_values_name'];
-  }
- ?>
+}
+?>

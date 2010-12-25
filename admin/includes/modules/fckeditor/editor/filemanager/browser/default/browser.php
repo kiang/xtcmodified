@@ -1,4 +1,4 @@
-<?php defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');?>
+<?php defined('_VALID_XTC') or die('Direct Access to this location is not allowed.'); ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
    "http://www.w3.org/TR/html4/frameset.dtd">
 <!--

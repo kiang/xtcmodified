@@ -7,7 +7,6 @@
    Released under the GNU General Public License
    --------------------------------------------------------------
 */
-
 /* --------------------------------------------------------------
    $Id: configuration.php 1125 2005-07-28 09:59:44Z novalis $   
 
@@ -23,15 +22,13 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
-  require('includes/application_top.php');
-  //require_once(DIR_FS_INC . 'xtc_wysiwyg.inc.php');
-  require_once(DIR_FS_INC . 'xtc_get_shop_conf.inc.php');  
-
-if(isset($_POST['go'])) {
-	xtc_db_query("UPDATE ". "shop_configuration" ." SET configuration_value= '" . $_POST['shop_offline']. "' WHERE configuration_key = 'SHOP_OFFLINE'");
-	xtc_db_query("UPDATE ". "shop_configuration" ." SET configuration_value= '" . $_POST['offline_msg'] . "' WHERE configuration_key = 'SHOP_OFFLINE_MSG'");
-    xtc_redirect('shop_offline.php');	
+require ('includes/application_top.php');
+//require_once(DIR_FS_INC . 'xtc_wysiwyg.inc.php');
+require_once (DIR_FS_INC . 'xtc_get_shop_conf.inc.php');
+if (isset($_POST['go'])) {
+    xtc_db_query("UPDATE " . "shop_configuration" . " SET configuration_value= '" . $_POST['shop_offline'] . "' WHERE configuration_key = 'SHOP_OFFLINE'");
+    xtc_db_query("UPDATE " . "shop_configuration" . " SET configuration_value= '" . $_POST['offline_msg'] . "' WHERE configuration_key = 'SHOP_OFFLINE_MSG'");
+    xtc_redirect('shop_offline.php');
 }
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -43,30 +40,29 @@ if(isset($_POST['go'])) {
 <script type="text/javascript" src="includes/general.js"></script>
 <script type="text/javascript" src="includes/modules/fckeditor/fckeditor.js"></script>
 
-<?php 
-		
+<?php
 if (USE_WYSIWYG == 'true') {
-	$query = xtc_db_query("SELECT code FROM ".TABLE_LANGUAGES." WHERE languages_id='".$_SESSION['languages_id']."'");
-	$data = xtc_db_fetch_array($query);	
-	$languages = xtc_get_languages();
-	//echo xtc_wysiwyg('shop_offline',$data['code']);
-	$js_src = DIR_WS_MODULES .'fckeditor/fckeditor.js';
-	$path = DIR_WS_MODULES .'fckeditor/';
-	$filemanager = DIR_WS_ADMIN.'fck_wrapper.php?Connector='.DIR_WS_MODULES . 'fckeditor/editor/filemanager/connectors/php/connector.php&ServerPath='. DIR_WS_CATALOG;
-	$file_path = '&Type=File';
-	$image_path = '&Type=Image';
-	$flash_path = '&Type=Flash';
-	$media_path = '&Type=Media';
-	echo('<script type="text/javascript">
+    $query = xtc_db_query("SELECT code FROM " . TABLE_LANGUAGES . " WHERE languages_id='" . $_SESSION['languages_id'] . "'");
+    $data = xtc_db_fetch_array($query);
+    $languages = xtc_get_languages();
+    //echo xtc_wysiwyg('shop_offline',$data['code']);
+    $js_src = DIR_WS_MODULES . 'fckeditor/fckeditor.js';
+    $path = DIR_WS_MODULES . 'fckeditor/';
+    $filemanager = DIR_WS_ADMIN . 'fck_wrapper.php?Connector=' . DIR_WS_MODULES . 'fckeditor/editor/filemanager/connectors/php/connector.php&ServerPath=' . DIR_WS_CATALOG;
+    $file_path = '&Type=File';
+    $image_path = '&Type=Image';
+    $flash_path = '&Type=Flash';
+    $media_path = '&Type=Media';
+    echo ('<script type="text/javascript">
 		window.onload = function()
 			{
 				var oFCKeditor = new FCKeditor( \'offline_msg\', \'800\', \'400\' ) ;
-				oFCKeditor.BasePath = "'.$path.'" ;
-				oFCKeditor.Config["LinkBrowserURL"] = "'.$filemanager.$file_path.'" ;
-				oFCKeditor.Config["ImageBrowserURL"] = "'.$filemanager.$image_path.'" ;
-				oFCKeditor.Config["FlashBrowserURL"] = "'.$filemanager.$flash_path.'" ;
+				oFCKeditor.BasePath = "' . $path . '" ;
+				oFCKeditor.Config["LinkBrowserURL"] = "' . $filemanager . $file_path . '" ;
+				oFCKeditor.Config["ImageBrowserURL"] = "' . $filemanager . $image_path . '" ;
+				oFCKeditor.Config["FlashBrowserURL"] = "' . $filemanager . $flash_path . '" ;
 				oFCKeditor.Config["AutoDetectLanguage"] = false ;
-				oFCKeditor.Config["DefaultLanguage"] = "'.$data['code'].'" ;
+				oFCKeditor.Config["DefaultLanguage"] = "' . $data['code'] . '" ;
 				oFCKeditor.ReplaceTextarea() ;
 			}
     </script>');
@@ -75,7 +71,7 @@ if (USE_WYSIWYG == 'true') {
 </head>
 <body marginwidth="0" marginheight="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF" >
 	<!-- header //-->
-	<?php require(DIR_WS_INCLUDES . 'header.php'); ?>
+	<?php require (DIR_WS_INCLUDES . 'header.php'); ?>
 	<!-- header_eof //-->
 
 	<!-- body //-->
@@ -84,7 +80,7 @@ if (USE_WYSIWYG == 'true') {
 			<td class="columnLeft2" width="<?php echo BOX_WIDTH; ?>" valign="top">
 				<table border="0" width="<?php echo BOX_WIDTH; ?>" cellspacing="1" cellpadding="1" class="columnLeft">
 					<!-- left_navigation //-->
-					<?php require(DIR_WS_INCLUDES . 'column_left.php'); ?>
+					<?php require (DIR_WS_INCLUDES . 'column_left.php'); ?>
 					<!-- left_navigation_eof //-->
 				</table>
 			</td>
@@ -111,8 +107,8 @@ if (USE_WYSIWYG == 'true') {
 
 										<?php echo SETTINGS_OFFLINE_MSG ?>:<br />
 										<?php
-										echo xtc_draw_textarea_field('offline_msg', 'soft', '150', '20', stripslashes(xtc_get_shop_conf('SHOP_OFFLINE_MSG')));
-										?>
+echo xtc_draw_textarea_field('offline_msg', 'soft', '150', '20', stripslashes(xtc_get_shop_conf('SHOP_OFFLINE_MSG')));
+?>
 
 										<br>
 										<br>
@@ -133,8 +129,8 @@ if (USE_WYSIWYG == 'true') {
 	<!-- body_eof //-->
 
 	<!-- footer //-->
-	<?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
+	<?php require (DIR_WS_INCLUDES . 'footer.php'); ?>
 	<!-- footer_eof //-->
 </body>
 </html>
-<?php require(DIR_WS_INCLUDES . 'application_bottom.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'application_bottom.php'); ?>

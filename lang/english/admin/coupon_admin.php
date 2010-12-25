@@ -24,7 +24,6 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 define('TOP_BAR_TITLE', 'Statistics');
 define('HEADING_TITLE', 'Discount Coupons');
 define('HEADING_TITLE_STATUS', 'Status : ');
@@ -41,26 +40,21 @@ define('TEXT_SELECT_CUSTOMER', 'Select Customer');
 define('TEXT_ALL_CUSTOMERS', 'All Customers');
 define('TEXT_NEWSLETTER_CUSTOMERS', 'To All Newsletter Subscribers');
 define('TEXT_CONFIRM_DELETE', 'This function gets the selected coupons <strong> inactive status </ strong>. A re-activation is no longer possible at a later date. <br /> <br /> If this coupon really deleted (inactive status) to receive?');
-
 define('TEXT_TO_REDEEM', 'You can redeem this coupon during checkout. Just enter the code in the box provided, and click on the redeem button.');
 define('TEXT_IN_CASE', ' in case you have any problems. ');
 define('TEXT_VOUCHER_IS', 'The coupon code is ');
 define('TEXT_REMEMBER', 'Don\'t lose the coupon code, make sure to keep the code safe so you can benefit from this special offer.');
 define('TEXT_VISIT', 'when you visit ' . HTTP_SERVER . DIR_WS_CATALOG);
 define('TEXT_ENTER_CODE', ' and enter the code ');
-
 define('TABLE_HEADING_ACTION', 'Action');
-
 define('CUSTOMER_ID', 'Customer ID');
 define('CUSTOMER_NAME', 'Customer Name');
 define('REDEEM_DATE', 'Date Redeemed');
 define('IP_ADDRESS', 'IP Address');
-
 define('TEXT_REDEMPTIONS', 'Redemptions');
 define('TEXT_REDEMPTIONS_TOTAL', 'In Total');
 define('TEXT_REDEMPTIONS_CUSTOMER', 'For this Customer');
 define('TEXT_NO_FREE_SHIPPING', 'No Free Shipping');
-
 define('NOTICE_EMAIL_SENT_TO', 'Notice: email sent to: %s');
 define('ERROR_NO_CUSTOMER_SELECTED', 'Error: No customer has been selected.');
 define('COUPON_NAME', 'Coupon Name');
@@ -80,8 +74,6 @@ define('DATE_CREATED', 'Date Created');
 define('DATE_MODIFIED', 'Date Modified');
 define('TEXT_HEADING_NEW_COUPON', 'Create New Coupon');
 define('TEXT_NEW_INTRO', 'Please fill out the following information for the new coupon.<br />');
-
-
 define('COUPON_NAME_HELP', 'A short name for the coupon');
 define('COUPON_AMOUNT_HELP', 'The value of the discount for the coupon, either fixed or add a % on the end for a percentage discount.');
 define('COUPON_CODE_HELP', 'You can enter your own code here, or leave blank for an auto generated one.');

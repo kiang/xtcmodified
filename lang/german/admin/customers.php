@@ -14,15 +14,12 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Kunden');
 define('HEADING_TITLE_SEARCH', 'Suche:');
-
 define('TABLE_HEADING_FIRSTNAME', 'Vorname');
 define('TABLE_HEADING_LASTNAME', 'Nachname');
 define('TABLE_HEADING_ACCOUNT_CREATED', 'Zugang erstellt am');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_DATE_ACCOUNT_CREATED', 'Zugang erstellt am:');
 define('TEXT_DATE_ACCOUNT_LAST_MODIFIED', 'letzte &Auml;nderung:');
 define('TEXT_INFO_DATE_LAST_LOGON', 'letzte Anmeldung:');
@@ -34,30 +31,29 @@ define('TEXT_DELETE_REVIEWS', '%s Bewertung(en) l&ouml;schen');
 define('TEXT_INFO_HEADING_DELETE_CUSTOMER', 'Kunden l&ouml;schen');
 define('TYPE_BELOW', 'Bitte unten eingeben');
 define('PLEASE_SELECT', 'Ausw&auml;hlen');
-define('HEADING_TITLE_STATUS','Kundengruppe');
-define('TEXT_ALL_CUSTOMERS','Alle Gruppen');
-define('TEXT_INFO_HEADING_STATUS_CUSTOMER','Kundengruppe');
-define('TABLE_HEADING_NEW_VALUE','Neuer Status');
-define('TABLE_HEADING_DATE_ADDED','Datum');
-define('TEXT_NO_CUSTOMER_HISTORY','--Keine &Auml;nderung bisher--');
-define('TABLE_HEADING_GROUPIMAGE','Icon');
-define('ENTRY_MEMO','Memo');
-define('TEXT_DATE','Datum');
-define('TEXT_TITLE','Titel');
-define('TEXT_POSTER','Verfasser');
-define('ENTRY_PASSWORD_CUSTOMER','Passwort:');
-define('TABLE_HEADING_ACCOUNT_TYPE','Konto');
-define('TEXT_ACCOUNT','Ja');
-define('TEXT_GUEST','Nein');
-define('NEW_ORDER','Neue Bestellung ?');
-define('ENTRY_PAYMENT_UNALLOWED','Nicht erlaubte Zahlungsmodule:');
-define('ENTRY_SHIPPING_UNALLOWED','Nicht erlaubte Versandmodule:');
-define('ENTRY_NEW_PASSWORD','Neues Passwort:');
-
+define('HEADING_TITLE_STATUS', 'Kundengruppe');
+define('TEXT_ALL_CUSTOMERS', 'Alle Gruppen');
+define('TEXT_INFO_HEADING_STATUS_CUSTOMER', 'Kundengruppe');
+define('TABLE_HEADING_NEW_VALUE', 'Neuer Status');
+define('TABLE_HEADING_DATE_ADDED', 'Datum');
+define('TEXT_NO_CUSTOMER_HISTORY', '--Keine &Auml;nderung bisher--');
+define('TABLE_HEADING_GROUPIMAGE', 'Icon');
+define('ENTRY_MEMO', 'Memo');
+define('TEXT_DATE', 'Datum');
+define('TEXT_TITLE', 'Titel');
+define('TEXT_POSTER', 'Verfasser');
+define('ENTRY_PASSWORD_CUSTOMER', 'Passwort:');
+define('TABLE_HEADING_ACCOUNT_TYPE', 'Konto');
+define('TEXT_ACCOUNT', 'Ja');
+define('TEXT_GUEST', 'Nein');
+define('NEW_ORDER', 'Neue Bestellung ?');
+define('ENTRY_PAYMENT_UNALLOWED', 'Nicht erlaubte Zahlungsmodule:');
+define('ENTRY_SHIPPING_UNALLOWED', 'Nicht erlaubte Versandmodule:');
+define('ENTRY_NEW_PASSWORD', 'Neues Passwort:');
 // NEU HINZUGEFUEGT 04.12.2008 - UMSATZANZEIGE BEI KUNDEN 03.12.2008
-define('TABLE_HEADING_UMSATZ','Umsatz');
-
+define('TABLE_HEADING_UMSATZ', 'Umsatz');
 // BOF - web28 - 2010-05-28 - added  customers_email_address
-define('TABLE_HEADING_EMAIL','E-Mail');
+define('TABLE_HEADING_EMAIL', 'E-Mail');
 // EOF - web28 - 2010-05-28 - added  customers_email_address
+
 ?>

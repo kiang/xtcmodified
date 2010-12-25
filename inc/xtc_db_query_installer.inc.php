@@ -14,10 +14,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_query_installer($query, $link = 'db_link') {
+function xtc_db_query_installer($query, $link = 'db_link') {
     global $$link;
-
     return mysql_query($query, $$link);
-  }
- ?>
+}
+?>

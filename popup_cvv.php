@@ -13,10 +13,8 @@
 
   Released under the GNU General Public License 
   ----------------------------------------------------------------------------*/
-
 require ('includes/application_top.php');
-
-require (DIR_WS_LANGUAGES.$_SESSION['language'].'/modules/payment/cc.php');
+require (DIR_WS_LANGUAGES . $_SESSION['language'] . '/modules/payment/cc.php');
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html <?php echo HTML_PARAMS; ?>>
@@ -56,7 +54,7 @@ function resize() {
 //BOF - GTB - 2010-08-03 - Security Fix - Base
 <link rel="stylesheet" type="text/css" href="<?php echo 'templates/'.CURRENT_TEMPLATE.'/stylesheet.css'; ?>" />
 */ ?>
-<link rel="stylesheet" type="text/css" href="<?php echo DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/stylesheet.css'; ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/stylesheet.css'; ?>" />
 <?php /*
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 */ ?>
@@ -68,15 +66,11 @@ BODY { margin-bottom: 10px; margin-left: 10px; margin-right: 10px; margin-top: 1
 
 <body onload="resize();">
 <?php
-
-$info_box_contents = array ();
-$info_box_contents[] = array ('align' => 'left', 'text' => HEADING_CVV);
-
+$info_box_contents = array();
+$info_box_contents[] = array('align' => 'left', 'text' => HEADING_CVV);
 new infoBoxHeading($info_box_contents);
-
-$info_box_contents = array ();
-$info_box_contents[] = array ('align' => 'left', 'text' => TEXT_CVV);
-
+$info_box_contents = array();
+$info_box_contents[] = array('align' => 'left', 'text' => TEXT_CVV);
 new infoBox($info_box_contents);
 ?>
 

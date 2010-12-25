@@ -12,19 +12,15 @@
    
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
 // returns human readeable filesize :)
-
 function xtc_filesize($file) {
-	$a = array("B","KB","MB","GB","TB","PB");
-	
-	$pos = 0;
-	$size = filesize(DIR_FS_CATALOG.'media/products/'.$file);
-	while ($size >= 1024) {
-		$size /= 1024;
-		$pos++;
-	}
-	return round($size,2)." ".$a[$pos];
+    $a = array("B", "KB", "MB", "GB", "TB", "PB");
+    $pos = 0;
+    $size = filesize(DIR_FS_CATALOG . 'media/products/' . $file);
+    while ($size >= 1024) {
+        $size/= 1024;
+        $pos++;
+    }
+    return round($size, 2) . " " . $a[$pos];
 }
-
 ?>

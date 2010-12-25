@@ -13,7 +13,7 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
- echo xtc_draw_form('transaction_search', FILENAME_PAYPAL, xtc_get_all_get_params(array('action')) . 'action=perform');
+echo xtc_draw_form('transaction_search', FILENAME_PAYPAL, xtc_get_all_get_params(array('action')) . 'action=perform');
 ?>
 <div class="highlightbox">
   <p class="pageHeading"><?php echo TEXT_PAYPAL_SEARCH_TRANSACTION; ?></p>
@@ -86,7 +86,7 @@
     </tr>
   </table>
   <input type="submit" class="button" value="<?php echo BUTTON_SEARCH; ?>">
-  <?php echo '<a class="button" href="'.xtc_href_link(FILENAME_PAYPAL).'">Zur&uuml;ck</a>'; ?>
+  <?php echo '<a class="button" href="' . xtc_href_link(FILENAME_PAYPAL) . '">Zur&uuml;ck</a>'; ?>
   </form>
 </div>
 <br />
@@ -96,10 +96,10 @@
       <div class="highlightbox">
         <p class="pageHeading"><?php echo TEXT_PAYPAL_FOUND_TRANSACTION; ?></p>
         <?php
-        if(isset($paypal->SearchError['code'])) {
-          $messageStack->add($paypal->SearchError['longmessage'],'warning');
-          echo $messageStack->output();
-        }?>
+if (isset($paypal->SearchError['code'])) {
+    $messageStack->add($paypal->SearchError['longmessage'], 'warning');
+    echo $messageStack->output();
+} ?>
         <table border="0" width="100%" cellspacing="0" cellpadding="2">
           <tr class="dataTableHeadingRow">
             <td class="dataTableHeadingContent" width="10">&nbsp;</td>
@@ -114,12 +114,12 @@
             <td class="dataTableHeadingContent" align="right"><?php echo TABLE_HEADING_ACTION; ?>&nbsp;</td>
           </tr>
           <?php
-          if(!is_array($response)) {
-            echo '<tr><td class="dataTableContent" colspan="9"> - Keine Transaktionen gefunden - </td></tr>';
-          } else {
-            foreach($response as $arr) { ?>
+if (!is_array($response)) {
+    echo '<tr><td class="dataTableContent" colspan="9"> - Keine Transaktionen gefunden - </td></tr>';
+} else {
+    foreach ($response as $arr) { ?>
               <tr>
-                <td class="dataTableContent" nowrap><?php echo $paypal->getStatusSymbol($arr['TYPE'],$arr['STATUS']); ?></td>
+                <td class="dataTableContent" nowrap><?php echo $paypal->getStatusSymbol($arr['TYPE'], $arr['STATUS']); ?></td>
                 <td class="dataTableContent" nowrap><?php echo $arr['TIMESTAMP']; ?></td>
                 <td class="dataTableContent" nowrap><?php echo $arr['NAME']; ?></td>
                 <td class="dataTableContent" nowrap><?php echo $arr['TXNID']; ?></td>
@@ -128,9 +128,11 @@
                 <td class="dataTableContent" nowrap><?php echo $arr['AMT']; ?></td>
                 <td class="dataTableContent" nowrap><?php echo $arr['FEEAMT']; ?></td>
                 <td class="dataTableContent" nowrap><?php echo $arr['NETAMT']; ?></td>
-                <td class="dataTableContent" nowrap><?php echo '<a href="' . xtc_href_link(FILENAME_PAYPAL, 'view=detail&txn_id='.$arr['TXNID']) . '">' . xtc_image(DIR_WS_ICONS . 'page_find.gif', IMAGE_ICON_INFO) . '</a>'; ?></td>
+                <td class="dataTableContent" nowrap><?php echo '<a href="' . xtc_href_link(FILENAME_PAYPAL, 'view=detail&txn_id=' . $arr['TXNID']) . '">' . xtc_image(DIR_WS_ICONS . 'page_find.gif', IMAGE_ICON_INFO) . '</a>'; ?></td>
               </tr>
-          <?php } }?>
+          <?php
+    }
+} ?>
         </table>
       </div>
     </td>

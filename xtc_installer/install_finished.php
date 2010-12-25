@@ -1,5 +1,5 @@
 <?php
-  /* --------------------------------------------------------------
+/* --------------------------------------------------------------
    $Id: install_finished.php 899 2005-04-29 02:40:57Z hhgag $   
 
    XT-Commerce - community made shopping
@@ -13,15 +13,13 @@
    
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-  
-  require('includes/application.php');
-  require('../admin/includes/configure.php'); 
-    
-  //BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
-  //include('language/'.$_SESSION['language'].'.php');
-  include('language/'.$lang.'.php');
-  //EOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
-  
+require ('includes/application.php');
+require ('../admin/includes/configure.php');
+//BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
+//include('language/'.$_SESSION['language'].'.php');
+include ('language/' . $lang . '.php');
+//EOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -76,7 +74,7 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
               </div><br />
             <table border="0" width="100%" cellspacing="0" cellpadding="0">
               <tr> 
-                <td align="center"><a href="<?php echo HTTP_CATALOG_SERVER . DIR_WS_CATALOG . 'index.php'; ?>" target="_blank"><img src="buttons/<?php echo $lang;?>/button_catalog.gif" border="0" alt="Catalog"></a></td>
+                <td align="center"><a href="<?php echo HTTP_CATALOG_SERVER . DIR_WS_CATALOG . 'index.php'; ?>" target="_blank"><img src="buttons/<?php echo $lang; ?>/button_catalog.gif" border="0" alt="Catalog"></a></td>
                 
               </tr>
             </table>

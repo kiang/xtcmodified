@@ -14,14 +14,10 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-
-  define('MODULE_ORDER_TOTAL_TAX_TITLE', 'MwSt.');
-  define('MODULE_ORDER_TOTAL_TAX_DESCRIPTION', 'Mehrwertsteuer');
-  
-  define('MODULE_ORDER_TOTAL_TAX_STATUS_TITLE','Mehrwertsteuer');
-  define('MODULE_ORDER_TOTAL_TAX_STATUS_DESC','Anzeige der Mehrwertsteuer?');
-  
-  define('MODULE_ORDER_TOTAL_TAX_SORT_ORDER_TITLE','Sortierreihenfolge');
-  define('MODULE_ORDER_TOTAL_TAX_SORT_ORDER_DESC','Anzeigereihenfolge.');
+define('MODULE_ORDER_TOTAL_TAX_TITLE', 'MwSt.');
+define('MODULE_ORDER_TOTAL_TAX_DESCRIPTION', 'Mehrwertsteuer');
+define('MODULE_ORDER_TOTAL_TAX_STATUS_TITLE', 'Mehrwertsteuer');
+define('MODULE_ORDER_TOTAL_TAX_STATUS_DESC', 'Anzeige der Mehrwertsteuer?');
+define('MODULE_ORDER_TOTAL_TAX_SORT_ORDER_TITLE', 'Sortierreihenfolge');
+define('MODULE_ORDER_TOTAL_TAX_SORT_ORDER_DESC', 'Anzeigereihenfolge.');
 ?>

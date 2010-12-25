@@ -14,15 +14,14 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_get_subcategories(&$subcategories_array, $parent_id = 0) {
+function xtc_get_subcategories(&$subcategories_array, $parent_id = 0) {
     $subcategories_query = "select categories_id from " . TABLE_CATEGORIES . " where parent_id = '" . $parent_id . "'";
-    $subcategories_query  = xtDBquery($subcategories_query);
-    while ($subcategories = xtc_db_fetch_array($subcategories_query,true)) {
-      $subcategories_array[sizeof($subcategories_array)] = $subcategories['categories_id'];
-      if ($subcategories['categories_id'] != $parent_id) {
-        xtc_get_subcategories($subcategories_array, $subcategories['categories_id']);
-      }
+    $subcategories_query = xtDBquery($subcategories_query);
+    while ($subcategories = xtc_db_fetch_array($subcategories_query, true)) {
+        $subcategories_array[sizeof($subcategories_array) ] = $subcategories['categories_id'];
+        if ($subcategories['categories_id'] != $parent_id) {
+            xtc_get_subcategories($subcategories_array, $subcategories['categories_id']);
+        }
     }
-  }
- ?>
+}
+?>

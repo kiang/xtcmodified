@@ -14,23 +14,20 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 function xtc_rand($min = null, $max = null) {
     static $seeded;
-
     if (!isset($seeded)) {
-      mt_srand((double)microtime()*1000000);
-      $seeded = true;
+        mt_srand((double)microtime() * 1000000);
+        $seeded = true;
     }
-
     if (isset($min) && isset($max)) {
-      if ($min >= $max) {
-        return $min;
-      } else {
-        return mt_rand($min, $max);
-      }
+        if ($min >= $max) {
+            return $min;
+        } else {
+            return mt_rand($min, $max);
+        }
     } else {
-      return mt_rand();
+        return mt_rand();
     }
-  }
- ?>
+}
+?>

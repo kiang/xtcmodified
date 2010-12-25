@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_error($query, $errno, $error) { 
+function xtc_db_error($query, $errno, $error) {
     die('<font color="#000000"><strong>' . $errno . ' - ' . $error . '<br /><br />' . $query . '<br /><br /><small><font color="#ff0000">[XT SQL Error]</font></small><br /><br /></strong></font>');
-  }
- ?>
+}
+?>

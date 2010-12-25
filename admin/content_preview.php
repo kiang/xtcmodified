@@ -13,28 +13,25 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
-require('includes/application_top.php');
-
-if ($_GET['pID']=='media') {
-  $content_query=xtc_db_query("SELECT
+require ('includes/application_top.php');
+if ($_GET['pID'] == 'media') {
+    $content_query = xtc_db_query("SELECT
            content_file,
            content_name,
            file_comment
-           FROM ".TABLE_PRODUCTS_CONTENT."
-           WHERE content_id='".(int)$_GET['coID']."'");
-   $content_data=xtc_db_fetch_array($content_query);
-
+           FROM " . TABLE_PRODUCTS_CONTENT . "
+           WHERE content_id='" . (int)$_GET['coID'] . "'");
+    $content_data = xtc_db_fetch_array($content_query);
 } else {
-   $content_query=xtc_db_query("SELECT
+    $content_query = xtc_db_query("SELECT
            content_title,
            content_heading,
            content_text,
            content_file
-           FROM ".TABLE_CONTENT_MANAGER."
-           WHERE content_id='".(int)$_GET['coID']."'");
-   $content_data=xtc_db_fetch_array($content_query);
- }
+           FROM " . TABLE_CONTENT_MANAGER . "
+           WHERE content_id='" . (int)$_GET['coID'] . "'");
+    $content_data = xtc_db_fetch_array($content_query);
+}
 ?>
 <html <?php echo HTML_PARAMS; ?>>
 <head>
@@ -49,21 +46,21 @@ if ($_GET['pID']=='media') {
   <tr>
     <td class="main">
 <?php
-if ($content_data['content_file']!=''){
-  if (strpos($content_data['content_file'],'.txt')) echo '<pre>';
-  if ($_GET['pID']=='media') {
-    // display image
-    if (preg_match('/.gif/i',$content_data['content_file']) or preg_match('/.jpg/i',$content_data['content_file']) or  preg_match('/.png/i',$content_data['content_file']) or  preg_match('/.tif/i',$content_data['content_file']) or  preg_match('/.bmp/i',$content_data['content_file'])) { // Hetfield - 2009-08-19 - replaced deprecated function eregi with preg_match to be ready for PHP >= 5.3
-      echo xtc_image(DIR_WS_CATALOG.'media/products/'.$content_data['content_file']);
+if ($content_data['content_file'] != '') {
+    if (strpos($content_data['content_file'], '.txt')) echo '<pre>';
+    if ($_GET['pID'] == 'media') {
+        // display image
+        if (preg_match('/.gif/i', $content_data['content_file']) or preg_match('/.jpg/i', $content_data['content_file']) or preg_match('/.png/i', $content_data['content_file']) or preg_match('/.tif/i', $content_data['content_file']) or preg_match('/.bmp/i', $content_data['content_file'])) { // Hetfield - 2009-08-19 - replaced deprecated function eregi with preg_match to be ready for PHP >= 5.3
+            echo xtc_image(DIR_WS_CATALOG . 'media/products/' . $content_data['content_file']);
+        } else {
+            include (DIR_FS_CATALOG . 'media/products/' . $content_data['content_file']);
+        }
     } else {
-      include(DIR_FS_CATALOG.'media/products/'.$content_data['content_file']);
+        include (DIR_FS_CATALOG . 'media/content/' . $content_data['content_file']);
     }
-  } else {
-    include(DIR_FS_CATALOG.'media/content/'.$content_data['content_file']);
-  }
-  if (strpos($content_data['content_file'],'.txt')) echo '</pre>';
+    if (strpos($content_data['content_file'], '.txt')) echo '</pre>';
 } else {
-  echo $content_data['content_text'];
+    echo $content_data['content_text'];
 }
 ?>
     </td>

@@ -24,7 +24,6 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Versandte Gutscheine');
 define('TABLE_HEADING_ID', 'cID');
 define('TABLE_HEADING_SENDERS_NAME', 'Absender');

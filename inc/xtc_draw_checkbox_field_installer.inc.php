@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_draw_checkbox_field_installer($name, $value = '', $checked = false) {
+function xtc_draw_checkbox_field_installer($name, $value = '', $checked = false) {
     return xtc_draw_selection_field_installer($name, 'checkbox', $value, $checked);
-  }
- ?>
+}
+?>

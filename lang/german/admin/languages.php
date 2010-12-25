@@ -14,13 +14,10 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Sprachen');
-
 define('TABLE_HEADING_LANGUAGE_NAME', 'Sprache');
 define('TABLE_HEADING_LANGUAGE_CODE', 'Codierung');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
 define('TEXT_INFO_LANGUAGE_NAME', 'Name:');
 define('TEXT_INFO_LANGUAGE_CODE', 'Codierung:');
@@ -32,13 +29,12 @@ define('TEXT_INFO_DELETE_INTRO', 'Sind Sie sicher, dass Sie die Sprache l&ouml;s
 define('TEXT_INFO_HEADING_NEW_LANGUAGE', 'Neue Sprache');
 define('TEXT_INFO_HEADING_EDIT_LANGUAGE', 'Sprache bearbeiten');
 define('TEXT_INFO_HEADING_DELETE_LANGUAGE', 'Sprache l&ouml;schen');
-define('TEXT_INFO_LANGUAGE_CHARSET','Charset');
-define('TEXT_INFO_LANGUAGE_CHARSET_INFO','meta-content:');
-
+define('TEXT_INFO_LANGUAGE_CHARSET', 'Charset');
+define('TEXT_INFO_LANGUAGE_CHARSET_INFO', 'meta-content:');
 define('ERROR_REMOVE_DEFAULT_LANGUAGE', 'Fehler: Die Standardsprache darf nicht gel&ouml;scht werden. Bitte definieren Sie eine neue Standardsprache und wiederholen Sie den Vorgang.');
-
 // BOF - Tomcraft - 2009-11-08 - Added option to deactivate languages
 define('TEXT_INFO_LANGUAGE_STATUS', 'Status:');
 define('TABLE_HEADING_LANGUAGE_STATUS', 'Status');
 // EOF - Tomcraft - 2009-11-08 - Added option to deactivate languages
+
 ?>

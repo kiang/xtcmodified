@@ -14,9 +14,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Output a separator either through whitespace, or with an image
-  function xtc_draw_separator($image = 'pixel_black.gif', $width = '100%', $height = '1') {
+function xtc_draw_separator($image = 'pixel_black.gif', $width = '100%', $height = '1') {
     return xtc_image(DIR_WS_IMAGES . $image, '', $width, $height);
-  }
- ?>
+}
+?>

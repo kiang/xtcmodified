@@ -12,11 +12,8 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
 function W4B_graduated_prices_edit_logic() {
-
-	if(!isset($_GET['pID']))
-		return;
+    if (!isset($_GET['pID'])) return;
 ?>
 <tr style="display:none;"><td colspan="2">
 <script type="text/javascript">
@@ -130,8 +127,8 @@ function W4B_graduated_prices_edit_addrow(objButton, intStatus) {
 	var objDeleteButtonClassName = document.createAttribute("class");
 	objDeleteButtonClassName.nodeValue = "button";
 	var objDeleteButtonHref = document.createAttribute("href");
-	objDeleteButtonHref.nodeValue = '<?php global $cPath; echo xtc_href_link(FILENAME_CATEGORIES,
-		'cPath=' . $cPath . '&function=delete&quantity=\'+objQuantity.value+\'&statusID=\'+intStatus+\'&action=new_product&pID=' . $_GET['pID']); ?>';
+	objDeleteButtonHref.nodeValue = '<?php global $cPath;
+    echo xtc_href_link(FILENAME_CATEGORIES, 'cPath=' . $cPath . '&function=delete&quantity=\'+objQuantity.value+\'&statusID=\'+intStatus+\'&action=new_product&pID=' . $_GET['pID']); ?>';
 	var objDeleteButtonOnclick = document.createAttribute("onclick");
 	objDeleteButtonOnclick.nodeValue = "W4B_graduated_prices_edit_removerow(this);";
 	var objDeleteButtonStyle = document.createAttribute("style");
@@ -217,97 +214,82 @@ W4B_graduated_prices_edit_makeToggleTextClickable();
 </td></tr>
 <?php
 }
-
 function W4B_graduated_prices_edit_unhtmlentities($text) {
-
-	// removes html entities and converts them into the real characters
-	// @param  textToConvert
-	// @return string convertedText
-
-	for($i = 160; $i <= 255; $i++) {
-		$letter = chr($i);
-		$text = str_replace(htmlentities($letter),$letter,$text);
-	}
-
-	$text = str_replace("&amp;"  ,"&",$text);
-	$text = str_replace("&lt;"   ,"<",$text);
-	$text = str_replace("&gt;"   ,">",$text);
-	$text = str_replace("&quot;" ,'"',$text);
-	$text = str_replace("&ndash;","–",$text);
-	$text = str_replace("&bdquo;","„",$text);
-	$text = str_replace("&ldquo;","“",$text);
-	$text = str_replace("&rdquo;","”",$text);
-	$text = str_replace("&euro;" ,"€",$text);
-
-	return $text;
+    // removes html entities and converts them into the real characters
+    // @param  textToConvert
+    // @return string convertedText
+    for ($i = 160;$i <= 255;$i++) {
+        $letter = chr($i);
+        $text = str_replace(htmlentities($letter), $letter, $text);
+    }
+    $text = str_replace("&amp;", "&", $text);
+    $text = str_replace("&lt;", "<", $text);
+    $text = str_replace("&gt;", ">", $text);
+    $text = str_replace("&quot;", '"', $text);
+    $text = str_replace("&ndash;", "–", $text);
+    $text = str_replace("&bdquo;", "„", $text);
+    $text = str_replace("&ldquo;", "“", $text);
+    $text = str_replace("&rdquo;", "”", $text);
+    $text = str_replace("&euro;", "€", $text);
+    return $text;
 }
-
 function W4B_graduated_prices_save() {
-
-	$products_data = $_POST;
-	$group_data = array();
-	$products_id = intval($_GET['pID']);
-
-		$i = 0;
-		$group_query = xtc_db_query("SELECT customers_status_id
-					                               FROM ".TABLE_CUSTOMERS_STATUS."
-					                              WHERE language_id = '".(int) $_SESSION['languages_id']."'
+    $products_data = $_POST;
+    $group_data = array();
+    $products_id = intval($_GET['pID']);
+    $i = 0;
+    $group_query = xtc_db_query("SELECT customers_status_id
+					                               FROM " . TABLE_CUSTOMERS_STATUS . "
+					                              WHERE language_id = '" . (int)$_SESSION['languages_id'] . "'
 					                                AND customers_status_id != '0'");
-		while ($group_values = xtc_db_fetch_array($group_query)) {
-			// load data into array
-			$i ++;
-			$group_data[$i] = array ('STATUS_ID' => $group_values['customers_status_id']);
-		}
-		for ($col = 0, $n = sizeof($group_data); $col < $n +1; $col ++) {
-			if ($group_data[$col]['STATUS_ID'] != '') {
-				$quantity = xtc_db_prepare_input($products_data['products_quantity_staffel_'.$group_data[$col]['STATUS_ID']]);
-				$staffelpreis = xtc_db_prepare_input($products_data['products_price_staffel_'.$group_data[$col]['STATUS_ID']]);
-
-				if (PRICE_IS_BRUTTO == 'true') {
-					$staffelpreis = ($staffelpreis / (xtc_get_tax_rate($products_data['products_tax_class_id']) + 100) * 100);
-				}
-				$staffelpreis = xtc_round($staffelpreis, PRICE_PRECISION);
-				if ($staffelpreis != '' && $quantity != '') {
-					// ok, lets check entered data to get rid of user faults
-					if ($quantity <= 1)
-						$quantity = 2;
-					$check_query = xtc_db_query("SELECT quantity
-														                               FROM personal_offers_by_customers_status_".$group_data[$col]['STATUS_ID']."
-														                              WHERE products_id = '".$products_id."'
-														                                AND quantity    = '".$quantity."'");
-					// dont insert if same qty!
-					if (xtc_db_num_rows($check_query) < 1) {
-						xtc_db_query("INSERT INTO personal_offers_by_customers_status_".$group_data[$col]['STATUS_ID']."
+    while ($group_values = xtc_db_fetch_array($group_query)) {
+        // load data into array
+        $i++;
+        $group_data[$i] = array('STATUS_ID' => $group_values['customers_status_id']);
+    }
+    for ($col = 0, $n = sizeof($group_data);$col < $n + 1;$col++) {
+        if ($group_data[$col]['STATUS_ID'] != '') {
+            $quantity = xtc_db_prepare_input($products_data['products_quantity_staffel_' . $group_data[$col]['STATUS_ID']]);
+            $staffelpreis = xtc_db_prepare_input($products_data['products_price_staffel_' . $group_data[$col]['STATUS_ID']]);
+            if (PRICE_IS_BRUTTO == 'true') {
+                $staffelpreis = ($staffelpreis / (xtc_get_tax_rate($products_data['products_tax_class_id']) + 100) * 100);
+            }
+            $staffelpreis = xtc_round($staffelpreis, PRICE_PRECISION);
+            if ($staffelpreis != '' && $quantity != '') {
+                // ok, lets check entered data to get rid of user faults
+                if ($quantity <= 1) $quantity = 2;
+                $check_query = xtc_db_query("SELECT quantity
+														                               FROM personal_offers_by_customers_status_" . $group_data[$col]['STATUS_ID'] . "
+														                              WHERE products_id = '" . $products_id . "'
+														                                AND quantity    = '" . $quantity . "'");
+                // dont insert if same qty!
+                if (xtc_db_num_rows($check_query) < 1) {
+                    xtc_db_query("INSERT INTO personal_offers_by_customers_status_" . $group_data[$col]['STATUS_ID'] . "
 																	                 SET price_id       = '',
-																	                     products_id    = '".$products_id."',
-																	                     quantity       = '".$quantity."',
-																	                     personal_offer = '".$staffelpreis."'");
-					}
-				}
-			}
-		}
-
-	header("HTTP/1.0 204 No Content");
-	die();
+																	                     products_id    = '" . $products_id . "',
+																	                     quantity       = '" . $quantity . "',
+																	                     personal_offer = '" . $staffelpreis . "'");
+                }
+            }
+        }
+    }
+    header("HTTP/1.0 204 No Content");
+    die();
 }
-
-if(isset($_GET['action']) && $_GET['action'] == "update_product" && isset($_GET['pID']) && isset($_POST['graduated_prices_edit'])) {
-
-	W4B_graduated_prices_save();
+if (isset($_GET['action']) && $_GET['action'] == "update_product" && isset($_GET['pID']) && isset($_POST['graduated_prices_edit'])) {
+    W4B_graduated_prices_save();
 }
-
 //this is used only by group_prices
 $function = (isset($_GET['function']) ? $_GET['function'] : '');
 if (xtc_not_null($function)) {
-	switch ($function) {
-		case 'delete' :
-			xtc_db_query("DELETE FROM personal_offers_by_customers_status_".(int) $_GET['statusID']."
-						                     WHERE products_id = '".(int) $_GET['pID']."'
-						                     AND quantity    = '".(int) $_GET['quantity']."'");
-			break;
-	}
-
-	header("HTTP/1.0 204 No Content");
-	die();
+    switch ($function) {
+        case 'delete':
+            xtc_db_query("DELETE FROM personal_offers_by_customers_status_" . (int)$_GET['statusID'] . "
+						                     WHERE products_id = '" . (int)$_GET['pID'] . "'
+						                     AND quantity    = '" . (int)$_GET['quantity'] . "'");
+        break;
+    }
+    header("HTTP/1.0 204 No Content");
+    die();
 }
 ?>

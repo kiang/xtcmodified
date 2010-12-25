@@ -14,22 +14,18 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  function xtc_array_to_string($array, $exclude = '', $equals = '=', $separator = '&') {
-
+function xtc_array_to_string($array, $exclude = '', $equals = '=', $separator = '&') {
     if (!is_array($exclude)) $exclude = array();
-
     $get_string = '';
     if (sizeof($array) > 0) {
-      while (list($key, $value) = each($array)) {
-        if ( (!in_array($key, $exclude)) && ($key != 'x') && ($key != 'y') ) {
-          $get_string .= $key . $equals . $value . $separator;
+        while (list($key, $value) = each($array)) {
+            if ((!in_array($key, $exclude)) && ($key != 'x') && ($key != 'y')) {
+                $get_string.= $key . $equals . $value . $separator;
+            }
         }
-      }
-      $remove_chars = strlen($separator);
-      $get_string = substr($get_string, 0, -$remove_chars);
+        $remove_chars = strlen($separator);
+        $get_string = substr($get_string, 0, -$remove_chars);
     }
-
     return $get_string;
-  }
- ?>
+}
+?>

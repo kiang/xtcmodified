@@ -15,9 +15,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Output a function button in the selected language
-  function xtc_image_button($image, $alt = '', $parameters = '') {
-    return xtc_image('templates/'.CURRENT_TEMPLATE.'/buttons/' . $_SESSION['language'] . '/'. $image, $alt, '', '', $parameters);
-  }
+function xtc_image_button($image, $alt = '', $parameters = '') {
+    return xtc_image('templates/' . CURRENT_TEMPLATE . '/buttons/' . $_SESSION['language'] . '/' . $image, $alt, '', '', $parameters);
+}
 ?>

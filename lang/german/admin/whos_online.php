@@ -14,9 +14,7 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Wer ist Online');
-
 define('TABLE_HEADING_ONLINE', 'Online');
 define('TABLE_HEADING_CUSTOMER_ID', 'ID');
 define('TABLE_HEADING_FULL_NAME', 'Name');

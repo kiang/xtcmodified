@@ -27,53 +27,30 @@
    
    
    ---------------------------------------------------------------------------------------*/
-
 if (file_exists('includes/classes/class.moneybookers.php')) {
-	require_once 'includes/classes/class.moneybookers.php';
+    require_once 'includes/classes/class.moneybookers.php';
 } else {
-	require_once '../includes/classes/class.moneybookers.php';
+    require_once '../includes/classes/class.moneybookers.php';
 }
-
 class moneybookers_elv extends fcnt_moneybookers {
-
-	var $images='ec.gif';
-
-	// class constructor
-	// BOF - Hendrik - 2010-08-11 - php5 compatible
-	//function moneybookers_elv() {
-	function __construct() {
-	// EOF - Hendrik - 2010-08-11 - php5 compatible
-		global $order, $language;
-
-		$this->_setAllowed('DE');
-		$this->_setCode('elv','DID');
-		
-
-		if (is_object($order))
-			$this->update_status();
-
-	}
-
-
-	function selection() {
-
-		$content = array();
-		$accepted = '';
-		$icons = explode(',', $this->images);
-		foreach ($icons as $key => $val)
-			$accepted .= xtc_image(DIR_WS_ICONS .'moneybookers/'. $val) . ' ';
-
-
-
-		$content = array_merge($content, array (array ('title' => ' ','field' => $accepted)));
-		
-
-		return array (
-			'id' => $this->code,
-			'module' => $this->title,
-			'fields' => $content,
-			'description' => $this->info
-		);
-	}
+    var $images = 'ec.gif';
+    // class constructor
+    // BOF - Hendrik - 2010-08-11 - php5 compatible
+    //function moneybookers_elv() {
+    function __construct() {
+        // EOF - Hendrik - 2010-08-11 - php5 compatible
+        global $order, $language;
+        $this->_setAllowed('DE');
+        $this->_setCode('elv', 'DID');
+        if (is_object($order)) $this->update_status();
+    }
+    function selection() {
+        $content = array();
+        $accepted = '';
+        $icons = explode(',', $this->images);
+        foreach ($icons as $key => $val) $accepted.= xtc_image(DIR_WS_ICONS . 'moneybookers/' . $val) . ' ';
+        $content = array_merge($content, array(array('title' => ' ', 'field' => $accepted)));
+        return array('id' => $this->code, 'module' => $this->title, 'fields' => $content, 'description' => $this->info);
+    }
 }
 ?>

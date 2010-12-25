@@ -15,14 +15,13 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
- // include needed functions
- require_once(DIR_FS_INC . 'xtc_draw_hidden_field.inc.php');
+// include needed functions
+require_once (DIR_FS_INC . 'xtc_draw_hidden_field.inc.php');
 // Hide form elements
-  function xtc_hide_session_id() {
+function xtc_hide_session_id() {
     global $session_started;
-
-    if ( ($session_started == true) && defined('SID') && xtc_not_null(SID) ) {
-      return xtc_draw_hidden_field(xtc_session_name(), xtc_session_id());
+    if (($session_started == true) && defined('SID') && xtc_not_null(SID)) {
+        return xtc_draw_hidden_field(xtc_session_name(), xtc_session_id());
     }
-  }
+}
 ?>

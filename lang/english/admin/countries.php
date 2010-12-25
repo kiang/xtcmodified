@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Countries');
-
 define('TABLE_HEADING_COUNTRY_NAME', 'Country');
 define('TABLE_HEADING_COUNTRY_CODES', 'ISO Codes');
 define('TABLE_HEADING_ACTION', 'Action');
 define('TABLE_HEADING_STATUS', 'Status');
-
 define('TEXT_INFO_EDIT_INTRO', 'Please make any necessary changes');
 define('TEXT_INFO_COUNTRY_NAME', 'Name:');
 define('TEXT_INFO_COUNTRY_CODE_2', 'ISO Code (2):');

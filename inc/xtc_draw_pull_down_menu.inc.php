@@ -14,54 +14,37 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Output a form pull down menu
-  function xtc_draw_pull_down_menu($name, $values, $default = '', $parameters = '', $required = false) {
+function xtc_draw_pull_down_menu($name, $values, $default = '', $parameters = '', $required = false) {
     $field = '<select name="' . xtc_parse_input_field_data($name, array('"' => '&quot;')) . '"';
-
-    if (xtc_not_null($parameters)) $field .= ' ' . $parameters;
-
-    $field .= '>';
-
+    if (xtc_not_null($parameters)) $field.= ' ' . $parameters;
+    $field.= '>';
     if (empty($default) && isset($GLOBALS[$name])) $default = $GLOBALS[$name];
-
-    for ($i=0, $n=sizeof($values); $i<$n; $i++) {
-      $field .= '<option value="' . xtc_parse_input_field_data($values[$i]['id'], array('"' => '&quot;')) . '"';
-      if ($default == $values[$i]['id']) {
-        $field .= ' selected="selected"';
-      }
-
-      $field .= '>' . xtc_parse_input_field_data($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>';
+    for ($i = 0, $n = sizeof($values);$i < $n;$i++) {
+        $field.= '<option value="' . xtc_parse_input_field_data($values[$i]['id'], array('"' => '&quot;')) . '"';
+        if ($default == $values[$i]['id']) {
+            $field.= ' selected="selected"';
+        }
+        $field.= '>' . xtc_parse_input_field_data($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>';
     }
-    $field .= '</select>';
-
-    if ($required == true) $field .= TEXT_FIELD_REQUIRED;
-
+    $field.= '</select>';
+    if ($required == true) $field.= TEXT_FIELD_REQUIRED;
     return $field;
-  }
-  
-    function xtc_draw_pull_down_menuNote($data, $values, $default = '', $parameters = '', $required = false) {
+}
+function xtc_draw_pull_down_menuNote($data, $values, $default = '', $parameters = '', $required = false) {
     $field = '<select name="' . xtc_parse_input_field_data($data['name'], array('"' => '&quot;')) . '"';
-
-    if (xtc_not_null($parameters)) $field .= ' ' . $parameters;
-
-    $field .= '>';
-
+    if (xtc_not_null($parameters)) $field.= ' ' . $parameters;
+    $field.= '>';
     if (empty($default) && isset($GLOBALS[$data['name']])) $default = $GLOBALS[$data['name']];
-
-    for ($i=0, $n=sizeof($values); $i<$n; $i++) {
-      $field .= '<option value="' . xtc_parse_input_field_data($values[$i]['id'], array('"' => '&quot;')) . '"';
-      if ($default == $values[$i]['id']) {
-        $field .= ' selected="selected"';
-      }
-
-      $field .= '>' . xtc_parse_input_field_data($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>';
+    for ($i = 0, $n = sizeof($values);$i < $n;$i++) {
+        $field.= '<option value="' . xtc_parse_input_field_data($values[$i]['id'], array('"' => '&quot;')) . '"';
+        if ($default == $values[$i]['id']) {
+            $field.= ' selected="selected"';
+        }
+        $field.= '>' . xtc_parse_input_field_data($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>';
     }
-    $field .= '</select>'.$data['text'];
-
-    if ($required == true) $field .= TEXT_FIELD_REQUIRED;
-
+    $field.= '</select>' . $data['text'];
+    if ($required == true) $field.= TEXT_FIELD_REQUIRED;
     return $field;
-  }
-
- ?>
+}
+?>

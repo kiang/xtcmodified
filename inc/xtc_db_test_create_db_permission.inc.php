@@ -14,58 +14,51 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 function xtc_db_test_create_db_permission($database) {
     global $db_error;
-
     $db_created = false;
     $db_error = false;
-
     if (!$database) {
-      $db_error = 'No Database selected.';
-      return false;
+        $db_error = 'No Database selected.';
+        return false;
     }
-
     if (!$db_error) {
-      if (!@xtc_db_select_db($database)) {
-        $db_created = true;
-// BOF - Dokuman - 2009-05-27 - xtc_db_query_installer typo      
-//        if (!@xtc_db_query_installer_installer('create database ' . $database)) {
-        if (!@xtc_db_query_installer('create database ' . $database)) {
-// EOF - Dokuman - 2009-05-27 - xtc_db_query_installer typo
-        
-          $db_error = mysql_error();
-        }
-      } else {
-        $db_error = mysql_error();
-      }
-      
-      if (!$db_error) {
-        if (@xtc_db_select_db($database)) {
-          if (@xtc_db_query_installer('create table temp ( temp_id int(5) )')) {
-            if (@xtc_db_query_installer('drop table temp')) {
-              if ($db_created) {
-                if (@xtc_db_query_installer('drop database ' . $database)) {
-                } else {
-                  $db_error = mysql_error();
-                }
-              }
-            } else {
-              $db_error = mysql_error();
+        if (!@xtc_db_select_db($database)) {
+            $db_created = true;
+            // BOF - Dokuman - 2009-05-27 - xtc_db_query_installer typo
+            //        if (!@xtc_db_query_installer_installer('create database ' . $database)) {
+            if (!@xtc_db_query_installer('create database ' . $database)) {
+                // EOF - Dokuman - 2009-05-27 - xtc_db_query_installer typo
+                $db_error = mysql_error();
             }
-          } else {
-            $db_error = mysql_error();
-          }
         } else {
-          $db_error = mysql_error();
+            $db_error = mysql_error();
         }
-      }
+        if (!$db_error) {
+            if (@xtc_db_select_db($database)) {
+                if (@xtc_db_query_installer('create table temp ( temp_id int(5) )')) {
+                    if (@xtc_db_query_installer('drop table temp')) {
+                        if ($db_created) {
+                            if (@xtc_db_query_installer('drop database ' . $database)) {
+                            } else {
+                                $db_error = mysql_error();
+                            }
+                        }
+                    } else {
+                        $db_error = mysql_error();
+                    }
+                } else {
+                    $db_error = mysql_error();
+                }
+            } else {
+                $db_error = mysql_error();
+            }
+        }
     }
-
     if ($db_error) {
-      return false;
+        return false;
     } else {
-      return true;
+        return true;
     }
-  }
- ?>
+}
+?>

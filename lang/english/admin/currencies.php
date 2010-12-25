@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-   
 define('HEADING_TITLE', 'Currencies');
-
 define('TABLE_HEADING_CURRENCY_NAME', 'Currency');
 define('TABLE_HEADING_CURRENCY_CODES', 'Code');
 define('TABLE_HEADING_CURRENCY_VALUE', 'Value');
 define('TABLE_HEADING_ACTION', 'Action');
-
 define('TEXT_INFO_EDIT_INTRO', 'Please make any necessary changes');
 define('TEXT_INFO_CURRENCY_TITLE', 'Title:');
 define('TEXT_INFO_CURRENCY_CODE', 'Code:');
@@ -40,7 +37,6 @@ define('TEXT_INFO_HEADING_EDIT_CURRENCY', 'Edit Currency');
 define('TEXT_INFO_HEADING_DELETE_CURRENCY', 'Delete Currency');
 define('TEXT_INFO_SET_AS_DEFAULT', TEXT_SET_DEFAULT . ' (requires a manual update of currency values)');
 define('TEXT_INFO_CURRENCY_UPDATED', 'The exchange rate for %s (%s) was updated successfully');
-
 define('ERROR_REMOVE_DEFAULT_CURRENCY', 'Error: The default currency can not be removed. Please set another currency as default, and try again.');
 define('ERROR_CURRENCY_INVALID', 'Error: The exchange rate for %s (%s) was not updated. Is it a valid currency code?');
 ?>

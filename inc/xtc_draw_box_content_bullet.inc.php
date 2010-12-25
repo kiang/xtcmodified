@@ -14,30 +14,19 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 function xtc_draw_box_content_bullet($bullet_text, $bullet_link = '') {
     global $page_file;
-
-    $bullet = '      <tr>' . CR .
-              '        <td><table border="0" cellspacing="0" cellpadding="0">' . CR .
-              '          <tr>' . CR .
-              '            <td width="12" class="boxText"><img src="images/icon_pointer.gif" border="0" alt=""></td>' . CR .
-              '            <td class="infoboxText">';
+    $bullet = '      <tr>' . CR . '        <td><table border="0" cellspacing="0" cellpadding="0">' . CR . '          <tr>' . CR . '            <td width="12" class="boxText"><img src="images/icon_pointer.gif" border="0" alt=""></td>' . CR . '            <td class="infoboxText">';
     if ($bullet_link) {
-      if ($bullet_link == $page_file) {
-        $bullet .= '<font color="#0033cc"><strong>' . $bullet_text . '</strong></font>';
-      } else {
-        $bullet .= '<a href="' . $bullet_link . '">' . $bullet_text . '</a>';
-      }
+        if ($bullet_link == $page_file) {
+            $bullet.= '<font color="#0033cc"><strong>' . $bullet_text . '</strong></font>';
+        } else {
+            $bullet.= '<a href="' . $bullet_link . '">' . $bullet_text . '</a>';
+        }
     } else {
-      $bullet .= $bullet_text;
+        $bullet.= $bullet_text;
     }
-
-    $bullet .= '</td>' . CR .
-               '         </tr>' . CR .
-               '       </table></td>' . CR .
-               '     </tr>' . CR;
-
+    $bullet.= '</td>' . CR . '         </tr>' . CR . '       </table></td>' . CR . '     </tr>' . CR;
     return $bullet;
-  }
- ?>
+}
+?>

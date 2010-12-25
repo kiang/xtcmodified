@@ -40,34 +40,27 @@
 
 *************************************************************************
    ---------------------------------------------------------------------------------------*/
+define('MODULE_PAYMENT_ICLEAR_TEXT_TITLE', 'iclear Payment System');
+define('MODULE_PAYMENT_ICLEAR_TEXT_DESCRIPTION', 'iclear');
+define('MODULE_PAYMENT_ICLEAR_TEXT_ERROR_MESSAGE', 'Bei der &Uuml;berp&uuml;fung Ihres iclear Rechnungskaufes ist ein Fehler aufgetreten! Bitte versuchen Sie es nochmal oder w&auml;hlen Sie eine andere Zahlungsweise.');
+define('MODULE_PAYMENT_ICLEAR_TEXT_INFO', '');
+define('MODULE_PAYMENT_ICLEAR_ALLOWED_TITLE', 'Erlaubte Zonen');
+define('MODULE_PAYMENT_ICLEAR_ALLOWED_DESC', 'Geben Sie <b>einzeln</b> die Zonen an, welche f&uuml;r dieses Modul erlaubt sein sollen. (z.B. AT,DE (wenn leer, werden alle Zonen erlaubt))');
+define('MODULE_PAYMENT_ICLEAR_STATUS_TITLE', 'Allow iclear');
+define('MODULE_PAYMENT_ICLEAR_STATUS_DESC', 'Wollen Sie Zahlungen per iclear Rechnungskauf anbieten?');
+define('MODULE_PAYMENT_ICLEAR_ID_TITLE', 'Merchant ID');
+define('MODULE_PAYMENT_ICLEAR_ID_DESC', 'Your merchant ID at EuroCoin iclear.');
+define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_TITLE', 'Reihenfolge der Anzeige.');
+define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_DESC', 'Niedrigste wird zuerst angezeigt.');
+define('MODULE_PAYMENT_ICLEAR_ZONE_TITLE', 'Zone f&uuml;r diese Zahlungsweise');
+define('MODULE_PAYMENT_ICLEAR_ZONE_DESC', 'Wenn Sie eine Zone ausw&auml;hlen, wird diese Zahlungsweise nur in dieser Zone angeboten.');
+define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_TITLE', 'Order Status');
+define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_DESC', 'Festlegung des Status f&uuml;r Bestellungen, welche mit dieser Zahlungsweise durchgef&uuml;hrt werden.');
+define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_TITLE', 'MWST Satz Versandkosten');
+define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_DESC', 'Festlegen mit welchem MWST Satz Versandkosten erstellt werden, falls Versandkosten ohne MWST Satz angegeben sind.');
+// BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
+define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_TITLE', 'Ausschluﬂ bei Versandmodulen');
+define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
+// EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 
-  define('MODULE_PAYMENT_ICLEAR_TEXT_TITLE', 'iclear Payment System');
-  define('MODULE_PAYMENT_ICLEAR_TEXT_DESCRIPTION', 'iclear');
-  define('MODULE_PAYMENT_ICLEAR_TEXT_ERROR_MESSAGE', 'Bei der &Uuml;berp&uuml;fung Ihres iclear Rechnungskaufes ist ein Fehler aufgetreten! Bitte versuchen Sie es nochmal oder w&auml;hlen Sie eine andere Zahlungsweise.');
-  define('MODULE_PAYMENT_ICLEAR_TEXT_INFO','');
-  define('MODULE_PAYMENT_ICLEAR_ALLOWED_TITLE' , 'Erlaubte Zonen');
-  define('MODULE_PAYMENT_ICLEAR_ALLOWED_DESC' , 'Geben Sie <b>einzeln</b> die Zonen an, welche f&uuml;r dieses Modul erlaubt sein sollen. (z.B. AT,DE (wenn leer, werden alle Zonen erlaubt))');
-
-  define('MODULE_PAYMENT_ICLEAR_STATUS_TITLE', 'Allow iclear');
-  define('MODULE_PAYMENT_ICLEAR_STATUS_DESC', 'Wollen Sie Zahlungen per iclear Rechnungskauf anbieten?');
-
-  define('MODULE_PAYMENT_ICLEAR_ID_TITLE', 'Merchant ID');
-  define('MODULE_PAYMENT_ICLEAR_ID_DESC', 'Your merchant ID at EuroCoin iclear.');
-
-  define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_TITLE', 'Reihenfolge der Anzeige.');
-  define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_DESC', 'Niedrigste wird zuerst angezeigt.');
-
-  define('MODULE_PAYMENT_ICLEAR_ZONE_TITLE', 'Zone f&uuml;r diese Zahlungsweise');
-  define('MODULE_PAYMENT_ICLEAR_ZONE_DESC', 'Wenn Sie eine Zone ausw&auml;hlen, wird diese Zahlungsweise nur in dieser Zone angeboten.');
-
-  define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_TITLE', 'Order Status');
-  define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_DESC', 'Festlegung des Status f&uuml;r Bestellungen, welche mit dieser Zahlungsweise durchgef&uuml;hrt werden.');
-
-  define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_TITLE', 'MWST Satz Versandkosten');
-  define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_DESC', 'Festlegen mit welchem MWST Satz Versandkosten erstellt werden, falls Versandkosten ohne MWST Satz angegeben sind.');
-  
-  // BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
-  define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_TITLE', 'Ausschluﬂ bei Versandmodulen');
-  define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
-  // EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 ?>

@@ -24,7 +24,6 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 define('TOP_BAR_TITLE', 'Statistik');
 define('HEADING_TITLE', 'Rabatt Kupons');
 define('HEADING_TITLE_STATUS', 'Status : ');
@@ -41,26 +40,21 @@ define('TEXT_SELECT_CUSTOMER', 'Kunde ausw&auml;hlen');
 define('TEXT_ALL_CUSTOMERS', 'Alle Kunden');
 define('TEXT_NEWSLETTER_CUSTOMERS', 'Alle Newsletter Abonnenten');
 define('TEXT_CONFIRM_DELETE', 'Mit dieser Funktion erh&auml;lt der selektierte Koupon den Status <strong>inaktiv</strong>. Eine Re-Aktivierung ist zu einem späteren Zeitpunkt nicht mehr möglich.<br /><br />Soll dieser Kupon wirklich gel&ouml;scht (den Status inaktiv) erhalten?');
-
 define('TEXT_TO_REDEEM', 'Sie k&ouml;nnen den Gutschein bei Ihrer Bestellung einl&ouml;sen. Dazu geben Sie Ihren Gutschein-Code in das daf&uuml;r vorgesehene Feld ein, und klicken Sie den "Einl&ouml;sen"-Button.');
 define('TEXT_IN_CASE', ' Falls es wider Erwarten zu Problemen beim verbuchen kommen sollte.');
 define('TEXT_VOUCHER_IS', 'Ihr Gutschein-Code lautet: ');
 define('TEXT_REMEMBER', 'Bewahren Sie Ihren Gutschein-Code gut auf, damit Sie von diesem Angebot profitieren k&ouml;nnen');
-define('TEXT_VISIT', 'wenn Sie uns das n&auml;chste mal unter ' . HTTP_SERVER . DIR_WS_CATALOG. ' besuchen.');
+define('TEXT_VISIT', 'wenn Sie uns das n&auml;chste mal unter ' . HTTP_SERVER . DIR_WS_CATALOG . ' besuchen.');
 define('TEXT_ENTER_CODE', ' und den Code eingeben ');
-
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('CUSTOMER_ID', 'Kunden Nr.');
 define('CUSTOMER_NAME', 'Kunden Name');
 define('REDEEM_DATE', 'eingel&ouml;st am');
 define('IP_ADDRESS', 'IP Adresse');
-
 define('TEXT_REDEMPTIONS', 'Einl&ouml;sung');
 define('TEXT_REDEMPTIONS_TOTAL', 'Insgesamt:');
 define('TEXT_REDEMPTIONS_CUSTOMER', 'F&uuml;r diesen Kunden:');
 define('TEXT_NO_FREE_SHIPPING', 'Nicht Versandkostenfrei');
-
 define('NOTICE_EMAIL_SENT_TO', 'Notiz: E-Mail versendet an: %s');
 define('ERROR_NO_CUSTOMER_SELECTED', 'Fehler: Kein Kunde ausgew&auml;hlt.');
 define('COUPON_NAME', 'Kupon Name');
@@ -80,7 +74,6 @@ define('DATE_CREATED', 'erstellt am');
 define('DATE_MODIFIED', 'ge&auml;ndert am');
 define('TEXT_HEADING_NEW_COUPON', 'Neuen Kupon erstellen');
 define('TEXT_NEW_INTRO', 'Bitte geben Sie die folgende Informationen f&uuml;r den neuen Kupon an.<br />');
-
 define('COUPON_NAME_HELP', 'Eine Kurzbezeichnung f&uuml;r den Kupon');
 define('COUPON_AMOUNT_HELP', 'Tragen Sie hier den Rabatt f&uuml;r diesen Kupon ein. Entweder einen festen Betrag oder einen prozentualen Rabatt wie z.B. 10%');
 define('COUPON_CODE_HELP', 'Hier k&ouml;nnen Sie einen eigenen Code eintragen (max. 16 Zeichen). Lassen Sie das Feld frei, dann wird dieser Code automatisch generiert.');

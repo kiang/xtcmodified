@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_free_result($db_query) {
+function xtc_db_free_result($db_query) {
     return mysql_free_result($db_query);
-  }
- ?>
+}
+?>

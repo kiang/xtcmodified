@@ -15,27 +15,22 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 // Allgemeine Texte
 define('TABLE_HEADING', 'Edit Order');
 define('TABLE_HEADING_ORDER', 'Order #:&nbsp;');
 define('TEXT_SAVE_ORDER', 'Finish Editing and Recalculate Order');
-
 define('TEXT_EDIT_ADDRESS', 'Edit Address');
 define('TEXT_EDIT_PRODUCTS', 'Edit Products');
 define('TEXT_EDIT_SHIPPING', 'Edit Shipping Information');
 define('TEXT_EDIT_GIFT', 'Add or Edit Gift Vouchers or Discount');
 define('TEXT_EDIT_ADDRESS_SUCCESS', 'Address Saved');
-
 define('IMAGE_EDIT_ADDRESS', 'Edit Address');
 define('IMAGE_EDIT_PRODUCTS', 'Edit Products');
 define('IMAGE_EDIT_OTHER', 'Edit Shipping Costs, Payment Terms, Vouchers and more');
-
 // Adressaenderung
 define('TEXT_INVOICE_ADDRESS', 'Customer Address');
 define('TEXT_SHIPPING_ADDRESS', 'Shipping Address');
 define('TEXT_BILLING_ADDRESS', 'Billing Address');
-
 define('TEXT_COMPANY', 'Company:');
 define('TEXT_NAME', 'Name:');
 define('TEXT_STREET', 'Street');
@@ -46,9 +41,7 @@ define('TEXT_CUSTOMER_GROUP', 'Customer Group from Order');
 define('TEXT_CUSTOMER_EMAIL', 'E-mail:');
 define('TEXT_CUSTOMER_TELEPHONE', 'Phone:');
 define('TEXT_CUSTOMER_UST', 'VAT Reg No:');
-
 // Artikelbearbeitung
-
 define('TEXT_SMALL_NETTO', '(net)');
 define('TEXT_PRODUCT_ID', 'pID:');
 define('TEXT_PRODUCTS_MODEL', 'Product #:');
@@ -58,7 +51,6 @@ define('TEXT_TAX', 'Tax:');
 define('TEXT_PRICE', 'Price:');
 define('TEXT_FINAL', 'Total:');
 define('TEXT_PRODUCT_SEARCH', 'Search Products:');
-
 define('TEXT_PRODUCT_OPTION', 'Attributes:');
 define('TEXT_PRODUCT_OPTION_VALUE', 'Option Value:');
 define('TEXT_PRICE', 'Price:');
@@ -69,9 +61,7 @@ define('TEXT_SHIPPING', 'Shipping Costs');
 define('TEXT_COD_COSTS', 'COD Costs');
 define('TEXT_VALUE', 'Price');
 define('TEXT_DESC', 'insert');
-
 // Sonstiges
-
 define('TEXT_PAYMENT', 'Payment:');
 define('TEXT_SHIPPING', 'Shipping:');
 define('TEXT_LANGUAGE', 'Language:');
@@ -81,16 +71,13 @@ define('TEXT_SAVE', 'Save');
 define('TEXT_ACTUAL', 'actual:');
 define('TEXT_NEW', 'new:');
 define('TEXT_PRICE', 'Costs: ');
-
 // web28 2010-12-07 add new defines
-define('TEXT_ADD_TAX','incl. ');
-define('TEXT_NO_TAX','plus ');
-
+define('TEXT_ADD_TAX', 'incl. ');
+define('TEXT_NO_TAX', 'plus ');
 define('TEXT_ORDERS_EDIT_INFO', '<b> Important Notes: </ b> <br>
 Please check with the address/customer data, the right customer group choose <br>
 When you change the customer group, all invoice items are newly save! <br>
 Shippincosts must be changed manually! <br>
 In this case, depending on the customer group the shippingcost entered gross or net! <br>
 ');
-
 ?>

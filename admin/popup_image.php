@@ -15,28 +15,23 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
-  require('includes/application_top.php');
-
-  reset($_GET);
-  while (list($key, ) = each($_GET)) {
+require ('includes/application_top.php');
+reset($_GET);
+while (list($key,) = each($_GET)) {
     switch ($key) {
-      case 'banner':
-        $banners_id = xtc_db_prepare_input($_GET['banner']);
-
-        $banner_query = xtc_db_query("select banners_title, banners_image, banners_html_text from " . TABLE_BANNERS . " where banners_id = '" . (int)$banners_id . "'");
-        $banner = xtc_db_fetch_array($banner_query);
-
-        $page_title = $banner['banners_title'];
-
-        if ($banner['banners_html_text']) {
-          $image_source = $banner['banners_html_text'];
-        } elseif ($banner['banners_image']) {
-          $image_source = xtc_image(HTTP_CATALOG_SERVER . DIR_WS_CATALOG_IMAGES . $banner['banners_image'], $page_title);
-        }
+        case 'banner':
+            $banners_id = xtc_db_prepare_input($_GET['banner']);
+            $banner_query = xtc_db_query("select banners_title, banners_image, banners_html_text from " . TABLE_BANNERS . " where banners_id = '" . (int)$banners_id . "'");
+            $banner = xtc_db_fetch_array($banner_query);
+            $page_title = $banner['banners_title'];
+            if ($banner['banners_html_text']) {
+                $image_source = $banner['banners_html_text'];
+            } elseif ($banner['banners_image']) {
+                $image_source = xtc_image(HTTP_CATALOG_SERVER . DIR_WS_CATALOG_IMAGES . $banner['banners_image'], $page_title);
+            }
         break;
     }
-  }
+}
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html <?php echo HTML_PARAMS; ?>>

@@ -14,9 +14,7 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Server Information');
-
 define('TITLE_SERVER_HOST', 'Server Host:');
 define('TITLE_SERVER_OS', 'Server OS:');
 define('TITLE_SERVER_DATE', 'Server Datum:');

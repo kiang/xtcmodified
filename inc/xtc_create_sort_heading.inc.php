@@ -14,18 +14,14 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Return table heading with sorting capabilities
-  function xtc_create_sort_heading($sortby, $colnum, $heading) {
-
+function xtc_create_sort_heading($sortby, $colnum, $heading) {
     $sort_prefix = '';
     $sort_suffix = '';
-
     if ($sortby) {
-      $sort_prefix = '<a href="' . xtc_href_link(basename($_SERVER['PHP_SELF']), xtc_get_all_get_params(array('page', 'info', 'sort')) . 'page=1&sort=' . $colnum . ($sortby == $colnum . 'a' ? 'd' : 'a')) . '" title="' . TEXT_SORT_PRODUCTS . ($sortby == $colnum . 'd' || substr($sortby, 0, 1) != $colnum ? TEXT_ASCENDINGLY : TEXT_DESCENDINGLY) . TEXT_BY . $heading . '" class="productListing-heading">' ;
-      $sort_suffix = (substr($sortby, 0, 1) == $colnum ? (substr($sortby, 1, 1) == 'a' ? '+' : '-') : '') . '</a>';
+        $sort_prefix = '<a href="' . xtc_href_link(basename($_SERVER['PHP_SELF']), xtc_get_all_get_params(array('page', 'info', 'sort')) . 'page=1&sort=' . $colnum . ($sortby == $colnum . 'a' ? 'd' : 'a')) . '" title="' . TEXT_SORT_PRODUCTS . ($sortby == $colnum . 'd' || substr($sortby, 0, 1) != $colnum ? TEXT_ASCENDINGLY : TEXT_DESCENDINGLY) . TEXT_BY . $heading . '" class="productListing-heading">';
+        $sort_suffix = (substr($sortby, 0, 1) == $colnum ? (substr($sortby, 1, 1) == 'a' ? '+' : '-') : '') . '</a>';
     }
-
     return $sort_prefix . $heading . $sort_suffix;
-  }
+}
 ?>

@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-   
 define('HEADING_TITLE', 'W&auml;hrungen');
-
 define('TABLE_HEADING_CURRENCY_NAME', 'W&auml;hrung');
 define('TABLE_HEADING_CURRENCY_CODES', 'K&uuml;rzel');
 define('TABLE_HEADING_CURRENCY_VALUE', 'Wert');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
 define('TEXT_INFO_CURRENCY_TITLE', 'Name:');
 define('TEXT_INFO_CURRENCY_CODE', 'K&uuml;rzel:');
@@ -40,7 +37,6 @@ define('TEXT_INFO_HEADING_EDIT_CURRENCY', 'W&auml;hrung bearbeiten');
 define('TEXT_INFO_HEADING_DELETE_CURRENCY', 'W&auml;hrung l&ouml;schen');
 define('TEXT_INFO_SET_AS_DEFAULT', TEXT_SET_DEFAULT . ' (manuelles Aktualisieren der Wechselkurse erforderlich.)');
 define('TEXT_INFO_CURRENCY_UPDATED', 'Der Wechselkurs %s (%s) wurde erfolgreich aktualisiert');
-
 define('ERROR_REMOVE_DEFAULT_CURRENCY', 'Fehler: Die Standardw&auml;hrung darf nicht gel&ouml;scht werden. Bitte definieren Sie eine neue Standardw&auml;hrung und wiederholen Sie den Vorgang.');
 define('ERROR_CURRENCY_INVALID', 'Fehler: Der Wechselkurs f&uuml;r %s (%s) wurde nicht aktualisiert. Ist dies ein g&uuml;ltiges W&auml;hrungsk&uuml;rzel?');
 ?>

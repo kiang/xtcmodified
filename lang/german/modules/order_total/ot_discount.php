@@ -14,13 +14,10 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  define('MODULE_ORDER_TOTAL_DISCOUNT_TITLE', 'Rabatt');
-  define('MODULE_ORDER_TOTAL_DISCOUNT_DESCRIPTION', 'Rabatt auf Bestellung');
-  
-  define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_TITLE', 'Rabatt');
-  define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_DESC', 'Anzeige des Rabattes ?');
-  
-  define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_TITLE', 'Sortierreihenfolge');
-  define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_DESC','Anzeigereihenfolge.');
+define('MODULE_ORDER_TOTAL_DISCOUNT_TITLE', 'Rabatt');
+define('MODULE_ORDER_TOTAL_DISCOUNT_DESCRIPTION', 'Rabatt auf Bestellung');
+define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_TITLE', 'Rabatt');
+define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_DESC', 'Anzeige des Rabattes ?');
+define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_TITLE', 'Sortierreihenfolge');
+define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_DESC', 'Anzeigereihenfolge.');
 ?>

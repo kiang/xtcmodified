@@ -14,26 +14,21 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
-  function xtc_get_all_get_params($exclude_array = '') {
-  	global $InputFilter;
-
+function xtc_get_all_get_params($exclude_array = '') {
+    global $InputFilter;
     if (!is_array($exclude_array)) $exclude_array = array();
     $get_url = '';
     if (is_array($_GET) && (sizeof($_GET) > 0)) {
-      reset($_GET);
-      while (list($key, $value) = each($_GET)) {
-//-- SHOPSTAT --//     
-//        if ( (strlen($value) > 0) && ($key != xtc_session_name()) && ($key != 'error') && ($key != 'cPath') && (!in_array($key, $exclude_array)) && ($key != 'x') && ($key != 'y') ) {
-//-- SHOPSTAT --//
-        if ( (strlen($value) > 0) && ($key != xtc_session_name()) && ($key != 'error') && (!in_array($key, $exclude_array)) && ($key != 'x') && ($key != 'y') ) {
-
-          $get_url .= rawurlencode(stripslashes($key)) . '=' . rawurlencode(stripslashes($value)) . '&';
-
+        reset($_GET);
+        while (list($key, $value) = each($_GET)) {
+            //-- SHOPSTAT --//
+            //        if ( (strlen($value) > 0) && ($key != xtc_session_name()) && ($key != 'error') && ($key != 'cPath') && (!in_array($key, $exclude_array)) && ($key != 'x') && ($key != 'y') ) {
+            //-- SHOPSTAT --//
+            if ((strlen($value) > 0) && ($key != xtc_session_name()) && ($key != 'error') && (!in_array($key, $exclude_array)) && ($key != 'x') && ($key != 'y')) {
+                $get_url.= rawurlencode(stripslashes($key)) . '=' . rawurlencode(stripslashes($value)) . '&';
+            }
         }
-      }
     }
-
     return $get_url;
-  }
+}
 ?>

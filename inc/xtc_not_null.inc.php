@@ -14,20 +14,19 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_not_null($value) {
+function xtc_not_null($value) {
     if (is_array($value)) {
-      if (sizeof($value) > 0) {
-        return true;
-      } else {
-        return false;
-      }
+        if (sizeof($value) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     } else {
-      if (($value != '') && ($value != 'NULL') && (strlen(trim($value)) > 0)) {
-        return true;
-      } else {
-        return false;
-      }
+        if (($value != '') && ($value != 'NULL') && (strlen(trim($value)) > 0)) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
- ?>
+}
+?>

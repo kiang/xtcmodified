@@ -14,17 +14,15 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_draw_input_field_installer($name, $text = '', $type = 'text', $parameters = '', $reinsert_value = true) {
+function xtc_draw_input_field_installer($name, $text = '', $type = 'text', $parameters = '', $reinsert_value = true) {
     $field = '<input type="' . $type . '" name="' . $name . '"';
-    if ( ($key = $GLOBALS[$name]) || ($key = $_GET[$name]) || ($key = $_POST[$name]) || ($key = $_SESSION[$name]) && ($reinsert_value) ) {
-      $field .= ' value="' . $key . '"';
+    if (($key = $GLOBALS[$name]) || ($key = $_GET[$name]) || ($key = $_POST[$name]) || ($key = $_SESSION[$name]) && ($reinsert_value)) {
+        $field.= ' value="' . $key . '"';
     } elseif ($text != '') {
-      $field .= ' value="' . $text . '"';
+        $field.= ' value="' . $text . '"';
     }
     if ($parameters) $field.= ' ' . $parameters;
-    $field .= ' />';
-
+    $field.= ' />';
     return $field;
-  }
- ?>
+}
+?>

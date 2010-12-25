@@ -14,10 +14,8 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', '&Ouml;ffnen Sie die Transaktions-Steuerung');
 define('SUB_BAR_TITLE', 'Klicken Sie auf das Bild unten. Sie ben&ouml;tigen Ihr Gateway ID und Passwort.');
-
 define('CPANEL_URL', 'https://secure.itransact.com/support/login.html');
 define('CPANEL_URL_NAME', 'ctrlpan');
 ?>

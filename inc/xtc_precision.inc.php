@@ -14,9 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-function xtc_precision($number,$places)
-	{
-	 return (round($number,$places));
-	}
- ?>
+function xtc_precision($number, $places) {
+    return (round($number, $places));
+}
+?>

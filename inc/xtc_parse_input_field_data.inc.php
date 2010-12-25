@@ -14,9 +14,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Parse the data used in the html tags to ensure the tags will not break
-  function xtc_parse_input_field_data($data, $parse) {
+function xtc_parse_input_field_data($data, $parse) {
     return strtr(trim($data), $parse);
-  }
- ?>
+}
+?>

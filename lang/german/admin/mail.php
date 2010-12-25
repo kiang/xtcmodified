@@ -14,9 +14,7 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'E-Mail an Kunden versenden');
-
 define('TEXT_CUSTOMER', 'Kunde:');
 define('TEXT_SUBJECT', 'Betreff:');
 define('TEXT_FROM', 'Absender:');
@@ -24,7 +22,6 @@ define('TEXT_MESSAGE', 'Nachricht:');
 define('TEXT_SELECT_CUSTOMER', 'Kunden ausw&auml;hlen');
 define('TEXT_ALL_CUSTOMERS', 'Alle Kunden');
 define('TEXT_NEWSLETTER_CUSTOMERS', 'An alle Newsletter-Abonnenten');
-
 define('NOTICE_EMAIL_SENT_TO', 'Hinweis: E-Mail wurde versandt an: %s');
 define('ERROR_NO_CUSTOMER_SELECTED', 'Fehler: Es wurde kein Kunde ausgew&auml;hlt.');
 ?>

@@ -14,25 +14,24 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  // Unlinks all subdirectories and files in $dir
-  // Works only on one subdir level, will not recurse
-  function xtc_unlink_temp_dir($dir) {
+// Unlinks all subdirectories and files in $dir
+// Works only on one subdir level, will not recurse
+function xtc_unlink_temp_dir($dir) {
     $h1 = opendir($dir);
     while ($subdir = readdir($h1)) {
-      // Ignore non directories
-      if (!is_dir($dir . $subdir)) continue;
-      // Ignore . and .. and CVS
-      if ($subdir == '.' || $subdir == '..' || $subdir == 'CVS') continue;
-      // Loop and unlink files in subdirectory
-      $h2 = opendir($dir . $subdir);
-      while ($file = readdir($h2)) {
-        if ($file == '.' || $file == '..') continue;
-        @unlink($dir . $subdir . '/' . $file);
-      }
-      closedir($h2); 
-      @rmdir($dir . $subdir);
+        // Ignore non directories
+        if (!is_dir($dir . $subdir)) continue;
+        // Ignore . and .. and CVS
+        if ($subdir == '.' || $subdir == '..' || $subdir == 'CVS') continue;
+        // Loop and unlink files in subdirectory
+        $h2 = opendir($dir . $subdir);
+        while ($file = readdir($h2)) {
+            if ($file == '.' || $file == '..') continue;
+            @unlink($dir . $subdir . '/' . $file);
+        }
+        closedir($h2);
+        @rmdir($dir . $subdir);
     }
     closedir($h1);
-  }
- ?>
+}
+?>

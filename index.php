@@ -21,51 +21,45 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 include ('includes/application_top.php');
-
 // create smarty elements
-
 $smarty = new Smarty;
-
 // include boxes
-require (DIR_FS_CATALOG.'templates/'.CURRENT_TEMPLATE.'/source/boxes.php');
-
+require (DIR_FS_CATALOG . 'templates/' . CURRENT_TEMPLATE . '/source/boxes.php');
 // the following cPath references come from application_top.php
 $category_depth = 'top';
-if (isset ($cPath) && xtc_not_null($cPath)) {
-  //BOF - GTB - 2010-11-29 - show categories when no active product
-  //$categories_products_query = "select count(*) as total from ".TABLE_PRODUCTS_TO_CATEGORIES." where categories_id = '".$current_category_id."'";
-  $categories_products_query = "SELECT p2c.products_id FROM ".TABLE_PRODUCTS_TO_CATEGORIES." p2c, ".TABLE_PRODUCTS." p WHERE p2c.categories_id = '".$current_category_id."' AND p.products_id = p2c.products_id AND p.products_status = 1";
-  $categories_products_query = xtDBquery($categories_products_query);
-  //$cateqories_products = xtc_db_fetch_array($categories_products_query, true);
-  //if ($cateqories_products['total'] > 0) {
-  if (xtc_db_num_rows($categories_products_query) > 0) {
-  //EOF - GTB - 2010-11-29 - show categories when no active product
-    $category_depth = 'products'; // display products
-  } else {
-    //BOF - GTB - 2010-11-29 - only count avtive categories
-    //$category_parent_query = "select count(*) as total from ".TABLE_CATEGORIES." where parent_id = '".$current_category_id."'";
-    $category_parent_query = "select count(*) as total from ".TABLE_CATEGORIES." where parent_id = '".$current_category_id."' AND categories_status = 1";
-    //EOF - GTB - 2010-11-29 - only count avtive categories
-    $category_parent_query = xtDBquery($category_parent_query);
-    $category_parent = xtc_db_fetch_array($category_parent_query, true);
-    if ($category_parent['total'] > 0) {
-      $category_depth = 'nested'; // navigate through the categories
+if (isset($cPath) && xtc_not_null($cPath)) {
+    //BOF - GTB - 2010-11-29 - show categories when no active product
+    //$categories_products_query = "select count(*) as total from ".TABLE_PRODUCTS_TO_CATEGORIES." where categories_id = '".$current_category_id."'";
+    $categories_products_query = "SELECT p2c.products_id FROM " . TABLE_PRODUCTS_TO_CATEGORIES . " p2c, " . TABLE_PRODUCTS . " p WHERE p2c.categories_id = '" . $current_category_id . "' AND p.products_id = p2c.products_id AND p.products_status = 1";
+    $categories_products_query = xtDBquery($categories_products_query);
+    //$cateqories_products = xtc_db_fetch_array($categories_products_query, true);
+    //if ($cateqories_products['total'] > 0) {
+    if (xtc_db_num_rows($categories_products_query) > 0) {
+        //EOF - GTB - 2010-11-29 - show categories when no active product
+        $category_depth = 'products'; // display products
+        
     } else {
-      $category_depth = 'products'; // category has no products, but display the 'no products' message
+        //BOF - GTB - 2010-11-29 - only count avtive categories
+        //$category_parent_query = "select count(*) as total from ".TABLE_CATEGORIES." where parent_id = '".$current_category_id."'";
+        $category_parent_query = "select count(*) as total from " . TABLE_CATEGORIES . " where parent_id = '" . $current_category_id . "' AND categories_status = 1";
+        //EOF - GTB - 2010-11-29 - only count avtive categories
+        $category_parent_query = xtDBquery($category_parent_query);
+        $category_parent = xtc_db_fetch_array($category_parent_query, true);
+        if ($category_parent['total'] > 0) {
+            $category_depth = 'nested'; // navigate through the categories
+            
+        } else {
+            $category_depth = 'products'; // category has no products, but display the 'no products' message
+            
+        }
     }
-  }
 }
-
-require (DIR_WS_INCLUDES.'header.php');
-include (DIR_WS_MODULES.'default.php');
-
+require (DIR_WS_INCLUDES . 'header.php');
+include (DIR_WS_MODULES . 'default.php');
 $smarty->assign('language', $_SESSION['language']);
 $smarty->caching = 0;
-if (!defined('RM'))
-  $smarty->load_filter('output', 'note');
-$smarty->display(CURRENT_TEMPLATE.'/index.html');
-
+if (!defined('RM')) $smarty->load_filter('output', 'note');
+$smarty->display(CURRENT_TEMPLATE . '/index.html');
 include ('includes/application_bottom.php');
 ?>

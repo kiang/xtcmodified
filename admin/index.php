@@ -19,7 +19,5 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
-  require('includes/application_top.php');
-
- ?>
+require ('includes/application_top.php');
+?>

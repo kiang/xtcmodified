@@ -15,7 +15,6 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 /**
  * Output a form input field
  *
@@ -26,22 +25,17 @@
  * @param boolean $reinsert_value reinsert values if reloading page, needed for validation
  * @return String complete html string
  */
-  function xtc_draw_input_field($name, $value = '', $parameters = '', $type = 'text', $reinsert_value = true) {
+function xtc_draw_input_field($name, $value = '', $parameters = '', $type = 'text', $reinsert_value = true) {
     $field = '<input type="' . xtc_parse_input_field_data($type, array('"' => '&quot;')) . '" name="' . xtc_parse_input_field_data($name, array('"' => '&quot;')) . '"';
-
-    if ( (isset($GLOBALS[$name])) && ($reinsert_value == true) ) {
-      $field .= ' value="' . xtc_parse_input_field_data($GLOBALS[$name], array('"' => '&quot;')) . '"';
+    if ((isset($GLOBALS[$name])) && ($reinsert_value == true)) {
+        $field.= ' value="' . xtc_parse_input_field_data($GLOBALS[$name], array('"' => '&quot;')) . '"';
     } elseif (xtc_not_null($value)) {
-      $field .= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
+        $field.= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
     }
-
-    if (xtc_not_null($parameters)) $field .= ' ' . $parameters;
-
-    $field .= ' />';
-
+    if (xtc_not_null($parameters)) $field.= ' ' . $parameters;
+    $field.= ' />';
     return $field;
-  }
-
+}
 /**
  * Output a form input field with an optional note at the end
  *
@@ -51,20 +45,16 @@
  * @param String $type type e.g. text, password, submit etc
  * @param boolean $reinsert_value reinsert values if reloading page, needed for validation
  * @return String complete html string
- */  
-    function xtc_draw_input_fieldNote($data, $value = '', $parameters = '', $type = 'text', $reinsert_value = true) {
+ */
+function xtc_draw_input_fieldNote($data, $value = '', $parameters = '', $type = 'text', $reinsert_value = true) {
     $field = '<input type="' . xtc_parse_input_field_data($type, array('"' => '&quot;')) . '" name="' . xtc_parse_input_field_data($data['name'], array('"' => '&quot;')) . '"';
-
-    if ( (isset($GLOBALS[$data['name']])) && ($reinsert_value == true) ) {
-      $field .= ' value="' . xtc_parse_input_field_data($GLOBALS[$data['name']], array('"' => '&quot;')) . '"';
+    if ((isset($GLOBALS[$data['name']])) && ($reinsert_value == true)) {
+        $field.= ' value="' . xtc_parse_input_field_data($GLOBALS[$data['name']], array('"' => '&quot;')) . '"';
     } elseif (xtc_not_null($value)) {
-      $field .= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
+        $field.= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
     }
-
-    if (xtc_not_null($parameters)) $field .= ' ' . $parameters;
-
-    $field .= ' />'.$data['text'];
-
+    if (xtc_not_null($parameters)) $field.= ' ' . $parameters;
+    $field.= ' />' . $data['text'];
     return $field;
-  }
+}
 ?>

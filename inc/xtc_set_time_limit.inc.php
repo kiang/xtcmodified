@@ -14,12 +14,11 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  // Sets timeout for the current script.
-  // Can't be used in safe mode.
-  function xtc_set_time_limit($limit) {
+// Sets timeout for the current script.
+// Can't be used in safe mode.
+function xtc_set_time_limit($limit) {
     if (!get_cfg_var('safe_mode')) {
-      set_time_limit($limit);
+        set_time_limit($limit);
     }
-  }
+}
 ?>

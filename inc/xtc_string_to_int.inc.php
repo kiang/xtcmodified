@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  function xtc_string_to_int($string) {
+function xtc_string_to_int($string) {
     return (int)$string;
-  }
+}
 ?>

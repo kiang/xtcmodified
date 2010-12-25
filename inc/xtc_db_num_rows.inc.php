@@ -15,21 +15,20 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_num_rows($db_query,$cq=false) {
+function xtc_db_num_rows($db_query, $cq = false) {
     //BOF - DokuMan - 2010-08-30 - if db_query not a valid result, return false
     if ($db_query === false) return false;
     //EOF - DokuMan - 2010-08-30 - if db_query not a valid result, return false
-    if (DB_CACHE=='true' && $cq) {
-       if (!count($db_query)) return false;
-       return count($db_query);
+    if (DB_CACHE == 'true' && $cq) {
+        if (!count($db_query)) return false;
+        return count($db_query);
     } else {
-       if (!is_array($db_query)) return mysql_num_rows($db_query);
+        if (!is_array($db_query)) return mysql_num_rows($db_query);
     }
     /*
-  if (!is_array($db_query)) return mysql_num_rows($db_query);
-  if (!count($db_query)) return false;
-   return count($db_query);
-   */
-  }
+    if (!is_array($db_query)) return mysql_num_rows($db_query);
+    if (!count($db_query)) return false;
+    return count($db_query);
+    */
+}
 ?>

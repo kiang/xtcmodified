@@ -15,9 +15,8 @@
 
    Released under the GNU General Public License 
    ----------------------------------------------------------------------------------------- */
-// example for testing xajax support   
-if( XAJAX_BACKEND_SUPPORT_TEST=='true' ) {
+// example for testing xajax support
+if (XAJAX_BACKEND_SUPPORT_TEST == 'true') {
     $imdxajax->registerFunction('xajax_support_test_get_servertime');
 }
-  
 ?>

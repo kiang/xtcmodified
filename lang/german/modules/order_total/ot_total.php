@@ -14,15 +14,12 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  define('MODULE_ORDER_TOTAL_TOTAL_TITLE', '<b>Summe</b>');
-  define('MODULE_ORDER_TOTAL_TOTAL_TITLE_NO_TAX', '<b>Summe, netto</b>');
-  define('MODULE_ORDER_TOTAL_TOTAL_TITLE_NO_TAX_BRUTTO','<b>Summe, brutto</b>');
-  define('MODULE_ORDER_TOTAL_TOTAL_DESCRIPTION', 'Summe der Bestellung');
-  
-  define('MODULE_ORDER_TOTAL_TOTAL_STATUS_TITLE','Summe anzeigen');
-  define('MODULE_ORDER_TOTAL_TOTAL_STATUS_DESC','M&ouml;chten Sie die Gesamtbestellsumme anzeigen?');
-  
-  define('MODULE_ORDER_TOTAL_TOTAL_SORT_ORDER_TITLE','Sortierreihenfolge');
-  define('MODULE_ORDER_TOTAL_TOTAL_SORT_ORDER_DESC','Anzeigereihenfolge.');
+define('MODULE_ORDER_TOTAL_TOTAL_TITLE', '<b>Summe</b>');
+define('MODULE_ORDER_TOTAL_TOTAL_TITLE_NO_TAX', '<b>Summe, netto</b>');
+define('MODULE_ORDER_TOTAL_TOTAL_TITLE_NO_TAX_BRUTTO', '<b>Summe, brutto</b>');
+define('MODULE_ORDER_TOTAL_TOTAL_DESCRIPTION', 'Summe der Bestellung');
+define('MODULE_ORDER_TOTAL_TOTAL_STATUS_TITLE', 'Summe anzeigen');
+define('MODULE_ORDER_TOTAL_TOTAL_STATUS_DESC', 'M&ouml;chten Sie die Gesamtbestellsumme anzeigen?');
+define('MODULE_ORDER_TOTAL_TOTAL_SORT_ORDER_TITLE', 'Sortierreihenfolge');
+define('MODULE_ORDER_TOTAL_TOTAL_SORT_ORDER_DESC', 'Anzeigereihenfolge.');
 ?>

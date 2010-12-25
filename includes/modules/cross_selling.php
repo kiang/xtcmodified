@@ -15,47 +15,37 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 $module_smarty = new Smarty;
 //BOF - GTB - 2010-08-03 - Security Fix - Base
-$module_smarty->assign('tpl_path',DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/');
+$module_smarty->assign('tpl_path', DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/');
 //$module_smarty->assign('tpl_path', 'templates/'.CURRENT_TEMPLATE.'/');
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 $data = $product->getCrossSells();
-
 if (count($data) > 0) {
-
-	$module_smarty->assign('language', $_SESSION['language']);
-	$module_smarty->assign('module_content', $data);
-	// set cache ID
-
-	$module_smarty->caching = 0;
-	$module = $module_smarty->fetch(CURRENT_TEMPLATE.'/module/cross_selling.html');
-	$info_smarty->assign('MODULE_cross_selling', $module);
-}
-
-// reverse cross selling
-if (ACTIVATE_REVERSE_CROSS_SELLING=='true') {
-$module_smarty = new Smarty;
-//BOF - Dokuman - 2010-01-20: set template path also on activated cross selling
-//BOF - GTB - 2010-08-03 - Security Fix - Base
-$module_smarty->assign('tpl_path',DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/');
-//$module_smarty->assign('tpl_path', 'templates/'.CURRENT_TEMPLATE.'/');
-//EOF - GTB - 2010-08-03 - Security Fix - Base
-//EOF - Dokuman - 2010-01-20: set template path also on activated cross selling
-
-$data = $product->getReverseCrossSells();
-
-  if (count($data) > 0) {
     $module_smarty->assign('language', $_SESSION['language']);
     $module_smarty->assign('module_content', $data);
     // set cache ID
-
     $module_smarty->caching = 0;
-    $module = $module_smarty->fetch(CURRENT_TEMPLATE.'/module/reverse_cross_selling.html');
-
-    $info_smarty->assign('MODULE_reverse_cross_selling', $module);
-  }
-
+    $module = $module_smarty->fetch(CURRENT_TEMPLATE . '/module/cross_selling.html');
+    $info_smarty->assign('MODULE_cross_selling', $module);
+}
+// reverse cross selling
+if (ACTIVATE_REVERSE_CROSS_SELLING == 'true') {
+    $module_smarty = new Smarty;
+    //BOF - Dokuman - 2010-01-20: set template path also on activated cross selling
+    //BOF - GTB - 2010-08-03 - Security Fix - Base
+    $module_smarty->assign('tpl_path', DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/');
+    //$module_smarty->assign('tpl_path', 'templates/'.CURRENT_TEMPLATE.'/');
+    //EOF - GTB - 2010-08-03 - Security Fix - Base
+    //EOF - Dokuman - 2010-01-20: set template path also on activated cross selling
+    $data = $product->getReverseCrossSells();
+    if (count($data) > 0) {
+        $module_smarty->assign('language', $_SESSION['language']);
+        $module_smarty->assign('module_content', $data);
+        // set cache ID
+        $module_smarty->caching = 0;
+        $module = $module_smarty->fetch(CURRENT_TEMPLATE . '/module/reverse_cross_selling.html');
+        $info_smarty->assign('MODULE_reverse_cross_selling', $module);
+    }
 }
 ?>

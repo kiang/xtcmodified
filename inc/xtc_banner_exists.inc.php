@@ -14,15 +14,15 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-require_once(DIR_FS_INC.'xtc_random_select.inc.php');   
-  function xtc_banner_exists($action, $identifier) {
+require_once (DIR_FS_INC . 'xtc_random_select.inc.php');
+function xtc_banner_exists($action, $identifier) {
     if ($action == 'dynamic') {
-      return xtc_random_select("select banners_id, banners_title, banners_image, banners_html_text from " . TABLE_BANNERS . " where status = '1' and banners_group = '" . $identifier . "'");
+        return xtc_random_select("select banners_id, banners_title, banners_image, banners_html_text from " . TABLE_BANNERS . " where status = '1' and banners_group = '" . $identifier . "'");
     } elseif ($action == 'static') {
-      $banner_query = xtc_db_query("select banners_id, banners_title, banners_image, banners_html_text from " . TABLE_BANNERS . " where status = '1' and banners_id = '" . $identifier . "'");
-      return xtc_db_fetch_array($banner_query);
+        $banner_query = xtc_db_query("select banners_id, banners_title, banners_image, banners_html_text from " . TABLE_BANNERS . " where status = '1' and banners_id = '" . $identifier . "'");
+        return xtc_db_fetch_array($banner_query);
     } else {
-      return false;
+        return false;
     }
-  }
- ?>
+}
+?>

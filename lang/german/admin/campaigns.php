@@ -14,16 +14,12 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Kampagnenverfolgung');
-
 define('TABLE_HEADING_CAMPAIGNS', 'Kampagnen');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_HEADING_NEW_CAMPAIGN', 'Neue Kampagne');
 define('TEXT_HEADING_EDIT_CAMPAIGN', 'Kampagne bearbeiten');
 define('TEXT_HEADING_DELETE_CAMPAIGN', 'Kampagne l&ouml;schen');
-
 define('TEXT_CAMPAIGNS', 'Kampagnen:');
 define('TEXT_DATE_ADDED', 'hinzugef&uuml;gt am:');
 define('TEXT_LAST_MODIFIED', 'letzte &Auml;nderung am:');
@@ -32,10 +28,8 @@ define('TEXT_SALES', 'Sales:');
 define('TEXT_LATE_CONVERSIONS', 'Late Conversions:');
 define('TEXT_NEW_INTRO', 'Bitte geben Sie eine neue Kampagne ein.');
 define('TEXT_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
-
 define('TEXT_CAMPAIGNS_NAME', 'Kampagnenname:');
 define('TEXT_CAMPAIGNS_REFID', 'RefID der Kampagne:');
 define('TEXT_DISPLAY_NUMBER_OF_CAMPAIGNS', 'Verfolgte Kampagnen:');
-
 define('TEXT_DELETE_INTRO', 'Sind Sie sicher, dass Sie diese Kampagne l&ouml;schen m&ouml;chten?');
 ?>

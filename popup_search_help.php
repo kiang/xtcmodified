@@ -1,5 +1,4 @@
 <?php
-
 /* -----------------------------------------------------------------------------------------
    $Id: popup_search_help.php 1238 2005-09-24 10:51:19Z mz $
 
@@ -15,25 +14,20 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 include ('includes/application_top.php');
-
 $smarty = new Smarty;
-
 include ('includes/header.php');
-
 $smarty->assign('link_close', 'javascript:window.close()');
 $smarty->assign('language', $_SESSION['language']);
-
 // set cache ID
- if (!CacheCheck()) {
-	$smarty->caching = 0;
-	$smarty->display(CURRENT_TEMPLATE.'/module/popup_search_help.html');
+if (!CacheCheck()) {
+    $smarty->caching = 0;
+    $smarty->display(CURRENT_TEMPLATE . '/module/popup_search_help.html');
 } else {
-	$smarty->caching = 1;
-	$smarty->cache_lifetime = CACHE_LIFETIME;
-	$smarty->cache_modified_check = CACHE_CHECK;
-	$cache_id = $_SESSION['language'];
-	$smarty->display(CURRENT_TEMPLATE.'/module/popup_search_help.html', $cache_id);
+    $smarty->caching = 1;
+    $smarty->cache_lifetime = CACHE_LIFETIME;
+    $smarty->cache_modified_check = CACHE_CHECK;
+    $cache_id = $_SESSION['language'];
+    $smarty->display(CURRENT_TEMPLATE . '/module/popup_search_help.html', $cache_id);
 }
 ?>

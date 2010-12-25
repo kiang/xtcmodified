@@ -15,25 +15,19 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
 $module_smarty = new Smarty;
 //BOF - GTB - 2010-08-03 - Security Fix - Base
-$module_smarty->assign('tpl_path',DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/');
+$module_smarty->assign('tpl_path', DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/');
 //$module_smarty->assign('tpl_path', 'templates/'.CURRENT_TEMPLATE.'/');
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 // include needed files
-
 $data = $product->getAlsoPurchased();
 if (count($data) >= MIN_DISPLAY_ALSO_PURCHASED) {
-
-	$module_smarty->assign('language', $_SESSION['language']);
-	$module_smarty->assign('module_content', $data);
-	// set cache ID
-
-	$module_smarty->caching = 0;
-	$module = $module_smarty->fetch(CURRENT_TEMPLATE.'/module/also_purchased.html');
-
-	$info_smarty->assign('MODULE_also_purchased', $module);
-
+    $module_smarty->assign('language', $_SESSION['language']);
+    $module_smarty->assign('module_content', $data);
+    // set cache ID
+    $module_smarty->caching = 0;
+    $module = $module_smarty->fetch(CURRENT_TEMPLATE . '/module/also_purchased.html');
+    $info_smarty->assign('MODULE_also_purchased', $module);
 }
 ?>

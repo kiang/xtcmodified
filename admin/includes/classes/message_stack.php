@@ -22,52 +22,43 @@
    if ($messageStack->size > 0) echo $messageStack->output();
   
    --------------------------------------------------------------*/
-defined( '_VALID_XTC' ) or die( 'Direct Access to this location is not allowed.' );
-  class messageStack extends tableBlock {
+defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
+class messageStack extends tableBlock {
     var $size = 0;
-
     function messageStack() {
-
-      $this->errors = array();
-
-      if (isset($_SESSION['messageToStack'])) {
-        for ($i = 0, $n = sizeof($_SESSION['messageToStack']); $i < $n; $i++) {
-          $this->add($_SESSION['messageToStack'][$i]['text'], $_SESSION['messageToStack'][$i]['type']);
+        $this->errors = array();
+        if (isset($_SESSION['messageToStack'])) {
+            for ($i = 0, $n = sizeof($_SESSION['messageToStack']);$i < $n;$i++) {
+                $this->add($_SESSION['messageToStack'][$i]['text'], $_SESSION['messageToStack'][$i]['type']);
+            }
+            unset($_SESSION['messageToStack']);
         }
-        unset($_SESSION['messageToStack']);
-      }
     }
-
     function add($message, $type = 'error') {
-      if ($type == 'error') {
-        $this->errors[] = array('params' => 'class="messageStackError"', 'text' => xtc_image(DIR_WS_ICONS . 'error.gif', ICON_ERROR) . '&nbsp;' . $message);
-      } elseif ($type == 'warning') {
-        $this->errors[] = array('params' => 'class="messageStackWarning"', 'text' => xtc_image(DIR_WS_ICONS . 'warning.gif', ICON_WARNING) . '&nbsp;' . $message);
-      } elseif ($type == 'success') {
-        $this->errors[] = array('params' => 'class="messageStackSuccess"', 'text' => xtc_image(DIR_WS_ICONS . 'success.gif', ICON_SUCCESS) . '&nbsp;' . $message);
-      } else {
-        $this->errors[] = array('params' => 'class="messageStackError"', 'text' => $message);
-      }
-
-      $this->size++;
+        if ($type == 'error') {
+            $this->errors[] = array('params' => 'class="messageStackError"', 'text' => xtc_image(DIR_WS_ICONS . 'error.gif', ICON_ERROR) . '&nbsp;' . $message);
+        } elseif ($type == 'warning') {
+            $this->errors[] = array('params' => 'class="messageStackWarning"', 'text' => xtc_image(DIR_WS_ICONS . 'warning.gif', ICON_WARNING) . '&nbsp;' . $message);
+        } elseif ($type == 'success') {
+            $this->errors[] = array('params' => 'class="messageStackSuccess"', 'text' => xtc_image(DIR_WS_ICONS . 'success.gif', ICON_SUCCESS) . '&nbsp;' . $message);
+        } else {
+            $this->errors[] = array('params' => 'class="messageStackError"', 'text' => $message);
+        }
+        $this->size++;
     }
-
     function add_session($message, $type = 'error') {
-      if (!isset($_SESSION['messageToStack'])) {
-        $_SESSION['messageToStack'] = array();
-      }
-
-      $_SESSION['messageToStack'][] = array('text' => $message, 'type' => $type);
+        if (!isset($_SESSION['messageToStack'])) {
+            $_SESSION['messageToStack'] = array();
+        }
+        $_SESSION['messageToStack'][] = array('text' => $message, 'type' => $type);
     }
-
     function reset() {
-      $this->errors = array();
-      $this->size = 0;
+        $this->errors = array();
+        $this->size = 0;
     }
-
     function output() {
-      $this->table_data_parameters = 'class="messageBox"';
-      return $this->tableBlock($this->errors);
+        $this->table_data_parameters = 'class="messageBox"';
+        return $this->tableBlock($this->errors);
     }
-  }
+}
 ?>

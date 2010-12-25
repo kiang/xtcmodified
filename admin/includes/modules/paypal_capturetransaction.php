@@ -19,7 +19,7 @@
  * xt:Commerce Support Forums at www.xt-commerce.com
  *
  */
-if(isset($error)) echo $error;
+if (isset($error)) echo $error;
 echo xtc_draw_form('refund_transaction', FILENAME_PAYPAL, xtc_get_all_get_params(array('action')) . 'action=perform');
 echo xtc_draw_hidden_field('txn_id', $ipn_data['txn_id']);
 echo xtc_draw_hidden_field('amount', $ipn_data['mc_gross']);
@@ -42,23 +42,23 @@ echo xtc_draw_hidden_field('ipn_id', (int)$_GET['paypal_ipn_id']);
 		</tr>
 		<tr>
 			<td width="10%" nowrap="nowrap"><?php echo TEXT_PAYPAL_PAYER_EMAIL; ?></td>
-			<td width="90%" valign="middle"><?php echo $ipn_data['payer_email'];?></td>
+			<td width="90%" valign="middle"><?php echo $ipn_data['payer_email']; ?></td>
 		</tr>
 		<tr>
 			<td width="10%" nowrap="nowrap"><?php echo TEXT_PAYPAL_TRANSACTION_AUTH_TOTAL; ?></td>
-			<td width="90%"><?php echo $ipn_data['mc_authorization'].' '.$ipn_data['mc_currency']; ?></td>
+			<td width="90%"><?php echo $ipn_data['mc_authorization'] . ' ' . $ipn_data['mc_currency']; ?></td>
 		</tr>
 		<tr>
 			<td width="10%"><?php echo TEXT_PAYPAL_TRANSACTION_AUTH_CAPTURED; ?></td>
-			<td width="90%"><?php echo $ipn_data['mc_captured'].' '.$ipn_data['mc_currency']; ?></td>
+			<td width="90%"><?php echo $ipn_data['mc_captured'] . ' ' . $ipn_data['mc_currency']; ?></td>
 		</tr>
 		<tr>
 			<td width="10%"><?php echo TEXT_PAYPAL_TRANSACTION_AUTH_OPEN; ?></td>
-			<td width="90%"><?php echo $ipn_data['mc_authorization']-$ipn_data['mc_captured'].' '.$ipn_data['mc_currency']; ?></td>
+			<td width="90%"><?php echo $ipn_data['mc_authorization'] - $ipn_data['mc_captured'] . ' ' . $ipn_data['mc_currency']; ?></td>
 		</tr>
 		<tr>
 			<td width="10%" nowrap="nowrap"><?php echo TEXT_PAYPAL_TRANSACTION_AMOUNT; ?></td>
-			<td width="90%"><?php echo xtc_draw_input_field('capture_amount',$ipn_data['mc_authorization']-$ipn_data['mc_captured'],'size="10"'); ?></td>
+			<td width="90%"><?php echo xtc_draw_input_field('capture_amount', $ipn_data['mc_authorization'] - $ipn_data['mc_captured'], 'size="10"'); ?></td>
 		</tr>
 		<tr>
 			<td width="10%" valign="top"><?php echo TEXT_PAYPAL_REFUND_NOTE; ?></td>
@@ -68,6 +68,6 @@ echo xtc_draw_hidden_field('ipn_id', (int)$_GET['paypal_ipn_id']);
 		</tr>
 	</table>
 	<input type="submit" class="button" value="<?php echo CAPTURE; ?>">
-	<?php echo '<a class="button" href="'.xtc_href_link(FILENAME_PAYPAL).'">Zur&uuml;ck</a>'; ?>
+	<?php echo '<a class="button" href="' . xtc_href_link(FILENAME_PAYPAL) . '">Zur&uuml;ck</a>'; ?>
 </div>
 </form>

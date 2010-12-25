@@ -9,20 +9,17 @@
    -----------------------------------------------------------------------------------------
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
-function xtc_get_qty($products_id)  {
-
-    if (strpos($products_id,'{'))  {
-      $act_id=substr($products_id,0,strpos($products_id,'{'));
+function xtc_get_qty($products_id) {
+    if (strpos($products_id, '{')) {
+        $act_id = substr($products_id, 0, strpos($products_id, '{'));
     } else {
-      $act_id=$products_id;
+        $act_id = $products_id;
     }
-
     //BOF - Dokuman - 2010-02-26 - set Undefined index
     //return $_SESSION['actual_content'][$act_id]['qty'];
-    if (isset($_SESSION['actual_content'][$act_id]['qty']))
-      return $_SESSION['actual_content'][$act_id]['qty'];
+    if (isset($_SESSION['actual_content'][$act_id]['qty'])) return $_SESSION['actual_content'][$act_id]['qty'];
     return 0;
     //EOF - Dokuman - 2010-02-26 - set Undefined index
+    
 }
 ?>

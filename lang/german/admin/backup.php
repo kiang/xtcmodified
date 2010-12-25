@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
-define('HEADING_TITLE', 'Datenbanksicherung'); 
-
+define('HEADING_TITLE', 'Datenbanksicherung');
 define('TABLE_HEADING_TITLE', 'Titel');
 define('TABLE_HEADING_FILE_DATE', 'Datum');
 define('TABLE_HEADING_FILE_SIZE', 'Gr&ouml;sse');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_HEADING_NEW_BACKUP', 'Neue Sicherung');
 define('TEXT_INFO_HEADING_RESTORE_LOCAL', 'Lokal wiederherstellen');
 define('TEXT_INFO_NEW_BACKUP', 'Bitte den Sicherungsprozess AUF KEINEN FALL unterbrechen. Dieser kann einige Minuten in Anspruch nehmen.');
@@ -42,17 +39,14 @@ define('TEXT_BACKUP_DIRECTORY', 'Sicherungsverzeichnis:');
 define('TEXT_LAST_RESTORATION', 'Letzte Wiederherstellung:');
 define('TEXT_FORGET', '(<u>vergessen</u>)');
 define('TEXT_DELETE_INTRO', 'Sind Sie sicher, dass Sie diese Sicherung l&ouml;schen m&ouml;chten?');
-
 define('ERROR_BACKUP_DIRECTORY_DOES_NOT_EXIST', 'Fehler: Das Sicherungsverzeichnis ist nicht vorhanden.');
 define('ERROR_BACKUP_DIRECTORY_NOT_WRITEABLE', 'Fehler: Das Sicherungsverzeichnis ist schreibgesch&uuml;tzt.');
 define('ERROR_DOWNLOAD_LINK_NOT_ACCEPTABLE', 'Fehler: Download Link nicht akzeptabel.');
-
 define('SUCCESS_LAST_RESTORE_CLEARED', 'Erfolg: Das letzte Wiederherstellungdatum wurde gel&ouml;scht.');
 define('SUCCESS_DATABASE_SAVED', 'Erfolg: Die Datenbank wurde gesichert.');
 define('SUCCESS_DATABASE_RESTORED', 'Erfolg: Die Datenbank wurde wiederhergestellt.');
 define('SUCCESS_BACKUP_DELETED', 'Erfolg: Die Sicherungsdatei wurde gel&ouml;scht.');
 define('SUCCESS_BACKUP_UPLOAD', 'Erfolgreich: Die Backupdatei wurde erfolgreich hochgeladen.');
-
 //TEXT_COMPLETE_INSERTS
 define('TEXT_COMPLETE_INSERTS', "<b>Vollst&auml;ndige 'INSERT's</b><br> - Feldnamen werden in jede INSERT-Zeile eingetragen (vergr&ouml;ssert das Backup)");
 ?>

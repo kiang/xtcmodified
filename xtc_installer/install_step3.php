@@ -1,5 +1,5 @@
 <?php
-  /* --------------------------------------------------------------
+/* --------------------------------------------------------------
    $Id: install_step3.php 899 2005-04-29 02:40:57Z hhgag $   
 
    XT-Commerce - community made shopping
@@ -14,13 +14,12 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
+require ('includes/application.php');
+//BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
+//include('language/'.$_SESSION['language'].'.php');
+include ('language/' . $lang . '.php');
+//EOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
 
-   require('includes/application.php');
-
-   //BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
-  //include('language/'.$_SESSION['language'].'.php');
-  include('language/'.$lang.'.php');
-  //EOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -65,27 +64,23 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
         <tr>
           <td> 
             <?php
-  //BOF - web28 - 2010-03-18 - change install[]  to install_cfg
-  //if (xtc_in_array('database', $_POST['install'])) {
-  if($_POST['install_db'] == 1) {
-  //EOF - web28 - 2010-03-18 - change install[]  to install_cfg
+//BOF - web28 - 2010-03-18 - change install[]  to install_cfg
+//if (xtc_in_array('database', $_POST['install'])) {
+if ($_POST['install_db'] == 1) {
+    //EOF - web28 - 2010-03-18 - change install[]  to install_cfg
     $db = array();
     $db['DB_SERVER'] = trim(stripslashes($_POST['DB_SERVER']));
     $db['DB_SERVER_USERNAME'] = trim(stripslashes($_POST['DB_SERVER_USERNAME']));
     $db['DB_SERVER_PASSWORD'] = trim(stripslashes($_POST['DB_SERVER_PASSWORD']));
     $db['DB_DATABASE'] = trim(stripslashes($_POST['DB_DATABASE']));
-
     xtc_db_connect_installer($db['DB_SERVER'], $db['DB_SERVER_USERNAME'], $db['DB_SERVER_PASSWORD']);
-
     $db_error = false;
     $sql_file = DIR_FS_CATALOG . 'xtc_installer/xtcommerce.sql';
-//    $script_filename = (($SCRIPT_FILENAME) ? $SCRIPT_FILENAME : $HTTP_SERVER_VARS['SCRIPT_FILENAME']);
-//    $script_directory = dirname($script_filename);
-//    $sql_file = $script_directory . '/nextcommerce.sql';
-
-//    @xtc_set_time_limit(0);
+    //    $script_filename = (($SCRIPT_FILENAME) ? $SCRIPT_FILENAME : $HTTP_SERVER_VARS['SCRIPT_FILENAME']);
+    //    $script_directory = dirname($script_filename);
+    //    $sql_file = $script_directory . '/nextcommerce.sql';
+    //    @xtc_set_time_limit(0);
     xtc_db_install($db['DB_DATABASE'], $sql_file);
-
     if ($db_error) {
 ?>
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -104,24 +99,24 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
 <form name="install" action="install_step3.php" method="post">
 
 <?php
-      reset($_POST);
-      while (list($key, $value) = each($_POST)) {
-        if ($key != 'x' && $key != 'y') {
-          if (is_array($value)) {
-            for ($i=0; $i<sizeof($value); $i++) {
-              echo xtc_draw_hidden_field_installer($key . '[]', $value[$i]);
+        reset($_POST);
+        while (list($key, $value) = each($_POST)) {
+            if ($key != 'x' && $key != 'y') {
+                if (is_array($value)) {
+                    for ($i = 0;$i < sizeof($value);$i++) {
+                        echo xtc_draw_hidden_field_installer($key . '[]', $value[$i]);
+                    }
+                } else {
+                    echo xtc_draw_hidden_field_installer($key, $value);
+                }
             }
-          } else {
-            echo xtc_draw_hidden_field_installer($key, $value);
-          }
         }
-      }
 ?>
 
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center"><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_cancel.gif" border="0" alt="Cancel"></a></td>
-    <td align="center"><input type="image" src="buttons/<?php echo $lang;?>/button_retry.gif" border="0" alt="Retry"></td>
+    <td align="center"><a href="index.php"><img src="buttons/<?php echo $lang; ?>/button_cancel.gif" border="0" alt="Cancel"></a></td>
+    <td align="center"><input type="image" src="buttons/<?php echo $lang; ?>/button_retry.gif" border="0" alt="Retry"></td>
   </tr>
 </table>
 
@@ -138,37 +133,38 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
             <form name="install" action="install_step4.php" method="post">
 
 <?php
-      reset($_POST);
-      while (list($key, $value) = each($_POST)) {
-        if ($key != 'x' && $key != 'y') {
-          if (is_array($value)) {
-            for ($i=0; $i<sizeof($value); $i++) {
-              echo xtc_draw_hidden_field_installer($key . '[]', $value[$i]);
+        reset($_POST);
+        while (list($key, $value) = each($_POST)) {
+            if ($key != 'x' && $key != 'y') {
+                if (is_array($value)) {
+                    for ($i = 0;$i < sizeof($value);$i++) {
+                        echo xtc_draw_hidden_field_installer($key . '[]', $value[$i]);
+                    }
+                } else {
+                    echo xtc_draw_hidden_field_installer($key, $value);
+                }
             }
-          } else {
-            echo xtc_draw_hidden_field_installer($key, $value);
-          }
         }
-      }
 ?>
 <br />
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
   <tr>
 <?php
-      //BOF - web28 - 2010-03-18 - change install[]  to install_cfg
-	  //if (xtc_in_array('configure', $_POST['install'])) {
-      if($_POST['install_cfg'] == 1) {
-	  //EOF - web28 - 2010-03-18 - change install[]  to install_cfg
+        //BOF - web28 - 2010-03-18 - change install[]  to install_cfg
+        //if (xtc_in_array('configure', $_POST['install'])) {
+        if ($_POST['install_cfg'] == 1) {
+            //EOF - web28 - 2010-03-18 - change install[]  to install_cfg
+            
 ?>
 
-    <td align="right"><input type="image" src="buttons/<?php echo $lang;?>/button_continue.gif"></td>
+    <td align="right"><input type="image" src="buttons/<?php echo $lang; ?>/button_continue.gif"></td>
 <?php
-      } else {
+        } else {
 ?>
 
-    <td align="right"><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_continue.gif"></a></td>
+    <td align="right"><a href="index.php"><img src="buttons/<?php echo $lang; ?>/button_continue.gif"></a></td>
 <?php
-      }
+        }
 ?>
   </tr>
 </table>
@@ -177,7 +173,7 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
 
 <?php
     }
-  }
+}
 ?>
                   
                   </td>

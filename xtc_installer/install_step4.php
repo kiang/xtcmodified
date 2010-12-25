@@ -1,5 +1,5 @@
 <?php
-  /* --------------------------------------------------------------
+/* --------------------------------------------------------------
    $Id: install_step4.php 1576 2010-12-13 14:16:45Z web28 $   
 
    xtcModified - community made shopping
@@ -15,13 +15,11 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-   require('includes/application.php');
-
-   //BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
-  //include('language/'.$_SESSION['language'].'.php');
-  include('language/'.$lang.'.php');
-  //EOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
-  
+require ('includes/application.php');
+//BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
+//include('language/'.$_SESSION['language'].'.php');
+include ('language/' . $lang . '.php');
+//EOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -78,7 +76,7 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
             </table>
             <div style="border:1px solid #ccc; background:#fff; padding:10px;">
             <?php
-  if ( ( (file_exists(DIR_FS_CATALOG . 'includes/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'includes/configure.php')) ) || ( (file_exists(DIR_FS_CATALOG . 'admin/includes/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'admin/includes/configure.php')) ) || ( (file_exists(DIR_FS_CATALOG . 'admin/includes/local/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'admin/includes/local/configure.php')) ) || ( (file_exists(DIR_FS_CATALOG . 'includes/local/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'includes/local/configure.php')) )) {
+if (((file_exists(DIR_FS_CATALOG . 'includes/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'includes/configure.php'))) || ((file_exists(DIR_FS_CATALOG . 'admin/includes/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'admin/includes/configure.php'))) || ((file_exists(DIR_FS_CATALOG . 'admin/includes/local/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'admin/includes/local/configure.php'))) || ((file_exists(DIR_FS_CATALOG . 'includes/local/configure.php')) && (!is_writeable(DIR_FS_CATALOG . 'includes/local/configure.php')))) {
 ?>
             <p><img src="images/icons/error.gif" width="16" height="16"> 
               <strong><font color="#FF0000" size="2"><?php echo TITLE_STEP4_ERROR; ?></strong></p>
@@ -110,30 +108,30 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
               <?php
     reset($_POST);
     while (list($key, $value) = each($_POST)) {
-      if ($key != 'x' && $key != 'y') {
-        if (is_array($value)) {
-          for ($i=0; $i<sizeof($value); $i++) {
-            echo xtc_draw_hidden_field_installer($key . '[]', $value[$i]);
-          }
-        } else {
-          echo xtc_draw_hidden_field_installer($key, $value);
+        if ($key != 'x' && $key != 'y') {
+            if (is_array($value)) {
+                for ($i = 0;$i < sizeof($value);$i++) {
+                    echo xtc_draw_hidden_field_installer($key . '[]', $value[$i]);
+                }
+            } else {
+                echo xtc_draw_hidden_field_installer($key, $value);
+            }
         }
-      }
     }
 ?>
               
               <table border="0" width="100%" cellspacing="0" cellpadding="0">
                 <tr> 
-                  <td align="center"><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_cancel.gif" border="0" alt="Cancel"></a></td>
+                  <td align="center"><a href="index.php"><img src="buttons/<?php echo $lang; ?>/button_cancel.gif" border="0" alt="Cancel"></a></td>
                   <td align="center">
-                    <input type="image" src="buttons/<?php echo $lang;?>/button_retry.gif" border="0" alt="Retry">
+                    <input type="image" src="buttons/<?php echo $lang; ?>/button_retry.gif" border="0" alt="Retry">
                     </td>
                 </tr>
               </table>
             </form>
             
             <?php
-  } else {
+} else {
 ?>
             
             <form name="install" action="install_step5.php" method="post">
@@ -148,9 +146,11 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
                 <tr> 
                   <td style="border-top: 1px solid; border-color: #CFCFCF"><b>
                     <?php echo TITLE_CHECK_CONFIGURATION; ?></b>
-					<?php //BOF - web28 - 2010.02.09 -  NEW INFO TEXT ?>
+					<?php //BOF - web28 - 2010.02.09 -  NEW INFO TEXT
+     ?>
 					<div style="color: #FC0000; padding:0px 0px 5px 0px"><b><?php echo TITLE_WEBSERVER_INFO; ?></b></div>
-					<?php //EOF - web28 - 2010.02.09 -  NEW INFO TEXT ?>
+					<?php //EOF - web28 - 2010.02.09 -  NEW INFO TEXT
+     ?>
 					</td>
                   <td style="border-top: 1px solid; border-color: #CFCFCF">&nbsp;</td>
                 </tr>
@@ -164,23 +164,30 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
               <p><?php echo xtc_draw_checkbox_field_installer('ENABLE_SSL', 'true'); ?> 
                 <b><?php echo TEXT_SSL; ?></b><br />
                <?php echo TEXT_SSL_LONG; ?></p>
-			   <p><?php echo xtc_draw_checkbox_field_installer('USE_SSL_PROXY', 'true'). TEXT_SSL_PROXY_LONG; ?></p>
-			   <?php //BOF - GTB - 2010-08-31 -  Layout correction ?>
+			   <p><?php echo xtc_draw_checkbox_field_installer('USE_SSL_PROXY', 'true') . TEXT_SSL_PROXY_LONG; ?></p>
+			   <?php //BOF - GTB - 2010-08-31 -  Layout correction
+     ?>
 			   <div style="border: #a3a3a3 1px solid; padding: 3px; background-color: #f4f4f4;"><?php echo TEXT_SSL_PROXY_EXP; ?></div>			   
 			   <!-- <p span style="border: #a3a3a3 1px solid; padding: 3px; background-color: #f4f4f4;"><?php echo TEXT_SSL_PROXY_EXP; ?></p> -->
-			   <?php //EOF - GTB - 2010-08-31 -  Layout correction ?>
+			   <?php //EOF - GTB - 2010-08-31 -  Layout correction
+     ?>
 			   
-			   <!--p><b><?php //echo TEXT_WS_CATALOG; ?></b><br />
-                <?php //echo xtc_draw_input_field_installer('DIR_WS_CATALOG'); ?><br />
-                <?php //echo TEXT_WS_CATALOG_LONG; ?></p>
+			   <!--p><b><?php //echo TEXT_WS_CATALOG;
+     ?></b><br />
+                <?php //echo xtc_draw_input_field_installer('DIR_WS_CATALOG');
+     ?><br />
+                <?php //echo TEXT_WS_CATALOG_LONG;
+     ?></p>
 			   <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr> 
                   <td style="border-top: 1px solid; border-color: #CFCFCF"><b>
-                    <?php //echo TITLE_CHECK_FILES; ?></b></td>
+                    <?php //echo TITLE_CHECK_FILES;
+     ?></b></td>
                   <td style="border-top: 1px solid; border-color: #CFCFCF">&nbsp;</td>
                 </tr>
               </table-->
-			   <?php //BOF - web28 - 2010.02.20 -  NEW ROOT INFO ?>
+			   <?php //BOF - web28 - 2010.02.20 -  NEW ROOT INFO
+     ?>
                 <p><b><?php echo TEXT_WS_ROOT; ?></b></p>			    
                 <span style="border: #a3a3a3 1px solid; padding: 3px; background-color: #f4f4f4;"><?php echo DIR_FS_DOCUMENT_ROOT; ?></span>
                 <p><?php echo TEXT_WS_ROOT_INFO; ?></p>
@@ -188,11 +195,15 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
                 <?php echo xtc_draw_hidden_field_installer('DIR_WS_CATALOG', $_POST['DIR_WS_CATALOG']); ?>				
                 <span style="border: #a3a3a3 1px solid; padding: 3px; background-color: #f4f4f4;"><?php echo $_POST['DIR_WS_CATALOG']; ?></span>
                 <p><?php echo TEXT_WS_ROOT_INFO; ?></p>
-			  <?php //EOF - web28 - 2010.02.20 -  NEW ROOT INFO ?>
+			  <?php //EOF - web28 - 2010.02.20 -  NEW ROOT INFO
+     ?>
 				 
-              <!--p><b><?php //echo TEXT_WS_XTC; ?></b><br />
-                <?php //echo xtc_draw_input_field_installer('DIR_FS_CATALOG'); ?><br />
-                <?php //echo TEXT_WS_XTC_LONG; ?></p-->
+              <!--p><b><?php //echo TEXT_WS_XTC;
+     ?></b><br />
+                <?php //echo xtc_draw_input_field_installer('DIR_FS_CATALOG');
+     ?><br />
+                <?php //echo TEXT_WS_XTC_LONG;
+     ?></p-->
 				
               <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr> 
@@ -204,26 +215,37 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
 			  
 	<?php
     echo xtc_draw_hidden_field_installer('DB_SERVER', $_POST['DB_SERVER']);
-	echo xtc_draw_hidden_field_installer('DB_SERVER_USERNAME', $_POST['DB_SERVER_USERNAME']);
-	echo xtc_draw_hidden_field_installer('DB_SERVER_PASSWORD', $_POST['DB_SERVER_PASSWORD']);
-	echo xtc_draw_hidden_field_installer('DB_DATABASE', $_POST['DB_DATABASE']);
-	
-	echo xtc_draw_hidden_field_installer('install_db', $_POST['install_db']);
-	echo xtc_draw_hidden_field_installer('install_cfg', $_POST['install_cfg']);
-    ?>
+    echo xtc_draw_hidden_field_installer('DB_SERVER_USERNAME', $_POST['DB_SERVER_USERNAME']);
+    echo xtc_draw_hidden_field_installer('DB_SERVER_PASSWORD', $_POST['DB_SERVER_PASSWORD']);
+    echo xtc_draw_hidden_field_installer('DB_DATABASE', $_POST['DB_DATABASE']);
+    echo xtc_draw_hidden_field_installer('install_db', $_POST['install_db']);
+    echo xtc_draw_hidden_field_installer('install_cfg', $_POST['install_cfg']);
+?>
 			  
-              <!--p><b><?php //echo TEXT_DATABASE_SERVER; ?></b><br />
-                <?php //echo xtc_draw_input_field_installer('DB_SERVER'); ?><br />
-                <?php //echo TEXT_DATABASE_SERVER_LONG; ?></p>
-              <p><b><?php //echo TEXT_USERNAME; ?></b><br />
-                <?php //echo xtc_draw_input_field_installer('DB_SERVER_USERNAME'); ?><br />
-                <?php //echo TEXT_USERNAME_LONG; ?></p>
-              <p><b><?php //echo TEXT_PASSWORD; ?></b><br />
-                <?php //echo xtc_draw_input_field_installer('DB_SERVER_PASSWORD'); ?><br />
-                <?php //echo TEXT_PASSWORD_LONG; ?></p>
-              <p><b><?php //echo TEXT_DATABASE; ?></b><br />
-                <?php //echo xtc_draw_input_field_installer('DB_DATABASE'); ?><br />
-                <?php //echo TEXT_DATABASE_LONG; ?></p-->
+              <!--p><b><?php //echo TEXT_DATABASE_SERVER;
+     ?></b><br />
+                <?php //echo xtc_draw_input_field_installer('DB_SERVER');
+     ?><br />
+                <?php //echo TEXT_DATABASE_SERVER_LONG;
+     ?></p>
+              <p><b><?php //echo TEXT_USERNAME;
+     ?></b><br />
+                <?php //echo xtc_draw_input_field_installer('DB_SERVER_USERNAME');
+     ?><br />
+                <?php //echo TEXT_USERNAME_LONG;
+     ?></p>
+              <p><b><?php //echo TEXT_PASSWORD;
+     ?></b><br />
+                <?php //echo xtc_draw_input_field_installer('DB_SERVER_PASSWORD');
+     ?><br />
+                <?php //echo TEXT_PASSWORD_LONG;
+     ?></p>
+              <p><b><?php //echo TEXT_DATABASE;
+     ?></b><br />
+                <?php //echo xtc_draw_input_field_installer('DB_DATABASE');
+     ?><br />
+                <?php //echo TEXT_DATABASE_LONG;
+     ?></p-->
 				
               <p><?php echo xtc_draw_checkbox_field_installer('USE_PCONNECT', 'true'); ?> 
                 <b><?php echo TEXT_PERSIST; ?></b><br />
@@ -238,14 +260,14 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
 <br />
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="right"><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_cancel.gif" border="0" alt="Cancel" /></a> <!--input type="hidden" name="install[]" value="configure"--> <input type="image" src="buttons/<?php echo $lang;?>/button_continue.gif"></td>
+    <td align="right"><a href="index.php"><img src="buttons/<?php echo $lang; ?>/button_cancel.gif" border="0" alt="Cancel" /></a> <!--input type="hidden" name="install[]" value="configure"--> <input type="image" src="buttons/<?php echo $lang; ?>/button_continue.gif"></td>
   </tr>
 </table>
 <br />
 </form>
 
 <?php
-  }
+}
 ?>
                   
                   </td>

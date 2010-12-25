@@ -1,5 +1,5 @@
 <?php
-   /* -----------------------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------------------
    $Id: validproducts.php 1313 2005-10-18 15:49:15Z mz $
 
    xtcModified - community made shopping
@@ -26,11 +26,7 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
-
-require('includes/application_top.php');
-
-
+require ('includes/application_top.php');
 ?>
 <html>
 <head>
@@ -45,35 +41,32 @@ require('includes/application_top.php');
 </td>
 </tr>
 <?php
-    echo "<tr><th class=\"dataTableHeadingContent\">". TEXT_VALID_PRODUCTS_ID . "</th>
+echo "<tr><th class=\"dataTableHeadingContent\">" . TEXT_VALID_PRODUCTS_ID . "</th>
 			  <th class=\"dataTableHeadingContent\">" . TEXT_VALID_PRODUCTS_NAME . "</th>
 			  <th class=\"dataTableHeadingContent\">" . TEXT_VALID_PRODUCTS_MODEL . "</th>
 		  </tr>";
-   
-  //BOF JUNG GESTALTEN.com - BUGFIX: #0000255 ungültige SQL-Abfrage (pd undefiniert)
-  //$result = xtc_db_query("SELECT * FROM ".TABLE_PRODUCTS." p, ".TABLE_PRODUCTS_DESCRIPTION." WHERE p.products_id = pd.products_id and pd.language_id = '" . $_SESSION['languages_id'] . "' ORDER BY pd.products_name"); 
-    $result = xtc_db_query("SELECT * FROM ".TABLE_PRODUCTS." p, 
-										  ".TABLE_PRODUCTS_DESCRIPTION." pd 
+//BOF JUNG GESTALTEN.com - BUGFIX: #0000255 ungültige SQL-Abfrage (pd undefiniert)
+//$result = xtc_db_query("SELECT * FROM ".TABLE_PRODUCTS." p, ".TABLE_PRODUCTS_DESCRIPTION." WHERE p.products_id = pd.products_id and pd.language_id = '" . $_SESSION['languages_id'] . "' ORDER BY pd.products_name");
+$result = xtc_db_query("SELECT * FROM " . TABLE_PRODUCTS . " p, 
+										  " . TABLE_PRODUCTS_DESCRIPTION . " pd 
 									WHERE p.products_id = pd.products_id 
 									  and pd.language_id = '" . $_SESSION['languages_id'] . "' 
 								 ORDER BY pd.products_name");
-  //EOF JUNG GESTALTEN.com - BUGFIX: #0000255 ungültige SQL-Abfrage (pd undefiniert)
-   
-    if ($row = xtc_db_fetch_array($result)) {
-        do {
-            echo "<tr><td class=\"dataTableHeadingContent\">".$row["products_id"]."</td>\n";
-            echo "<td class=\"dataTableHeadingContent\">".$row["products_name"]."</td>\n";
-            echo "<td class=\"dataTableHeadingContent\">".$row["products_model"]."</td>\n";
-            echo "</tr>\n";
-        }
-        while($row = xtc_db_fetch_array($result));
-    }
-    echo "</table>\n";
+//EOF JUNG GESTALTEN.com - BUGFIX: #0000255 ungültige SQL-Abfrage (pd undefiniert)
+if ($row = xtc_db_fetch_array($result)) {
+    do {
+        echo "<tr><td class=\"dataTableHeadingContent\">" . $row["products_id"] . "</td>\n";
+        echo "<td class=\"dataTableHeadingContent\">" . $row["products_name"] . "</td>\n";
+        echo "<td class=\"dataTableHeadingContent\">" . $row["products_model"] . "</td>\n";
+        echo "</tr>\n";
+    } while ($row = xtc_db_fetch_array($result));
+}
+echo "</table>\n";
 ?>
 <br />
 <table width="550" border="0" cellspacing="1">
 <tr>
-<td align=middle><input type="button" value="<?php echo BUTTON_CLOSE_WINDOW;?>" onclick="window.close()"></td>
+<td align=middle><input type="button" value="<?php echo BUTTON_CLOSE_WINDOW; ?>" onclick="window.close()"></td>
 </tr></table>
 </body>
 </html>

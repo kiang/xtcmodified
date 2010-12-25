@@ -16,24 +16,26 @@
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
 function xtc_get_top_level_domain($url) {
-	if (strpos($url, '://')) {
-		$url = parse_url($url);
-		$url = $url['host'];
-	}
-	$domain_array = explode('.', $url);
-	$domain_size = sizeof($domain_array);
-	if ($domain_size > 1) {
-		if (is_numeric($domain_array[$domain_size -2]) && is_numeric($domain_array[$domain_size -1])) {
-			return false;
-    //BOF - DokuMan - 2010-09-30 - support for TLD like ".co.uk"
-    } elseif ($domain_size > 3) {
-			return $domain_array[$domain_size - 3] . '.' . $domain_array[$domain_size - 2] . '.' . $domain_array[$domain_size - 1];
-		} else {
-			return $domain_array[$domain_size - 2] . '.' . $domain_array[$domain_size - 1];
-    //EOF - DokuMan - 2010-09-30 - support for TLD like ".co.uk"
-		}
-	} else {
-		return false;
-	}
+    if (strpos($url, '://')) {
+        $url = parse_url($url);
+        $url = $url['host'];
+    }
+    $domain_array = explode('.', $url);
+    $domain_size = sizeof($domain_array);
+    if ($domain_size > 1) {
+        if (is_numeric($domain_array[$domain_size - 2]) && is_numeric($domain_array[$domain_size - 1])) {
+            return false;
+            //BOF - DokuMan - 2010-09-30 - support for TLD like ".co.uk"
+            
+        } elseif ($domain_size > 3) {
+            return $domain_array[$domain_size - 3] . '.' . $domain_array[$domain_size - 2] . '.' . $domain_array[$domain_size - 1];
+        } else {
+            return $domain_array[$domain_size - 2] . '.' . $domain_array[$domain_size - 1];
+            //EOF - DokuMan - 2010-09-30 - support for TLD like ".co.uk"
+            
+        }
+    } else {
+        return false;
+    }
 }
 ?>

@@ -14,11 +14,9 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-   require_once(DIR_FS_INC . 'xtc_draw_selection_field.inc.php');
-   
+require_once (DIR_FS_INC . 'xtc_draw_selection_field.inc.php');
 // Output a form checkbox field
-  function xtc_draw_checkbox_field($name, $value = '', $checked = false, $parameters = '') {
+function xtc_draw_checkbox_field($name, $value = '', $checked = false, $parameters = '') {
     return xtc_draw_selection_field($name, 'checkbox', $value, $checked, $parameters);
-  }
+}
 ?>

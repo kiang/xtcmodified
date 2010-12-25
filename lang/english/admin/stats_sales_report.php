@@ -14,12 +14,8 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-  
-
 define('REPORT_DATE_FORMAT', 'm. d. Y');
-
 define('HEADING_TITLE', 'Sales Report');
-
 define('REPORT_TYPE_YEARLY', 'Yearly');
 define('REPORT_TYPE_MONTHLY', 'Monthly');
 define('REPORT_TYPE_WEEKLY', 'Weekly');
@@ -35,17 +31,14 @@ define('REPORT_SEND', 'send');
 define('EXP_NORMAL', 'normal');
 define('EXP_HTML', 'HTML only');
 define('EXP_CSV', 'CSV');
-
 define('TABLE_HEADING_DATE', 'Date');
 define('TABLE_HEADING_ORDERS', '# Orders');
 define('TABLE_HEADING_ITEMS', '# Products');
 define('TABLE_HEADING_REVENUE', 'Revenue');
 define('TABLE_HEADING_SHIPPING', 'Shipping');
-
 define('DET_HEAD_ONLY', 'no details');
 define('DET_DETAIL', 'show details');
 define('DET_DETAIL_ONLY', 'details with amount');
-
 define('SORT_VAL0', 'standard');
 define('SORT_VAL1', 'description');
 define('SORT_VAL2', 'description desc');
@@ -53,10 +46,8 @@ define('SORT_VAL3', '# Products');
 define('SORT_VAL4', '# Products desc');
 define('SORT_VAL5', 'Revenue');
 define('SORT_VAL6', 'Revenue desc');
-
 define('REPORT_STATUS_FILTER', 'Status');
-define('REPORT_PAYMENT_FILTER','Paymenttype');
-
+define('REPORT_PAYMENT_FILTER', 'Paymenttype');
 define('SR_SEPARATOR1', ';');
 define('SR_SEPARATOR2', ';');
 define('SR_NEWLINE', '<br />');

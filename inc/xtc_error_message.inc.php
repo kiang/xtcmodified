@@ -14,12 +14,10 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_error_message($error_message, $close_application = false, $close_application_error = '') {
+function xtc_error_message($error_message, $close_application = false, $close_application_error = '') {
     echo $error_message;
-
     if ($close_application == true) {
-      die($close_application_error);
+        die($close_application_error);
     }
-  }
- ?>
+}
+?>

@@ -14,10 +14,9 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-  require_once(DIR_FS_INC . 'xtc_draw_selection_field.inc.php'); 
-   
-  function xtc_draw_radio_field($name, $value = '', $checked = false, $parameters = '') {
-  	if (is_array($name)) return xtc_draw_selection_fieldNote($name, 'radio', $value, $checked, $parameters); 
+require_once (DIR_FS_INC . 'xtc_draw_selection_field.inc.php');
+function xtc_draw_radio_field($name, $value = '', $checked = false, $parameters = '') {
+    if (is_array($name)) return xtc_draw_selection_fieldNote($name, 'radio', $value, $checked, $parameters);
     return xtc_draw_selection_field($name, 'radio', $value, $checked, $parameters);
-  }
- ?>
+}
+?>

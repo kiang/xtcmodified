@@ -18,12 +18,11 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_TITLE', 'Secure Payment through Moneybookers');
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_DESCRIPTION', 'Moneybookers<br /><br /><img src="images/icon_arrow_right.gif"> <b><a href="http://www.xt-commerce.com/index.php?option=com_content&task=view&id=76&lang=en" target="_blank">Help / Explanation</a></b>');
 define('MODULE_PAYMENT_AMONEYBOOKERS_NOCURRENCY_ERROR', 'There\'s no Moneybookers accepted currency installed!');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ERRORTEXT1', 'payment_error=');
-define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO','');
+define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO', '');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ERRORTEXT2', '&error=There was an error during your payment at Moneybookers!');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ORDER_TEXT', 'Date of the order: ');
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_ERROR', 'Payment error!');
@@ -39,22 +38,16 @@ define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO_1', '<br /><br />Pay instantly by
 //define('MB_TEXT_MBTID', 'TR ID:');
 //define('MB_TEXT_MBERRTXT', 'Status:');
 //BOF - DokuMan - 2010-09-08 - already defined in english.php
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_PROCESSED_STATUS_ID_TITLE', 'Order status - Processed');
 define('MODULE_PAYMENT_AMONEYBOOKERS_PROCESSED_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_PENDING_STATUS_ID_TITLE', 'Order status - Sheduled');
 define('MODULE_PAYMENT_AMONEYBOOKERS_PENDING_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_CANCELED_STATUS_ID_TITLE', 'Order status - Canceled');
 define('MODULE_PAYMENT_AMONEYBOOKERS_CANCELED_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS__TMP_STATUS_ID_TITLE', 'Order status - Temp');
 define('MODULE_PAYMENT_AMONEYBOOKERS__TMP_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_ICONS_TITLE', 'Icons');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ICONS_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_STATUS_TITLE', 'Enable Moneybookers');
 define('MODULE_PAYMENT_AMONEYBOOKERS_STATUS_DESC', 'Do you want to accept payments through Moneybookers?<br /><br /><img src="images/icon_arrow_right.gif"> <b><a href="http://www.xt-commerce.com/index.php?option=com_content&task=view&id=76&lang=en" target="_blank">Help / Explanation</a></b>');
 define('MODULE_PAYMENT_AMONEYBOOKERS_EMAILID_TITLE', 'Email Address');
@@ -71,11 +64,11 @@ define('MODULE_PAYMENT_AMONEYBOOKERS_LANGUAGE_TITLE', 'Transaction Language');
 define('MODULE_PAYMENT_AMONEYBOOKERS_LANGUAGE_DESC', 'If the user\'s language is not available at Moneybookers this language will be used for the payment.');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ZONE_TITLE', 'Payment Zone');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ZONE_DESC', 'If a zone is selected, only enable this payment method for that zone.');
-define('MODULE_PAYMENT_AMONEYBOOKERS_ALLOWED_TITLE' , 'Allowed Zones');
-define('MODULE_PAYMENT_AMONEYBOOKERS_ALLOWED_DESC' , 'Please enter the zones <b>separately</b> which should be allowed to use this modul (e. g. AT,DE (leave empty if you want to allow all zones))');
-
+define('MODULE_PAYMENT_AMONEYBOOKERS_ALLOWED_TITLE', 'Allowed Zones');
+define('MODULE_PAYMENT_AMONEYBOOKERS_ALLOWED_DESC', 'Please enter the zones <b>separately</b> which should be allowed to use this modul (e. g. AT,DE (leave empty if you want to allow all zones))');
 // BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 define('MODULE_PAYMENT_AMONEYBOOKERS_NEG_SHIPPING_TITLE', 'Exclusion in case of shipping');
 define('MODULE_PAYMENT_AMONEYBOOKERS_NEG_SHIPPING_DESC', 'deactivate this payment if one of these shippingtypes are selected (list separated by comma)');
 // EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
+
 ?>

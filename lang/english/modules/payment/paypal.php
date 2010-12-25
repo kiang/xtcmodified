@@ -12,19 +12,19 @@
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
 define('MODULE_PAYMENT_PAYPAL_TEXT_TITLE', 'PayPal Checkout');
-define('MODULE_PAYMENT_PAYPAL_TEXT_INFO','<img src="https://www.paypal.com/de_DE/DE/i/logo/lockbox_150x47.gif" />');
+define('MODULE_PAYMENT_PAYPAL_TEXT_INFO', '<img src="https://www.paypal.com/de_DE/DE/i/logo/lockbox_150x47.gif" />');
 define('MODULE_PAYMENT_PAYPAL_TEXT_DESCRIPTION', 'After "confirm" your will be routet to PayPal to pay your order.<br />Back in shop you will get your order-mail.');
-define('MODULE_PAYMENT_PAYPAL_ALLOWED_TITLE' , 'Allowed zones');
-define('MODULE_PAYMENT_PAYPAL_ALLOWED_DESC' , 'Please enter the zones <b>separately</b> which should be allowed to use this module (e.g. AT,DE (leave empty if you want to allow all zones))');
+define('MODULE_PAYMENT_PAYPAL_ALLOWED_TITLE', 'Allowed zones');
+define('MODULE_PAYMENT_PAYPAL_ALLOWED_DESC', 'Please enter the zones <b>separately</b> which should be allowed to use this module (e.g. AT,DE (leave empty if you want to allow all zones))');
 define('MODULE_PAYMENT_PAYPAL_STATUS_TITLE', 'Enable PayPal module');
 define('MODULE_PAYMENT_PAYPAL_STATUS_DESC', 'Do you want to accept PayPal payments?');
-define('MODULE_PAYMENT_PAYPAL_SORT_ORDER_TITLE' , 'Sort order');
-define('MODULE_PAYMENT_PAYPAL_SORT_ORDER_DESC' , 'Sort order of the view. Lowest numeral will be displayed first');
-define('MODULE_PAYMENT_PAYPAL_ZONE_TITLE' , 'Payment zone');
-define('MODULE_PAYMENT_PAYPAL_ZONE_DESC' , 'If a zone is choosen, the payment method will be valid for this zone only.');
-
+define('MODULE_PAYMENT_PAYPAL_SORT_ORDER_TITLE', 'Sort order');
+define('MODULE_PAYMENT_PAYPAL_SORT_ORDER_DESC', 'Sort order of the view. Lowest numeral will be displayed first');
+define('MODULE_PAYMENT_PAYPAL_ZONE_TITLE', 'Payment zone');
+define('MODULE_PAYMENT_PAYPAL_ZONE_DESC', 'If a zone is choosen, the payment method will be valid for this zone only.');
 // BOF - Hendrik - 2010-08-11 - exlusion config for shipping modules
 define('MODULE_PAYMENT_PAYPAL_NEG_SHIPPING_TITLE', 'Exclusion in case of shipping');
 define('MODULE_PAYMENT_PAYPAL_NEG_SHIPPING_DESC', 'deactivate this payment if one of these shippingtypes are selected (list separated by comma)');
 // EOF - Hendrik - 2010-08-11 - exlusion config for shipping modules
+
 ?>

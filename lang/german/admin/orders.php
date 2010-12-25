@@ -23,7 +23,6 @@ define('TEXT_BANK_NAME', 'Bank:');
 define('TEXT_BANK_FAX', 'Einzugserm&auml;chtigung wird per Fax best&auml;tigt');
 define('TEXT_BANK_STATUS', 'Pr&uuml;fstatus:');
 define('TEXT_BANK_PRZ', 'Pr&uuml;fverfahren:');
-
 define('TEXT_BANK_ERROR_1', 'Kontonummer stimmt nicht mit BLZ &uuml;berein!');
 define('TEXT_BANK_ERROR_2', 'F&uuml;r diese Kontonummer ist kein Pr&uuml;fverfahren definiert!');
 define('TEXT_BANK_ERROR_3', 'Kontonummer nicht pr&uuml;fbar! Pr&uuml;fverfahren nicht implementiert');
@@ -32,11 +31,9 @@ define('TEXT_BANK_ERROR_5', 'Bankleitzahl nicht gefunden!');
 define('TEXT_BANK_ERROR_8', 'Keine Bankleitzahl angegeben!');
 define('TEXT_BANK_ERROR_9', 'Keine Kontonummer angegeben!');
 define('TEXT_BANK_ERRORCODE', 'Fehlercode:');
-
 define('HEADING_TITLE', 'Bestellungen');
 define('HEADING_TITLE_SEARCH', 'Bestell-Nr.:');
 define('HEADING_TITLE_STATUS', 'Status:');
-
 define('TABLE_HEADING_COMMENTS', 'Kommentar');
 define('TABLE_HEADING_CUSTOMERS', 'Kunden');
 define('TABLE_HEADING_ORDER_TOTAL', 'Gesamtwert');
@@ -53,12 +50,10 @@ define('TABLE_HEADING_PRICE_EXCLUDING_TAX', 'Preis (exkl.)');
 define('TABLE_HEADING_PRICE_INCLUDING_TAX', 'Preis (inkl.)');
 define('TABLE_HEADING_TOTAL_EXCLUDING_TAX', 'Total (exkl.)');
 define('TABLE_HEADING_TOTAL_INCLUDING_TAX', 'Total');
-define('TABLE_HEADING_AFTERBUY','Afterbuy');
-
+define('TABLE_HEADING_AFTERBUY', 'Afterbuy');
 define('TABLE_HEADING_STATUS', 'Status');
 define('TABLE_HEADING_CUSTOMER_NOTIFIED', 'Kunde benachrichtigt');
 define('TABLE_HEADING_DATE_ADDED', 'hinzugef&uuml;gt am:');
-
 define('ENTRY_CUSTOMER', 'Kunde:');
 define('ENTRY_SOLD_TO', 'Rechnungsadresse:');
 define('ENTRY_STREET_ADDRESS', 'Strasse:');
@@ -89,17 +84,14 @@ define('ENTRY_DATE_LAST_UPDATED', 'zuletzt aktualisiert am:');
 define('ENTRY_NOTIFY_CUSTOMER', 'Kunde benachrichtigen:');
 define('ENTRY_NOTIFY_COMMENTS', 'Kommentare mitsenden:');
 define('ENTRY_PRINTABLE', 'Rechnung Drucken');
-
 define('TEXT_INFO_HEADING_DELETE_ORDER', 'Bestellung l&ouml;schen');
 define('TEXT_INFO_DELETE_INTRO', 'Sind Sie sicher, das Sie diese Bestellung l&ouml;schen m&ouml;chten?');
 define('TEXT_INFO_RESTOCK_PRODUCT_QUANTITY', 'Artikelanzahl dem Lager gutschreiben');
 define('TEXT_DATE_ORDER_CREATED', 'erstellt am:');
 define('TEXT_DATE_ORDER_LAST_MODIFIED', 'letzte &Auml;nderung:');
 define('TEXT_INFO_PAYMENT_METHOD', 'Zahlungsweise:');
-
 define('TEXT_ALL_ORDERS', 'Alle Bestellungen');
 define('TEXT_NO_ORDER_HISTORY', 'Keine Bestellhistorie verf&uuml;gbar');
-
 define('EMAIL_SEPARATOR', '------------------------------------------------------');
 define('EMAIL_TEXT_SUBJECT', 'Status&auml;nderung Ihrer Bestellung');
 define('EMAIL_TEXT_ORDER_NUMBER', 'Bestell-Nr.:');
@@ -107,26 +99,21 @@ define('EMAIL_TEXT_INVOICE_URL', 'Ihre Bestellung k&ouml;nnen Sie unter folgende
 define('EMAIL_TEXT_DATE_ORDERED', 'Bestelldatum:');
 define('EMAIL_TEXT_STATUS_UPDATE', 'Der Status Ihrer Bestellung wurde aktualisiert.' . "\n\n" . 'Neuer Status: %s' . "\n\n" . 'Bei Fragen zu Ihrer Bestellung antworten Sie bitte auf diese E-Mail.' . "\n\n" . 'Mit freundlichen Gr&uuml;ssen' . "\n");
 define('EMAIL_TEXT_COMMENTS_UPDATE', 'Anmerkungen und Kommentare zu Ihrer Bestellung:' . "\n\n%s\n\n");
-
 define('ERROR_ORDER_DOES_NOT_EXIST', 'Fehler: Die Bestellung existiert nicht!.');
 define('SUCCESS_ORDER_UPDATED', 'Erfolg: Die Bestellung wurde erfolgreich aktualisiert.');
 define('WARNING_ORDER_NOT_UPDATED', 'Hinweis: Es wurde nichts ge&auml;ndert. Daher wurde diese Bestellung nicht aktualisiert.');
-
-define('TABLE_HEADING_DISCOUNT','Rabatt');
-define('ENTRY_CUSTOMERS_GROUP','Kundengruppe:');
-define('ENTRY_CUSTOMERS_VAT_ID','USt-IdNr.:');
-define('TEXT_VALIDATING','Nicht best&auml;tigt');
-
+define('TABLE_HEADING_DISCOUNT', 'Rabatt');
+define('ENTRY_CUSTOMERS_GROUP', 'Kundengruppe:');
+define('ENTRY_CUSTOMERS_VAT_ID', 'USt-IdNr.:');
+define('TEXT_VALIDATING', 'Nicht best&auml;tigt');
 // BOF - Tomcraft - 2010-04-22 - Added a missing language definition
 define('TEXT_PRODUCTS', 'Artikel');
 // EOF - Tomcraft - 2010-04-22 - Added a missing language definition
-
 //BOF - web28 - 2010-03-20 - Send Order by Admin
-define('COMMENT_SEND_ORDER_BY_ADMIN' , 'Auftragsbestätigung gesendet'); //ACHTUNG hier  keine HTML-Entities verwenden
+define('COMMENT_SEND_ORDER_BY_ADMIN', 'Auftragsbestätigung gesendet'); //ACHTUNG hier  keine HTML-Entities verwenden
 define('BUTTON_ORDER_CONFIRMATION', 'Auftragsbest&auml;tigung senden');
 define('SUCCESS_ORDER_SEND', 'Auftragsbest&auml;tigung erfolgreich gesendet');
 //EOF - web28 - 2010-03-20 - Send Order by Admin
-
 // web28 2010-12-07 add new defines
 define('ENTRY_CUSTOMERS_ADDRESS', 'Kundenadresse:');
 define('TEXT_ORDER', 'Bestellung:');

@@ -14,7 +14,6 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 //! Get data from the cache or the database.
 //  get_db_cache checks the cache for cached SQL data in $filename
 //  or retreives it from the database is the cache is not present.
@@ -22,22 +21,20 @@
 //  $filename -  The name of the cache file.
 //  $var      -  The variable to be filled.
 //  $refresh  -  Optional.  If true, do not read from the cache.
-  function get_db_cache($sql, &$var, $filename, $refresh = false){
+function get_db_cache($sql, &$var, $filename, $refresh = false) {
     $var = array();
-
-// check for the refresh flag and try to the data
-    if (($refresh == true)|| !read_cache($var, $filename)) {
-// Didn' get cache so go to the database.
-//      $conn = mysql_connect("localhost", "apachecon", "apachecon");
-      $res = xtc_db_query($sql);
-//      if ($err = mysql_error()) trigger_error($err, E_USER_ERROR);
-// loop through the results and add them to an array
-      while ($rec = xtc_db_fetch_array($res)) {
-        $var[] = $rec;
-      }
-// write the data to the file
-      write_cache($var, $filename);
+    // check for the refresh flag and try to the data
+    if (($refresh == true) || !read_cache($var, $filename)) {
+        // Didn' get cache so go to the database.
+        //      $conn = mysql_connect("localhost", "apachecon", "apachecon");
+        $res = xtc_db_query($sql);
+        //      if ($err = mysql_error()) trigger_error($err, E_USER_ERROR);
+        // loop through the results and add them to an array
+        while ($rec = xtc_db_fetch_array($res)) {
+            $var[] = $rec;
+        }
+        // write the data to the file
+        write_cache($var, $filename);
     }
-  }
-
- ?>
+}
+?>

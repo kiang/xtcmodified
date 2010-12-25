@@ -14,12 +14,9 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Steuerklassen');
-
 define('TABLE_HEADING_TAX_CLASSES', 'Steuerklassen');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
 define('TEXT_INFO_CLASS_TITLE', 'Name der Steuerklasse:');
 define('TEXT_INFO_CLASS_DESCRIPTION', 'Beschreibung:');

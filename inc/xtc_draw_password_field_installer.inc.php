@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_draw_password_field_installer($name, $text = '') {
+function xtc_draw_password_field_installer($name, $text = '') {
     return xtc_draw_input_field_installer($name, $text, 'password', '', false);
-  }
- ?>
+}
+?>

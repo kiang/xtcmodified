@@ -15,22 +15,18 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
 $xx_mins_ago = (time() - 900);
 require ('includes/application_top.php');
 require_once ('includes/modules/carp/carp.php');
-require_once (DIR_FS_INC.'xtc_validate_vatid_status.inc.php');
-require_once (DIR_FS_INC.'xtc_get_geo_zone_code.inc.php');
-require_once (DIR_FS_INC.'xtc_encrypt_password.inc.php');
-require_once (DIR_FS_INC.'xtc_js_lang.php');
-
-require_once (DIR_WS_CLASSES.'currencies.php');
+require_once (DIR_FS_INC . 'xtc_validate_vatid_status.inc.php');
+require_once (DIR_FS_INC . 'xtc_get_geo_zone_code.inc.php');
+require_once (DIR_FS_INC . 'xtc_encrypt_password.inc.php');
+require_once (DIR_FS_INC . 'xtc_js_lang.php');
+require_once (DIR_WS_CLASSES . 'currencies.php');
 $currencies = new currencies();
-
 $customers_statuses_array = xtc_get_customers_statuses();
 // remove entries that have expired
 xtc_db_query("delete from " . TABLE_WHOS_ONLINE . " where time_last_click < '" . $xx_mins_ago . "'");
-
 // get customer stats (exclude admin, restrict to current language
 $customers_query = xtc_db_query('select cs.customers_status_name cust_group, count(*) cust_count
                      from ' . TABLE_CUSTOMERS . ' c
@@ -44,14 +40,11 @@ $customers_query = xtc_db_query('select cs.customers_status_name cust_group, cou
                      order by 2 desc');
 // save query result
 $customers = array();
-while ($row = xtc_db_fetch_array($customers_query))
-  $customers[] = $row;
-
+while ($row = xtc_db_fetch_array($customers_query)) $customers[] = $row;
 // newsletter
 $newsletter_query = xtc_db_query("select count(*) as count
-                    from " . TABLE_NEWSLETTER_RECIPIENTS. " where mail_status='1'");
+                    from " . TABLE_NEWSLETTER_RECIPIENTS . " where mail_status='1'");
 $newsletter = xtc_db_fetch_array($newsletter_query);
-
 // products
 $products_query = xtc_db_query('select
                   count(if(products_status = 0, products_id, null)) inactive_count,
@@ -59,23 +52,19 @@ $products_query = xtc_db_query('select
                   count(*) total_count
                   from ' . TABLE_PRODUCTS);
 $products = xtc_db_fetch_array($products_query);
-
 // orders (status)
 $orders_query = xtc_db_query('select os.orders_status_name status, coalesce(o.order_count, 0) order_count
                 from ' . TABLE_ORDERS_STATUS . ' os
                 left join (select orders_status, count(*) order_count
                 from ' . TABLE_ORDERS . '
                 group by 1) o on o.orders_status = os.orders_status_id
-                where os.language_id = ' .  (int)$_SESSION['languages_id'] . '
+                where os.language_id = ' . (int)$_SESSION['languages_id'] . '
                 order by os.orders_status_id');
 $orders = array();
-while ($row = xtc_db_fetch_array($orders_query))
-  $orders[] = $row;
-
+while ($row = xtc_db_fetch_array($orders_query)) $orders[] = $row;
 // specials
 $specials_query = xtc_db_query("select count(*) as specials_count from " . TABLE_SPECIALS);
 $specials = xtc_db_fetch_array($specials_query);
-
 // turnover
 $turnover_query = xtc_db_query('select
   round(coalesce(sum(if(date(o.date_purchased) = current_date, ot.value, null)), 0), 2) today,
@@ -125,11 +114,11 @@ h1 {
 </style>
 </head>
 <body style="margin:0" bgcolor="#FFFFFF">
-<?php require(DIR_WS_INCLUDES . 'header.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'header.php'); ?>
 <!-- BOF - Tomcraft - 2009-06-16 - Added security check //-->
 <table width="100%">
   <tr>
-    <td><?php include(DIR_WS_MODULES.FILENAME_SECURITY_CHECK); ?></td>
+    <td><?php include (DIR_WS_MODULES . FILENAME_SECURITY_CHECK); ?></td>
   </tr>
 </table>
 <!-- EOF - Tomcraft - 2009-06-16 - Added security check //-->
@@ -138,7 +127,7 @@ h1 {
 <tr>
     <td class="columnLeft2" width="<?php echo BOX_WIDTH; ?>" valign="top"><table border="0" width="<?php echo BOX_WIDTH; ?>" cellspacing="1" cellpadding="1" class="columnLeft">
 <!-- left_navigation //-->
-<?php require(DIR_WS_INCLUDES . 'column_left.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'column_left.php'); ?>
 <!-- left_navigation_eof //-->
     </table></td>
 <!-- body_text //-->
@@ -184,10 +173,10 @@ h1 {
 		  <td width="25%" valign="top"><table width="100%">
 
 <?php
-    foreach ($customers as $customer) {
-      echo '<tr><td style="background:#e4e4e4"><strong>' . $customer['cust_group'] . ':</strong></td>';
-      echo '<td style="background:#e4e4e4" align="center">' . $customer['cust_count'] . '</td></tr>';
-    }
+foreach ($customers as $customer) {
+    echo '<tr><td style="background:#e4e4e4"><strong>' . $customer['cust_group'] . ':</strong></td>';
+    echo '<td style="background:#e4e4e4" align="center">' . $customer['cust_count'] . '</td></tr>';
+}
 ?>
 					<tr>
 						 <td style="background:#e4e4e4"><strong><?php echo TOTAL_SUBSCRIBERS; ?>:</strong></td>
@@ -215,10 +204,10 @@ h1 {
 		  <td width="25%" valign="top">
 		  <table width="100%">
 <?php
-    foreach ($orders as $order) {
-      echo '<tr><td style="background:#e4e4e4"><strong>' . $order['status'] . ':</strong></td>';
-      echo '<td style="background:#e4e4e4">' . $order['order_count'] . '</td></tr>';
-    }
+foreach ($orders as $order) {
+    echo '<tr><td style="background:#e4e4e4"><strong>' . $order['status'] . ':</strong></td>';
+    echo '<td style="background:#e4e4e4">' . $order['order_count'] . '</td></tr>';
+}
 ?>
 		  </table>
 		  </td>
@@ -253,14 +242,14 @@ h1 {
             <td class="dataTableHeadingContent" align="center" bgcolor="#D9D9D9" height="20" width="33%"><strong><font face="Verdana"><?php echo TABLE_HEADING_USERS_ONLINE_INFO; ?></font></strong></td>
           </tr>
           <?php
-	  $whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
-    $info='';
-	  while ($whos_online = xtc_db_fetch_array($whos_online_query)) {
-	    $time_online = (time() - $whos_online['time_entry']);
-	    if ((!isset($_GET['info']) || (isset($_GET['info']) && ($_GET['info'] == $whos_online['session_id']))) && !isset($info) ) {
-	      $info = $whos_online['session_id'];
-	    }
-    ?>
+$whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE . " order by time_last_click desc");
+$info = '';
+while ($whos_online = xtc_db_fetch_array($whos_online_query)) {
+    $time_online = (time() - $whos_online['time_entry']);
+    if ((!isset($_GET['info']) || (isset($_GET['info']) && ($_GET['info'] == $whos_online['session_id']))) && !isset($info)) {
+        $info = $whos_online['session_id'];
+    }
+?>
           <tr>
             <td class="dataTableContent" width="22%"><font face="Verdana"> <a href="whos_online.php?info=<?php echo $whos_online['session_id']; ?>"><?php echo gmdate('H:i:s', $time_online); ?></a></font></td>
             <td class="dataTableContent" width="33%"><font face="Verdana"> <a href="whos_online.php?info=<?php echo $whos_online['session_id']; ?>"><?php echo $whos_online['full_name']; ?></a></font></td>
@@ -268,8 +257,8 @@ h1 {
             <td class="dataTableContent" align="center" width="33%"><font face="Verdana" color="#800000"><u><strong> <a href="whos_online.php?info=<?php echo $whos_online['session_id']; ?>"> <font color="#800000"><strong><?php echo TABLE_CELL_USERS_ONLINE_INFO; ?></strong></font></a></strong></u></font></td>
           </tr>
     <?php
-	  }
-	?>
+}
+?>
         </table>
     </td>
 	  <td width="4%">&nbsp;</td>
@@ -283,26 +272,27 @@ h1 {
           <td class="dataTableHeadingContent" align="center" bgcolor="#D9D9D9" height="20" width="12%"><strong><font face="Verdana"><?php echo TABLE_HEADING_NEW_CUSTOMERS_ORDERS; ?></font></strong></td>
         </tr>
         <?php
-       // $whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
-        ?>
+// $whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
+
+?>
         <?php
-	  $abfrage = "SELECT * FROM " . TABLE_CUSTOMERS . " ORDER BY customers_date_added DESC LIMIT 15";
-	  $ergebnis = mysql_query($abfrage);
-	  while($row = mysql_fetch_object($ergebnis)){
-        ?>
+$abfrage = "SELECT * FROM " . TABLE_CUSTOMERS . " ORDER BY customers_date_added DESC LIMIT 15";
+$ergebnis = mysql_query($abfrage);
+while ($row = mysql_fetch_object($ergebnis)) {
+?>
         <tr>
-          <td class="dataTableContent" width="25%"><?php  echo $row-> customers_lastname; ?>
+          <td class="dataTableContent" width="25%"><?php echo $row->customers_lastname; ?>
           </td>
-          <td class="dataTableContent" width="25%"><?php  echo $row-> customers_firstname; ?>
+          <td class="dataTableContent" width="25%"><?php echo $row->customers_firstname; ?>
           </td>
-          <td class="dataTableContent" align="center" width="25%"><?php  echo $row-> customers_date_added; ?>
+          <td class="dataTableContent" align="center" width="25%"><?php echo $row->customers_date_added; ?>
           </td>
-          <td class="dataTableContent" align="center" width="12%"><strong> <a href="customers.php?page=1&cID=<?php  echo $row-> customers_id; ?>&action=edit"> <font face="Verdana" color="#800000"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_EDIT; ?></strong></font></a></strong></td>
-          <td class="dataTableContent" align="center" width="12%"><strong> <a href="orders.php?cID=<?php  echo $row-> customers_id; ?>"><font color="#7691A2" face="Verdana"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_ORDERS; ?></strong></font></a></strong></td>
+          <td class="dataTableContent" align="center" width="12%"><strong> <a href="customers.php?page=1&cID=<?php echo $row->customers_id; ?>&action=edit"> <font face="Verdana" color="#800000"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_EDIT; ?></strong></font></a></strong></td>
+          <td class="dataTableContent" align="center" width="12%"><strong> <a href="orders.php?cID=<?php echo $row->customers_id; ?>"><font color="#7691A2" face="Verdana"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_ORDERS; ?></strong></font></a></strong></td>
         </tr>
         <?php
-	  }
-	?>
+}
+?>
       </table>
     </td>
 	</tr>
@@ -328,29 +318,30 @@ h1 {
           <td class="dataTableHeadingContent" align="center" bgcolor="#D9D9D9" height="20" width="12%"><p align="center"><strong><font face="Verdana"><?php echo TABLE_HEADING_NEW_ORDERS_DELETE; ?></font></strong></td>
         </tr>
         <?php
-	 // $whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
-	?>
+// $whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
+
+?>
         <?php
-	  $abfrage = "SELECT * FROM " . TABLE_ORDERS . " ORDER BY orders_id DESC LIMIT 20";
-	  $ergebnis = mysql_query($abfrage);
-	  while($row = mysql_fetch_object($ergebnis)){
-	?>
+$abfrage = "SELECT * FROM " . TABLE_ORDERS . " ORDER BY orders_id DESC LIMIT 20";
+$ergebnis = mysql_query($abfrage);
+while ($row = mysql_fetch_object($ergebnis)) {
+?>
         <tr>
           <td class="dataTableContent" width="25%"><font face="Verdana">
-            <?php  echo $row-> orders_id; ?>
+            <?php echo $row->orders_id; ?>
           </font></td>
           <td class="dataTableContent" width="25%"><p align="center"> <font face="Verdana">
-              <?php  echo $row-> date_purchased; ?>
+              <?php echo $row->date_purchased; ?>
           </font> </td>
           <td class="dataTableContent" align="center" width="25%"><font face="Verdana">
-            <?php  echo $row-> delivery_name; ?>
+            <?php echo $row->delivery_name; ?>
           </font></td>
-          <td class="dataTableContent" align="center" width="12%"><strong> <a href="orders.php?page=1&oID=<?php  echo $row-> orders_id; ?>&action=edit"> <font face="Verdana" color="#7691A2"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_EDIT; ?></strong></font></a></strong></td>
-          <td class="dataTableContent" align="center" width="12%"><font face="Verdana" color="#800000"> <strong> <a href="orders.php?page=1&oID=<?php  echo $row-> orders_id; ?>&action=delete"> <font color="#800000"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_DELETE; ?></strong></font></a></strong></font></td>
+          <td class="dataTableContent" align="center" width="12%"><strong> <a href="orders.php?page=1&oID=<?php echo $row->orders_id; ?>&action=edit"> <font face="Verdana" color="#7691A2"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_EDIT; ?></strong></font></a></strong></td>
+          <td class="dataTableContent" align="center" width="12%"><font face="Verdana" color="#800000"> <strong> <a href="orders.php?page=1&oID=<?php echo $row->orders_id; ?>&action=delete"> <font color="#800000"><strong><?php echo TABLE_CELL_NEW_CUSTOMERS_DELETE; ?></strong></font></a></strong></font></td>
         </tr>
         <?php
-	  }
-	?>
+}
+?>
         <tr>
           <td class="smallText" colspan="5"><em> <font face="Verdana"></font></em></td>
         </tr>
@@ -360,22 +351,20 @@ h1 {
 	  <td style="background: #F9F0F1; border: 1px solid #b40076;" height="200" valign="top">
 	  <table border="0" width="98%" cellspacing="0" cellpadding="0">
     <?php
-    CarpConf('iorder','link,date,desc');
-    CarpConf('cborder','link,desc');
-    CarpConf('caorder','image');
-    CarpConf('bcb','<div style="background:#F0F1F1;font-size:11px; border:1px solid #999; padding:5px; font-weight: 700" align="left">');
-    CarpConf('acb','</div>');
-    CarpConf('bca','<span>');
-    CarpConf('aca','</span>');
-    CarpConf('maxitems',3);
-
-    // before each item
-    CarpConf('bi','<br /><div class="feedtitle" style="padding:5px;font-size:11px;" align="left">');
-
-    // after each item
-    CarpConf('ai','</div><hr noshade="noshade" />');
-    CarpShow('http://www.xtc-modified.org/feed/');
-    ?>
+CarpConf('iorder', 'link,date,desc');
+CarpConf('cborder', 'link,desc');
+CarpConf('caorder', 'image');
+CarpConf('bcb', '<div style="background:#F0F1F1;font-size:11px; border:1px solid #999; padding:5px; font-weight: 700" align="left">');
+CarpConf('acb', '</div>');
+CarpConf('bca', '<span>');
+CarpConf('aca', '</span>');
+CarpConf('maxitems', 3);
+// before each item
+CarpConf('bi', '<br /><div class="feedtitle" style="padding:5px;font-size:11px;" align="left">');
+// after each item
+CarpConf('ai', '</div><hr noshade="noshade" />');
+CarpShow('http://www.xtc-modified.org/feed/');
+?>
       </table>
     </td>
 	</tr>
@@ -406,25 +395,21 @@ $ergebnis = xtc_db_query("select
                           where month(customers_dob) = month(current_date) and
                           day(customers_dob) >= day(current_date)
                           order by customers_dob");
-
 $this_month = array();
-while($row = xtc_db_fetch_array($ergebnis))
-{
-   if ($row['today'] == 1) {
-     echo '<tr><td width="68%" bgcolor="#F9F0F1">' . $row['name'] . '</td>';
-     echo '<td width="32%" bgcolor="#F9F0F1">' . xtc_date_long($row['dob']) . '</td></tr>';
-  }
-  else
-    $this_month[] = array('name' => $row['name'], 'dob' => $row['dob']);
+while ($row = xtc_db_fetch_array($ergebnis)) {
+    if ($row['today'] == 1) {
+        echo '<tr><td width="68%" bgcolor="#F9F0F1">' . $row['name'] . '</td>';
+        echo '<td width="32%" bgcolor="#F9F0F1">' . xtc_date_long($row['dob']) . '</td></tr>';
+    } else $this_month[] = array('name' => $row['name'], 'dob' => $row['dob']);
 }
 ?>
   <tr>
      <td width="100%" colspan="2" style="border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC" bgcolor="#F1F1F1"><strong><?php echo TABLE_CELL_BIRTHDAYS_THIS_MONTH; ?>:</strong></td>
   </tr>
 <?php
-foreach($this_month as $row) {
-  echo '<tr><td width="68%" bgcolor="#F9F0F1">' . $row['name'] . '</td>';
-  echo '<td width="32%" bgcolor="#F9F0F1">' . xtc_date_long($row['dob']) . '</td></tr>';
+foreach ($this_month as $row) {
+    echo '<tr><td width="68%" bgcolor="#F9F0F1">' . $row['name'] . '</td>';
+    echo '<td width="32%" bgcolor="#F9F0F1">' . xtc_date_long($row['dob']) . '</td></tr>';
 }
 ?>
 </table>
@@ -446,7 +431,7 @@ foreach($this_month as $row) {
    </td>
   </tr>
 </table>
-<?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'footer.php'); ?>
 </body>
 </html>
-<?php require(DIR_WS_INCLUDES . 'application_bottom.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'application_bottom.php'); ?>

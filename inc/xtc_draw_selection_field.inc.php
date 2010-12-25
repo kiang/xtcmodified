@@ -15,47 +15,35 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 // Output a selection field - alias function for xtc_draw_checkbox_field() and xtc_draw_radio_field()
-
-  function xtc_draw_selection_field($name, $type, $value = '', $checked = false, $parameters = '') {
+function xtc_draw_selection_field($name, $type, $value = '', $checked = false, $parameters = '') {
     $selection = '<input type="' . xtc_parse_input_field_data($type, array('"' => '&quot;')) . '" name="' . xtc_parse_input_field_data($name, array('"' => '&quot;')) . '"';
-
-    if (xtc_not_null($value)) $selection .= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
-
+    if (xtc_not_null($value)) $selection.= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
     //BOF - DokuMan - 2010-08-23 - set undefined index
     //if ( ($checked == true) || ($GLOBALS[$name] == 'on') || ( (isset($value)) && ($GLOBALS[$name] == $value) ) ) {
-    if ( ($checked == true) || (isset($GLOBALS[$name]) && $GLOBALS[$name] == 'on') || ( (isset($value)) && (isset($GLOBALS[$name]) && $GLOBALS[$name] == $value) ) ) {
-    //EOF - DokuMan - 2010-08-23 - set undefined index
-      $selection .= ' checked="checked"';
+    if (($checked == true) || (isset($GLOBALS[$name]) && $GLOBALS[$name] == 'on') || ((isset($value)) && (isset($GLOBALS[$name]) && $GLOBALS[$name] == $value))) {
+        //EOF - DokuMan - 2010-08-23 - set undefined index
+        $selection.= ' checked="checked"';
     }
-
-    if (xtc_not_null($parameters)) $selection .= ' ' . $parameters;
-
-    $selection .= ' />';
-
+    if (xtc_not_null($parameters)) $selection.= ' ' . $parameters;
+    $selection.= ' />';
     return $selection;
-  }
-
-    function xtc_draw_selection_fieldNote($data, $type, $value = '', $checked = false, $parameters = '') {
-    $selection = $data['suffix'].'<input type="' . xtc_parse_input_field_data($type, array('"' => '&quot;')) . '" name="' . xtc_parse_input_field_data($data['name'], array('"' => '&quot;')) . '"';
-
-    if (xtc_not_null($value)) $selection .= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
+}
+function xtc_draw_selection_fieldNote($data, $type, $value = '', $checked = false, $parameters = '') {
+    $selection = $data['suffix'] . '<input type="' . xtc_parse_input_field_data($type, array('"' => '&quot;')) . '" name="' . xtc_parse_input_field_data($data['name'], array('"' => '&quot;')) . '"';
+    if (xtc_not_null($value)) $selection.= ' value="' . xtc_parse_input_field_data($value, array('"' => '&quot;')) . '"';
     //BOF - DokuMan - 2010-09-17 - set undefined index
     //if ( ($checked == true) || ($GLOBALS[$data['name']] == 'on') || ( (isset($value)) && ($GLOBALS[$data['name']] == $value) ) ) {
-    if ( ($checked == true) || (isset($GLOBALS[$data['name']]) && ($GLOBALS[$data['name']] == 'on')) || ( (isset($value)) && (isset($GLOBALS[$data['name']]) && ($GLOBALS[$data['name']] == $value) ) ) ) {
-    //EOF - DokuMan - 2010-09-17 - set undefined index
-      $selection .= ' checked="checked"';
+    if (($checked == true) || (isset($GLOBALS[$data['name']]) && ($GLOBALS[$data['name']] == 'on')) || ((isset($value)) && (isset($GLOBALS[$data['name']]) && ($GLOBALS[$data['name']] == $value)))) {
+        //EOF - DokuMan - 2010-09-17 - set undefined index
+        $selection.= ' checked="checked"';
     }
-
-    if (xtc_not_null($parameters)) $selection .= ' ' . $parameters;
-
+    if (xtc_not_null($parameters)) $selection.= ' ' . $parameters;
     //BOF - DokuMan - 2010-09-17 - set undefined index: text
     //$selection .= ' />'.$data['text'];
-    $selection .= ' />';
-    if (isset($data['text'])) $selection .= $data['text'];
+    $selection.= ' />';
+    if (isset($data['text'])) $selection.= $data['text'];
     //EOF - DokuMan - 2010-09-17 - set undefined index: text
-
     return $selection;
-  }
+}
 ?>

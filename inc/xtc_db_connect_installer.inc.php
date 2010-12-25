@@ -14,24 +14,18 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_connect_installer($server, $username, $password, $link = 'db_link') {
+function xtc_db_connect_installer($server, $username, $password, $link = 'db_link') {
     global $$link, $db_error;
-
     $db_error = false;
-
     if (!$server) {
-      $db_error = 'No Server selected.';
-      return false;
+        $db_error = 'No Server selected.';
+        return false;
     }
-
     $$link = @mysql_connect($server, $username, $password) or $db_error = mysql_error();
-
-// BOF - Dokuman - 2009-09-02 - Disable "STRICT" mode for MySQL 5!
+    // BOF - Dokuman - 2009-09-02 - Disable "STRICT" mode for MySQL 5!
     $vers = @mysql_get_server_info();
-    if(substr($vers,0,1) > 4) @mysql_query("SET SESSION sql_mode='MYSQL40'");
-// EOF - Dokuman - 2009-09-02 - Disable "STRICT" mode for MySQL 5!
-
+    if (substr($vers, 0, 1) > 4) @mysql_query("SET SESSION sql_mode='MYSQL40'");
+    // EOF - Dokuman - 2009-09-02 - Disable "STRICT" mode for MySQL 5!
     return $$link;
-  }
- ?>
+}
+?>

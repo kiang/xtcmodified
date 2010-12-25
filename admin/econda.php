@@ -14,30 +14,20 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 require ('includes/application_top.php');
-
-define('TRACKING_ECONDA_ACTIVE_TITLE','ECONDA Shop Monitor aktivieren ?');
-define('TRACKING_ECONDA_ACTIVE_DESC','Wenn auf true gesetzt, wird der ECONDA Shop Monitor gestartet.');
-
-define('TRACKING_ECONDA_ID_TITLE','Aktivierungscode');
-define('TRACKING_ECONDA_ID_DESC','Geben Sie ihren Aktivierungscode ein, den Sie von ECONDA erhalten.<br />Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!');
-
-  if ($_GET['action']) {
+define('TRACKING_ECONDA_ACTIVE_TITLE', 'ECONDA Shop Monitor aktivieren ?');
+define('TRACKING_ECONDA_ACTIVE_DESC', 'Wenn auf true gesetzt, wird der ECONDA Shop Monitor gestartet.');
+define('TRACKING_ECONDA_ID_TITLE', 'Aktivierungscode');
+define('TRACKING_ECONDA_ID_DESC', 'Geben Sie ihren Aktivierungscode ein, den Sie von ECONDA erhalten.<br />Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!');
+if ($_GET['action']) {
     switch ($_GET['action']) {
-      case 'save':
-
-          $configuration_query = xtc_db_query("select configuration_key,configuration_id, configuration_value, use_function,set_function from " . TABLE_CONFIGURATION . " where configuration_group_id = '23' order by sort_order");
-
-          while ($configuration = xtc_db_fetch_array($configuration_query))
-              xtc_db_query("UPDATE ".TABLE_CONFIGURATION." SET configuration_value='".$_POST[$configuration['configuration_key']]."' where configuration_key='".$configuration['configuration_key']."'");
-
-               xtc_redirect('econda.php');
-        break;
-
-    }
-  }
-
+        case 'save':
+            $configuration_query = xtc_db_query("select configuration_key,configuration_id, configuration_value, use_function,set_function from " . TABLE_CONFIGURATION . " where configuration_group_id = '23' order by sort_order");
+            while ($configuration = xtc_db_fetch_array($configuration_query)) xtc_db_query("UPDATE " . TABLE_CONFIGURATION . " SET configuration_value='" . $_POST[$configuration['configuration_key']] . "' where configuration_key='" . $configuration['configuration_key'] . "'");
+            xtc_redirect('econda.php');
+            break;
+        }
+}
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html <?php echo HTML_PARAMS; ?>>
@@ -49,7 +39,7 @@ define('TRACKING_ECONDA_ID_DESC','Geben Sie ihren Aktivierungscode ein, den Sie 
 </head>
 <body marginwidth="0" marginheight="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF">
 <!-- header //-->
-<?php require(DIR_WS_INCLUDES . 'header.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'header.php'); ?>
 <!-- header_eof //-->
 
 <!-- body //-->
@@ -57,7 +47,7 @@ define('TRACKING_ECONDA_ID_DESC','Geben Sie ihren Aktivierungscode ein, den Sie 
   <tr>
     <td class="columnLeft2" width="<?php echo BOX_WIDTH; ?>" valign="top"><table border="0" width="<?php echo BOX_WIDTH; ?>" cellspacing="1" cellpadding="1" class="columnLeft">
 <!-- left_navigation //-->
-<?php require(DIR_WS_INCLUDES . 'column_left.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'column_left.php'); ?>
 <!-- left_navigation_eof //-->
     </table></td>
 <!-- body_text //-->
@@ -84,56 +74,55 @@ define('TRACKING_ECONDA_ID_DESC','Geben Sie ihren Aktivierungscode ein, den Sie 
 	  <?php echo xtc_draw_form('configuration', 'econda.php', 'action=save'); ?>
             <table width="100%"  border="0" cellspacing="0" cellpadding="4">
 <?php
-  $configuration_query = xtc_db_query("select configuration_key,configuration_id, configuration_value, use_function,set_function from " . TABLE_CONFIGURATION . " where configuration_group_id = '23' order by sort_order");
-
-  while ($configuration = xtc_db_fetch_array($configuration_query)) {
+$configuration_query = xtc_db_query("select configuration_key,configuration_id, configuration_value, use_function,set_function from " . TABLE_CONFIGURATION . " where configuration_group_id = '23' order by sort_order");
+while ($configuration = xtc_db_fetch_array($configuration_query)) {
     if (xtc_not_null($configuration['use_function'])) {
-      $use_function = $configuration['use_function'];
-      if (preg_match('/->/', $use_function)) { // Hetfield - 2009-08-19 - replaced deprecated function ereg with preg_match to be ready for PHP >= 5.3
-        $class_method = explode('->', $use_function);
-        if (!is_object(${$class_method[0]})) {
-          include(DIR_WS_CLASSES . $class_method[0] . '.php');
-          ${$class_method[0]} = new $class_method[0]();
+        $use_function = $configuration['use_function'];
+        if (preg_match('/->/', $use_function)) { // Hetfield - 2009-08-19 - replaced deprecated function ereg with preg_match to be ready for PHP >= 5.3
+            $class_method = explode('->', $use_function);
+            if (!is_object($ {
+                $class_method[0]
+            })) {
+                include (DIR_WS_CLASSES . $class_method[0] . '.php');
+                $ {
+                    $class_method[0]
+                } = new $class_method[0]();
+            }
+            $cfgValue = xtc_call_function($class_method[1], $configuration['configuration_value'], $ {
+                $class_method[0]
+            });
+        } else {
+            $cfgValue = xtc_call_function($use_function, $configuration['configuration_value']);
         }
-        $cfgValue = xtc_call_function($class_method[1], $configuration['configuration_value'], ${$class_method[0]});
-      } else {
-        $cfgValue = xtc_call_function($use_function, $configuration['configuration_value']);
-      }
     } else {
-      $cfgValue = $configuration['configuration_value'];
+        $cfgValue = $configuration['configuration_value'];
     }
-
     if (((!$_GET['cID']) || (@$_GET['cID'] == $configuration['configuration_id'])) && (!$cInfo) && (substr($_GET['action'], 0, 3) != 'new')) {
-      $cfg_extra_query = xtc_db_query("select configuration_key,configuration_value, date_added, last_modified, use_function, set_function from " . TABLE_CONFIGURATION . " where configuration_id = '" . $configuration['configuration_id'] . "'");
-      $cfg_extra = xtc_db_fetch_array($cfg_extra_query);
-
-      $cInfo_array = xtc_array_merge($configuration, $cfg_extra);
-      $cInfo = new objectInfo($cInfo_array);
+        $cfg_extra_query = xtc_db_query("select configuration_key,configuration_value, date_added, last_modified, use_function, set_function from " . TABLE_CONFIGURATION . " where configuration_id = '" . $configuration['configuration_id'] . "'");
+        $cfg_extra = xtc_db_fetch_array($cfg_extra_query);
+        $cInfo_array = xtc_array_merge($configuration, $cfg_extra);
+        $cInfo = new objectInfo($cInfo_array);
     }
     if ($configuration['set_function']) {
         eval('$value_field = ' . $configuration['set_function'] . '"' . htmlspecialchars($configuration['configuration_value']) . '");');
-      } else {
-        $value_field = xtc_draw_input_field($configuration['configuration_key'], $configuration['configuration_value'],'size=40');
-      }
-   // add
-
-   if (strstr($value_field,'configuration_value')) $value_field=str_replace('configuration_value',$configuration['configuration_key'],$value_field);
-
-   echo '
+    } else {
+        $value_field = xtc_draw_input_field($configuration['configuration_key'], $configuration['configuration_value'], 'size=40');
+    }
+    // add
+    if (strstr($value_field, 'configuration_value')) $value_field = str_replace('configuration_value', $configuration['configuration_key'], $value_field);
+    echo '
   <tr>
-    <td width="300" valign="top" class="dataTableContent"><strong>'.constant(strtoupper($configuration['configuration_key'].'_TITLE')).'</strong></td>
+    <td width="300" valign="top" class="dataTableContent"><strong>' . constant(strtoupper($configuration['configuration_key'] . '_TITLE')) . '</strong></td>
     <td valign="top" class="dataTableContent">
     <table width="100%"  border="0" cellspacing="0" cellpadding="2">
       <tr>
-        <td style="background-color:#FCF2CF ; border: 1px solid; border-color: #CCCCCC;" class="dataTableContent">'.$value_field.'</td>
+        <td style="background-color:#FCF2CF ; border: 1px solid; border-color: #CCCCCC;" class="dataTableContent">' . $value_field . '</td>
       </tr>
     </table>
-    <br />'.constant(strtoupper( $configuration['configuration_key'].'_DESC')).'</td>
+    <br />' . constant(strtoupper($configuration['configuration_key'] . '_DESC')) . '</td>
   </tr>
   ';
-
-  }
-  
+}
 ?>
             </table>
 <?php echo '<input type="submit" class="button" onclick="this.blur();" value="' . BUTTON_SAVE . '"/>'; ?></form>
@@ -255,8 +244,8 @@ define('TRACKING_ECONDA_ID_DESC','Geben Sie ihren Aktivierungscode ein, den Sie 
 <!-- body_eof //-->
 
 <!-- footer //-->
-<?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'footer.php'); ?>
 <!-- footer_eof //-->
 </body>
 </html>
-<?php require(DIR_WS_INCLUDES . 'application_bottom.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'application_bottom.php'); ?>

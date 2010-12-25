@@ -13,13 +13,11 @@
    
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
 require ('includes/application_top.php');
-
 $content_query = xtDBquery("SELECT *
-           FROM ".TABLE_CONTENT_MANAGER."
-           WHERE content_group='".(int) $_GET['coID']."'
-           and languages_id = '".$_SESSION['languages_id']."'");
+           FROM " . TABLE_CONTENT_MANAGER . "
+           WHERE content_group='" . (int)$_GET['coID'] . "'
+           and languages_id = '" . $_SESSION['languages_id'] . "'");
 $content_data = xtc_db_fetch_array($content_query, true);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -33,7 +31,7 @@ $content_data = xtc_db_fetch_array($content_query, true);
 <base href="<?php echo (($request_type == 'SSL') ? HTTPS_SERVER : HTTP_SERVER) . DIR_WS_CATALOG; ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo 'templates/'.CURRENT_TEMPLATE.'/stylesheet.css'; ?>" />
 */ ?>
-<link rel="stylesheet" type="text/css" href="<?php echo DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/stylesheet.css'; ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/stylesheet.css'; ?>" />
 <?php /*
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 */ ?>
@@ -49,17 +47,12 @@ $content_data = xtc_db_fetch_array($content_query, true);
           <tr>
             <td class="main" style="font-size:12px">
  <?php
-
 if ($content_data['content_file'] != '') {
-  if (strpos($content_data['content_file'], '.txt'))
-    echo '<pre>';
-
-  include (DIR_FS_CATALOG.'media/content/'.$content_data['content_file']);
-
-  if (strpos($content_data['content_file'], '.txt'))
-    echo '</pre>';
+    if (strpos($content_data['content_file'], '.txt')) echo '<pre>';
+    include (DIR_FS_CATALOG . 'media/content/' . $content_data['content_file']);
+    if (strpos($content_data['content_file'], '.txt')) echo '</pre>';
 } else {
-  echo $content_data['content_text'];
+    echo $content_data['content_text'];
 }
 ?>
 <!--<br /><br />

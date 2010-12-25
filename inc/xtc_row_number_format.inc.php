@@ -14,10 +14,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_row_number_format($number) {
-    if ( ($number < 10) && (substr($number, 0, 1) != '0') ) $number = '0' . $number;
-
+function xtc_row_number_format($number) {
+    if (($number < 10) && (substr($number, 0, 1) != '0')) $number = '0' . $number;
     return $number;
-  }
- ?>
+}
+?>

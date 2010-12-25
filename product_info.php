@@ -21,44 +21,36 @@
    Cross-Sell (X-Sell) Admin 1                          Autor: Joshua Dechant (dreamscape)
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 include ('includes/application_top.php');
 // create smarty elements
 $smarty = new Smarty;
-
 // include boxes
 if (isset($_GET['products_id'])) {
-  $cat = xtc_db_query("SELECT categories_id FROM ".TABLE_PRODUCTS_TO_CATEGORIES." WHERE products_id='".(int) $_GET['products_id']."'");
-  $catData = xtc_db_fetch_array($cat);
-  require_once (DIR_FS_INC.'xtc_get_path.inc.php');
-  if ($catData['categories_id'])
-    $cPath = xtc_input_validation(xtc_get_path($catData['categories_id']), 'cPath', '');
+    $cat = xtc_db_query("SELECT categories_id FROM " . TABLE_PRODUCTS_TO_CATEGORIES . " WHERE products_id='" . (int)$_GET['products_id'] . "'");
+    $catData = xtc_db_fetch_array($cat);
+    require_once (DIR_FS_INC . 'xtc_get_path.inc.php');
+    if ($catData['categories_id']) $cPath = xtc_input_validation(xtc_get_path($catData['categories_id']), 'cPath', '');
 }
-
-require (DIR_FS_CATALOG.'templates/'.CURRENT_TEMPLATE.'/source/boxes.php');
-
+require (DIR_FS_CATALOG . 'templates/' . CURRENT_TEMPLATE . '/source/boxes.php');
 // include needed functions
-require_once (DIR_FS_INC.'xtc_get_download.inc.php');
+require_once (DIR_FS_INC . 'xtc_get_download.inc.php');
 //require_once (DIR_FS_INC.'xtc_delete_file.inc.php'); // Hetfield - 2009-08-12 - removed never needed function
-require_once (DIR_FS_INC.'xtc_get_all_get_params.inc.php');
-require_once (DIR_FS_INC.'xtc_date_long.inc.php');
-require_once (DIR_FS_INC.'xtc_draw_hidden_field.inc.php');
+require_once (DIR_FS_INC . 'xtc_get_all_get_params.inc.php');
+require_once (DIR_FS_INC . 'xtc_date_long.inc.php');
+require_once (DIR_FS_INC . 'xtc_draw_hidden_field.inc.php');
 //require_once (DIR_FS_INC.'xtc_image_button.inc.php'); //DokuMan - 2010-08-30 - function already set in application_top.php
-require_once (DIR_FS_INC.'xtc_draw_form.inc.php');
-require_once (DIR_FS_INC.'xtc_draw_input_field.inc.php');
-require_once (DIR_FS_INC.'xtc_image_submit.inc.php');
-
+require_once (DIR_FS_INC . 'xtc_draw_form.inc.php');
+require_once (DIR_FS_INC . 'xtc_draw_input_field.inc.php');
+require_once (DIR_FS_INC . 'xtc_image_submit.inc.php');
 if (isset($_GET['action']) && $_GET['action'] == 'get_download') {
-  xtc_get_download((int)$_GET['cID']); // Hetfield - 2009-08-12 - update function call for security
+    xtc_get_download((int)$_GET['cID']); // Hetfield - 2009-08-12 - update function call for security
+    
 }
-
-include (DIR_WS_MODULES.'product_info.php');
-
-require (DIR_WS_INCLUDES.'header.php');
+include (DIR_WS_MODULES . 'product_info.php');
+require (DIR_WS_INCLUDES . 'header.php');
 $smarty->assign('language', $_SESSION['language']);
 $smarty->caching = 0;
-if (!defined('RM'))
-  $smarty->load_filter('output', 'note');
-$smarty->display(CURRENT_TEMPLATE.'/index.html');
+if (!defined('RM')) $smarty->load_filter('output', 'note');
+$smarty->display(CURRENT_TEMPLATE . '/index.html');
 include ('includes/application_bottom.php');
 ?>

@@ -14,27 +14,18 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 function xtc_draw_box_heading($heading_title, $left_corner = false, $right_corner = false) {
-    $heading = '<table cellspacing="0" cellpadding="0" width="100%" border="0">' . CR .
-               '  <tr valign="middle" bgcolor="' . BOX_BGCOLOR_HEADING . '">' . CR .
-               '    <td>';
+    $heading = '<table cellspacing="0" cellpadding="0" width="100%" border="0">' . CR . '  <tr valign="middle" bgcolor="' . BOX_BGCOLOR_HEADING . '">' . CR . '    <td>';
     if ($left_corner) {
-      $heading .= '<img src="images/main_page/box_corner_left.gif" alt="" />';
+        $heading.= '<img src="images/main_page/box_corner_left.gif" alt="" />';
     } else {
-      $heading .= '<img src="images/main_page/box_corner_right_left.gif" alt="" />';
+        $heading.= '<img src="images/main_page/box_corner_right_left.gif" alt="" />';
     }
-
-    $heading .= '</td>' . CR .
-                '    <td class="infoBoxHeading">' . $heading_title . '</td>' . CR;
-
+    $heading.= '</td>' . CR . '    <td class="infoBoxHeading">' . $heading_title . '</td>' . CR;
     if ($right_corner) {
-      $heading .= '    <td class="infoBoxHeading"><img src="images/main_page/box_corner_right.gif" alt="" /></td>' . CR;
+        $heading.= '    <td class="infoBoxHeading"><img src="images/main_page/box_corner_right.gif" alt="" /></td>' . CR;
     }
-
-    $heading .= '  </tr>' . CR .
-                '</table>' . CR;
-
+    $heading.= '  </tr>' . CR . '</table>' . CR;
     return $heading;
-  }
- ?>
+}
+?>

@@ -18,7 +18,6 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_TITLE', 'Sicher bezahlen &uuml;ber Moneybookers');
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_DESCRIPTION', 'Moneybookers<br /><br /><img src="images/icon_arrow_right.gif"> <b><a href="http://www.xt-commerce.com/index.php?option=com_content&task=view&id=76&lang=de" target="_blank">Hilfe zu Einstellungen</a></b>');
 define('MODULE_PAYMENT_AMONEYBOOKERS_NOCURRENCY_ERROR', 'Es ist keine von Moneybookers akzeptierte W&auml;hrung installiert!');
@@ -41,19 +40,14 @@ define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO_1', '<br /><br />Direkt und beque
 //EOF - DokuMan - 2010-09-08 - already defined in english.php
 define('MODULE_PAYMENT_AMONEYBOOKERS_PROCESSED_STATUS_ID_TITLE', 'Bestellstatus - Processed');
 define('MODULE_PAYMENT_AMONEYBOOKERS_PROCESSED_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_PENDING_STATUS_ID_TITLE', 'Bestellstatus - Scheduled');
 define('MODULE_PAYMENT_AMONEYBOOKERS_PENDING_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_CANCELED_STATUS_ID_TITLE', 'Bestellstatus - Canceled');
 define('MODULE_PAYMENT_AMONEYBOOKERS_CANCELED_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_TMP_STATUS_ID_TITLE', 'Bestellstatus - Temp');
 define('MODULE_PAYMENT_AMONEYBOOKERS_TMP_STATUS_ID_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_ICONS_TITLE', 'Icons');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ICONS_DESC', '');
-
 define('MODULE_PAYMENT_AMONEYBOOKERS_STATUS_TITLE', 'Moneybookers aktivieren');
 define('MODULE_PAYMENT_AMONEYBOOKERS_STATUS_DESC', 'M&ouml;chten Sie Zahlungen per Moneybookers akzeptieren?<br /><br /><img src="images/icon_arrow_right.gif"> <b><a href="http://www.xt-commerce.com/index.php?option=com_content&task=view&id=76&lang=de" target="_blank">Hilfe zu Einstellungen</a></b>');
 define('MODULE_PAYMENT_AMONEYBOOKERS_EMAILID_TITLE', 'Moneybookers E-Mail Adresse');
@@ -72,9 +66,9 @@ define('MODULE_PAYMENT_AMONEYBOOKERS_ZONE_TITLE', 'Zahlungszone');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ZONE_DESC', 'Wenn eine Zone ausgew&auml;hlt ist, gilt die Zahlungsmethode nur f&uuml;r diese Zone.');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ALLOWED_TITLE', 'Erlaubte Zonen');
 define('MODULE_PAYMENT_AMONEYBOOKERS_ALLOWED_DESC', 'Geben Sie <b>einzeln</b> die Zonen an, welche f&uuml;r dieses Modul erlaubt sein sollen. (z.B. AT,DE (wenn leer, werden alle Zonen erlaubt))');
-
 // BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 define('MODULE_PAYMENT_AMONEYBOOKERS_NEG_SHIPPING_TITLE', 'Ausschluß bei Versandmodulen');
 define('MODULE_PAYMENT_AMONEYBOOKERS_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
 // EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
+
 ?>

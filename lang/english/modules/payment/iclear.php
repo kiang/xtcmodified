@@ -40,34 +40,27 @@
 
 *************************************************************************
    ---------------------------------------------------------------------------------------*/
+define('MODULE_PAYMENT_ICLEAR_TEXT_TITLE', 'iclear Payment System');
+define('MODULE_PAYMENT_ICLEAR_TEXT_DESCRIPTION', 'iclear');
+define('MODULE_PAYMENT_ICLEAR_TEXT_ERROR_MESSAGE', 'There was an error during your payment at iclear! Please try again/ select another payment option.');
+define('MODULE_PAYMENT_ICLEAR_TEXT_INFO', '');
+define('MODULE_PAYMENT_ICLEAR_ALLOWED_TITLE', 'Allowed zones');
+define('MODULE_PAYMENT_ICLEAR_ALLOWED_DESC', 'Please enter the zones <b>separately</b> which should be allowed to use this modul (e. g. AT,DE (leave empty if you want to allow all zones))');
+define('MODULE_PAYMENT_ICLEAR_STATUS_TITLE', 'Allow iclear');
+define('MODULE_PAYMENT_ICLEAR_STATUS_DESC', 'Do you want to accept iclear payments?');
+define('MODULE_PAYMENT_ICLEAR_ID_TITLE', 'Merchant ID');
+define('MODULE_PAYMENT_ICLEAR_ID_DESC', 'Your merchant ID at iclear.');
+define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_TITLE', 'Sort order');
+define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_DESC', 'Sort order of the view. Lowest numeral will be displayed first');
+define('MODULE_PAYMENT_ICLEAR_ZONE_TITLE', 'Payment zone');
+define('MODULE_PAYMENT_ICLEAR_ZONE_DESC', 'If a zone is choosen, the payment method will be valid for this zone only.');
+define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_TITLE', 'Set Order Status');
+define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_DESC', 'Set the status of orders made with this payment module to this value');
+define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_TITLE', 'Tax Class');
+define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_DESC', 'Use the following tax class on the shipping fee.');
+// BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
+define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_TITLE', 'Exclusion in case of shipping');
+define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_DESC', 'deactivate this payment if one of these shippingtypes are selected (list separated by comma)');
+// EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 
-  define('MODULE_PAYMENT_ICLEAR_TEXT_TITLE', 'iclear Payment System');
-  define('MODULE_PAYMENT_ICLEAR_TEXT_DESCRIPTION', 'iclear');
-  define('MODULE_PAYMENT_ICLEAR_TEXT_ERROR_MESSAGE', 'There was an error during your payment at iclear! Please try again/ select another payment option.');
-  define('MODULE_PAYMENT_ICLEAR_TEXT_INFO','');
-  define('MODULE_PAYMENT_ICLEAR_ALLOWED_TITLE', 'Allowed zones');
-  define('MODULE_PAYMENT_ICLEAR_ALLOWED_DESC', 'Please enter the zones <b>separately</b> which should be allowed to use this modul (e. g. AT,DE (leave empty if you want to allow all zones))');
-
-  define('MODULE_PAYMENT_ICLEAR_STATUS_TITLE', 'Allow iclear');
-  define('MODULE_PAYMENT_ICLEAR_STATUS_DESC', 'Do you want to accept iclear payments?');
-
-  define('MODULE_PAYMENT_ICLEAR_ID_TITLE', 'Merchant ID');
-  define('MODULE_PAYMENT_ICLEAR_ID_DESC', 'Your merchant ID at iclear.');
-
-  define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_TITLE', 'Sort order');
-  define('MODULE_PAYMENT_ICLEAR_SORT_ORDER_DESC', 'Sort order of the view. Lowest numeral will be displayed first');
-
-  define('MODULE_PAYMENT_ICLEAR_ZONE_TITLE', 'Payment zone');
-  define('MODULE_PAYMENT_ICLEAR_ZONE_DESC', 'If a zone is choosen, the payment method will be valid for this zone only.');
-
-  define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_TITLE', 'Set Order Status');
-  define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_DESC', 'Set the status of orders made with this payment module to this value');
-
-  define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_TITLE', 'Tax Class');
-  define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_DESC', 'Use the following tax class on the shipping fee.');
-  
-  // BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
-  define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_TITLE', 'Exclusion in case of shipping');
-  define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_DESC', 'deactivate this payment if one of these shippingtypes are selected (list separated by comma)');
-  // EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 ?>

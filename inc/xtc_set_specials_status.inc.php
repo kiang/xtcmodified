@@ -14,9 +14,8 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Sets the status of a special product
-  function xtc_set_specials_status($specials_id, $status) {
+function xtc_set_specials_status($specials_id, $status) {
     return xtc_db_query("update " . TABLE_SPECIALS . " set status = '" . $status . "', date_status_change = now() where specials_id = '" . $specials_id . "'");
-  }
- ?>
+}
+?>

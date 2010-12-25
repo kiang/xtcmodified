@@ -14,24 +14,22 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_break_string($string, $len, $break_char = '-') {
+function xtc_break_string($string, $len, $break_char = '-') {
     $l = 0;
     $output = '';
-    for ($i=0, $n=strlen($string); $i<$n; $i++) {
-      $char = substr($string, $i, 1);
-      if ($char != ' ') {
-        $l++;
-      } else {
-        $l = 0;
-      }
-      if ($l > $len) {
-        $l = 1;
-        $output .= $break_char;
-      }
-      $output .= $char;
+    for ($i = 0, $n = strlen($string);$i < $n;$i++) {
+        $char = substr($string, $i, 1);
+        if ($char != ' ') {
+            $l++;
+        } else {
+            $l = 0;
+        }
+        if ($l > $len) {
+            $l = 1;
+            $output.= $break_char;
+        }
+        $output.= $char;
     }
-
     return $output;
-  }
- ?>
+}
+?>

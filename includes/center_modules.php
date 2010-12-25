@@ -14,10 +14,7 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
-
-  require(DIR_WS_MODULES . FILENAME_NEW_PRODUCTS);
-
-  require(DIR_WS_MODULES . FILENAME_UPCOMING_PRODUCTS);
-  return $module;
+require (DIR_WS_MODULES . FILENAME_NEW_PRODUCTS);
+require (DIR_WS_MODULES . FILENAME_UPCOMING_PRODUCTS);
+return $module;
 ?>

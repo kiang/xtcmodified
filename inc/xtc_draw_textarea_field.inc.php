@@ -14,23 +14,17 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
 // Output a form textarea field
-  function xtc_draw_textarea_field($name, $wrap, $width, $height, $text = '', $parameters = '', $reinsert_value = true) {
+function xtc_draw_textarea_field($name, $wrap, $width, $height, $text = '', $parameters = '', $reinsert_value = true) {
     $field = '<textarea name="' . xtc_parse_input_field_data($name, array('"' => '&quot;')) . '" id="' . xtc_parse_input_field_data($name, array('"' => '&quot;')) . '" cols="' . xtc_parse_input_field_data($width, array('"' => '&quot;')) . '" rows="' . xtc_parse_input_field_data($height, array('"' => '&quot;')) . '"';
-
-    if (xtc_not_null($parameters)) $field .= ' ' . $parameters;
-
-    $field .= '>';
-
-    if ( (isset($GLOBALS[$name])) && ($reinsert_value == true) ) {
-      $field .= $GLOBALS[$name];
+    if (xtc_not_null($parameters)) $field.= ' ' . $parameters;
+    $field.= '>';
+    if ((isset($GLOBALS[$name])) && ($reinsert_value == true)) {
+        $field.= $GLOBALS[$name];
     } elseif (xtc_not_null($text)) {
-      $field .= $text;
+        $field.= $text;
     }
-
-    $field .= '</textarea>';
-
+    $field.= '</textarea>';
     return $field;
-  }
- ?>
+}
+?>

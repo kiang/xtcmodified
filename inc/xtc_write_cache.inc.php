@@ -14,27 +14,24 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  //! Write out serialized data.
-  //  write_cache uses serialize() to store $var in $filename.
-  //  $var      -  The variable to be written out.
-  //  $filename -  The name of the file to write to.
-  function write_cache(&$var, $filename) {
+//! Write out serialized data.
+//  write_cache uses serialize() to store $var in $filename.
+//  $var      -  The variable to be written out.
+//  $filename -  The name of the file to write to.
+function write_cache(&$var, $filename) {
     $filename = DIR_FS_CACHE . $filename;
     $success = false;
-
     // try to open the file
     if ($fp = @fopen($filename, 'w')) {
-      // obtain a file lock to stop corruptions occuring
-      flock($fp, 2); // LOCK_EX
-      // write serialized data
-      fputs($fp, serialize($var));
-      // release the file lock
-      flock($fp, 3); // LOCK_UN
-      fclose($fp);
-      $success = true;
+        // obtain a file lock to stop corruptions occuring
+        flock($fp, 2); // LOCK_EX
+        // write serialized data
+        fputs($fp, serialize($var));
+        // release the file lock
+        flock($fp, 3); // LOCK_UN
+        fclose($fp);
+        $success = true;
     }
-
     return $success;
-  }
+}
 ?>

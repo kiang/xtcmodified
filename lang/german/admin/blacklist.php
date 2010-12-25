@@ -15,20 +15,15 @@
 
   Released under the GNU General Public License
 ------------------------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Kreditkarten-Blackliste');
-
 define('TABLE_HEADING_BLACKLIST', 'Kreditkarten-Blackliste');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_HEADING_NEW_BLACKLIST_CARD', 'Neue Karte');
 define('TEXT_HEADING_EDIT_BLACKLIST_CARD', 'Karte bearbeiten');
 define('TEXT_HEADING_DELETE_BLACKLIST_CARD', 'Karte l&ouml;schen');
 define('TEXT_DISPLAY_NUMBER_OF_BLACKLIST_CARDS', 'Karten anzeigen');
 define('TEXT_DATE_ADDED', 'Hinzugef&uuml;gt am:');
 define('TEXT_LAST_MODIFIED', 'Zuletzt ge&auml;ndert:');
-
-
 define('TEXT_NEW_INTRO', 'Bitte machen Sie die folgenden Angaben zum neuen Hersteller.');
 define('TEXT_EDIT_INTRO', 'Bitte f&uuml;hren Sie die notwendigen &Auml;nderungen durch.');
 define('TEXT_BLACKLIST_CARD_NUMBER', 'Kartennummer:');

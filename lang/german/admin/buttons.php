@@ -14,7 +14,6 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 // buttons
 define('BUTTON_REVERSE_SELECTION', 'Auswahl umkehren');
 define('BUTTON_SWITCH_PRODUCTS', 'Nur Produkte');
@@ -73,23 +72,20 @@ define('BUTTON_DETAILS', 'Details');
 define('BUTTON_NEW_TAX_CLASS', 'Neue Steuerklasse');
 define('BUTTON_NEW_TAX_RATE', 'Neuer Steuersatz');
 define('BUTTON_SEND', 'Senden');
-
 // BOF - Tomcraft - 2009-11-28 - Included xs:booster
 define('BUTTON_EDIT_XTBOOSTER', 'eBay-Artikel');
 define('BUTTON_XTBOOSTER_MULTI', 'eBay-Multi-Artikel');
 // EOF - Tomcraft - 2009-11-28 - Included xs:booster
-
 // BOF - Dokuman - 2010-02-04 - delete cache files in admin section
 define('BUTTON_DELETE_CACHE', 'Cache leeren');
 define('BUTTON_DELETE_TEMP_CACHE', 'Templatecache leeren');
 // EOF - Dokuman - 2010-02-04 - delete cache files in admin section
-
 //BOF - DokuMan - 2010-08-12 - added possibility to reset admin statistics
 define('BUTTON_RESET_PRODUCTS_PURCHASED', 'Alle Positionen zur&uuml;cksetzen');
 define('BUTTON_RESET_PRODUCTS_VIEWED', 'Alle Positionen zur&uuml;cksetzen');
 //EOF - DokuMan - 2010-08-12 - added possibility to reset admin statistics
-
 // BOF - web28 - 2010-08-21 - add  button view products
-define('BUTTON_VIEW_PRODUCT','Produktansicht');
+define('BUTTON_VIEW_PRODUCT', 'Produktansicht');
 // EOF - web28 - 2010-08-21 - add  button view products
+
 ?>

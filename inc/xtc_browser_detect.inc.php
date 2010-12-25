@@ -14,9 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_browser_detect($component) {
-
+function xtc_browser_detect($component) {
     return stristr($_SERVER['HTTP_USER_AGENT'], $component);
-  }
+}
 ?>

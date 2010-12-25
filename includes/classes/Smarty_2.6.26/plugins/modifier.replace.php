@@ -4,8 +4,6 @@
  * @package Smarty
  * @subpackage plugins
  */
-
-
 /**
  * Smarty replace modifier plugin
  *
@@ -20,11 +18,8 @@
  * @param string
  * @return string
  */
-function smarty_modifier_replace($string, $search, $replace)
-{
+function smarty_modifier_replace($string, $search, $replace) {
     return str_replace($search, $replace, $string);
 }
-
 /* vim: set expandtab: */
-
 ?>

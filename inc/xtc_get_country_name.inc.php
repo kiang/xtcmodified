@@ -15,13 +15,10 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  require_once(DIR_FS_INC . 'xtc_get_countries.inc.php');
-  
-  function xtc_get_country_name($country_id) {
+require_once (DIR_FS_INC . 'xtc_get_countries.inc.php');
+function xtc_get_country_name($country_id) {
     if ($country_id == 0) return ''; //DokuMan - 2010-08-24 - return when no country set
     $country_array = xtc_get_countriesList($country_id);
-
     return $country_array['countries_name'];
-  }
+}
 ?>

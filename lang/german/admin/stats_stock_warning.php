@@ -14,6 +14,5 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Lagerbestand');
 ?>

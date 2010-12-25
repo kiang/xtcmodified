@@ -14,20 +14,17 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  // This funstion validates a plain text password with an
-  // encrpyted password
-  function xtc_validate_password($plain, $encrypted) {
+// This funstion validates a plain text password with an
+// encrpyted password
+function xtc_validate_password($plain, $encrypted) {
     if (xtc_not_null($plain) && xtc_not_null($encrypted)) {
-      // split apart the hash / salt
-      if ($encrypted!= md5($plain)){
+        // split apart the hash / salt
+        if ($encrypted != md5($plain)) {
             return false;
-      } else {
-             return true;
-      }
-
+        } else {
+            return true;
+        }
     }
-
     return false;
-  }
+}
 ?>

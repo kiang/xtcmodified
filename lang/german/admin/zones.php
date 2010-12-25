@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Bundesl&auml;nder');
-
 define('TABLE_HEADING_COUNTRY_NAME', 'Land');
 define('TABLE_HEADING_ZONE_NAME', 'Bundesland');
 define('TABLE_HEADING_ZONE_CODE', 'Code');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
 define('TEXT_INFO_ZONES_NAME', 'Name des Bundeslandes:');
 define('TEXT_INFO_ZONES_CODE', 'Code des Bundeslandes:');

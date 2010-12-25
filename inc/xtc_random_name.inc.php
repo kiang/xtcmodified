@@ -14,18 +14,17 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  // Returns a random name, 16 to 20 characters long
-  // There are more than 10^28 combinations
-  // The directory is "hidden", i.e. starts with '.'
-  function xtc_random_name() {
+// Returns a random name, 16 to 20 characters long
+// There are more than 10^28 combinations
+// The directory is "hidden", i.e. starts with '.'
+function xtc_random_name() {
     $letters = 'abcdefghijklmnopqrstuvwxyz';
     $dirname = '.';
-    $length = floor(xtc_rand(16,20));
-    for ($i = 1; $i <= $length; $i++) {
-     $q = floor(xtc_rand(1,26));
-     $dirname .= $letters[$q];
+    $length = floor(xtc_rand(16, 20));
+    for ($i = 1;$i <= $length;$i++) {
+        $q = floor(xtc_rand(1, 26));
+        $dirname.= $letters[$q];
     }
     return $dirname;
-  }
- ?>
+}
+?>

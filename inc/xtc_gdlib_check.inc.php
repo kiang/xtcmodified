@@ -9,9 +9,7 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
-
-   $code = 'function gd_info() {
+$code = 'function gd_info() {
        $array = Array(
                        "GD Version" => "",
                        "FreeType Support" => 0,
@@ -88,7 +86,5 @@
 
        return $array;
    }';
-
-if(!function_exists("gd_info")) eval($code);
-
+if (!function_exists("gd_info")) eval($code);
 ?>

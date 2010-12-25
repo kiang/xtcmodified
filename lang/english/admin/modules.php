@@ -14,21 +14,17 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE_MODULES_PAYMENT', 'Payment Modules');
 define('HEADING_TITLE_MODULES_SHIPPING', 'Shipping Modules');
 define('HEADING_TITLE_MODULES_ORDER_TOTAL', 'Order Total Modules');
-
 define('TABLE_HEADING_MODULES', 'Modules');
 define('TABLE_HEADING_SORT_ORDER', 'Sort Order');
 define('TABLE_HEADING_STATUS', 'Status');
 define('TABLE_HEADING_ACTION', 'Action');
-
 define('TEXT_MODULE_DIRECTORY', 'Module Directory:');
-
-define('TABLE_HEADING_FILENAME','Modulname (for internal usage)');
-
+define('TABLE_HEADING_FILENAME', 'Modulname (for internal usage)');
 // BOF - web28 - 2010-05-07 PayPal API Modul
 define('TEXT_INFO_DELETE_PAYPAL', 'If you uninstall this module now, the PayPal transaction data are deleted!<br />If you want to receive these data, press now on abort and you deactivate the module (activate module = False) only.');
 // BOF - web28 - 2010-05-07 PayPal API Modul
+
 ?>

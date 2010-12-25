@@ -14,14 +14,11 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Database Backup Manager');
-
 define('TABLE_HEADING_TITLE', 'Title');
 define('TABLE_HEADING_FILE_DATE', 'Date');
 define('TABLE_HEADING_FILE_SIZE', 'Size');
 define('TABLE_HEADING_ACTION', 'Action');
-
 define('TEXT_INFO_HEADING_NEW_BACKUP', 'New Backup');
 define('TEXT_INFO_HEADING_RESTORE_LOCAL', 'Restore Local');
 define('TEXT_INFO_NEW_BACKUP', 'Do not interrupt the backup process which might take a couple of minutes.');
@@ -42,18 +39,14 @@ define('TEXT_NO_EXTENSION', 'None');
 define('TEXT_BACKUP_DIRECTORY', 'Backup Directory:');
 define('TEXT_LAST_RESTORATION', 'Last Restoration:');
 define('TEXT_FORGET', '(<u>forget</u>)');
-
 define('ERROR_BACKUP_DIRECTORY_DOES_NOT_EXIST', 'Error: Backup directory does not exist. Please set this in configure.php.');
 define('ERROR_BACKUP_DIRECTORY_NOT_WRITEABLE', 'Error: Backup directory is not writeable.');
 define('ERROR_DOWNLOAD_LINK_NOT_ACCEPTABLE', 'Error: Download link not acceptable.');
-
 define('SUCCESS_LAST_RESTORE_CLEARED', 'Success: The last restoration date has been cleared.');
 define('SUCCESS_DATABASE_SAVED', 'Success: The database has been saved.');
 define('SUCCESS_DATABASE_RESTORED', 'Success: The database has been restored.');
 define('SUCCESS_BACKUP_DELETED', 'Success: The backup has been removed.');
 define('SUCCESS_BACKUP_UPLOAD', 'Success: The backup file has been uploaded.');
-
 //TEXT_COMPLETE_INSERTS
 define('TEXT_COMPLETE_INSERTS', "<b>Complete 'INSERT's</b><br> - field names are entered into each row INSERT (increased backup)");
-
 ?>

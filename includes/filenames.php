@@ -1,5 +1,4 @@
 <?php
-
 /* -----------------------------------------------------------------------------------------
    $Id: filenames.php 1295 2005-10-08 16:59:56Z mz $   
 
@@ -15,7 +14,6 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
 // define the filenames used in the project
 define('FILENAME_ACCOUNT', 'account.php');
 define('FILENAME_ACCOUNT_EDIT', 'account_edit.php');
@@ -40,7 +38,7 @@ define('FILENAME_CHECKOUT_SHIPPING', 'checkout_shipping.php');
 define('FILENAME_CHECKOUT_SHIPPING_ADDRESS', 'checkout_shipping_address.php');
 define('FILENAME_CHECKOUT_SUCCESS', 'checkout_success.php');
 define('FILENAME_COOKIE_USAGE', 'cookie_usage.php');
-define('FILENAME_CUSTOMERS','admin/customers.php');
+define('FILENAME_CUSTOMERS', 'admin/customers.php');
 define('FILENAME_CREATE_ACCOUNT', 'create_account.php');
 define('FILENAME_CREATE_ACCOUNT_SUCCESS', 'create_account_success.php');
 define('FILENAME_DEFAULT', 'index.php');
@@ -91,16 +89,14 @@ define('FILENAME_POPUP_CONTENT', 'popup_content.php');
 define('FILENAME_EDIT_PRODUCTS', 'admin/categories.php');
 define('FILENAME_METATAGS_PRODUCTS_INFO', 'metatags_product_info.php');
 define('FILENAME_GRADUATED_PRICE', 'graduated_prices.php');
-
 define('FILENAME_PDF_DATASHEET', 'pdf_datasheet.php');
 define('FILENAME_PRINT_PRODUCT_INFO', 'print_product_info.php');
 define('FILENAME_PRINT_ORDER', 'print_order.php');
-
 define('FILENAME_ERROR_HANDLER', 'error_handler.php');
 define('FILENAME_CONTENT', 'shop_content.php');
 define('FILENAME_BANNER', 'banners.php');
-
-// BOF - DokuMan - 2010-08-23 - PayPal API Modul - Use of undefined constant FILENAME_PAYPAL_CHECKOUT 
+// BOF - DokuMan - 2010-08-23 - PayPal API Modul - Use of undefined constant FILENAME_PAYPAL_CHECKOUT
 define('FILENAME_PAYPAL_CHECKOUT', 'paypal_checkout.php');
-// EOF - DokuMan - 2010-08-23 - PayPal API Modul - Use of undefined constant FILENAME_PAYPAL_CHECKOUT 
+// EOF - DokuMan - 2010-08-23 - PayPal API Modul - Use of undefined constant FILENAME_PAYPAL_CHECKOUT
+
 ?>

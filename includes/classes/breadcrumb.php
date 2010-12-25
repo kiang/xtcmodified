@@ -15,65 +15,48 @@
    
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-
-  class breadcrumb {
+class breadcrumb {
     var $_trail;
-
     function breadcrumb() {
-      $this->reset();
+        $this->reset();
     }
-
     function reset() {
-      $this->_trail = array();
+        $this->_trail = array();
     }
-	
-	//BOF - web28 - 2010-11-13 - add target parameter
+    //BOF - web28 - 2010-11-13 - add target parameter
     //function add($title, $link = '') {
-      //$this->_trail[] = array('title' => $title, 'link' => $link);
+    //$this->_trail[] = array('title' => $title, 'link' => $link);
     //}
-	function add($title, $link = '', $target = '') {
-      $this->_trail[] = array('title' => $title, 'link' => $link, 'target' => $target );
+    function add($title, $link = '', $target = '') {
+        $this->_trail[] = array('title' => $title, 'link' => $link, 'target' => $target);
     }
-	//BOF - web28 - 2010-11-13 - add target parameter
-
+    //BOF - web28 - 2010-11-13 - add target parameter
     function trail($separator = ' - ') {
-      $trail_string = '';
-
-      for ($i=0, $n=sizeof($this->_trail); $i<$n; $i++) {
-        if (isset($this->_trail[$i]['link']) && xtc_not_null($this->_trail[$i]['link'])) {
-		  //BOF - web28 - 2010-11-13 - add target parameter
-          //$trail_string .= '<a href="' . $this->_trail[$i]['link'] . '" class="headerNavigation">' . $this->_trail[$i]['title'] . '</a>';
-		  $trail_string .= '<a href="' . $this->_trail[$i]['link'] . '" class="headerNavigation" '. $this->_trail[$i]['target'] .'>' . $this->_trail[$i]['title'] . '</a>';
-		  //BOF - web28 - 2010-11-13 - add target parameter
-        } else {
-          $trail_string .= $this->_trail[$i]['title'];
+        $trail_string = '';
+        for ($i = 0, $n = sizeof($this->_trail);$i < $n;$i++) {
+            if (isset($this->_trail[$i]['link']) && xtc_not_null($this->_trail[$i]['link'])) {
+                //BOF - web28 - 2010-11-13 - add target parameter
+                //$trail_string .= '<a href="' . $this->_trail[$i]['link'] . '" class="headerNavigation">' . $this->_trail[$i]['title'] . '</a>';
+                $trail_string.= '<a href="' . $this->_trail[$i]['link'] . '" class="headerNavigation" ' . $this->_trail[$i]['target'] . '>' . $this->_trail[$i]['title'] . '</a>';
+                //BOF - web28 - 2010-11-13 - add target parameter
+                
+            } else {
+                $trail_string.= $this->_trail[$i]['title'];
+            }
+            if (($i + 1) < $n) $trail_string.= $separator;
         }
-
-        if (($i+1) < $n) $trail_string .= $separator;
-      }
-
-      return $trail_string;
+        return $trail_string;
     }
-    
-        // Begin Econda-Monitor
-
+    // Begin Econda-Monitor
     function econda() { // for drill-down
-
-      $econda_string = '';
-
-      for ($i=1, $n=sizeof($this->_trail); $i<$n; $i++) {
-
-        $econda_string .= $this->_trail[$i]['title'];
-
-        if (($i+1) < $n) $econda_string .= '/';
-
-      }
-
-      return $econda_string;
-
+        $econda_string = '';
+        for ($i = 1, $n = sizeof($this->_trail);$i < $n;$i++) {
+            $econda_string.= $this->_trail[$i]['title'];
+            if (($i + 1) < $n) $econda_string.= '/';
+        }
+        return $econda_string;
     }
-
     // End Econda-Monitor
     
-  }
+}
 ?>

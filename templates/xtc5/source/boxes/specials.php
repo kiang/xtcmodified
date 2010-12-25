@@ -17,20 +17,19 @@
    ---------------------------------------------------------------------------------------*/
 $box_smarty = new smarty;
 //BOF - GTB - 2010-08-03 - Security Fix - Base
-$box_smarty->assign('tpl_path',DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/');
+$box_smarty->assign('tpl_path', DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/');
 //$box_smarty->assign('tpl_path', 'templates/'.CURRENT_TEMPLATE.'/');
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 $box_content = '';
 // include needed functions
-require_once (DIR_FS_INC.'xtc_random_select.inc.php');
-
+require_once (DIR_FS_INC . 'xtc_random_select.inc.php');
 //fsk18 lock
 $fsk_lock = '';
 if ($_SESSION['customers_status']['customers_fsk18_display'] == '0') {
-  $fsk_lock = ' and p.products_fsk18!=1';
+    $fsk_lock = ' and p.products_fsk18!=1';
 }
 if (GROUP_CHECK == 'true') {
-  $group_check = " and p.group_permission_".$_SESSION['customers_status']['customers_status_id']."=1 ";
+    $group_check = " and p.group_permission_" . $_SESSION['customers_status']['customers_status_id'] . "=1 ";
 }
 if ($random_product = xtc_random_select("select
                                      p.products_id,
@@ -43,35 +42,33 @@ if ($random_product = xtc_random_select("select
                                      p.products_vpe_status,
                                      p.products_vpe_value,
                                      s.specials_new_products_price
-                                     from ".TABLE_PRODUCTS." p,
-                                     ".TABLE_PRODUCTS_DESCRIPTION." pd,
-                                     ".TABLE_SPECIALS." s where p.products_status = '1'
+                                     from " . TABLE_PRODUCTS . " p,
+                                     " . TABLE_PRODUCTS_DESCRIPTION . " pd,
+                                     " . TABLE_SPECIALS . " s where p.products_status = '1'
                                      and p.products_id = s.products_id
                                      and pd.products_id = s.products_id
-                                     and pd.language_id = '".$_SESSION['languages_id']."'
+                                     and pd.language_id = '" . $_SESSION['languages_id'] . "'
                                      and s.status = '1'
-                                     ".$group_check."
-                                     ".$fsk_lock."
+                                     " . $group_check . "
+                                     " . $fsk_lock . "
                                      order by s.specials_date_added
-                                     desc limit ".MAX_RANDOM_SELECT_SPECIALS)) {
-
-  $box_smarty->assign('box_content',$product->buildDataArray($random_product));
-  $box_smarty->assign('SPECIALS_LINK', xtc_href_link(FILENAME_SPECIALS));
-  $box_smarty->assign('language', $_SESSION['language']);
-
-  if ($random_product["products_id"] != '') {
-    // set cache ID
-    if (!CacheCheck()) {
-      $box_smarty->caching = 0;
-      $box_specials = $box_smarty->fetch(CURRENT_TEMPLATE.'/boxes/box_specials.html');
-    } else {
-      $box_smarty->caching = 1;
-      $box_smarty->cache_lifetime = CACHE_LIFETIME;
-      $box_smarty->cache_modified_check = CACHE_CHECK;
-      $cache_id = $_SESSION['language'].$random_product["products_id"].$_SESSION['customers_status']['customers_status_name'];
-      $box_specials = $box_smarty->fetch(CURRENT_TEMPLATE.'/boxes/box_specials.html', $cache_id);
+                                     desc limit " . MAX_RANDOM_SELECT_SPECIALS)) {
+    $box_smarty->assign('box_content', $product->buildDataArray($random_product));
+    $box_smarty->assign('SPECIALS_LINK', xtc_href_link(FILENAME_SPECIALS));
+    $box_smarty->assign('language', $_SESSION['language']);
+    if ($random_product["products_id"] != '') {
+        // set cache ID
+        if (!CacheCheck()) {
+            $box_smarty->caching = 0;
+            $box_specials = $box_smarty->fetch(CURRENT_TEMPLATE . '/boxes/box_specials.html');
+        } else {
+            $box_smarty->caching = 1;
+            $box_smarty->cache_lifetime = CACHE_LIFETIME;
+            $box_smarty->cache_modified_check = CACHE_CHECK;
+            $cache_id = $_SESSION['language'] . $random_product["products_id"] . $_SESSION['customers_status']['customers_status_name'];
+            $box_specials = $box_smarty->fetch(CURRENT_TEMPLATE . '/boxes/box_specials.html', $cache_id);
+        }
+        $smarty->assign('box_SPECIALS', $box_specials);
     }
-    $smarty->assign('box_SPECIALS', $box_specials);
-  }
 }
 ?>

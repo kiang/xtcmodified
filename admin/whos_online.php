@@ -15,14 +15,11 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
-  $xx_mins_ago = (time() - 900);
-
-  require('includes/application_top.php');
-  require(DIR_FS_INC. 'xtc_get_products.inc.php');
-
-  // remove entries that have expired
-  xtc_db_query("delete from " . TABLE_WHOS_ONLINE . " where time_last_click < '" . $xx_mins_ago . "'");
+$xx_mins_ago = (time() - 900);
+require ('includes/application_top.php');
+require (DIR_FS_INC . 'xtc_get_products.inc.php');
+// remove entries that have expired
+xtc_db_query("delete from " . TABLE_WHOS_ONLINE . " where time_last_click < '" . $xx_mins_ago . "'");
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html <?php echo HTML_PARAMS; ?>>
@@ -33,7 +30,7 @@
 </head>
 <body marginwidth="0" marginheight="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF">
 <!-- header //-->
-<?php require(DIR_WS_INCLUDES . 'header.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'header.php'); ?>
 <!-- header_eof //-->
 
 <!-- body //-->
@@ -41,7 +38,7 @@
   <tr>
     <td class="columnLeft2" width="<?php echo BOX_WIDTH; ?>" valign="top"><table border="0" width="<?php echo BOX_WIDTH; ?>" cellspacing="1" cellpadding="1" class="columnLeft">
 <!-- left_navigation //-->
-<?php require(DIR_WS_INCLUDES . 'column_left.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'column_left.php'); ?>
 <!-- left_navigation_eof //-->
     </table></td>
 <!-- body_text //-->
@@ -69,24 +66,24 @@
                 <td class="dataTableHeadingContent"><?php echo TABLE_HEADING_HTTP_REFERER; ?></td>
               </tr>
 <?php
-  //BOF - DokuMan - 2010-06-28 - Added http_referer to whois online
-  $whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id, http_referer from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
-  //$whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
-  //EOF - DokuMan - 2010-06-28 - Added http_referer to whois online
-
-  while ($whos_online = xtc_db_fetch_array($whos_online_query)) {
+//BOF - DokuMan - 2010-06-28 - Added http_referer to whois online
+$whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id, http_referer from " . TABLE_WHOS_ONLINE . " order by time_last_click desc");
+//$whos_online_query = xtc_db_query("select customer_id, full_name, ip_address, time_entry, time_last_click, last_page_url, session_id from " . TABLE_WHOS_ONLINE ." order by time_last_click desc");
+//EOF - DokuMan - 2010-06-28 - Added http_referer to whois online
+while ($whos_online = xtc_db_fetch_array($whos_online_query)) {
     $time_online = (time() - $whos_online['time_entry']);
-    if ((!isset($_GET['info']) || (isset($_GET['info']) && ($_GET['info'] == $whos_online['session_id']))) && !isset($info) ) {
-      $info = $whos_online['session_id'];
+    if ((!isset($_GET['info']) || (isset($_GET['info']) && ($_GET['info'] == $whos_online['session_id']))) && !isset($info)) {
+        $info = $whos_online['session_id'];
     }
     if ($whos_online['session_id'] == $info) {
-      echo '              <tr class="dataTableRowSelected">' . "\n";
+        echo '              <tr class="dataTableRowSelected">' . "\n";
     } else {
-      echo '              <tr class="dataTableRow" onmouseover="this.className=\'dataTableRowOver\';this.style.cursor=\'pointer\'" onmouseout="this.className=\'dataTableRow\'" onclick="document.location.href=\'' . xtc_href_link(FILENAME_WHOS_ONLINE, xtc_get_all_get_params(array('info', 'action')) . 'info=' . $whos_online['session_id'], 'NONSSL') . '\'">' . "\n";
+        echo '              <tr class="dataTableRow" onmouseover="this.className=\'dataTableRowOver\';this.style.cursor=\'pointer\'" onmouseout="this.className=\'dataTableRow\'" onclick="document.location.href=\'' . xtc_href_link(FILENAME_WHOS_ONLINE, xtc_get_all_get_params(array('info', 'action')) . 'info=' . $whos_online['session_id'], 'NONSSL') . '\'">' . "\n";
     }
     //BOF web28 2010-12-03 added Hostname to whois online
-    $whos_online['ip_address'] = '<span style="white-space: nowrap;">'.$whos_online['ip_address'].'<span style="font-weight: normal; font-style: italic;"> ('.@gethostbyaddr($whos_online['ip_address']).')</span></span>';
-    //EOF web28 2010-12-03 added Hostname to whois online   
+    $whos_online['ip_address'] = '<span style="white-space: nowrap;">' . $whos_online['ip_address'] . '<span style="font-weight: normal; font-style: italic;"> (' . @gethostbyaddr($whos_online['ip_address']) . ')</span></span>';
+    //EOF web28 2010-12-03 added Hostname to whois online
+    
 ?>
                 <td class="dataTableContent"><?php echo gmdate('H:i:s', $time_online); ?></td>
                 <td class="dataTableContent" align="center"><?php echo $whos_online['customer_id']; ?></td>
@@ -95,62 +92,57 @@
                 <td class="dataTableContent"><?php echo date('H:i:s', $whos_online['time_entry']); ?></td>
                 <td class="dataTableContent" align="center"><?php echo date('H:i:s', $whos_online['time_last_click']); ?></td>
                 <td class="dataTableContent"><?php
-                if (preg_match('/^(.*)' . xtc_session_name() . '=[a-f,0-9]+[&]*(.*)/i', $whos_online['last_page_url'], $array)) { // Hetfield - 2009-08-19 - replaced deprecated function eregi with preg_match to be ready for PHP >= 5.3
-                echo $array[1] . $array[2]; } else { echo $whos_online['last_page_url'];
-                }
-                ?>&nbsp;</td>
+    if (preg_match('/^(.*)' . xtc_session_name() . '=[a-f,0-9]+[&]*(.*)/i', $whos_online['last_page_url'], $array)) { // Hetfield - 2009-08-19 - replaced deprecated function eregi with preg_match to be ready for PHP >= 5.3
+        echo $array[1] . $array[2];
+    } else {
+        echo $whos_online['last_page_url'];
+    }
+?>&nbsp;</td>
                 <td class="dataTableContent"><?php echo $whos_online['http_referer']; ?></td>
               </tr>
 <?php
-  }
+}
 ?>
               <tr>
                 <td class="smallText" colspan="7"><?php echo sprintf(TEXT_NUMBER_OF_CUSTOMERS, xtc_db_num_rows($whos_online_query)); ?></td>
               </tr>
             </table></td>
 <?php
-
-  $heading = array();
-  $contents = array();
-  if (isset($info)) {
+$heading = array();
+$contents = array();
+if (isset($info)) {
     $heading[] = array('text' => '<strong>' . TABLE_HEADING_SHOPPING_CART . '</strong>');
     $session_data = '';
     if (STORE_SESSIONS == 'mysql') {
-      $session_data = xtc_db_query("select value from " . TABLE_SESSIONS . " WHERE sesskey = '" . $info . "'");
-      $session_data = xtc_db_fetch_array($session_data);
-      $session_data = trim($session_data['value']);
+        $session_data = xtc_db_query("select value from " . TABLE_SESSIONS . " WHERE sesskey = '" . $info . "'");
+        $session_data = xtc_db_fetch_array($session_data);
+        $session_data = trim($session_data['value']);
     } else {
-      if ( (file_exists(xtc_session_save_path() . '/sess_' . $info)) && (filesize(xtc_session_save_path() . '/sess_' . $info) > 0) ) {
-        $session_data = file(xtc_session_save_path() . '/sess_' . $info);
-        $session_data = trim(implode('', $session_data));
-      }
+        if ((file_exists(xtc_session_save_path() . '/sess_' . $info)) && (filesize(xtc_session_save_path() . '/sess_' . $info) > 0)) {
+            $session_data = file(xtc_session_save_path() . '/sess_' . $info);
+            $session_data = trim(implode('', $session_data));
+        }
     }
-
-      $user_session = unserialize_session_data($session_data);
-
-      if (isset($user_session)) {
+    $user_session = unserialize_session_data($session_data);
+    if (isset($user_session)) {
         $products = xtc_get_products($user_session);
-        for ($i = 0, $n = sizeof($products); $i < $n; $i++) {
-          $contents[] = array('text' => $products[$i]['quantity'] . ' x ' . $products[$i]['name']);
+        for ($i = 0, $n = sizeof($products);$i < $n;$i++) {
+            $contents[] = array('text' => $products[$i]['quantity'] . ' x ' . $products[$i]['name']);
         }
-
         if (sizeof($products) > 0) {
-          $contents[] = array('text' => xtc_draw_separator('pixel_black.gif', '100%', '1'));
-          $contents[] = array('align' => 'right', 'text'  => TEXT_SHOPPING_CART_SUBTOTAL . ' ' . $user_session['cart']->total . ' ' . $user_session['currency']);
+            $contents[] = array('text' => xtc_draw_separator('pixel_black.gif', '100%', '1'));
+            $contents[] = array('align' => 'right', 'text' => TEXT_SHOPPING_CART_SUBTOTAL . ' ' . $user_session['cart']->total . ' ' . $user_session['currency']);
         } else {
-          $contents[] = array('text' => TEXT_EMPTY_CART);
+            $contents[] = array('text' => TEXT_EMPTY_CART);
         }
-      }
     }
-
-  if ( (xtc_not_null($heading)) && (xtc_not_null($contents)) ) {
+}
+if ((xtc_not_null($heading)) && (xtc_not_null($contents))) {
     echo '            <td width="25%" valign="top">' . "\n";
-
     $box = new box;
     echo $box->infoBox($heading, $contents);
-
     echo '            </td>' . "\n";
-  }
+}
 ?>
           </tr>
         </table></td>
@@ -162,9 +154,9 @@
 <!-- body_eof //-->
 
 <!-- footer //-->
-<?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'footer.php'); ?>
 <!-- footer_eof //-->
 <br />
 </body>
 </html>
-<?php require(DIR_WS_INCLUDES . 'application_bottom.php'); ?>
+<?php require (DIR_WS_INCLUDES . 'application_bottom.php'); ?>

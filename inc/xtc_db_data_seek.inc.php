@@ -14,18 +14,12 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_data_seek($db_query, $row_number,$cq=false) {
-
-
-    if (DB_CACHE=='true' && $cq) {
-    if (!count($db_query)) return;
-     return $db_query[$row_number];
-      } else {
-
-         if (!is_array($db_query)) return mysql_data_seek($db_query, $row_number);
-
-      }
-
-  }
- ?>
+function xtc_db_data_seek($db_query, $row_number, $cq = false) {
+    if (DB_CACHE == 'true' && $cq) {
+        if (!count($db_query)) return;
+        return $db_query[$row_number];
+    } else {
+        if (!is_array($db_query)) return mysql_data_seek($db_query, $row_number);
+    }
+}
+?>

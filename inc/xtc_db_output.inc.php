@@ -14,8 +14,7 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_db_output($string) {
+function xtc_db_output($string) {
     return htmlspecialchars($string);
-  }
- ?>
+}
+?>

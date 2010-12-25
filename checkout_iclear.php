@@ -32,57 +32,44 @@
   USA
 
 *************************************************************************/
-
-  require('includes/application_top.php');
-
+require ('includes/application_top.php');
 // if the customer is not logged on, redirect them to the login page
-if (!isset ($_SESSION['customer_id'])) {
-	xtc_redirect(xtc_href_link(FILENAME_LOGIN, '', 'SSL'));
+if (!isset($_SESSION['customer_id'])) {
+    xtc_redirect(xtc_href_link(FILENAME_LOGIN, '', 'SSL'));
 }
-
 // assign SESSION vars 2 locals (register_globals off)
-	$cart = $_SESSION['cart'];
-	$cartID = $_SESSION['cartID'];
- // if there is nothing in the customers cart, redirect them to the shopping cart page
-  if ($cart->count_contents() < 1) {
+$cart = $_SESSION['cart'];
+$cartID = $_SESSION['cartID'];
+// if there is nothing in the customers cart, redirect them to the shopping cart page
+if ($cart->count_contents() < 1) {
     xtc_redirect(xtc_href_link(FILENAME_SHOPPING_CART));
-  }
-
- // avoid hack attempts during the checkout procedure by checking the internal cartID
-  if (isset($cart->cartID) && isset($_SESSION['cartID'])) { // Hetfield - 2009-08-19 - removed deprecated function session_is_registered to be ready for PHP >= 5.3
+}
+// avoid hack attempts during the checkout procedure by checking the internal cartID
+if (isset($cart->cartID) && isset($_SESSION['cartID'])) { // Hetfield - 2009-08-19 - removed deprecated function session_is_registered to be ready for PHP >= 5.3
     if ($cart->cartID != $cartID) {
-      xtc_redirect(xtc_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
+        xtc_redirect(xtc_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
     }
-  }
-
-	// if no shipping method has been selected, redirect the customer to the shipping method selection page
-	if (!isset ($_SESSION['shipping']))
-		xtc_redirect(xtc_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
-
+}
+// if no shipping method has been selected, redirect the customer to the shipping method selection page
+if (!isset($_SESSION['shipping'])) xtc_redirect(xtc_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
 // load the selected payment module
-  require(DIR_WS_CLASSES . 'payment.php');
-  $payment_modules = new payment($payment);
-
-  require(DIR_WS_CLASSES . 'order.php');
-  $order = new order;
-
-  $payment_modules->update_status();
-
-  if (is_array($payment_modules->modules)) {
+require (DIR_WS_CLASSES . 'payment.php');
+$payment_modules = new payment($payment);
+require (DIR_WS_CLASSES . 'order.php');
+$order = new order;
+$payment_modules->update_status();
+if (is_array($payment_modules->modules)) {
     $payment_modules->pre_confirmation_check();
-  }
-
+}
 // load the selected shipping module
-  require(DIR_WS_CLASSES . 'shipping.php');
-  $shipping_modules = new shipping($shipping);
-
-  require(DIR_WS_CLASSES . 'order_total.php');
-  $order_total_modules = new order_total;
+require (DIR_WS_CLASSES . 'shipping.php');
+$shipping_modules = new shipping($shipping);
+require (DIR_WS_CLASSES . 'order_total.php');
+$order_total_modules = new order_total;
 // check if this is a call from checkout confirmation and redirect 2 iclear login page if
-  if(isset($_POST['targetURI'])) {
+if (isset($_POST['targetURI'])) {
     xtc_redirect($_POST['targetURI']);
-  } elseif (isset($_POST['error_message'])) {
+} elseif (isset($_POST['error_message'])) {
     print '<div style="width: 100%; text-align: center; color: red; font-size:14px; font-weight: 900; font-family:sans-serif">Bei der Kommunikation mit dem iclear Paymentsystem trat folgender Fehler auf: <br />' . nl2br($_POST['error_message']) . '</div>';
-
-  }
+}
 ?>

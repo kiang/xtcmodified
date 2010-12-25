@@ -14,16 +14,13 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Steuers&auml;tze');
-
 define('TABLE_HEADING_TAX_RATE_PRIORITY', 'Priorit&auml;t');
 define('TABLE_HEADING_TAX_CLASS_TITLE', 'Steuerklasse');
 define('TABLE_HEADING_COUNTRIES_NAME', 'Land');
 define('TABLE_HEADING_ZONE', 'Steuerzone');
 define('TABLE_HEADING_TAX_RATE', 'Steuersatz');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
 define('TEXT_INFO_DATE_ADDED', 'hinzugef&uuml;gt am:');
 define('TEXT_INFO_LAST_MODIFIED', 'letzte &Auml;nderung:');

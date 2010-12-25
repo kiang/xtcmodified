@@ -27,48 +27,46 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 $gift_smarty = new Smarty;
 //BOF - GTB - 2010-08-03 - Security Fix - Base
-$gift_smarty->assign('tpl_path',DIR_WS_BASE.'templates/'.CURRENT_TEMPLATE.'/');
+$gift_smarty->assign('tpl_path', DIR_WS_BASE . 'templates/' . CURRENT_TEMPLATE . '/');
 //$gift_smarty->assign('tpl_path', 'templates/'.CURRENT_TEMPLATE.'/');
 //EOF - GTB - 2010-08-03 - Security Fix - Base
 if (ACTIVATE_GIFT_SYSTEM == 'true') {
-	$gift_smarty->assign('ACTIVATE_GIFT', 'true');
+    $gift_smarty->assign('ACTIVATE_GIFT', 'true');
 }
-
-if (isset ($_SESSION['customer_id'])) {
-	$gv_query = xtc_db_query("select amount from ".TABLE_COUPON_GV_CUSTOMER." where customer_id = '".$_SESSION['customer_id']."'");
-	$gv_result = xtc_db_fetch_array($gv_query);
-	if ($gv_result['amount'] > 0) {
-		$gift_smarty->assign('GV_AMOUNT', $xtPrice->xtcFormat($gv_result['amount'], true, 0, true));
-		$gift_smarty->assign('GV_SEND_TO_FRIEND_LINK', xtc_href_link(FILENAME_GV_SEND));
-	} else {
-		$gift_smarty->assign('GV_AMOUNT', 0);
-	}
+if (isset($_SESSION['customer_id'])) {
+    $gv_query = xtc_db_query("select amount from " . TABLE_COUPON_GV_CUSTOMER . " where customer_id = '" . $_SESSION['customer_id'] . "'");
+    $gv_result = xtc_db_fetch_array($gv_query);
+    if ($gv_result['amount'] > 0) {
+        $gift_smarty->assign('GV_AMOUNT', $xtPrice->xtcFormat($gv_result['amount'], true, 0, true));
+        $gift_smarty->assign('GV_SEND_TO_FRIEND_LINK', xtc_href_link(FILENAME_GV_SEND));
+    } else {
+        $gift_smarty->assign('GV_AMOUNT', 0);
+    }
 }
-if (isset ($_SESSION['gv_id'])) {
-	$gv_query = xtc_db_query("select coupon_amount from ".TABLE_COUPONS." where coupon_id = '".$_SESSION['gv_id']."'");
-	$coupon = xtc_db_fetch_array($gv_query);
-	$gift_smarty->assign('COUPON_AMOUNT2', $xtPrice->xtcFormat($coupon['coupon_amount'], true, 0, true));
+if (isset($_SESSION['gv_id'])) {
+    $gv_query = xtc_db_query("select coupon_amount from " . TABLE_COUPONS . " where coupon_id = '" . $_SESSION['gv_id'] . "'");
+    $coupon = xtc_db_fetch_array($gv_query);
+    $gift_smarty->assign('COUPON_AMOUNT2', $xtPrice->xtcFormat($coupon['coupon_amount'], true, 0, true));
 }
-if (isset ($_SESSION['cc_id'])) {
-	//$gift_smarty->assign('COUPON_HELP_LINK', '<a style="cursor:pointer" onclick="javascript:window.open(\''.xtc_href_link(FILENAME_POPUP_COUPON_HELP, 'cID='.$_SESSION['cc_id']).'\', \'popup\', \'toolbar=0,scrollbars=yes, width=350, height=350\')">');
-	
-	//BOF - GTB - 2011-11-26 - correct href and added title tag
-	//BOF - web28 - FIX LOST cID - 2010-11-05 - add SSL FIX -> $request_type
-	//$gift_smarty->assign('COUPON_HELP_LINK', '<a target="_blank" class="thickbox" href="'.xtc_href_link(FILENAME_POPUP_COUPON_HELP.'?KeepThis=true&TB_iframe=true&height=400&width=600').'">Information</a>');
-	//$gift_smarty->assign('COUPON_HELP_LINK', '<a target="_blank" class="thickbox" href="'.xtc_href_link(FILENAME_POPUP_COUPON_HELP.'?cID='.$_SESSION['cc_id'].'&KeepThis=true&TB_iframe=true&height=400&width=600', $request_type).'">Information</a>');
-	$gift_smarty->assign('COUPON_HELP_LINK', '<a target="_blank" class="thickbox" title="Information" href="'.xtc_href_link(FILENAME_POPUP_COUPON_HELP, 'cID='.$_SESSION['cc_id'].'&KeepThis=true&TB_iframe=true&height=400&width=600', $request_type).'">Information</a>');
-	//EOF - web28 - FIX LOST cID - 2010-11-05 - add SSL FIX -> $request_type
-	//EOF - GTB - 2011-11-26 - correct href and added title tag
+if (isset($_SESSION['cc_id'])) {
+    //$gift_smarty->assign('COUPON_HELP_LINK', '<a style="cursor:pointer" onclick="javascript:window.open(\''.xtc_href_link(FILENAME_POPUP_COUPON_HELP, 'cID='.$_SESSION['cc_id']).'\', \'popup\', \'toolbar=0,scrollbars=yes, width=350, height=350\')">');
+    //BOF - GTB - 2011-11-26 - correct href and added title tag
+    //BOF - web28 - FIX LOST cID - 2010-11-05 - add SSL FIX -> $request_type
+    //$gift_smarty->assign('COUPON_HELP_LINK', '<a target="_blank" class="thickbox" href="'.xtc_href_link(FILENAME_POPUP_COUPON_HELP.'?KeepThis=true&TB_iframe=true&height=400&width=600').'">Information</a>');
+    //$gift_smarty->assign('COUPON_HELP_LINK', '<a target="_blank" class="thickbox" href="'.xtc_href_link(FILENAME_POPUP_COUPON_HELP.'?cID='.$_SESSION['cc_id'].'&KeepThis=true&TB_iframe=true&height=400&width=600', $request_type).'">Information</a>');
+    $gift_smarty->assign('COUPON_HELP_LINK', '<a target="_blank" class="thickbox" title="Information" href="' . xtc_href_link(FILENAME_POPUP_COUPON_HELP, 'cID=' . $_SESSION['cc_id'] . '&KeepThis=true&TB_iframe=true&height=400&width=600', $request_type) . '">Information</a>');
+    //EOF - web28 - FIX LOST cID - 2010-11-05 - add SSL FIX -> $request_type
+    //EOF - GTB - 2011-11-26 - correct href and added title tag
+    
 }
-if (isset ($_SESSION['customer_id'])) {
-	$gift_smarty->assign('C_FLAG', 'true');
+if (isset($_SESSION['customer_id'])) {
+    $gift_smarty->assign('C_FLAG', 'true');
 }
 //BOF - web28 - 2010-09-04 - FIX SSL Link FILENAME_CREATE_ACCOUNT
 //$gift_smarty->assign('LINK_ACCOUNT', xtc_href_link(FILENAME_CREATE_ACCOUNT));
-$gift_smarty->assign('LINK_ACCOUNT', xtc_href_link(FILENAME_CREATE_ACCOUNT,'','SSL'));
+$gift_smarty->assign('LINK_ACCOUNT', xtc_href_link(FILENAME_CREATE_ACCOUNT, '', 'SSL'));
 //EOF - web28 - 2010-09-04 - FIX SSL Link FILENAME_CREATE_ACCOUNT
 //BOF - GTB - 2010-11-26 - fix SSL/NONSSL to request
 $gift_smarty->assign('FORM_ACTION', xtc_draw_form('gift_coupon', xtc_href_link(FILENAME_SHOPPING_CART, 'action=check_gift', $request_type)));
@@ -79,6 +77,5 @@ $gift_smarty->assign('BUTTON_SUBMIT', xtc_image_submit('button_redeem.gif', IMAG
 $gift_smarty->assign('language', $_SESSION['language']);
 $gift_smarty->assign('FORM_END', '</form>');
 $gift_smarty->caching = 0;
-
-$smarty->assign('MODULE_gift_cart', $gift_smarty->fetch(CURRENT_TEMPLATE.'/module/gift_cart.html'));
+$smarty->assign('MODULE_gift_cart', $gift_smarty->fetch(CURRENT_TEMPLATE . '/module/gift_cart.html'));
 ?>

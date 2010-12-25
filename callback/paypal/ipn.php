@@ -18,13 +18,12 @@
  * ab 15.08.2008 Teile vom Hamburger-Internetdienst geändert
  * Hamburger-Internetdienst Support Forums at www.forum.hamburger-internetdienst.de
  * Stand 29.04.2009
-*/
-include('../../includes/application_top_callback.php');
-include(DIR_WS_CLASSES . 'language.php');
+ */
+include ('../../includes/application_top_callback.php');
+include (DIR_WS_CLASSES . 'language.php');
 $lng = new language(xtc_input_validation($_GET['language'], 'char', ''));
-if(!isset($_GET['language']))
-  $lng->get_browser_language();
-include(DIR_WS_LANGUAGES.$lng->language['directory'].'/'.$lng->language['directory'].'.php');
+if (!isset($_GET['language'])) $lng->get_browser_language();
+include (DIR_WS_LANGUAGES . $lng->language['directory'] . '/' . $lng->language['directory'] . '.php');
 // nur zum Testen Dateien in ein Verzeichnis root/paypaltest
 //foreach ($_POST as $key => $value) {
 //    $text.= "Schlüssel: $key; Wert: $value\n";
@@ -34,9 +33,9 @@ include(DIR_WS_LANGUAGES.$lng->language['directory'].'/'.$lng->language['directo
 //fwrite($fp, $text);
 //fclose($fp);
 // testen ende
-require_once('../../includes/classes/paypal_checkout.php');
+require_once ('../../includes/classes/paypal_checkout.php');
 $o_paypal = new paypal_checkout();
-if(is_array($_POST)) {
-	$response = $o_paypal->callback_process($_POST,$lng->language['language_charset']);
+if (is_array($_POST)) {
+    $response = $o_paypal->callback_process($_POST, $lng->language['language_charset']);
 }
 ?>

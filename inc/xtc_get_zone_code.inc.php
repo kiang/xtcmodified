@@ -14,14 +14,13 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-   
-  function xtc_get_zone_code($country_id, $zone_id, $default_zone) {
+function xtc_get_zone_code($country_id, $zone_id, $default_zone) {
     $zone_query = xtc_db_query("select zone_code from " . TABLE_ZONES . " where zone_country_id = '" . $country_id . "' and zone_id = '" . $zone_id . "'");
     if (xtc_db_num_rows($zone_query)) {
-      $zone = xtc_db_fetch_array($zone_query);
-      return $zone['zone_code'];
+        $zone = xtc_db_fetch_array($zone_query);
+        return $zone['zone_code'];
     } else {
-      return $default_zone;
+        return $default_zone;
     }
-  }
- ?>
+}
+?>

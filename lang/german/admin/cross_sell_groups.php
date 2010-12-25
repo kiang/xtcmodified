@@ -14,12 +14,9 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', 'Cross-Marketing Gruppen');
-
 define('TABLE_HEADING_XSELL_GROUP_NAME', 'Gruppenname');
 define('TABLE_HEADING_ACTION', 'Aktion');
-
 define('TEXT_INFO_EDIT_INTRO', 'Bitte f&uuml;hren Sie alle notwendigen &Auml;nderungen durch');
 define('TEXT_INFO_XSELL_GROUP_NAME', 'Gruppenname:');
 define('TEXT_INFO_INSERT_INTRO', 'Bitte geben Sie den neuen Gruppennamen mit allen relevanten Daten ein');
@@ -28,5 +25,4 @@ define('TEXT_INFO_HEADING_NEW_XSELL_GROUP', 'Neuer Gruppenname');
 define('TEXT_INFO_HEADING_EDIT_XSELL_GROUP', 'Gruppenname bearbeiten');
 define('TEXT_INFO_HEADING_DELETE_XSELL_GROUP', 'Gruppenname l&ouml;schen');
 define('ERROR_STATUS_USED_IN_ORDERS', 'Fehler: Diese Gruppe wird zur Zeit noch bei Cross-Marketing Artikeln verwendet.');
-
 ?>

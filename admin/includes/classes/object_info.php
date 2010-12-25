@@ -14,15 +14,14 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-defined( '_VALID_XTC' ) or die( 'Direct Access to this location is not allowed.' );
-  class objectInfo {
-
+defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
+class objectInfo {
     // class constructor
     function objectInfo($object_array) {
-      reset($object_array);
-      while (list($key, $value) = each($object_array)) {
-        $this->$key = xtc_db_prepare_input($value);
-      }
+        reset($object_array);
+        while (list($key, $value) = each($object_array)) {
+            $this->$key = xtc_db_prepare_input($value);
+        }
     }
-  }
+}
 ?>

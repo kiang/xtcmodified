@@ -13,50 +13,43 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
-require('includes/application.php');
-
+require ('includes/application.php');
 // include needed functions
-require_once(DIR_FS_INC.'xtc_image.inc.php');
-require_once(DIR_FS_INC.'xtc_draw_separator.inc.php');
-require_once(DIR_FS_INC.'xtc_redirect.inc.php');
-require_once(DIR_FS_INC.'xtc_href_link.inc.php');
-
+require_once (DIR_FS_INC . 'xtc_image.inc.php');
+require_once (DIR_FS_INC . 'xtc_draw_separator.inc.php');
+require_once (DIR_FS_INC . 'xtc_redirect.inc.php');
+require_once (DIR_FS_INC . 'xtc_href_link.inc.php');
 //BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
 //include('language/english.php');
-include('language/'.$lang.'.php');
+include ('language/' . $lang . '.php');
 //BOF - web28 - 2010.02.11 - NEW LANGUAGE HANDLING IN application.php
-define('HTTP_SERVER','');
-define('HTTPS_SERVER','');
-define('DIR_WS_CATALOG','');
-
-define('DIR_WS_BASE',''); //web28 - 2010-12-13 - FIX for $messageStack icons
-
+define('HTTP_SERVER', '');
+define('HTTPS_SERVER', '');
+define('DIR_WS_CATALOG', '');
+define('DIR_WS_BASE', ''); //web28 - 2010-12-13 - FIX for $messageStack icons
 //BOF - web28 - 2010-12-13 - redirect to db_upgrade.php, if database is already set up (do an update instead of a new installation)
-include(DIR_FS_CATALOG.'/includes/configure.php');
+include (DIR_FS_CATALOG . '/includes/configure.php');
 $upgrade = true;;
-if (DB_SERVER_USERNAME == 'root' && DB_SERVER_PASSWORD == 'root' && DB_DATABASE == 'xtc_modified') {$upgrade = false;}
+if (DB_SERVER_USERNAME == 'root' && DB_SERVER_PASSWORD == 'root' && DB_DATABASE == 'xtc_modified') {
+    $upgrade = false;
+}
 if (isset($_POST['db_upgrade']) && ($_POST['db_upgrade'] == true)) {
-  xtc_redirect('db_upgrade.php?upgrade_redir=1', '', 'NONSSL');
+    xtc_redirect('db_upgrade.php?upgrade_redir=1', '', 'NONSSL');
 }
 //EOF - web28 - 2010-12-13 - redirect to db_upgrade.php, if database is already set up (do an update instead of a new installation)
-
 $messageStack = new messageStack();
 $process = false;
-
 if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
-  $process = true;
-  $_SESSION['language'] = xtc_db_prepare_input($_POST['LANGUAGE']);
-  $error = false;
-
-  if ( ($_SESSION['language'] != 'german') && ($_SESSION['language'] != 'english') ) {
-    $error = true;
-    $messageStack->add('index', SELECT_LANGUAGE_ERROR);
-  }
-
-  if ($error == false) {
-    xtc_redirect(xtc_href_link('install_step1.php?lg='. xtc_db_prepare_input($_POST['LANGUAGE']), '', 'NONSSL'));
-  }
+    $process = true;
+    $_SESSION['language'] = xtc_db_prepare_input($_POST['LANGUAGE']);
+    $error = false;
+    if (($_SESSION['language'] != 'german') && ($_SESSION['language'] != 'english')) {
+        $error = true;
+        $messageStack->add('index', SELECT_LANGUAGE_ERROR);
+    }
+    if ($error == false) {
+        xtc_redirect(xtc_href_link('install_step1.php?lg=' . xtc_db_prepare_input($_POST['LANGUAGE']), '', 'NONSSL'));
+    }
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -78,6 +71,7 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
 //BOF - DokuMan - 2009-05-19 - removed webbug to www.xt-commerce.com
 //<img src='http://www.xt-commerce.com/_banner/adview.php?what=zone:18&amp;n=a61c088d' border='0' alt=''>
 //EOF - DokuMan - 2009-05-19 - removed webbug to www.xt-commerce.com
+
 ?>
 <table width="800" style="border:30px solid #fff;" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -101,145 +95,138 @@ h1 { font-size: 18px; margin: 0; padding: 0; margin-bottom: 10px; }
 
 <?php
 // file and folder permission checks
-$error_flag=false;
-$message='';
-$ok_message='';
-
+$error_flag = false;
+$message = '';
+$ok_message = '';
 // config files
 if (!is_writeable(DIR_FS_CATALOG . 'includes/configure.php')) {
-    $error_flag=true;
-    $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'includes/configure.php<br />';
+    $error_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'includes/configure.php<br />';
 }
 if (!is_writeable(DIR_FS_CATALOG . 'includes/configure.org.php')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'includes/configure.org.php<br />';
+    $error_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'includes/configure.org.php<br />';
 }
 if (!is_writeable(DIR_FS_CATALOG . 'admin/includes/configure.php')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'admin/includes/configure.php<br />';
+    $error_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'admin/includes/configure.php<br />';
 }
 if (!is_writeable(DIR_FS_CATALOG . 'admin/includes/configure.org.php')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'admin/includes/configure.org.php<br />';
+    $error_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'admin/includes/configure.org.php<br />';
 }
-
 if (!is_writeable(DIR_FS_CATALOG . 'admin/rss/xt-news.cache')) {
-    $error_flag=true;
-    $folder_flag=true;
-    $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'admin/rss/xt-news.cache<br />';
- }
-  if (!is_writeable(DIR_FS_CATALOG . 'sitemap.xml')) {
-    $error_flag=true;
-    $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'sitemap.xml<br />';
- }
-
-$status='<strong>OK</strong>';
-if ($error_flag==true) $status='<strong><font color="#ff0000">'.TEXT_ERROR.'</font></strong>';
-$ok_message.= TEXT_FILE_PERMISSION_STATUS .'.............................. '.$status.'<br /><hr noshade />';
-
-// smarty folders
-$folder_flag==false;
-
-if (!is_writeable(DIR_FS_CATALOG . 'admin/backups/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'admin/backups/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'admin/images/graphs')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'admin/images/graphs<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'admin/rss/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'admin/rss/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'cache/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'cache/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'export/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'export/<br />';
-}
- // image folders
-if (!is_writeable(DIR_FS_CATALOG . 'images/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/categories/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/categories/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/banner/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/banner/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/info_images/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/product_images/info_images/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/original_images/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/product_images/original_images/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/popup_images/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/product_images/popup_images/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/thumbnail_images/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/product_images/thumbnail_images/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'images/manufacturers/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'images/manufacturers/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'import/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'import/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'log/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'log/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'media/content/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'media/content/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'media/products/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'media/products/<br />';
-}
-if (!is_writeable(DIR_FS_CATALOG . 'media/products/backup/')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'media/products/backup/<br />';
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'admin/rss/xt-news.cache<br />';
 }
 if (!is_writeable(DIR_FS_CATALOG . 'sitemap.xml')) {
-  $error_flag=true;
-  $message .= TEXT_WRONG_FILE_PERMISSION .DIR_FS_CATALOG . 'sitemap.xml<br />';
+    $error_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'sitemap.xml<br />';
+}
+$status = '<strong>OK</strong>';
+if ($error_flag == true) $status = '<strong><font color="#ff0000">' . TEXT_ERROR . '</font></strong>';
+$ok_message.= TEXT_FILE_PERMISSION_STATUS . '.............................. ' . $status . '<br /><hr noshade />';
+// smarty folders
+$folder_flag == false;
+if (!is_writeable(DIR_FS_CATALOG . 'admin/backups/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'admin/backups/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'admin/images/graphs')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'admin/images/graphs<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'admin/rss/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'admin/rss/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'cache/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'cache/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'export/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'export/<br />';
+}
+// image folders
+if (!is_writeable(DIR_FS_CATALOG . 'images/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/categories/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/categories/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/banner/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/banner/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/info_images/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/product_images/info_images/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/original_images/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/product_images/original_images/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/popup_images/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/product_images/popup_images/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/product_images/thumbnail_images/')) {
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/product_images/thumbnail_images/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'images/manufacturers/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'images/manufacturers/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'import/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'import/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'log/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'log/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'media/content/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'media/content/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'media/products/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'media/products/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'media/products/backup/')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'media/products/backup/<br />';
+}
+if (!is_writeable(DIR_FS_CATALOG . 'sitemap.xml')) {
+    $error_flag = true;
+    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'sitemap.xml<br />';
 }
 if (!is_writeable(DIR_FS_CATALOG . 'templates_c/')) {
-  $error_flag=true;
-  $folder_flag=true;
-  $message .= TEXT_WRONG_FOLDER_PERMISSION .DIR_FS_CATALOG . 'templates_c/<br />';
+    $error_flag = true;
+    $folder_flag = true;
+    $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'templates_c/<br />';
 }
-
-$status='<strong>OK</strong>';
-if ($folder_flag==true) $status='<strong><font color="#ff0000">'.TEXT_ERROR.'</font></strong>';
-$ok_message.= TEXT_FOLDER_PERMISSION_STATUS . '............... '.$status.'<br /><hr noshade />';
-
+$status = '<strong>OK</strong>';
+if ($folder_flag == true) $status = '<strong><font color="#ff0000">' . TEXT_ERROR . '</font></strong>';
+$ok_message.= TEXT_FOLDER_PERMISSION_STATUS . '............... ' . $status . '<br /><hr noshade />';
 //BOF *************  check PHP-Version *************
-$php_flag==false;
+$php_flag == false;
 //BOF - Dokuman - 2009-09-02: update PHP-Version check
 /*
 if (xtc_check_version()!=1) {
@@ -251,52 +238,41 @@ if (xtc_check_version()!=1) {
 $php_min = '5.1.0';
 $php_max = '6.0.0';
 if (function_exists('version_compare')) {
-	if(version_compare(phpversion(), $php_min, "<=")){
-		$error_flag = true;
-		$php_flag = true;
-		$message .= '<strong>'. sprintf(TEXT_PHPVERSION_TOO_OLD,$php_min) . phpversion() . '</strong>.';
-	}
-	if(version_compare(phpversion(), $php_max, ">=")){
-		$error_flag = true;
-		$php_flag = true;
-		$message .= '<strong>'.sprintf(TEXT_ERROR_PHP_MAX,$php_max) . phpversion() . '</strong>.';
-	}
-}
-else{
-  $error_flag = true;
-  $php_flag = true;
-  $message .= '<strong>'. sprintf(TEXT_PHPVERSION_TOO_OLD,$php_min) . phpversion() . '</strong>.';
+    if (version_compare(phpversion(), $php_min, "<=")) {
+        $error_flag = true;
+        $php_flag = true;
+        $message.= '<strong>' . sprintf(TEXT_PHPVERSION_TOO_OLD, $php_min) . phpversion() . '</strong>.';
+    }
+    if (version_compare(phpversion(), $php_max, ">=")) {
+        $error_flag = true;
+        $php_flag = true;
+        $message.= '<strong>' . sprintf(TEXT_ERROR_PHP_MAX, $php_max) . phpversion() . '</strong>.';
+    }
+} else {
+    $error_flag = true;
+    $php_flag = true;
+    $message.= '<strong>' . sprintf(TEXT_PHPVERSION_TOO_OLD, $php_min) . phpversion() . '</strong>.';
 }
 //EOF - Dokuman - 2009-09-02: update PHP-Version check
-
-$status='<strong>OK</strong>';
-if ($php_flag==true) $status='<strong><font color="#ff0000">'.TEXT_ERROR.'</font></strong>';
-$ok_message.='PHP VERSION ............................... '.$status.' ('.phpversion().')<br /><hr noshade />';
+$status = '<strong>OK</strong>';
+if ($php_flag == true) $status = '<strong><font color="#ff0000">' . TEXT_ERROR . '</font></strong>';
+$ok_message.= 'PHP VERSION ............................... ' . $status . ' (' . phpversion() . ')<br /><hr noshade />';
 //EOF *************  check PHP-Version *************
-
 //BOF *************  check fsockopen *************
-
- //TODO
-
+//TODO
 //EOF *************  check fsockopen *************
-
-$gd=gd_info();
-
-if ($gd['GD Version']=='') $gd['GD Version']='<strong><font color="#ff0000">'.TEXT_ERROR.TEXT_NO_GDLIB_FOUND.'</font></strong>';
-
-$status= '<strong>'.$gd['GD Version'].'</strong> ('.TEXT_GDLIBV2_SUPPORT.')';
-
+$gd = gd_info();
+if ($gd['GD Version'] == '') $gd['GD Version'] = '<strong><font color="#ff0000">' . TEXT_ERROR . TEXT_NO_GDLIB_FOUND . '</font></strong>';
+$status = '<strong>' . $gd['GD Version'] . '</strong> (' . TEXT_GDLIBV2_SUPPORT . ')';
 // display GDlibversion
-$ok_message.='GDlib VERSION .............................. '.$status.'<br /><hr noshade />';
-
-if ($gd['GIF Read Support']==1 or $gd['GIF Support']==1) {
-$status='<strong>OK</strong>';
+$ok_message.= 'GDlib VERSION .............................. ' . $status . '<br /><hr noshade />';
+if ($gd['GIF Read Support'] == 1 or $gd['GIF Support'] == 1) {
+    $status = '<strong>OK</strong>';
 } else {
-$status='<strong><font color="#ff0000">'.TEXT_ERROR.'</font></strong><br />'.TEXT_GDLIB_MISSING_GIF_SUPPORT;
+    $status = '<strong><font color="#ff0000">' . TEXT_ERROR . '</font></strong><br />' . TEXT_GDLIB_MISSING_GIF_SUPPORT;
 }
-$ok_message.= TEXT_GDLIB_GIF_VERSION .' .............. '.$status.'<br /><hr noshade />';
-
-if ($error_flag==true) {
+$ok_message.= TEXT_GDLIB_GIF_VERSION . ' .............. ' . $status . '<br /><hr noshade />';
+if ($error_flag == true) {
 ?><tr>
         <td>
 <h1><?php echo TEXT_CHMOD_REMARK_HEADLINE; ?>:</h1>
@@ -307,9 +283,10 @@ if ($error_flag==true) {
 <?php echo $message; ?>
 </div>
 </td></tr>
-<?php } ?>
+<?php
+} ?>
 <tr>
-<?php if ($ok_message!='') { ?>
+<?php if ($ok_message != '') { ?>
   <td>&nbsp;</td>
 </tr>
 <tr>
@@ -317,7 +294,8 @@ if ($error_flag==true) {
   <strong><?php echo TEXT_CHECKING; ?>:</strong>
   <br /><br /><?php echo $ok_message; ?>
   </td>
-<?php } ?>
+<?php
+} ?>
 </tr>
       </table>
       <p><img src="images/break-el.gif" width="100%" height="1" alt="" /></p>
@@ -334,7 +312,7 @@ if ($messageStack->size('index') > 0) {
   </tr>
 </table>
 <?php
-  }
+}
 ?>
              <form name="language" method="post" action="index.php">
               <table width="300" border="0" cellpadding="0" cellspacing="4">
@@ -350,23 +328,29 @@ if ($messageStack->size('index') > 0) {
                     <?php echo xtc_draw_radio_field_installer('LANGUAGE', 'english'); ?> </td>
                 </tr> 
               </table>
-              <?php// BOF - web28 - 2010.12.13 - NEW db-upgrade  ?>
-              <?php if ($error_flag==false) { ?>
+              <? php
+// BOF - web28 - 2010.12.13 - NEW db-upgrade
+ ?>
+              <?php if ($error_flag == false) { ?>
               <input type="hidden" name="action" value="process" />
               <table border="0" cellpadding="0" cellspacing="0">
                 <tr>                  
-                  <?php if($upgrade) { ?>
+                  <?php if ($upgrade) { ?>
                   <td style="padding-left:4px"><img src="images/icons/arrow02.gif" width="13" height="6" alt="" /></td>                  
                   <td><?php echo TEXT_DB_UPGRADE; ?></td>
-                  <td  style="padding-right:10px"><?php echo xtc_draw_checkbox_field_installer('db_upgrade','',false); ?></td>
-                  <?php }?>
-                  <td><input type="image" src="buttons/<?php echo $lang;?>/button_continue.gif"></td>
+                  <td  style="padding-right:10px"><?php echo xtc_draw_checkbox_field_installer('db_upgrade', '', false); ?></td>
+                  <?php
+    } ?>
+                  <td><input type="image" src="buttons/<?php echo $lang; ?>/button_continue.gif"></td>
                 </tr>
               </table>
-              <?php// EOF - web28 - 2010.12.13 - NEW db-upgrade  ?>
-              <?php } else {
-                echo '<br/><strong>'. TEXT_INSTALLATION_NOT_POSSIBLE .'</strong><br/><br/><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_retry.gif" border="0" alt="refresh page"></a>';
-              } ?>
+              <? php
+    // EOF - web28 - 2010.12.13 - NEW db-upgrade
+     ?>
+              <?php
+} else {
+    echo '<br/><strong>' . TEXT_INSTALLATION_NOT_POSSIBLE . '</strong><br/><br/><a href="index.php"><img src="buttons/<?php echo $lang;?>/button_retry.gif" border="0" alt="refresh page"></a>';
+} ?>
               <br />
             </form>
           </td>

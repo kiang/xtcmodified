@@ -213,10 +213,6 @@ if (!is_writeable(DIR_FS_CATALOG . 'media/products/backup/')) {
     $error_flag = true;
     $message.= TEXT_WRONG_FOLDER_PERMISSION . DIR_FS_CATALOG . 'media/products/backup/<br />';
 }
-if (!is_writeable(DIR_FS_CATALOG . 'sitemap.xml')) {
-    $error_flag = true;
-    $message.= TEXT_WRONG_FILE_PERMISSION . DIR_FS_CATALOG . 'sitemap.xml<br />';
-}
 if (!is_writeable(DIR_FS_CATALOG . 'templates_c/')) {
     $error_flag = true;
     $folder_flag = true;

@@ -211,7 +211,7 @@ if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
         xtc_db_query("UPDATE " . TABLE_CONFIGURATION . " SET configuration_value='" . ($email_from) . "' WHERE configuration_key = 'CONTACT_US_EMAIL_ADDRESS'");
         xtc_db_query("UPDATE " . TABLE_CONFIGURATION . " SET configuration_value='" . ($email_from) . "' WHERE configuration_key = 'EMAIL_SUPPORT_ADDRESS'");
         if ($zone_setup == 'yes') {
-            // Steuers‰tze des jeweiligen Landes einstellen!
+            // Steuers√§tze des jeweiligen Landes einstellen!
             $tax_normal = '';
             $tax_normal_text = '';
             $tax_special = '';
@@ -232,7 +232,7 @@ if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
                     $tax_special_text = '6%';
                 break;
                 case '57':
-                    // D‰nemark
+                    // D√§nemark
                     $tax_normal = '25.0000';
                     $tax_normal_text = '25%';
                     $tax_special = '25.0000';
@@ -330,7 +330,7 @@ if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
                     $tax_special_text = '5%';
                 break;
             }
-            // Steuers‰tze / tax_rates
+            // Steuers√§tze / tax_rates
             xtc_db_query("INSERT INTO tax_rates (tax_rates_id, tax_zone_id, tax_class_id, tax_priority, tax_rate, tax_description, last_modified, date_added) VALUES (1, 5, 1, 1, '" . $tax_normal . "', '" . $tax_normal_text . "', '', '')");
             xtc_db_query("INSERT INTO tax_rates (tax_rates_id, tax_zone_id, tax_class_id, tax_priority, tax_rate, tax_description, last_modified, date_added) VALUES (2, 5, 2, 1, '" . $tax_special . "', '" . $tax_special_text . "', '', '')");
             xtc_db_query("INSERT INTO tax_rates (tax_rates_id, tax_zone_id, tax_class_id, tax_priority, tax_rate, tax_description, last_modified, date_added) VALUES (3, 6, 1, 1, '0.0000', 'EU-AUS-UST 0%', '', '')");
@@ -338,7 +338,7 @@ if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
             // Steuerklassen
             xtc_db_query("INSERT INTO tax_class (tax_class_id, tax_class_title, tax_class_description, last_modified, date_added) VALUES (1, 'Standardsatz', '', '', now())");
             xtc_db_query("INSERT INTO tax_class (tax_class_id, tax_class_title, tax_class_description, last_modified, date_added) VALUES (2, 'erm&auml;&szlig;igter Steuersatz', '', NULL, now())");
-            // Steuers‰tze
+            // Steuers√§tze
             xtc_db_query("INSERT INTO geo_zones (geo_zone_id, geo_zone_name, geo_zone_description, last_modified, date_added) VALUES (6, 'Steuerzone EU-Ausland', '', '', now())");
             xtc_db_query("INSERT INTO geo_zones (geo_zone_id, geo_zone_name, geo_zone_description, last_modified, date_added) VALUES (5, 'Steuerzone EU', 'Steuerzone f&uuml;r die EU', '', now())");
             xtc_db_query("INSERT INTO geo_zones (geo_zone_id, geo_zone_name, geo_zone_description, last_modified, date_added) VALUES (7, 'Steuerzone B2B', '', NULL, now())");

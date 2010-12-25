@@ -140,8 +140,8 @@ class billiger {
             $lieferkosten . ";" . // lieferkosten
             number_format($preis, 2, ',', '') . ";" . // preis
             $waehrung . ";" . // waehrung
-            $aufbauservice . ";" . // aufbauservice - nicht unterstützt von xtcommerce 3.0.4 SP2.1
-            $x24_Std_service . ";" . // 24_Std_service - nicht unterstützt von xtcommerce 3.0.4 SP2.1
+            $aufbauservice . ";" . // aufbauservice - nicht unterstÃŒtzt von xtcommerce 3.0.4 SP2.1
+            $x24_Std_service . ";" . // 24_Std_service - nicht unterstÃŒtzt von xtcommerce 3.0.4 SP2.1
             $EAN . ";" . // EAN
             $ASIN . ";" . // ASIN
             $ISBN . ";" . // ISBN
@@ -269,7 +269,7 @@ class billiger {
     function display() {
         /* Auswahl Kundengruppe vorbeiten */
         $customers_statuses_array = xtc_get_customers_statuses();
-        /* Auswahl Währung vorbereiten */
+        /* Auswahl WÃ€hrung vorbereiten */
         $curr = '';
         $currencies = xtc_db_query("SELECT code FROM " . TABLE_CURRENCIES . " ORDER BY currencies_id DESC");
         while ($currencies_data = xtc_db_fetch_array($currencies)) {

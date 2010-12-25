@@ -1,6 +1,6 @@
 <?php
 ##
-## xs:booster v1.042 für xt:Commerce und Gambio
+## xs:booster v1.042 fÃŒr xt:Commerce und Gambio
 ## Copyright (c) 2008-2009 xs:booster Limited
 ## http://www.xsbooster.com
 ##
@@ -162,7 +162,7 @@ if (defined('XTB_CHECKOUT_PROCESS')) {
     if (xtc_db_num_rows($products_query) == 1) {
         #
         # Status der Auktion ueber xs:booster System abrufen und
-        # anschliessend E-Mail Template mit Hash zurück an xs:booster uebergeben..
+        # anschliessend E-Mail Template mit Hash zurÃŒck an xs:booster uebergeben..
         # Dann wird ueber xs:booster eine eBay interne Nachricht an den Kaeufer
         # zugestellt und dieser ueber den Link zum Checkout informiert.
         #

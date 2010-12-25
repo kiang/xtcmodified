@@ -6,7 +6,7 @@
  * xt:Commerce - Shopsoftware
  * (c) 2003-2007 xt:Commerce (Winger/Zanier), http://www.xt-commerce.com
  *
- * xt:Commerce ist eine geschŸtzte Handelsmarke und wird vertreten durch die xt:Commerce GmbH (Austria)
+ * xt:Commerce ist eine geschÂŸtzte Handelsmarke und wird vertreten durch die xt:Commerce GmbH (Austria)
  * xt:Commerce is a protected trademark and represented by the xt:Commerce GmbH (Austria)
  *
  * @copyright Copyright 2003-2007 xt:Commerce (Winger/Zanier), www.xt-commerce.com
@@ -17,7 +17,7 @@
  * For questions, help, comments, discussion, etc., please join the
  * xt:Commerce Support Forums at www.xt-commerce.com
  *
- * ab 15.08.2008 Teile vom Hamburger-Internetdienst geändert
+ * ab 15.08.2008 Teile vom Hamburger-Internetdienst geÃ¤ndert
  * Hamburger-Internetdienst Support Forums at www.forum.hamburger-internetdienst.de
  * Stand 19.07.2010
  */
@@ -110,12 +110,12 @@ class paypal {
     /**************************************************************/
     function before_process() {
         // Stand: 29.04.2009
-        // Bereits geholt und bestätigt
+        // Bereits geholt und bestÃ¤tigt
         if ($_GET['PayerID'] != '' AND $_SESSION['reshash']['TOKEN'] != '' AND (strtoupper($_SESSION['reshash']["ACK"]) == "SUCCESS" OR strtoupper($_SESSION['reshash']["ACK"]) == "SUCCESSWITHWARNING")) return;
         // Den PayPal Token holen, ohne das commit keine Preisanzeige !
         global $order, $o_paypal;
         $o_paypal->paypal_auth_call();
-        // Gleich auf Bezahl-Bestätigt setzten bei PayPal
+        // Gleich auf Bezahl-BestÃ¤tigt setzten bei PayPal
         xtc_redirect($o_paypal->payPalURL . '&useraction=commit');
         return;
     }
@@ -168,7 +168,7 @@ class paypal {
         if (!defined('TABLE_PAYPAL_STATUS_HISTORY')) define('TABLE_PAYPAL_STATUS_HISTORY', 'paypal_status_history');
         // nur zur Sicherheit falls noch alte Module da sind...
         $this->remove(1);
-        // Bestell Status prüfen oder erfassen
+        // Bestell Status prÃ¼fen oder erfassen
         $stati = array('PAYPAL_INST_ORDER_STATUS_TMP_NAME' => 'PAYPAL_INST_ORDER_STATUS_TMP_ID', 'PAYPAL_INST_ORDER_STATUS_SUCCESS_NAME' => 'PAYPAL_INST_ORDER_STATUS_SUCCESS_ID', 'PAYPAL_INST_ORDER_STATUS_PENDING_NAME' => 'PAYPAL_INST_ORDER_STATUS_PENDING_ID', 'PAYPAL_INST_ORDER_STATUS_REJECTED_NAME' => 'PAYPAL_INST_ORDER_STATUS_REJECTED_ID');
         foreach ($stati as $statusname => $statusid) {
             $languages_query = xtc_db_query("select * from " . TABLE_LANGUAGES . " order by sort_order");
@@ -208,7 +208,7 @@ class paypal {
         while ($rest_values = xtc_db_fetch_array($rest_query)) {
             $rest_array[] = $rest_values;
         }
-        // Config Daten löschen - falls noch Teile von alten Modulen da sind
+        // Config Daten lÃ¶schen - falls noch Teile von alten Modulen da sind
         xtc_db_query("delete from " . TABLE_CONFIGURATION . " where configuration_key like 'PAYPAL\_%'");
         // Config Daten restaurieren oder installieren mit Standard Werten
         $new_config = array();
@@ -251,7 +251,7 @@ class paypal {
         if (xtc_db_num_rows($check_query) < 1):
             xtc_db_query("alter table " . TABLE_ADDRESS_BOOK . " ADD address_class VARCHAR( 32 ) NOT NULL");
         else:
-            // Falls sich durch ein Update mal was ändert
+            // Falls sich durch ein Update mal was Ã¤ndert
             xtc_db_query("alter table " . TABLE_ADDRESS_BOOK . " MODIFY address_class VARCHAR( 32 ) NOT NULL");
         endif;
         $check_query = xtc_db_query("show columns from " . TABLE_ADMIN_ACCESS . " like 'paypal'");
@@ -314,7 +314,7 @@ class paypal {
         endif;
         // Grund Install des PayPal
         xtc_db_query("delete from " . TABLE_CONFIGURATION . " where configuration_key like 'MODULE\_PAYMENT\_PAYPAL\_%'");
-        // Config Install für PayPal + Express - NUR falls das Express nicht installiert ist
+        // Config Install fÃ¼r PayPal + Express - NUR falls das Express nicht installiert ist
         $check_query = xtc_db_query("select configuration_key from " . TABLE_CONFIGURATION . " where configuration_key = 'MODULE_PAYMENT_PAYPALEXPRESS_STATUS'");
         if (xtc_db_num_rows($check_query) == 0):
             xtc_db_query("delete from " . TABLE_CONFIGURATION . " where configuration_key like 'PAYPAL\_%'");

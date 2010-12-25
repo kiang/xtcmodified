@@ -1,6 +1,6 @@
 <?php
 /**
- * @version sofort�isung.de 1.2 - $Date: 2010-09-10 10:19:34 +0200 (Fr, 10 Sep 2010) $
+ * @version sofortï¿œisung.de 1.2 - $Date: 2010-09-10 10:19:34 +0200 (Fr, 10 Sep 2010) $
  * @author Payment Network AG (integration@payment-network.com)
  * @link http://www.payment-network.com/
  *

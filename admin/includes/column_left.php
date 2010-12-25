@@ -16,19 +16,19 @@
    Released under the GNU General Public License
    --------------------------------------------------------------*/
 //#############################
-// HINWEIS FÜR MODULE EINBAU
-// Das muss beim Hinzufügen neuer Menüpunkte beachtet werden:
-// Die Menüpunkte wurden auf "LISTE" geändert: <li>...</li>
+// HINWEIS FÃœR MODULE EINBAU
+// Das muss beim HinzufÃ¼gen neuer MenÃ¼punkte beachtet werden:
+// Die MenÃ¼punkte wurden auf "LISTE" geÃ¤ndert: <li>...</li>
 // Die Reihenfolge weicht von einem xtc Standard ab
 // Rubrik Konfiguration wurde in 2 Teile aufgeteilt
-// Durch die neuen Kommentare ist alles übersichtlicher
+// Durch die neuen Kommentare ist alles Ã¼bersichtlicher
 //#############################
 $admin_access_query = xtc_db_query("select * from " . TABLE_ADMIN_ACCESS . " where customers_id = '" . $_SESSION['customer_id'] . "'");
 $admin_access = xtc_db_fetch_array($admin_access_query);
 // BOF - Tomcraft - 2009-11-02 - NEW LISTSTYLE MENU
 echo '<div class="suckertreemenu">';
 echo '<ul id="treemenu1">';
-//---------------------------Ausgewählte Admin Sprache als Flagge
+//---------------------------AusgewÃ¤hlte Admin Sprache als Flagge
 echo ('<div id="lang_flag">' . xtc_image('../lang/' . $_SESSION['language'] . '/admin/images/' . 'icon.gif', $_SESSION['language']) . '</div>');
 //---------------------------STARTSEITE
 echo ('<li><a href="start.php" id="current"><b>' . TEXT_ADMIN_START . '</b></a></li>');

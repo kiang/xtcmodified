@@ -16,7 +16,7 @@
    Third Party contribution:
 
 ************************************************************************
-  Copyright (C) 2001 - 2003 TheMedia, Dipl.-Ing Thomas Pl‰nkers
+  Copyright (C) 2001 - 2003 TheMedia, Dipl.-Ing Thomas Pl√§nkers
   http://www.themedia.at & http://www.oscommerce.at
 
   All rights reserved.
@@ -59,7 +59,7 @@ define('MODULE_PAYMENT_ICLEAR_ORDER_STATUS_ID_DESC', 'Festlegung des Status f&uu
 define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_TITLE', 'MWST Satz Versandkosten');
 define('MODULE_PAYMENT_ICLEAR_SHIPPING_TAX_DESC', 'Festlegen mit welchem MWST Satz Versandkosten erstellt werden, falls Versandkosten ohne MWST Satz angegeben sind.');
 // BOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
-define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_TITLE', 'Ausschluﬂ bei Versandmodulen');
+define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_TITLE', 'Ausschlu√ü bei Versandmodulen');
 define('MODULE_PAYMENT_ICLEAR_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
 // EOF - Hendrik - 2010-08-09 - exlusion config for shipping modules
 

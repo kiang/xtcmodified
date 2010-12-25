@@ -39,7 +39,7 @@ define('TEXT_MESSAGE', 'Nachricht:');
 define('TEXT_SELECT_CUSTOMER', 'Kunde ausw&auml;hlen');
 define('TEXT_ALL_CUSTOMERS', 'Alle Kunden');
 define('TEXT_NEWSLETTER_CUSTOMERS', 'Alle Newsletter Abonnenten');
-define('TEXT_CONFIRM_DELETE', 'Mit dieser Funktion erh&auml;lt der selektierte Koupon den Status <strong>inaktiv</strong>. Eine Re-Aktivierung ist zu einem späteren Zeitpunkt nicht mehr möglich.<br /><br />Soll dieser Kupon wirklich gel&ouml;scht (den Status inaktiv) erhalten?');
+define('TEXT_CONFIRM_DELETE', 'Mit dieser Funktion erh&auml;lt der selektierte Koupon den Status <strong>inaktiv</strong>. Eine Re-Aktivierung ist zu einem spÃ¤teren Zeitpunkt nicht mehr mÃ¶glich.<br /><br />Soll dieser Kupon wirklich gel&ouml;scht (den Status inaktiv) erhalten?');
 define('TEXT_TO_REDEEM', 'Sie k&ouml;nnen den Gutschein bei Ihrer Bestellung einl&ouml;sen. Dazu geben Sie Ihren Gutschein-Code in das daf&uuml;r vorgesehene Feld ein, und klicken Sie den "Einl&ouml;sen"-Button.');
 define('TEXT_IN_CASE', ' Falls es wider Erwarten zu Problemen beim verbuchen kommen sollte.');
 define('TEXT_VOUCHER_IS', 'Ihr Gutschein-Code lautet: ');

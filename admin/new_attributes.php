@@ -29,7 +29,7 @@ if (isset($_GET['action'])) $_POST['action'] = $_GET['action'];
 if (isset($_GET['cpath'])) $_POST['cpath'] = $_GET['cpath'];
 if (isset($_GET['current_product_id'])) $_POST['current_product_id'] = $_GET['current_product_id'];
 //EOF - web28 - 2010-12-01 - added Attribute Edit Link
-//BOF - DokuMan - 2010-03-20 - Artikelattribute nach bearbeiten zurück zur Kategorie
+//BOF - DokuMan - 2010-03-20 - Artikelattribute nach bearbeiten zurÃ¼ck zur Kategorie
 /*
   if ( isset($cPathID) && $_POST['action'] == 'change') {
     include(DIR_WS_MODULES.'new_attributes_change.php');
@@ -41,7 +41,7 @@ if (isset($_POST['cPathID']) && $_POST['action'] == 'change') {
     include (DIR_WS_MODULES . 'new_attributes_change.php');
     xtc_redirect(xtc_href_link(FILENAME_CATEGORIES, 'cPath=' . $_POST['cPathID'] . '&pID=' . $_POST['current_product_id']));
 }
-//EOF - DokuMan - 2010-03-20 - Artikelattribute nach bearbeiten zurück zur Kategorie
+//EOF - DokuMan - 2010-03-20 - Artikelattribute nach bearbeiten zurÃ¼ck zur Kategorie
 
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">

@@ -201,7 +201,7 @@ define('CURRENCY_SERVER_BACKUP', 'xe');
 xtc_db_connect() or die('Unable to connect to database server!');
 // set application wide parameters
 $configuration_query = xtc_db_query('select configuration_key as cfgKey, configuration_value as cfgValue from ' . TABLE_CONFIGURATION . '');
-// Paypal API Modul Änderungen - Cache im Admin AUS!
+// Paypal API Modul Ã„nderungen - Cache im Admin AUS!
 while ($configuration = xtc_db_fetch_array($configuration_query)) {
     if ($configuration['cfgKey'] == 'DB_CACHE'):
         define("DB_CACHE", "false");

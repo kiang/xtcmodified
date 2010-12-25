@@ -21,7 +21,7 @@
 
    Datenbank Backup Ver. 1.91e
    modified by web28 - www.rpa-com.de 06.10.2010
-   //upload mit xtc_try_upload beschränkt auf sql und gz Dateien
+   //upload mit xtc_try_upload beschrÃ¤nkt auf sql und gz Dateien
 
    Datenbank Backup Ver. 1.91d
    modified by web28 - www.rpa-com.de 09.09.2010
@@ -29,7 +29,7 @@
 
    Datenbank Backup Ver. 1.91b
    modified by web28 - www.rpa-com.de 05.06.2010
-   //Rechte automatisch setzen für Unteradmin
+   //Rechte automatisch setzen fÃ¼r Unteradmin
 
    Datenbank Backup Ver. 1.91a
    modified by web28 - www.rpa-com.de 28.04.2010
@@ -43,13 +43,13 @@ define('BK_FILENAME', 'backup_db.php');
 define('VERSION', 'Database Backup Ver. 1.91f');
 require ('includes/application_top.php');
 $action = (isset($_GET['action']) ? $_GET['action'] : '');
-//Adminrechte automatisch für backup_db setzen
+//Adminrechte automatisch fÃ¼r backup_db setzen
 $result = xtc_db_query("select * from " . TABLE_ADMIN_ACCESS . "");
 if ($result_array = xtc_db_fetch_array($result)) {
     if (!isset($result_array['backup_db'])) {
         xtc_db_query("ALTER TABLE `" . TABLE_ADMIN_ACCESS . "` ADD `backup_db` INT( 1 ) DEFAULT '0' NOT NULL");
         xtc_db_query("UPDATE `" . TABLE_ADMIN_ACCESS . "` SET `backup_db` = '1' WHERE `customers_id` = '1' LIMIT 1");
-        //Rechte automatisch setzen für Unteradmin
+        //Rechte automatisch setzen fÃ¼r Unteradmin
         if ($_SESSION['customer_id'] > 1) {
             xtc_db_query("UPDATE `" . TABLE_ADMIN_ACCESS . "` SET `backup_db` = '1' WHERE `customers_id` = '" . $_SESSION['customer_id'] . "' LIMIT 1");
         }

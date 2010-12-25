@@ -16,7 +16,7 @@
    --------------------------------------------------------------*/
 define('HEADING_TITLE', 'Shop online/offline');
 define('HEADING_SUB_TITLE', 'xtcModified');
-define('BOX_SHOP_OFFLINE', 'Shop online/offline - gilt für alle Sprachen');
-define('SETTINGS_OFFLINE', 'Shop offline <br /><font color="red">(Zugriff nur noch mit Admin-Daten über die URL <a href="' . HTTP_SERVER . DIR_WS_CATALOG . 'login_admin.php" target="_blank"><font color="red">' . HTTP_SERVER . DIR_WS_CATALOG . 'login_admin.php</font></a>)</font>');
+define('BOX_SHOP_OFFLINE', 'Shop online/offline - gilt fÃ¼r alle Sprachen');
+define('SETTINGS_OFFLINE', 'Shop offline <br /><font color="red">(Zugriff nur noch mit Admin-Daten Ã¼ber die URL <a href="' . HTTP_SERVER . DIR_WS_CATALOG . 'login_admin.php" target="_blank"><font color="red">' . HTTP_SERVER . DIR_WS_CATALOG . 'login_admin.php</font></a>)</font>');
 define('SETTINGS_OFFLINE_MSG', 'Offline Nachricht');
 ?>

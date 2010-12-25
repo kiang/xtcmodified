@@ -2,10 +2,10 @@
 /*-----------------------------------------------------------------------
     Version: $Id: xtc_href_link_from_admin.inc.php,v 1.1 2005/01/18 18:48:56 Administrator Exp $
 
-    xtC-SEO-Module by www.ShopStat.com (Hartmut König)
+    xtC-SEO-Module by www.ShopStat.com (Hartmut KÃ¶nig)
     http://www.shopstat.com
     info@shopstat.com
-    © 2004 ShopStat.com
+    Â© 2004 ShopStat.com
     All Rights Reserved.
 ------------------------------------------------------------------------*/
 // The HTML href link wrapper function
@@ -44,7 +44,7 @@ function xtc_href_link_from_admin($page = '', $parameters = '', $connection = 'N
             }
         }
     }
-    //--- SEO Hartmut König -----------------------------------------//
+    //--- SEO Hartmut KÃ¶nig -----------------------------------------//
     if ($_REQUEST['test'] || ((SEARCH_ENGINE_FRIENDLY_URLS == 'true') && ($search_engine_safe == true))) {
         require_once (DIR_FS_INC . 'shopstat_functions.inc.php');
         $seolink = shopstat_getSEO($page, $parameters, $connection, $add_session_id, $search_engine_safe, 'admin');
@@ -54,14 +54,14 @@ function xtc_href_link_from_admin($page = '', $parameters = '', $connection = 'N
             (isset($elements['query'])) ? $separator = '&' : $separator = '?';
         }
     }
-    //--- SEO Hartmut König -----------------------------------------//
+    //--- SEO Hartmut KÃ¶nig -----------------------------------------//
     if (xtc_check_agent() == 1) {
         $sid = NULL;
     }
     if (isset($sid)) {
         $link.= $separator . $sid;
     }
-    //--- SEO Hartmut König -------------------------//
+    //--- SEO Hartmut KÃ¶nig -------------------------//
     return $link;
 }
 ?>

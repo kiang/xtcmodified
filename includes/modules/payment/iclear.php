@@ -8,7 +8,7 @@
    Copyright (c) 2010 xtcModified
    -----------------------------------------------------------------------------------------
    based on: 
-   (c) 2001 - 2003 TheMedia, Dipl.-Ing Thomas Plänkers; http://www.themedia.at & http://www.oscommerce.at
+   (c) 2001 - 2003 TheMedia, Dipl.-Ing Thomas PlÃ¤nkers; http://www.themedia.at & http://www.oscommerce.at
    (c) 2003	osCommerce (iclear.php,v 1.4 2007/05/10); www.nextcommerce.org
    (c) 2006 XT-Commerce (cash.php 1102 2005-07-24)
 
@@ -134,7 +134,7 @@ class iclear extends iclearCatalog {
                 $messageString = trim(fgets($fp, 4096));
                 fclose($fp);
             } else {
-                $messageString = 'Ihre Bestellung ist nicht aktiv. Bitte erhöhen Sie zur Aktivierung Ihren iclear Verfügungsrahmen!';
+                $messageString = 'Ihre Bestellung ist nicht aktiv. Bitte erhÃ¶hen Sie zur Aktivierung Ihren iclear VerfÃ¼gungsrahmen!';
             }
             $messageType = 'success';
             // todo: maybe a redirect goes here

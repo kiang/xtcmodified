@@ -39,8 +39,8 @@ if ($_SESSION['customer_id'] == $order_check['customers_id'] || $send_by_admin) 
         $smarty->assign('address_label_payment', xtc_address_format($order->billing['format_id'], $order->billing, 1, '', '<br />'));
     }
     $smarty->assign('csID', $order->customer['csID']);
-    $order_total = $order->getTotalData($insert_id); //ACHTUNG für Bestellbestätigung  aus Admin Funktion in admin/includes/classes/order.php
-    $smarty->assign('order_data', $order->getOrderData($insert_id)); //ACHTUNG für Bestellbestätigung  aus Admin Funktion in admin/includes/classes/order.php
+    $order_total = $order->getTotalData($insert_id); //ACHTUNG fÃ¼r BestellbestÃ¤tigung  aus Admin Funktion in admin/includes/classes/order.php
+    $smarty->assign('order_data', $order->getOrderData($insert_id)); //ACHTUNG fÃ¼r BestellbestÃ¤tigung  aus Admin Funktion in admin/includes/classes/order.php
     $smarty->assign('order_total', $order_total['data']);
     // assign language to template for caching
     $smarty->assign('language', $_SESSION['language']);
@@ -61,7 +61,7 @@ if ($_SESSION['customer_id'] == $order_check['customers_id'] || $send_by_admin) 
     $smarty->assign('PAYMENT_METHOD', $payment_method);
     $smarty->assign('DATE', xtc_date_long($order->info['date_purchased']));
     $smarty->assign('NAME', $order->customer['name']);
-    //BOF - web28 - 2010-08-20 - Anrede {$GENDER} in Bestätigungsmail verfügbar machen
+    //BOF - web28 - 2010-08-20 - Anrede {$GENDER} in BestÃ¤tigungsmail verfÃ¼gbar machen
     $gender_query = xtc_db_query("SELECT customers_gender FROM " . TABLE_CUSTOMERS . " WHERE customers_id = '" . $order->customer['id'] . "'");
     $gender = xtc_db_fetch_array($gender_query);
     if ($gender['customers_gender'] == 'f') {
@@ -71,8 +71,8 @@ if ($_SESSION['customer_id'] == $order_check['customers_id'] || $send_by_admin) 
     } else {
         $smarty->assign('GENDER', '');
     }
-    //EOF - web28 - 2010-08-20 - Anrede {$GENDER} in Bestätigungsmail verfügbar machen
-    //BOF - web28 - 2010-08-20 - Erweiterung Variablen für Bestätigungsmail
+    //EOF - web28 - 2010-08-20 - Anrede {$GENDER} in BestÃ¤tigungsmail verfÃ¼gbar machen
+    //BOF - web28 - 2010-08-20 - Erweiterung Variablen fÃ¼r BestÃ¤tigungsmail
     $smarty->assign('CITY', $order->customer['city']);
     $smarty->assign('POSTCODE', $order->customer['postcode']);
     $smarty->assign('STATE', $order->customer['state']);
@@ -81,7 +81,7 @@ if ($_SESSION['customer_id'] == $order_check['customers_id'] || $send_by_admin) 
     $smarty->assign('STREET', $order->customer['street_address']);
     $smarty->assign('FIRSTNAME', $order->customer['firstname']);
     $smarty->assign('LASTNAME', $order->customer['lastname']);
-    //EOF - web28 - 2010-08-20 - Erweiterung Variablen für Bestätigungsmail
+    //EOF - web28 - 2010-08-20 - Erweiterung Variablen fÃ¼r BestÃ¤tigungsmail
     $smarty->assign('COMMENTS', $order->info['comments']);
     $smarty->assign('EMAIL', $order->customer['email_address']);
     $smarty->assign('PHONE', $order->customer['telephone']);

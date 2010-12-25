@@ -25,10 +25,10 @@ require_once (DIR_FS_INC . 'xtc_validate_vatid_status.inc.php');
 require_once (DIR_FS_INC . 'xtc_get_geo_zone_code.inc.php');
 require_once (DIR_FS_INC . 'xtc_encrypt_password.inc.php');
 require_once (DIR_FS_INC . 'xtc_js_lang.php');
-// BOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÄTZE
+// BOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÃ„TZE
 require (DIR_WS_CLASSES . 'currencies.php');
 $currencies = new currencies();
-// EOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÄTZE
+// EOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÃ„TZE
 $customers_statuses_array = xtc_get_customers_statuses();
 $processed = false;
 $error = false;
@@ -1109,10 +1109,10 @@ function check_form() {
         while ($customers = xtc_db_fetch_array($customers_query)) {
             $info_query = xtc_db_query("select customers_info_date_account_created as date_account_created, customers_info_date_account_last_modified as date_account_last_modified, customers_info_date_of_last_logon as date_last_logon, customers_info_number_of_logons as number_of_logons from " . TABLE_CUSTOMERS_INFO . " where customers_info_id = '" . $customers['customers_id'] . "'");
             $info = xtc_db_fetch_array($info_query);
-            // BOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÄTZE
+            // BOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÃ„TZE
             $umsatz_query = xtc_db_query("select sum(op.final_price) as ordersum from " . TABLE_ORDERS_PRODUCTS . " op, " . TABLE_ORDERS . " o where '" . $customers['customers_id'] . "' = o.customers_id and o.orders_id = op.orders_id");
             $umsatz = xtc_db_fetch_array($umsatz_query);
-            // EOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÄTZE
+            // EOF - JUNG GESTALTEN - 27.11.2008 - KUNDENUMSÃ„TZE
             if ((!isset($_GET['cID']) || (@$_GET['cID'] == $customers['customers_id'])) && !isset($cInfo)) {
                 $country_query = xtc_db_query("select countries_name from " . TABLE_COUNTRIES . " where countries_id = '" . $customers['entry_country_id'] . "'");
                 $country = xtc_db_fetch_array($country_query);

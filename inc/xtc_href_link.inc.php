@@ -56,7 +56,7 @@ function xtc_href_link($page = '', $parameters = '', $connection = 'NONSSL', $ad
             }
         }
     }
-    //--- SEO Hartmut König -----------------------------------------//
+    //--- SEO Hartmut KÃ¶nig -----------------------------------------//
     if ((isset($_REQUEST['test']) && $_REQUEST['test']) || ((SEARCH_ENGINE_FRIENDLY_URLS == 'true') && ($search_engine_safe == true))) {
         require_once (DIR_FS_INC . 'shopstat_functions.inc.php');
         $seolink = shopstat_getSEO($page, $parameters, $connection, $add_session_id, $search_engine_safe, 'user');
@@ -66,7 +66,7 @@ function xtc_href_link($page = '', $parameters = '', $connection = 'NONSSL', $ad
             (isset($elements['query'])) ? $separator = '&' : $separator = '?';
         }
     }
-    //--- SEO Hartmut König -----------------------------------------//
+    //--- SEO Hartmut KÃ¶nig -----------------------------------------//
     // remove session if useragent is a known Spider
     if ($truncate_session_id) $sid = NULL;
     if (isset($sid)) {

@@ -364,7 +364,7 @@ switch ($action) {
         }
         // BOF - Tomcraft - 2009-11-03 - commented out the old sofortueberweisung.de payment module
         /*
-        // Start sofortüberweisung.de
+        // Start sofortÃ¼berweisung.de
         if (MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_STATUS == 'True' && $order->info['payment_method']=='pn_sofortueberweisung') {
         $sql = "SELECT * FROM payment_sofortueberweisung WHERE orders_id='$oID'";
         $sofort_query = xtc_db_query($sql);
@@ -472,7 +472,7 @@ switch ($action) {
         <?php
         }
         }
-        // End sofortüberweisung.de
+        // End sofortÃ¼berweisung.de
         */
         // EOF - Tomcraft - 2009-11-03 - commented out the old sofortueberweisung.de payment module
         // begin modification for banktransfer

@@ -373,7 +373,7 @@ define('GZIP_LEVEL_DESC', 'W&auml;hlen Sie einen Kompressionslevel zwischen 0-9 
 define('SESSION_WRITE_DIRECTORY_TITLE', 'Session Speicherort');
 define('SESSION_WRITE_DIRECTORY_DESC', 'Wenn Sessions als Files gespeichert werden sollen, benutzen Sie folgenden Ordner.');
 define('SESSION_FORCE_COOKIE_USE_TITLE', 'Cookie Benutzung bevorzugen');
-// kl‰ren, vr
+// kl√§ren, vr
 define('SESSION_FORCE_COOKIE_USE_DESC', 'Session starten falls Cookies vom Browser erlaubt werden.');
 define('SESSION_CHECK_SSL_SESSION_ID_TITLE', 'Checken der SSL Session ID');
 define('SESSION_CHECK_SSL_SESSION_ID_DESC', '&Uuml;berpr&uuml;fen der SSL_SESSION_ID bei jedem HTTPS Seitenaufruf.');

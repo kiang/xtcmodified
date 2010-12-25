@@ -167,7 +167,7 @@ class amoneybookers {
         $params = array('pay_to_email' => MODULE_PAYMENT_AMONEYBOOKERS_EMAILID, 'transaction_id' => $this->transaction_id, 'return_url' => xtc_href_link(FILENAME_CHECKOUT_PROCESS, 'trid=' . $this->transaction_id, 'NONSSL', true, false), 'cancel_url' => xtc_href_link(FILENAME_CHECKOUT_PAYMENT, MODULE_PAYMENT_AMONEYBOOKERS_ERRORTEXT1 . $this->code . MODULE_PAYMENT_AMONEYBOOKERS_ERRORTEXT2, 'SSL', true, false), 'status_url' => xtc_href_link('callback/moneybookers/callback_mb.php'), 'language' => $mbLanguage, 'pay_from_email' => $order->customer['email_address'], 'amount' => $amount, 'currency' => $mbCurrency, 'detail1_description' => 'Shop:', 'detail1_text' => STORE_NAME . ' Order:' . $insert_id, 'detail2_description' => 'Datum:', 'detail2_text' => strftime(DATE_FORMAT_LONG), 'amount2_description' => 'Summe:', 'amount2' => $amount, 'merchant_fields' => 'Field1', 'Field1' => md5(MODULE_PAYMENT_AMONEYBOOKERS_MERCHANTID), 'firstname' => $order->billing['firstname'], 'lastname' => $order->billing['lastname'], 'address' => $order->billing['street_address'], 'postal_code' => $order->billing['postcode'], 'city' => $order->billing['city'], 'state' => $order->billing['state'], 'country' => $mbCountry, 'confirmation_note' => MODULE_PAYMENT_AMONEYBOOKERS_CONFIRMATION_TEXT);
         $data = '';
         foreach ($params as $key => $value) {
-            $value = strtr($value, "áéíóöõúüûÁÉÍÓÖÕÚÜÛ", "aeiooouuuAEIOOOUUU");
+            $value = strtr($value, "Ã¡Ã©Ã­Ã³Ã¶ÃµÃºÃ¼Ã»ÃÃ‰ÃÃ“Ã–Ã•ÃšÃœÃ›", "aeiooouuuAEIOOOUUU");
             if ($key != 'status_url') {
                 $value = urlencode($value);
             }
@@ -175,7 +175,7 @@ class amoneybookers {
         }
         // moneyboocers.com payment gateway does not accept accented characters!
         // Please feel free to add any other accented characters to the list.
-        //		return strtr($process_button_string, "áéíóöõúüûÁÉÍÓÖÕÚÜÛ", "aeiooouuuAEIOOOUUU");
+        //		return strtr($process_button_string, "Ã¡Ã©Ã­Ã³Ã¶ÃµÃºÃ¼Ã»ÃÃ‰ÃÃ“Ã–Ã•ÃšÃœÃ›", "aeiooouuuAEIOOOUUU");
         // insert data
         xtc_db_query("UPDATE payment_moneybookers SET mb_ORDERID = '" . $insert_id . "' WHERE mb_TRID = '" . $this->transaction_id . "'");
         xtc_redirect($this->form_action_url . '?' . $data);

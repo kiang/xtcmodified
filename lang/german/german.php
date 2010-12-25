@@ -348,7 +348,7 @@ define('TEXT_EMAIL_ERROR', 'Bitte geben Sie Ihre E-Mail-Adresse und den Sicherhe
 define('TEXT_NO_ACCOUNT', 'Leider m&uuml;ssen wir Ihnen mitteilen, dass Ihre Anfrage f&uuml;r ein neues Anmelde-Passwort entweder ung&uuml;ltig war oder abgelaufen ist.<br />Bitte versuchen Sie es erneut.');
 define('HEADING_PASSWORD_FORGOTTEN', 'Passwort vergessen?');
 define('TEXT_PASSWORD_FORGOTTEN', '&Auml;ndern Sie Ihr Passwort in drei leichten Schritten.');
-define('TEXT_EMAIL_PASSWORD_FORGOTTEN', 'Bestätigungs-E-Mail für Passwortänderung'); // ä und ü für korrekte E-Mail Betreffszeile lassen!
+define('TEXT_EMAIL_PASSWORD_FORGOTTEN', 'BestÃ¤tigungs-E-Mail fÃ¼r PasswortÃ¤nderung'); // Ã¤ und Ã¼ fÃ¼r korrekte E-Mail Betreffszeile lassen!
 define('TEXT_EMAIL_PASSWORD_NEW_PASSWORD', 'Ihr neues Passwort');
 define('ERROR_MAIL', 'Bitte &uuml;berpr&uuml;fen Sie Ihre eingegebenen Daten im Formular');
 define('CATEGORIE_NOT_FOUND', 'Kategorie wurde nicht gefunden');
@@ -458,6 +458,6 @@ define('PAYPAL_EXP_VORL', 'Vorl&auml;ufige Versandkosten');
 define('PAYPAL_EXP_VERS', '6.90');
 // EOF - web28 - 2010-05-07 - PayPal API Modul
 define('BASICPRICE_VPE_TEXT', 'bei dieser Menge nur '); // Hetfield - 2009-11-26 - Added language definition for vpe at graduated prices
-//web - 2010-07-11 - Preisanzeige bei Staffelpreisen (größte Staffel)
+//web - 2010-07-11 - Preisanzeige bei Staffelpreisen (grÃ¶ÃŸte Staffel)
 define('GRADUATED_PRICE_MAX_VALUE', 'ab');
 ?>

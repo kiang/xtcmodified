@@ -45,7 +45,7 @@ class campaigns {
             // query data
             $this->counter = 0;
             $this->counterCMP = 0;
-            // tŠglich
+            // tÂŠglich
             $this->getTotalLeads();
             $this->getTotalSells();
             for ($n = 0;$n < count($this->SelectArray);$n++) {

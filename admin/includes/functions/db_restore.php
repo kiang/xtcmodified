@@ -2,7 +2,7 @@
 /**************************************************************
  *Script von MySQLDumper 1.24
  * Pfad und Dateiname MySQLDumper 1.24: inc/functions_restore.php
- * Angepasst für XTC Datenbank Manager von web28
+ * Angepasst fÃŒr XTC Datenbank Manager von web28
  * Version 1.0.2
  * 2010-09-09 - - add set_admin_access
  ***************************************************************/
@@ -19,13 +19,13 @@ function get_sqlbefehl() {
     if (!isset($restore['eintraege_ready'])) $restore['eintraege_ready'] = 0;
     //Parsen
     WHILE ($sqlparser_status != 100 && !$restore['fileEOF'] && !$restore['EOB']) {
-        //nächste Zeile lesen
+        //nÃ€chste Zeile lesen
         $zeile = ($restore['compressed']) ? gzgets($restore['filehandle']) : fgets($restore['filehandle']);
         if (DEBUG) echo "<br><br>Zeile: " . htmlspecialchars($zeile);
         /******************* Setzen des Parserstatus *******************/
-        // herausfinden um was für einen Befehl es sich handelt
+        // herausfinden um was fÃŒr einen Befehl es sich handelt
         if ($sqlparser_status == 0) {
-            //Vergleichszeile, um nicht bei jedem Vergleich strtoupper ausführen zu müssen
+            //Vergleichszeile, um nicht bei jedem Vergleich strtoupper ausfÃŒhren zu mÃŒssen
             $zeile2 = strtoupper(trim($zeile));
             // pre-built compare strings - so we need the CPU power only once :)
             $sub9 = substr($zeile2, 0, 9);
@@ -56,7 +56,7 @@ function get_sqlbefehl() {
             // Delete actions
             elseif ($sub9 == 'DROP TABL') $sqlparser_status = 1;
             elseif ($sub9 == 'DROP VIEW') $sqlparser_status = 1;
-            // Befehle, die nicht ausgeführt werden sollen
+            // Befehle, die nicht ausgefÃŒhrt werden sollen
             elseif ($sub9 == 'CREATE DA ') $sqlparser_status = 7;
             elseif ($sub9 == 'DROP DATA ') $sqlparser_status = 7;
             elseif ($sub3 == 'USE') $sqlparser_status = 7;
@@ -86,8 +86,8 @@ function get_sqlbefehl() {
             /******************* Ende von Setzen des Parserstatus *******************/
         }
         $last_char = substr(rtrim($zeile), -1);
-        // Zeilenumbrüche erhalten - sonst werden Schlüsselwörter zusammengefügt
-        // z.B. 'null' und in der nächsten Zeile 'check' wird zu 'nullcheck'
+        // ZeilenumbrÃŒche erhalten - sonst werden SchlÃŒsselwÃ¶rter zusammengefÃŒgt
+        // z.B. 'null' und in der nÃ€chsten Zeile 'check' wird zu 'nullcheck'
         $complete_sql.= $zeile . "\n";
         if ($sqlparser_status == 3) {
             //INSERT
@@ -120,7 +120,7 @@ function get_sqlbefehl() {
                 }
             }
         } else if ($sqlparser_status == 1) {
-            //Löschaktion
+            //LÃ¶schaktion
             if ($last_char == ';') $sqlparser_status = 100; //Befehl komplett
             $restore['actual_table'] = get_tablename($complete_sql);
         } else if ($sqlparser_status == 2) {
@@ -225,7 +225,7 @@ function submit_create_action($sql) {
         if ($res === false) {
             // wenn wir hier angekommen sind hat nichts geklappt -> Fehler ausgeben und abbrechen
             //SQLError($sql,mysql_error());
-            die("<br>Fatal error: Couldn't create table or view `" . $tablename . "´");
+            die("<br>Fatal error: Couldn't create table or view `" . $tablename . "ÂŽ");
         }
     } else protokoll($sql);
     return $tablename;
@@ -257,7 +257,7 @@ function del_inline_comments($sql) {
         if (DEBUG) echo "Nachher: :<br>" . $sql . "<br><hr>";
     }
     //$sql=trim(str_replace('<br>',"\n",$sql));
-    //Wenn nach dem Entfernen nur noch ein ; übrigbleibt -> entfernen
+    //Wenn nach dem Entfernen nur noch ein ; ÃŒbrigbleibt -> entfernen
     if ($sql == ';') $sql = '';
     return $sql;
 }
@@ -410,13 +410,13 @@ function protokoll($sql) {
     return;
 }
 function set_admin_access() {
-    //Adminrechte automatisch für backup_db setzen
+    //Adminrechte automatisch fÃŒr backup_db setzen
     $result = xtc_db_query("select * from " . TABLE_ADMIN_ACCESS . "");
     if ($result_array = xtc_db_fetch_array($result)) {
         if (!isset($result_array['backup_db'])) {
             xtc_db_query("ALTER TABLE `" . TABLE_ADMIN_ACCESS . "` ADD `backup_db` INT( 1 ) DEFAULT '0' NOT NULL");
             xtc_db_query("UPDATE `" . TABLE_ADMIN_ACCESS . "` SET `backup_db` = '1' WHERE `customers_id` = '1' LIMIT 1");
-            //Rechte automatisch setzen für Unteradmin
+            //Rechte automatisch setzen fÃŒr Unteradmin
             if ($_SESSION['customer_id'] > 1) {
                 xtc_db_query("UPDATE `" . TABLE_ADMIN_ACCESS . "` SET `backup_db` = '1' WHERE `customers_id` = '" . $_SESSION['customer_id'] . "' LIMIT 1");
             }

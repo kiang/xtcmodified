@@ -111,7 +111,7 @@ define('TABLE_LUUP', 'LUUP');
 define('TABLE_PAYMENT_MONEYBOOKERS', 'payment_moneybookers');
 define('TABLE_PAYMENT_AMONEYBOOKERS_CURRENCIES', 'payment_AMONEYBOOKERS_currencies');
 define('TABLE_PAYMENT_AMONEYBOOKERS_COUNTRIES', 'payment_AMONEYBOOKERS_countries');
-// Sofortüberweisung
+// SofortÃ¼berweisung
 define('TABLE_PAYMENT_IPAYMENT', 'payment_ipayment');
 define('TABLE_PAYMENT_IPAYMENT_LOG', 'payment_ipayment_log');
 // EOF - 2010-01-20 vr - revised unified version based on database_tables.php and admin/incudes/application_top.php

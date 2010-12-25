@@ -7,93 +7,93 @@
    Version 1.06 rev.04 (c) by web28  - www.rpa-com.de   
 ------------------------------------------------------------------------*/
 function shopstat_getRegExps(&$search, &$replace) {
-    $search = array("'\s&\s'", //--Kaufm‰nnisches Und mit Blanks muss raus
+    $search = array("'\s&\s'", //--Kaufm√§nnisches Und mit Blanks muss raus
     "'[\r\n\s]+'", // strip out white space
-    "'&(quote|#34);'i", //--Anf¸hrungszeichen oben replace html entities
-    "'&(amp|#38);'i", //--Ampersand-Zeichen, kaufm‰nnisches Und
-    "'&(lt|#60);'i", //--ˆffnende spitze Klammer
-    "'&(gt|#62);'i", //--schlieﬂende spitze Klammer
+    "'&(quote|#34);'i", //--Anf√ºhrungszeichen oben replace html entities
+    "'&(amp|#38);'i", //--Ampersand-Zeichen, kaufm√§nnisches Und
+    "'&(lt|#60);'i", //--√∂ffnende spitze Klammer
+    "'&(gt|#62);'i", //--schlie√üende spitze Klammer
     "'&(nbsp|#160);'i", //--Erzwungenes Leerzeichen
     //BOF - web28 - 2010-04-16 - UFT-8 kompatibel +  Eingetragene Marke, Trademark, Eurozeichen
-    "'&(iexcl|#161);|°'i", //umgekehrtes Ausrufezeichen
-    "'&(cent|#162);|¢'i", //Cent-Zeichen
-    "'&(pound|#163);|£'i", //Pfund-Zeichen
-    "'&(curren|#164);|§'i", //W‰hrungszeichen--currency
-    "'&(yen|#165);|•'i", //Yen  wird zu Yen
-    "'&(brvbar|#166);|¶'i", //durchbrochener Strich
-    "'&(sect|#167);|ß'i", //Paragraph-Zeichen
-    "'&(copy|#169);|©'i", //Copyright-Zeichen
-    "'&(reg|#174);|Æ'i", //Eingetragene Marke wird zu -R-
-    "'&(deg|#176);|∞'i", //Grad-Zeichen -- degree wird zu -Grad-
-    "'&(plusmn|#177);|±'i", //Plusminus-Zeichen
-    "'&(sup2|#178);|≤'i", //Hoch-2-Zeichen
-    "'&(sup3|#179);|≥'i", //Hoch-3-Zeichen
+    "'&(iexcl|#161);|¬°'i", //umgekehrtes Ausrufezeichen
+    "'&(cent|#162);|¬¢'i", //Cent-Zeichen
+    "'&(pound|#163);|¬£'i", //Pfund-Zeichen
+    "'&(curren|#164);|‚Ç¨'i", //W√§hrungszeichen--currency
+    "'&(yen|#165);|¬•'i", //Yen  wird zu Yen
+    "'&(brvbar|#166);|≈†'i", //durchbrochener Strich
+    "'&(sect|#167);|¬ß'i", //Paragraph-Zeichen
+    "'&(copy|#169);|¬©'i", //Copyright-Zeichen
+    "'&(reg|#174);|¬Æ'i", //Eingetragene Marke wird zu -R-
+    "'&(deg|#176);|¬∞'i", //Grad-Zeichen -- degree wird zu -Grad-
+    "'&(plusmn|#177);|¬±'i", //Plusminus-Zeichen
+    "'&(sup2|#178);|¬≤'i", //Hoch-2-Zeichen
+    "'&(sup3|#179);|¬≥'i", //Hoch-3-Zeichen
     //"'&(acute|#180);'i", 		// Akut (accent aigu, acute) ### NICHT in iso-8859-1 enthalten ###
-    "'&(micro|#181);|µ'i", //Mikro-Zeichen
+    "'&(micro|#181);|¬µ'i", //Mikro-Zeichen
     "'&(trade|#8482);'i", //--Trademark wird zu -TM-  ### NICHT in iso-8859-1 enthalten ###
     "'&(euro|#8364);'i", //--Eurozeichen wird zu EUR ### NICHT in iso-8859-1 enthalten ###
-    "'&(laquo|#171);|´'i", //-- Left angle quotes Left Winkel Zitate
-    "'&(raquo|#187);|ª'i", //--Right angle quotes Winkelgetriebe Zitate
-    //BOF - web28 - 2010-05-13 - Benannte Zeichen f¸r Interpunktion
+    "'&(laquo|#171);|¬´'i", //-- Left angle quotes Left Winkel Zitate
+    "'&(raquo|#187);|¬ª'i", //--Right angle quotes Winkelgetriebe Zitate
+    //BOF - web28 - 2010-05-13 - Benannte Zeichen f√ºr Interpunktion
     "'&(ndash|#8211);'i", //-- Gedankenstrich Breite n 	### NICHT in iso-8859-1 enthalten ###
     "'&(mdash|#8212);'i", //-- Gedankenstrich Breite m 	### NICHT in iso-8859-1 enthalten ###
-    "'&(lsquo|#8216);'i", //-- einfaches Anf¸hrungszeichen links 	### NICHT in iso-8859-1 enthalten ###
-    "'&(rsquo|#8217);'i", //-- einfaches Anf¸hrungszeichen rechts 	### NICHT in iso-8859-1 enthalten ###
-    "'&(sbquo|#8218);'i", //-- Einfaches, gekr¸mmtes Anf¸hrungszeichen unten 	### NICHT in iso-8859-1 enthalten ###
-    "'&(ldquo|#8220);'i", //-- doppeltes Anf¸hrungszeichen links  ### NICHT in iso-8859-1 enthalten ###
-    "'&(rdquo|#8221);'i", //-- doppeltes Anf¸hrungszeichen rechts  ### NICHT in iso-8859-1 enthalten ###
-    "'&(bdquo|#8222);'i", //-- Doppelte Anf¸hrungszeichen links unten   ### NICHT in iso-8859-1 enthalten ###
-    //EOF - web28 - 2010-05-13 - Benannte Zeichen f¸r Interpunktion
+    "'&(lsquo|#8216);'i", //-- einfaches Anf√ºhrungszeichen links 	### NICHT in iso-8859-1 enthalten ###
+    "'&(rsquo|#8217);'i", //-- einfaches Anf√ºhrungszeichen rechts 	### NICHT in iso-8859-1 enthalten ###
+    "'&(sbquo|#8218);'i", //-- Einfaches, gekr√ºmmtes Anf√ºhrungszeichen unten 	### NICHT in iso-8859-1 enthalten ###
+    "'&(ldquo|#8220);'i", //-- doppeltes Anf√ºhrungszeichen links  ### NICHT in iso-8859-1 enthalten ###
+    "'&(rdquo|#8221);'i", //-- doppeltes Anf√ºhrungszeichen rechts  ### NICHT in iso-8859-1 enthalten ###
+    "'&(bdquo|#8222);'i", //-- Doppelte Anf√ºhrungszeichen links unten   ### NICHT in iso-8859-1 enthalten ###
+    //EOF - web28 - 2010-05-13 - Benannte Zeichen f√ºr Interpunktion
     //EOF - web28 - 2010-04-16 - UFT-8 kompatibel +  Eingetragene Marke, Trademark, Eurozeichen
-    "'&'", //--Kaufm‰nnisches Und
+    "'&'", //--Kaufm√§nnisches Und
     "'%'", //--Prozent muss weg
-    "/[\[\({]/", //--ˆffnende Klammern nach Bindestriche
+    "/[\[\({]/", //--√∂ffnende Klammern nach Bindestriche
     "/[\)\]\}]/", //--schliessende Klammern weg
-    "/ﬂ/", //--Umlaute etc.
-    "/‰/", //--Umlaute etc.
-    "/¸/", //--Umlaute etc.
-    "/ˆ/", //--Umlaute etc.
-    "/ƒ/", //--Umlaute etc.
-    "/‹/", //--Umlaute etc.
-    "/÷/", //--Umlaute etc.
-    "/'|\"|¥|`/", //--Anf¸hrungszeichen weg.
+    "/√ü/", //--Umlaute etc.
+    "/√§/", //--Umlaute etc.
+    "/√º/", //--Umlaute etc.
+    "/√∂/", //--Umlaute etc.
+    "/√Ñ/", //--Umlaute etc.
+    "/√ú/", //--Umlaute etc.
+    "/√ñ/", //--Umlaute etc.
+    "/'|\"|≈Ω|`/", //--Anf√ºhrungszeichen weg.
     "/[:,\.!?\*\+]/"
     //--Doppelpunkte, Komma, Punkt etc. weg.
     );
     if (SPECIAL_CHAR_FR) {
-        $search2 = array( //BOF  - web28 - 2010-05-12 - Franzˆsisch
-        "'&(Agrave|#192);|¿'i", // Capital A-grave Capital A-Grab
-        "'&(agrave|#224);|‡'i", //Lowercase a-grave Kleinbuchstaben a-Grab
-        "'&(Acirc|#194);|¬'i", //Capital A-circumflex Capital A-Zirkumflex
-        "'&(acirc|#226);|‚'i", //Lowercase a-circumflex Kleinbuchstaben a-Zirkumflex
-        "'&(AElig|#198);|∆'i", //Capital AE Ligature Capital AE Ligature
-        "'&(aelig|#230);|Ê'i", //Lowercase AE Ligature Kleinbuchstabe ae
-        "'&(Ccedil|#199);|«'i", //Capital C-cedilla Capital-C Cedille
-        "'&(ccedil|#231);|Á'i", //Lowercase c-cedilla Kleinbuchstaben c-Cedille
-        "'&(Egrave|#200);|»'i", //Capital E-grave Capital E-Grab
-        "'&(egrave|#232);|Ë'i", //Lowercase e-grave Kleinbuchstaben e-Grab
-        "'&(Eacute|#201);|…'i", //Capital E-acute E-Capital akuten
-        "'&(eacute|#233);|È'i", //Lowercase e-acute Kleinbuchstaben e-acute
-        "'&(Ecirc|#202);| 'i", //Capital E-circumflex E-Capital circumflexa
-        "'&(ecirc|#234);|Í'i", //Lowercase e-circumflex Kleinbuchstaben e-Zirkumflex
-        "'&(Euml|#203);|À'i", //Capital E-umlaut Capital E-Umlaut
-        "'&(euml|#235);|Î'i", //Lowercase e-umlaut Kleinbuchstaben e-Umlaut
-        "'&(Icirc|#206);|Œ'i", //Capital I-circumflex Capital I-Zirkumflex
-        "'&(icirc|#238);|Ó'i", //Lowercase i-circumflex Kleinbuchstaben i-Zirkumflex
-        "'&(Iuml|#207);|œ'i", //Capital I-umlaut Capital I-Umlaut
-        "'&(iuml|#239);|Ô'i", //Lowercase i-umlaut Kleinbuchstaben i-Umlaut
-        "'&(Ocirc|#212);|‘'i", //Capital O-circumflex O-Capital circumflexa
-        "'&(ocirc|#244);|Ù'i", //Lowercase o-circumflex Kleinbuchstabe o-Zirkumflex
+        $search2 = array( //BOF  - web28 - 2010-05-12 - Franz√∂sisch
+        "'&(Agrave|#192);|√Ä'i", // Capital A-grave Capital A-Grab
+        "'&(agrave|#224);|√†'i", //Lowercase a-grave Kleinbuchstaben a-Grab
+        "'&(Acirc|#194);|√Ç'i", //Capital A-circumflex Capital A-Zirkumflex
+        "'&(acirc|#226);|√¢'i", //Lowercase a-circumflex Kleinbuchstaben a-Zirkumflex
+        "'&(AElig|#198);|√Ü'i", //Capital AE Ligature Capital AE Ligature
+        "'&(aelig|#230);|√¶'i", //Lowercase AE Ligature Kleinbuchstabe ae
+        "'&(Ccedil|#199);|√á'i", //Capital C-cedilla Capital-C Cedille
+        "'&(ccedil|#231);|√ß'i", //Lowercase c-cedilla Kleinbuchstaben c-Cedille
+        "'&(Egrave|#200);|√à'i", //Capital E-grave Capital E-Grab
+        "'&(egrave|#232);|√®'i", //Lowercase e-grave Kleinbuchstaben e-Grab
+        "'&(Eacute|#201);|√â'i", //Capital E-acute E-Capital akuten
+        "'&(eacute|#233);|√©'i", //Lowercase e-acute Kleinbuchstaben e-acute
+        "'&(Ecirc|#202);|√ä'i", //Capital E-circumflex E-Capital circumflexa
+        "'&(ecirc|#234);|√™'i", //Lowercase e-circumflex Kleinbuchstaben e-Zirkumflex
+        "'&(Euml|#203);|√ã'i", //Capital E-umlaut Capital E-Umlaut
+        "'&(euml|#235);|√´'i", //Lowercase e-umlaut Kleinbuchstaben e-Umlaut
+        "'&(Icirc|#206);|√é'i", //Capital I-circumflex Capital I-Zirkumflex
+        "'&(icirc|#238);|√Æ'i", //Lowercase i-circumflex Kleinbuchstaben i-Zirkumflex
+        "'&(Iuml|#207);|√è'i", //Capital I-umlaut Capital I-Umlaut
+        "'&(iuml|#239);|√Ø'i", //Lowercase i-umlaut Kleinbuchstaben i-Umlaut
+        "'&(Ocirc|#212);|√î'i", //Capital O-circumflex O-Capital circumflexa
+        "'&(ocirc|#244);|√¥'i", //Lowercase o-circumflex Kleinbuchstabe o-Zirkumflex
         "'&(OElig|#338);'i", //Capital OE ligature Capital OE Ligatur ### NICHT in iso-8859-1 enthalten ###
         "'&(oelig|#339);'i", //Lowercase oe ligature Kleinbuchstaben oe Ligatur ### NICHT in iso-8859-1 enthalten ###
-        "'&(Ugrave|#217);|Ÿ'i", //Capital U-grave Capital U-Grab
-        "'&(ugrave|#249);|˘'i", //Lowercase u-grave Kleinbuchstaben u-Grab
-        "'&(Ucirc|#219);|€'i", //Capital U-circumflex Capital U-Zirkumflex
-        "'&(ucirc|#251);|˚'i", //Lowercase U-circumflex Kleinbuchstaben U-Zirkumflex
-        "'&(Yuml|#376);'i", //Groﬂes Y mit Diaeresis ### NICHT in iso-8859-1 enthalten ###
-        "'&(yuml|#255);|ˇ'i"
+        "'&(Ugrave|#217);|√ô'i", //Capital U-grave Capital U-Grab
+        "'&(ugrave|#249);|√π'i", //Lowercase u-grave Kleinbuchstaben u-Grab
+        "'&(Ucirc|#219);|√õ'i", //Capital U-circumflex Capital U-Zirkumflex
+        "'&(ucirc|#251);|√ª'i", //Lowercase U-circumflex Kleinbuchstaben U-Zirkumflex
+        "'&(Yuml|#376);'i", //Gro√ües Y mit Diaeresis ### NICHT in iso-8859-1 enthalten ###
+        "'&(yuml|#255);|√ø'i"
         //Kleines y mit Diaeresis
-        //EOF - web28 - 2010-05-12 - Franzˆsisch
+        //EOF - web28 - 2010-05-12 - Franz√∂sisch
         );
         $search = array_merge($search, $search2);
         //echo print_r($search);
@@ -101,30 +101,30 @@ function shopstat_getRegExps(&$search, &$replace) {
     }
     if (SPECIAL_CHAR_ES) {
         $search3 = array( //BOF - web28 - 2010-08-13 - Spanisch
-        "'&(Aacute|#193);|¡'i", //Groﬂes A mit Akut
-        "'&(aacute|#225);|·'i", //Kleines a mit Akut
-        "'&(Iacute|#205);|Õ'i", //Groﬂes I mit Akut
-        "'&(iacute|#227);|Ì'i", //Kleines i mit Akut
-        "'&(Ntilde|#209);|—'i", //Groﬂes N mit Tilde
-        "'&(ntilde|#241);|Ò'i", //Kleines n mit Tilde
-        "'&(Oacute|#211);|”'i", //Groﬂes O mit Akut
-        "'&(oacute|#243);|Û'i", //Kleines o mit Akut
-        "'&(Uacute|#218);|⁄'i", //Groﬂes U mit Akut
-        "'&(uacute|#250);|˙'i", //Kleines u mit Akut
-        "'&(ordf|#170);|™'i", //Weibliche Ordnungszahl
-        "'&(ordm|#186);|∫'i", //m‰nnliche Ordnungszahl
-        "'&(iexcl|#161);|°'i", //umgekehrtes Ausrufungszeichen
-        "'&(iquest|#191);|ø'i", //umgekehrtes Fragezeichen
+        "'&(Aacute|#193);|√Å'i", //Gro√ües A mit Akut
+        "'&(aacute|#225);|√°'i", //Kleines a mit Akut
+        "'&(Iacute|#205);|√ç'i", //Gro√ües I mit Akut
+        "'&(iacute|#227);|√≠'i", //Kleines i mit Akut
+        "'&(Ntilde|#209);|√ë'i", //Gro√ües N mit Tilde
+        "'&(ntilde|#241);|√±'i", //Kleines n mit Tilde
+        "'&(Oacute|#211);|√ì'i", //Gro√ües O mit Akut
+        "'&(oacute|#243);|√≥'i", //Kleines o mit Akut
+        "'&(Uacute|#218);|√ö'i", //Gro√ües U mit Akut
+        "'&(uacute|#250);|√∫'i", //Kleines u mit Akut
+        "'&(ordf|#170);|¬™'i", //Weibliche Ordnungszahl
+        "'&(ordm|#186);|¬∫'i", //m√§nnliche Ordnungszahl
+        "'&(iexcl|#161);|¬°'i", //umgekehrtes Ausrufungszeichen
+        "'&(iquest|#191);|¬ø'i", //umgekehrtes Fragezeichen
         //EOF - web28 - 2010-08-13 - Spanisch
         //EOF - web28 - 2010-05-12 - Portugiesisch
-        "'&(Atilde|#195);|√'i", //Groﬂes A mit Tilde
-        "'&(atilde|#227);|„'i", //Kleines a mit Tilde
-        "'&(Otilde|#213);|’'i", //Groﬂes O mit Tilde
-        "'&(otilde|#245);|ı'i", //Kleines o mit Tilde
+        "'&(Atilde|#195);|√É'i", //Gro√ües A mit Tilde
+        "'&(atilde|#227);|√£'i", //Kleines a mit Tilde
+        "'&(Otilde|#213);|√ï'i", //Gro√ües O mit Tilde
+        "'&(otilde|#245);|√µ'i", //Kleines o mit Tilde
         //BOF - web28 - 2010-05-12 - Portugiesisch
         //BOF - web28 - 2010-05-12 - Italienisch
-        "'&(Igrave|#204);|Ã'i", //Groﬂes I mit Grave
-        "'&(igrave|#236);|Ï'i"
+        "'&(Igrave|#204);|√å'i", //Gro√ües I mit Grave
+        "'&(igrave|#236);|√¨'i"
         //Kleines i mit Grave
         //EOF - web28 - 2010-05-12 - Italienisch
         );
@@ -132,24 +132,24 @@ function shopstat_getRegExps(&$search, &$replace) {
     }
     if (SPECIAL_CHAR_MORE) {
         $search4 = array( //BOF - web28 - 2010-05-12 - Weitere Sonderzeichen
-        "'&(Ograve|#210);|“'i", //Groﬂes O mit Grave
-        "'&(ograve|#242);|Ú'i", //Kleines o mit Grave
-        "'&(Ograve|#210);|“'i", //Groﬂes O mit Grave
-        "'&(ograve|#242);|Ú'i", //Kleines o mit Grave
-        "'&(Oslash|#216);|ÿ'i", //Groﬂes O mit Schr‰gstrich
-        "'&(oslash|#248);|¯'i", //Kleines o mit Schr‰gstrich
-        "'&(Aring|#197);|≈'i", //Groﬂes A mit Ring (Krouzek)
-        "'&(aring|#229);|Â'i", //Kleines a mit Ring (Krouzek)
-        "'&(Scaron|#352);|¶'i", //Groﬂes S mit Caron (Hatschek)
-        "'&(scaron|#353);|®'i", //Kleines s mit Caron (Hatschek)
-        "'&(THORN|#222);|ﬁ'i", //Groﬂes Thorn (isl‰ndischer Buchstabe)
-        "'&(thorn|#254);|˛'i", //Kleines thorn (isl‰ndischer Buchstabe)
-        "'&(divide|#247);|˜'i", //Divisions-Zeichen ("Geteilt durch ...")
-        "'&(times|#215);|◊'i", //Multiplikationszeichen; "Multipliziert mit ..."
-        "'&(ETH|#272;)|–'i", //Groﬂes D mit Querstrich (isl‰ndischer Buchstabe)
-        "'&(eth|#273;)|'i", //Kleines d mit Querstrich (isl‰ndischer Buchstabe)
-        "'&(Yacute|#221;)|›'i", //Groﬂes Y mit Akut
-        "'&(yacute|#253;)|˝'i", //Kleines y mit Akut
+        "'&(Ograve|#210);|√í'i", //Gro√ües O mit Grave
+        "'&(ograve|#242);|√≤'i", //Kleines o mit Grave
+        "'&(Ograve|#210);|√í'i", //Gro√ües O mit Grave
+        "'&(ograve|#242);|√≤'i", //Kleines o mit Grave
+        "'&(Oslash|#216);|√ò'i", //Gro√ües O mit Schr√§gstrich
+        "'&(oslash|#248);|√∏'i", //Kleines o mit Schr√§gstrich
+        "'&(Aring|#197);|√Ö'i", //Gro√ües A mit Ring (Krouzek)
+        "'&(aring|#229);|√•'i", //Kleines a mit Ring (Krouzek)
+        "'&(Scaron|#352);|≈†'i", //Gro√ües S mit Caron (Hatschek)
+        "'&(scaron|#353);|≈°'i", //Kleines s mit Caron (Hatschek)
+        "'&(THORN|#222);|√û'i", //Gro√ües Thorn (isl√§ndischer Buchstabe)
+        "'&(thorn|#254);|√æ'i", //Kleines thorn (isl√§ndischer Buchstabe)
+        "'&(divide|#247);|√∑'i", //Divisions-Zeichen ("Geteilt durch ...")
+        "'&(times|#215);|√ó'i", //Multiplikationszeichen; "Multipliziert mit ..."
+        "'&(ETH|#272;)|√ê'i", //Gro√ües D mit Querstrich (isl√§ndischer Buchstabe)
+        "'&(eth|#273;)|√∞'i", //Kleines d mit Querstrich (isl√§ndischer Buchstabe)
+        "'&(Yacute|#221;)|√ù'i", //Gro√ües Y mit Akut
+        "'&(yacute|#253;)|√Ω'i", //Kleines y mit Akut
         //EOF - web28 - 2010-05-12 - Weitere Sonderzeichen
         );
         $search = array_merge($search, $search4);
@@ -157,18 +157,18 @@ function shopstat_getRegExps(&$search, &$replace) {
         
     }
     //*****************************************************************
-    $replace = array("-", //--Kaufm‰nnisches Und mit Blanks
+    $replace = array("-", //--Kaufm√§nnisches Und mit Blanks
     "-", // strip out white space
-    "-", //--Anf¸hrungszeichen oben
-    "-", //--Ampersand-Zeichen, kaufm‰nnisches Und
-    "-", //--ˆffnende spitze Klammer
-    "-", //--schlieﬂende spitze Klammer
+    "-", //--Anf√ºhrungszeichen oben
+    "-", //--Ampersand-Zeichen, kaufm√§nnisches Und
+    "-", //--√∂ffnende spitze Klammer
+    "-", //--schlie√üende spitze Klammer
     "", //--Erzwungenes Leerzeichen
     //BOF - web28 - 2010-04-16 - UFT-8 kompatibel +  Eingetragene Marke, Trademark, Eurozeichen
     "", //chr(161), //umgekehrtes Ausrufezeichen
     "ct", //chr(162), //Cent-Zeichen
     "GBP", //chr(163), //Pfund-Zeichen
-    "", //chr(164), //W‰hrungszeichen--currency
+    "", //chr(164), //W√§hrungszeichen--currency
     "Yen", //chr(165), //Yen-Zeichen
     "", //chr(166),durchbrochener Strich
     "", //chr(167),Paragraph-Zeichen
@@ -184,20 +184,20 @@ function shopstat_getRegExps(&$search, &$replace) {
     "-EUR-", //--Eurozeichen wird zu EUR
     "", //chr(171) -- Left angle quotes Left Winkel Zitate
     "", //chr(187) -- Right angle quotes Right Winkel Zitate
-    //BOF - web28 - 2010-05-13 - Benannte Zeichen f¸r Interpunktion
+    //BOF - web28 - 2010-05-13 - Benannte Zeichen f√ºr Interpunktion
     "-", //-- Gedankenstrich Breite n
     "-", //-- Gedankenstrich Breite m
-    "", //-- einfaches Anf¸hrungszeichen links
-    "", //-- einfaches Anf¸hrungszeichen rechts
+    "", //-- einfaches Anf√ºhrungszeichen links
+    "", //-- einfaches Anf√ºhrungszeichen rechts
     "", //-- einfaches low-9-Zeichen
-    "", //-- doppeltes Anf¸hrungszeichen links
-    "", //-- doppeltes Anf¸hrungszeichen rechts
+    "", //-- doppeltes Anf√ºhrungszeichen links
+    "", //-- doppeltes Anf√ºhrungszeichen rechts
     "", //-- doppeltes low-9-Zeichen rechts
-    //EOF - web28 - 2010-05-13 - Benannte Zeichen f¸r Interpunktion
+    //EOF - web28 - 2010-05-13 - Benannte Zeichen f√ºr Interpunktion
     //EOF - web28 - 2010-04-16 - UFT-8 kompatibel +  Eingetragene Marke, Trademark, Eurozeichen
-    "-", //--Kaufm‰nnisches Und
+    "-", //--Kaufm√§nnisches Und
     "-", //--Prozent
-    "-", //--ˆffnende Klammern
+    "-", //--√∂ffnende Klammern
     "", //--schliessende Klammern
     "ss", //--Umlaute etc.
     "ae", //--Umlaute etc.
@@ -206,12 +206,12 @@ function shopstat_getRegExps(&$search, &$replace) {
     "Ae", //--Umlaute etc.
     "Ue", //--Umlaute etc.
     "Oe", //--Umlaute etc.
-    "", //--Anf¸hrungszeichen
+    "", //--Anf√ºhrungszeichen
     "-"
     //--Doppelpunkte, Komma, Punkt etc.
     );
     if (SPECIAL_CHAR_FR) {
-        $replace2 = array( //BOF - web28 - 2010-05-12 - Franzˆsisch
+        $replace2 = array( //BOF - web28 - 2010-05-12 - Franz√∂sisch
         "A", // Capital A-grave Capital A-Grab
         "a", //Lowercase a-grave Kleinbuchstaben a-Grab
         "A", //Capital A-circumflex Capital A-Zirkumflex
@@ -240,38 +240,38 @@ function shopstat_getRegExps(&$search, &$replace) {
         "u", //Lowercase u-grave Kleinbuchstaben u-Grab
         "U", //Capital U-circumflex Capital U-Zirkumflex
         "u", //Lowercase U-circumflex Kleinbuchstaben U-Zirkumflex
-        "Y", //Groﬂes Y mit Diaeresis
+        "Y", //Gro√ües Y mit Diaeresis
         "y"
         //Kleines y mit Diaeresis
-        //EOF - web28 - 2010-05-12 - Franzˆsisch
+        //EOF - web28 - 2010-05-12 - Franz√∂sisch
         );
         $replace = array_merge($replace, $replace2);
     }
     if (SPECIAL_CHAR_ES) {
         $replace3 = array( //BOF - web28 - 2010-08-13 - Spanisch
-        "A", //Groﬂes A mit Akut
+        "A", //Gro√ües A mit Akut
         "a", //Kleines a mit Akut
-        "I", //Groﬂes I mit Akut
+        "I", //Gro√ües I mit Akut
         "i", //Kleines i mit Akut
-        "N", //Groﬂes N mit Tilde
+        "N", //Gro√ües N mit Tilde
         "n", //Kleines n mit Tilde
-        "O", //Groﬂes O mit Akut
+        "O", //Gro√ües O mit Akut
         "o", //Kleines o mit Akut
-        "U", //Groﬂes U mit Akut
+        "U", //Gro√ües U mit Akut
         "u", //Kleines u mit Akut
         "", //Weibliche Ordnungszahl
-        "", //m‰nnliche Ordnungszahl
+        "", //m√§nnliche Ordnungszahl
         "", //umgekehrtes Ausrufungszeichen
         "", //umgekehrtes Fragezeichen
         //EOF - web28 - 2010-08-13 - Spanisch
         //EOF - web28 - 2010-08-13 - Portugiesisch
-        "A", //Groﬂes A mit Tilde
+        "A", //Gro√ües A mit Tilde
         "a", //Kleines a mit Tilde
-        "O", //Groﬂes O mit Tilde
+        "O", //Gro√ües O mit Tilde
         "o", //Kleines o mit Tilde
         //BOF - web28 - 2010-08-13 - Portugiesisch
         //BOF - web28 - 2010-08-13 - Italienisch
-        "I", //Groﬂes I mit Grave
+        "I", //Gro√ües I mit Grave
         "i"
         //Kleines i mit Grave
         //EOF - web28 - 2010-08-13 - Italienisch
@@ -280,23 +280,23 @@ function shopstat_getRegExps(&$search, &$replace) {
     }
     if (SPECIAL_CHAR_MORE) {
         $replace4 = array( //BOF -web28 - 2010-09-16 - Weitere Sonderzeichen
-        "O", //Groﬂes O mit Grave
+        "O", //Gro√ües O mit Grave
         "o", //Kleines o mit Grave
-        "O", //Groﬂes O mit Grave
+        "O", //Gro√ües O mit Grave
         "o", //Kleines o mit Grave
-        "O", //Groﬂes O mit Schr‰gstrich
-        "o", //Kleines o mit Schr‰gstrich
-        "A", //Groﬂes A mit Ring (Krouzek)
+        "O", //Gro√ües O mit Schr√§gstrich
+        "o", //Kleines o mit Schr√§gstrich
+        "A", //Gro√ües A mit Ring (Krouzek)
         "a", //Kleines a mit Ring (Krouzek)
-        "S", //Groﬂes S mit Caron (Hatschek)
+        "S", //Gro√ües S mit Caron (Hatschek)
         "s", //Kleines s mit Caron (Hatschek)
-        "Th", //Groﬂes Thorn (isl‰ndischer Buchstabe)
-        "th", //Kleines thorn (isl‰ndischer Buchstabe)
+        "Th", //Gro√ües Thorn (isl√§ndischer Buchstabe)
+        "th", //Kleines thorn (isl√§ndischer Buchstabe)
         "-", //Divisions-Zeichen ("Geteilt durch ...")
         "x", //Multiplikationszeichen; "Multipliziert mit ..."
-        "D", //Groﬂes D mit Querstrich (isl‰ndischer Buchstabe)
-        "d", //Kleines d mit Querstrich (isl‰ndischer Buchstabe)
-        "Y", //Groﬂes Y mit Akut
+        "D", //Gro√ües D mit Querstrich (isl√§ndischer Buchstabe)
+        "d", //Kleines d mit Querstrich (isl√§ndischer Buchstabe)
+        "Y", //Gro√ües Y mit Akut
         "y", //Kleines y mit Akut
         //EOF - web28 - 2010-09-16 - Weitere Sonderzeichen
         );

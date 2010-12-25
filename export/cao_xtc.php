@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
  *                                                                                          *
- *  CAO-Faktura für Windows Version 1.4 (http://www.cao-faktura.de)                         *
+ *  CAO-Faktura fÃ¼r Windows Version 1.4 (http://www.cao-faktura.de)                         *
  *  Copyright (C) 2009 Jan Pokrandt / Jan@JP-SOFT.de                                        *
  *                                                                                          *
  *  This program is free software; you can redistribute it and/or                           *
@@ -37,7 +37,7 @@
  *  based on:                                                                               *
  * (c) 2000 - 2001 The Exchange Project                                                     *
  * (c) 2001 - 2003 osCommerce, Open Source E-Commerce Solutions                             *
- * (c) 2001 - 2003 TheMedia, Dipl.-Ing Thomas Plänkers                                      *
+ * (c) 2001 - 2003 TheMedia, Dipl.-Ing Thomas PlÃ¤nkers                                      *
  * (c) 2003 JP-Soft, Jan Pokrandt                                                           *
  * (c) 2003 IN-Solution, Henri Schmidhuber                                                  *
  * (c) 2003 www.websl.de, Karl Langmann                                                     *
@@ -54,16 +54,16 @@
  *  - 17.07.2003 tep_array_merge durch array_merge ersetzt                                  *
  *  - 18.07.2003 Code fuer Image_Upload hinzugefuegt                                        *
  *  - 20.07.2003 HS Shipping und Paymentklassen aufgenommen                                 *
- *  - 02.08.2003 KL MANUFACTURERS_DESCRIPTION  language_id geändert in languages_id         *
+ *  - 02.08.2003 KL MANUFACTURERS_DESCRIPTION  language_id geÃ¤ndert in languages_id         *
  *  - 09.08.2003 JP fuer das Modul Banktransfer werden jetzt die daten bei der Bestll-      *
  *                  uebermittlung mit ausgegeben                                            *
  *  - 10.08.2003 JP Geburtsdatum wird jetzt in den Bestellungen mit uebergeben              *
  *  - 18.08.2003 JP Bug bei Products/URL beseitigt                                          *
  *  - 18.08.2003 HS Bankdaten werden nur bei Banktransfer ausgelesen                        *
  *  - 23.08.2003 Code fuer Hersteller-Update hinzugefuegt                                   *
- *  - 25.10.2003 RV Kunden-Export hinzugefügt                                               *
- *  - 24.11.2003 HS Fix Kunden-Export - Newsletterexport hinzugefügt                        *
- *  - 01.12.2003 RV Code für 3 Produktbilder-Erweiterung hinzugefügt.                       *
+ *  - 25.10.2003 RV Kunden-Export hinzugefÃ¼gt                                               *
+ *  - 24.11.2003 HS Fix Kunden-Export - Newsletterexport hinzugefÃ¼gt                        *
+ *  - 01.12.2003 RV Code fÃ¼r 3 Produktbilder-Erweiterung hinzugefÃ¼gt.                       *
  *  - 31.01.2004 JP Resourcenverbrauch minimiert                                            *
  *                  tep_set_time_limit ist jetzt per DEFINE zu- und abschaltbar             *
  *  - 06.06.2004 JP per DEFINE kann jetzt die Option "3 Produktbilder" geschaltet werden    *
@@ -72,9 +72,9 @@
  *  - 09.10.2004 RV Kunden Vor- und Nachname bei Bestellungen getrennt exportieren          *
  *  - 09.10.2004 RV SQL-Cleanup                                                             *
  *  - 09.10.2004 RV CODE-Cleanup                                                            *
- *  - 14.10.2004 RV Länder bei Bestellungen als ISO-Code                                    *
- *  - 25.10.2003 Kunden-Update hinzugefügt                                                  *
- *  - 01.11.2003 Statusänderung werden wenn möglich in der Bestellsprache ausgeführt        *
+ *  - 14.10.2004 RV LÃ¤nder bei Bestellungen als ISO-Code                                    *
+ *  - 25.10.2003 Kunden-Update hinzugefÃ¼gt                                                  *
+ *  - 01.11.2003 StatusÃ¤nderung werden wenn mÃ¶glich in der Bestellsprache ausgefÃ¼hrt        *
  *             Copyright (c) 2004 XT-Commerce                                               *
  *              1.1  switching POST/GET vars for CAO imageUpload                            *
  *              1.2  mulitlang inserts for Categories                                       *
@@ -85,7 +85,7 @@
  *  - 10.12.2004 JP Anpassungen fuer CAO 1.2.6.x (customers_export, orders_export)          *
  *  - 10.12.2004 JP Anpassungen an CAO-Faktura 1.2.6.1                                      *
  *  - 01.06.2005 JP Bugfix MWST-Switch
- *  - 01.06.2005 KL/JP Anpassungen für IMAGE_MANIPULATOR (XTC 2.x und 3.x)                  *
+ *  - 01.06.2005 KL/JP Anpassungen fÃ¼r IMAGE_MANIPULATOR (XTC 2.x und 3.x)                  *
  *  - 19.08.2005 JP Bugfix beim Aktualisieren von Kunden (PW wurde neu gesetzt)             *
  *  - 24.08.2005 TKI Bugfix MWST-Switch                                                     *
  *               products_tax_class_id statt $products['products_tax_class_id']             *
@@ -113,7 +113,7 @@ define('SEND_ACCOUNT_MAIL', false);
 // Default-Sprache
 $LangID = 2;
 $Lang_folder = 'german';
-// Steuer Einstellungen für CAO-Faktura
+// Steuer Einstellungen fÃ¼r CAO-Faktura
 $order_total_class['ot_cod_fee']['prefix'] = '+';
 $order_total_class['ot_cod_fee']['tax'] = '19';
 $order_total_class['ot_customer_discount']['prefix'] = '-';
@@ -126,14 +126,14 @@ $order_total_class['ot_shipping']['prefix'] = '+';
 $order_total_class['ot_shipping']['tax'] = '19';
 define('_VALID_XTC', false);
 require ('../includes/application_top_export.php');
-// Kundengruppen ID für Neukunden (default "neue Kunden einstellungen in XTC")
+// Kundengruppen ID fÃ¼r Neukunden (default "neue Kunden einstellungen in XTC")
 define('STANDARD_GROUP', DEFAULT_CUSTOMERS_STATUS_ID);
 //KL02062005
 if (file_exists(DIR_FS_DOCUMENT_ROOT . 'admin/includes/classes/image_manipulator.php')) {
-    // für XTC 2.x
+    // fÃ¼r XTC 2.x
     include (DIR_FS_DOCUMENT_ROOT . 'admin/includes/classes/image_manipulator.php');
 } else {
-    // für XTC ab 3.x
+    // fÃ¼r XTC ab 3.x
     include (DIR_FS_DOCUMENT_ROOT . 'admin/includes/classes/' . IMAGE_MANIPULATOR);
 } //KL02062005_ENDE
 if ((isset($_POST['user'])) and (isset($_POST['password']))) {

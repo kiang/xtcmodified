@@ -49,7 +49,7 @@ define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_TEXT_DESCRIPTION_CHECKOUT_PAYMENT_I
       </tr>
     </table>');
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_TEXT_DESCRIPTION_CHECKOUT_PAYMENT_TEXT', 'Online-&Uuml;berweisung mit T&Uuml;V gepr&uuml;ftem Datenschutz ohne Registrierung. Bitte halten Sie Ihre Online-Banking-Daten (PIN/TAN) bereit.  Dienstleistungen/Waren werden bei Verf&uuml;gbarkeit SOFORT geliefert bzw. versendet!');
-define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_KS_TEXT_DESCRIPTION_CHECKOUT_PAYMENT_TEXT', 'Direkt&uuml;berweisung mit K&auml;uferschutz: Dieser K&auml;uferschutz sichert Ihnen als Kunde bei Nichtlieferung eine Geld-zurück-Garantie zu. sofortüberweisung.de ist T&Uuml;V zertifiziert (Gepr&uuml;fter Datenschutz, Gepr&uuml;ftes Zahlungssystem). Bitte halten Sie Ihre Online-Banking-Daten (PIN/TAN) bereit. Dienstleistungen/Waren werden bei Verf&uuml;gbarkeit SOFORT geliefert bzw. versendet!');
+define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_KS_TEXT_DESCRIPTION_CHECKOUT_PAYMENT_TEXT', 'Direkt&uuml;berweisung mit K&auml;uferschutz: Dieser K&auml;uferschutz sichert Ihnen als Kunde bei Nichtlieferung eine Geld-zurÃ¼ck-Garantie zu. sofortÃ¼berweisung.de ist T&Uuml;V zertifiziert (Gepr&uuml;fter Datenschutz, Gepr&uuml;ftes Zahlungssystem). Bitte halten Sie Ihre Online-Banking-Daten (PIN/TAN) bereit. Dienstleistungen/Waren werden bei Verf&uuml;gbarkeit SOFORT geliefert bzw. versendet!');
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_TEXT_DESCRIPTION_CHECKOUT_PAYMENT_IMAGEALT', 'sofort&uuml;berweisung.de ist der kostenlose, T&Uuml;V-zertifizierte Zahlungsdienst der Payment Network AG. Ihre Vorteile: keine zus&auml;tzliche Registrierung, automatische Abbuchung von Ihrem Online-Bankkonto, h&ouml;chste Sicherheitsstandards und sofortiger Versand von Lagerware. F&uuml;r die Bezahlung mit sofort&uuml;berweisung.de ben&ouml;tigen Sie Ihre eBanking Zugangsdaten, d.h. Bankverbindung, Kontonummer, PIN und TAN.');
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_ALLOWED_TITLE', 'Erlaubte Zonen');
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_ALLOWED_DESC', 'Geben Sie <b>einzeln</b> die Zonen an, welche f&uuml;r dieses Modul erlaubt sein sollen. (z.B. AT,DE (wenn leer, werden alle Zonen erlaubt))');
@@ -93,6 +93,6 @@ define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_TEXT_ERROR_HEADING', 'Folgender Feh
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_TEXT_ERROR_MESSAGE', 'Zahlung via sofort&uuml;berweisung.de ist leider nicht m&ouml;glich oder wurde auf Kundenwunsch abgebrochen. Bitte w&auml;hlen Sie eine andere Zahlungsweise.');
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_TEXT_INFO', 'Zahlen Sie bequem mit dem zertifizierten und gepr&uuml;ften Online Banking System Sofort&uuml;berweisung');
 // Hendrik - 11.08.2010 - exlusion config for shipping modules
-define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_NEG_SHIPPING_TITLE', 'Ausschluß bei Versandmodulen');
+define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_NEG_SHIPPING_TITLE', 'AusschluÃŸ bei Versandmodulen');
 define('MODULE_PAYMENT_PN_SOFORTUEBERWEISUNG_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
 ?>

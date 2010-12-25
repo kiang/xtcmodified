@@ -28,13 +28,13 @@ if ($lang[1] == 'de') {
     define('SUBMIT_VALUE', 'Datenbankupgrade durchf&uuml;hren');
     define('SUCCESS_MESSAGE', '<br /><br /><strong>Datenbankupgrade erfolgreich!</strong><br /><br />Ausgef&uuml;hrte SQL-Befehle:<br /><br />');
     define('UPGRADE_NOT_NECESSARY', 'Kein Datenbankupgrade notwendig, sie sind auf dem aktuellesten Stand!');
-    define('USED_FILES', '<br /><br />Folgende Dateien werden für das Upgrade auf die neueste Datenbank-Version verwendet:<br /><br />');
+    define('USED_FILES', '<br /><br />Folgende Dateien werden fÃ¼r das Upgrade auf die neueste Datenbank-Version verwendet:<br /><br />');
     define('CURRENT_DB_VERSION', '<br />Ihre derzeitige Datenbank-Version ist: ');
     define('FINAL_TEXT', 'Bitte l&ouml;schen Sie jetzt aus Sicherheitsgr&uuml;nden die Upgrade-Datei vom Server:<br /> ==> ');
     define('TEXT_FOOTER', '<a href="http://www.xtc-modified.org" target="_blank">xtcModified</a>' . '&nbsp;' . '&copy;' . date('Y') . '&nbsp;' . 'provides no warranty and is redistributable under the <a href="http://www.fsf.org/licensing/licenses/gpl.txt" target="_blank">GNU General Public License</a><br />eCommerce Engine 2006 based on <a href="http://www.xt-commerce.com/" rel="nofollow" target="_blank">xt:Commerce</a>');
     define('TEXT_TITLE', 'xtcModified Datenbankupgrade');
     define('OPTIMIZE_TABLE', '(OPTIMIZE TABLE): Datenbanktabellen nach dem Upgrade optimieren (empfohlen)');
-    define('OPTIMIZE_TABLE_GAIN', 'Die Optimierung der Datenbank führte zu einem Speicherplatzgewinn von: ');
+    define('OPTIMIZE_TABLE_GAIN', 'Die Optimierung der Datenbank fÃ¼hrte zu einem Speicherplatzgewinn von: ');
     define('REDIRECTED_FROM_INSTALLER', 'Ihre bereits bestehende Version von xtcModified muss noch auf das neueste Datenbank-Schema aktualisiert werden!');
 } else {
     // English definitions

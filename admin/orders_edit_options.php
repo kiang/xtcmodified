@@ -88,7 +88,7 @@ while ($attributes = xtc_db_fetch_array($attributes_query)) {
 
 
 
-<!-- Artikel Einfügen Anfang //-->
+<!-- Artikel EinfÃŒgen Anfang //-->
 
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <?php
@@ -153,7 +153,7 @@ while ($products = xtc_db_fetch_array($products_query)) {
 </table>
 
 <br /><br />
-<!-- Artikel Einfügen Ende //-->
+<!-- Artikel EinfÃŒgen Ende //-->
 
 
 

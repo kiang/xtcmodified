@@ -15,13 +15,13 @@
    (c) 2006 xt-commerce; www.xt-commerce.com
    -----------------------------------------------------------------------------------------
    Erweiterung der googlebase.php (c)2009 by Hetfield - http://www.MerZ-IT-SerVice.de um folgende Funktionen:
-   - Gewichts- oder preisabhängige Vesandkosten mit Berücksichtigung der Versandkostenfrei-Grenze
+   - Gewichts- oder preisabhÃ€ngige Vesandkosten mit BerÃŒcksichtigung der Versandkostenfrei-Grenze
    - Beachtung des Mindermengenzuschlags
    - Zustand 'neu' fest hinterlegt
    - Anzeige Zahlungsarten
    - Anzeige Gewicht
    - Anzeige EAN
-   - Auswahl der verschiedenen suchmaschinenfreundlichen URL für den Exportlink (Original/keine, Shopstat oder DirectURL)
+   - Auswahl der verschiedenen suchmaschinenfreundlichen URL fÃŒr den Exportlink (Original/keine, Shopstat oder DirectURL)
    - Umlautproblematik und str_replace-Wahnsinn beseitigt
 
    updated version by franky_n
@@ -323,7 +323,7 @@ class googlebase {
             }
             //create content
             $schema_txt_de.= $products_description . "\t" . $products['products_id'] . "\t" . $productURL . "\t" . number_format($products_price, 2, '.', '') . "\t" . $_POST['currencies'] . "\t" . $products_name . "\t" . "neu\t" . $image . "\t" . $products['products_ean'] . "\t" . $weight . "\t" . $products['manufacturers_name'] . "\t" . $_POST['shipping_country'] . ":::" . number_format($versand, 2, '.', '') . "\t" . $zahlungsmethode . "\t" . $zahlungsrichtlinie . "\n";
-            $schema_xml_de.= "\t" . "\t" . '<item>' . "\n" . "\t" . "\t" . "\t" . '<beschreibung>' . $products_description . '</beschreibung>' . "\n" . "\t" . "\t" . "\t" . '<g:id>' . $products['products_id'] . '</g:id>' . "\n" . "\t" . "\t" . "\t" . '<link>' . str_replace('&', '&amp;', $productURL) . '</link>' . "\n" . "\t" . "\t" . "\t" . '<g:preis>' . number_format($products_price, 2, '.', '') . '</g:preis>' . "\n" . "\t" . "\t" . "\t" . '<g:währung>' . $_POST['currencies'] . '</g:währung>' . "\n" . "\t" . "\t" . "\t" . '<titel>' . $products_name . '</titel>' . "\n" . "\t" . "\t" . "\t" . '<g:zustand>' . 'neu' . '</g:zustand>' . "\n" . "\t" . "\t" . "\t" . '<g:bild_url>' . $image . '</g:bild_url>' . "\n" . "\t" . "\t" . "\t" . '<g:ean>' . $products['products_ean'] . '</g:ean>' . "\n" . "\t" . "\t" . "\t" . '<g:gewicht>' . $weight . '</g:gewicht>' . "\n" . "\t" . "\t" . "\t" . '<g:marke>' . $products['manufacturers_name'] . '</g:marke>' . "\n" . "\t" . "\t" . "\t" . '<g:versand>' . $_POST['shipping_country'] . ':::' . number_format($versand, 2, '.', '') . '</g:versand>' . "\n" . "\t" . "\t" . "\t" . '<g:zahlungsmethode>' . $zahlungsmethode . '</g:zahlungsmethode>' . "\n" . "\t" . "\t" . "\t" . '<g:payment_notes>' . $zahlungsrichtlinie . '</g:payment_notes>' . "\n" . "\t" . "\t" . '</item>' . "\n";
+            $schema_xml_de.= "\t" . "\t" . '<item>' . "\n" . "\t" . "\t" . "\t" . '<beschreibung>' . $products_description . '</beschreibung>' . "\n" . "\t" . "\t" . "\t" . '<g:id>' . $products['products_id'] . '</g:id>' . "\n" . "\t" . "\t" . "\t" . '<link>' . str_replace('&', '&amp;', $productURL) . '</link>' . "\n" . "\t" . "\t" . "\t" . '<g:preis>' . number_format($products_price, 2, '.', '') . '</g:preis>' . "\n" . "\t" . "\t" . "\t" . '<g:wÃ€hrung>' . $_POST['currencies'] . '</g:wÃ€hrung>' . "\n" . "\t" . "\t" . "\t" . '<titel>' . $products_name . '</titel>' . "\n" . "\t" . "\t" . "\t" . '<g:zustand>' . 'neu' . '</g:zustand>' . "\n" . "\t" . "\t" . "\t" . '<g:bild_url>' . $image . '</g:bild_url>' . "\n" . "\t" . "\t" . "\t" . '<g:ean>' . $products['products_ean'] . '</g:ean>' . "\n" . "\t" . "\t" . "\t" . '<g:gewicht>' . $weight . '</g:gewicht>' . "\n" . "\t" . "\t" . "\t" . '<g:marke>' . $products['manufacturers_name'] . '</g:marke>' . "\n" . "\t" . "\t" . "\t" . '<g:versand>' . $_POST['shipping_country'] . ':::' . number_format($versand, 2, '.', '') . '</g:versand>' . "\n" . "\t" . "\t" . "\t" . '<g:zahlungsmethode>' . $zahlungsmethode . '</g:zahlungsmethode>' . "\n" . "\t" . "\t" . "\t" . '<g:payment_notes>' . $zahlungsrichtlinie . '</g:payment_notes>' . "\n" . "\t" . "\t" . '</item>' . "\n";
         }
         $schema_xml_de.= "\t" . '</channel>' . "\n" . '</rss>' . "\n";
         // create File

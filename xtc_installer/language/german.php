@@ -38,7 +38,7 @@ define('TEXT_DB_SERVER_VERSION_ERROR', 'Ihre MySQL-Version ist zu alt. Der Shop 
 define('TEXT_DB_SERVER_VERSION', 'Ihre MySQL-Version: ');
 // EOF - vr - 2010-01-14 - check MySQL *server* version
 // BOF - vr - 2010-01-14 - check MySQL *client* version
-define('TEXT_DB_CLIENT_VERSION_WARNING', 'Ihre MySQL-Client-Version ist zu alt. Der Shop ben&ouml;tigt mindestens die Version: 4.1.2 </br></br>Sie können die Installation aber fortf&uuml;hren.</br>Wenn sich die Installation nicht fehlerfrei durchf&uuml;hren l&auml;sst, bitten Sie Ihren Provider um ein Update!');
+define('TEXT_DB_CLIENT_VERSION_WARNING', 'Ihre MySQL-Client-Version ist zu alt. Der Shop ben&ouml;tigt mindestens die Version: 4.1.2 </br></br>Sie kÃ¶nnen die Installation aber fortf&uuml;hren.</br>Wenn sich die Installation nicht fehlerfrei durchf&uuml;hren l&auml;sst, bitten Sie Ihren Provider um ein Update!');
 define('TEXT_DB_CLIENT_VERSION', 'Ihre MySQL-Client-Version: ');
 // EOF - vr - 2010-01-14 - check MySQL *client* version
 // BOF - web28 - 2010-02-1014 - check FILE PATH
@@ -59,21 +59,21 @@ define('TEXT_GDLIBV2_SUPPORT', 'falls GDlib Version &lt; 2+ , wenden Sie sich bi
 define('TEXT_GDLIB_MISSING_GIF_SUPPORT', 'Sie haben keine GIF-Unterst&uuml;tzung innerhalb der GDlib, so dass Sie im Shop keine GIF-Bilder und GIF-Wasserzeichen-Funktionen nutzen k&ouml;nnen!');
 define('TEXT_GDLIB_GIF_VERSION', 'GDlib GIF-Unterst&uuml;tzung');
 define('TEXT_CHMOD_REMARK_HEADLINE', 'Achtung');
-define('TEXT_CHMOD_REMARK', 'Die folgenden Dateien und Ordner benötigen Schreibrechte ( CHMOD 0777 )');
-define('TEXT_CHECKING', '&Uuml;berprüfung');
+define('TEXT_CHMOD_REMARK', 'Die folgenden Dateien und Ordner benÃ¶tigen Schreibrechte ( CHMOD 0777 )');
+define('TEXT_CHECKING', '&Uuml;berprÃ¼fung');
 define('TEXT_INSTALLATION_NOT_POSSIBLE', 'Die Installation kann wegen fehlender Voraussetzungen nicht fortgesetzt werden! Bitte beheben Sie die Fehler und versuchen Sie es dann erneuet!');
 // EOF - DokuMan - 2010-08-16 - language dependent definitions for index.php
 // index.php
 define('TITLE_SELECT_LANGUAGE', 'W&auml;hlen Sie eine Sprache aus!');
-define('TEXT_WELCOME_INDEX', '<b>Willkommen zu xtcModified</b><br /><br />xtcModified ist eine Open-Source e-commerce L&ouml;sung, die st&auml;ndig vom xtcModified Team und einer grossen Gemeinschaft weiterentwickelt wird.<br /> Seine out-of-the-box Installation erlaubt es dem Shop-Besitzer seinen Online-Shop mit einem Minimum an Aufwand und Kosten zu installieren, zu betreiben und zu verwalten.<br /><br />xtcModified ist auf jedem System lauff&auml;hig, welches eine PHP Umgebung (ab PHP 5.0) und MySQL zur Verf&uuml;gung stellt, wie zum Beispiel Linux, Solaris, BSD, und Microsoft Windows.<br /><br />xtcModified ist ein OpenSource-Projekt &ndash; wir stecken jede Menge Arbeit und Freizeit in dieses Projekt und würden uns daher über eine Spende als kleine Anerkennung freuen.');
-define('TEXT_INFO_DONATIONS_IMG_ALT', 'Unterstützen Sie dieses Projekt mit Ihrer Spende');
+define('TEXT_WELCOME_INDEX', '<b>Willkommen zu xtcModified</b><br /><br />xtcModified ist eine Open-Source e-commerce L&ouml;sung, die st&auml;ndig vom xtcModified Team und einer grossen Gemeinschaft weiterentwickelt wird.<br /> Seine out-of-the-box Installation erlaubt es dem Shop-Besitzer seinen Online-Shop mit einem Minimum an Aufwand und Kosten zu installieren, zu betreiben und zu verwalten.<br /><br />xtcModified ist auf jedem System lauff&auml;hig, welches eine PHP Umgebung (ab PHP 5.0) und MySQL zur Verf&uuml;gung stellt, wie zum Beispiel Linux, Solaris, BSD, und Microsoft Windows.<br /><br />xtcModified ist ein OpenSource-Projekt &ndash; wir stecken jede Menge Arbeit und Freizeit in dieses Projekt und wÃ¼rden uns daher Ã¼ber eine Spende als kleine Anerkennung freuen.');
+define('TEXT_INFO_DONATIONS_IMG_ALT', 'UnterstÃ¼tzen Sie dieses Projekt mit Ihrer Spende');
 define('TEXT_WELCOME_STEP1', '<b>Datenbank- und Webservereinstellungen</b><br /><br />Der Installer ben&ouml;tigt hier einige Informationen bez&uuml;glich Ihrer Datenbank und Ihrer Verzeichnisstruktur.');
 define('TEXT_WELCOME_STEP2', '<b>Datenbank Installation</b><br /><br />Der xtcModified Installer installiert automatisch die xtcModified-Datenbank.');
 // BOF - web28 - 2010.12.13 - NEW db-upgrade
 define('TEXT_DB_UPGRADE', 'Nur Datenbank Upgrade durchf&uuml;hren!');
 // BOF - web28 - 2010.12.13 - NEW db-upgrade
 // BOF - web28 - 2010.02.20 - NEW STEP2-4 Handling
-define('TEXT_WELCOME_STEP2A', '<b>Datenbank Installation wurde deaktiviert</b><br /><br />Die Installation der xtcModified-Datenbank in Step3 wird übersprungen!.');
+define('TEXT_WELCOME_STEP2A', '<b>Datenbank Installation wurde deaktiviert</b><br /><br />Die Installation der xtcModified-Datenbank in Step3 wird Ã¼bersprungen!.');
 // BOF - web28 - 2010.02.20 - NEW STEP2-4 Handling
 define('TEXT_WELCOME_STEP3', '<b>Datenbank Import.</b><br /><br />Die Daten der xtcModified Datenbank werden automatisch in die Datenbank importiert.');
 define('TEXT_WELCOME_STEP4', '<b>Erstellen der xtcModified Konfiguration-Dateien</b><br /><br /><b>Wenn bereits configure Dateien aus einer fr&uuml;heren Installation vorhanden sind, wird xtcModified diese L&ouml;schen.</b><br /><br />Der Installer schreibt automatisch die Konfigurationsdateien f&uuml;r die Dateistruktur und die Datenbankanbindung.<br /><br />Sie k&ouml;nnen zwischen verschiedenen Session-Handling_systemen w&auml;hlen.');
@@ -116,7 +116,7 @@ define('TITLE_WEBSERVER_SETTINGS', 'Webserver Informationen');
 define('TEXT_WS_ROOT', 'Webserver Root Verzeichnis');
 define('TEXT_WS_ROOT_LONG', 'Das Verzeichnis, in das die Webseiten gespeichert werden, zum Beispiel <b>/home/myname/htdocs</b>.');
 define('TEXT_WS_XTC', 'Webserver "xtcModified" Verzeichnis');
-define('TEXT_WS_XTC_LONG', 'Das Verzeichnis, in das der Shop geladen wurde, relativ zum Webserver Root Verzeichnis, bspw. <b>/xtcModified/</b>.<br /><br />Webserver Root Verzeichnis + Webserver "xtcModified" Verzeichnis ergeben den vollständigen Pfad zum Shop.');
+define('TEXT_WS_XTC_LONG', 'Das Verzeichnis, in das der Shop geladen wurde, relativ zum Webserver Root Verzeichnis, bspw. <b>/xtcModified/</b>.<br /><br />Webserver Root Verzeichnis + Webserver "xtcModified" Verzeichnis ergeben den vollstÃ¤ndigen Pfad zum Shop.');
 define('TEXT_WS_ADMIN', 'Webserver Admin Verzeichnis');
 define('TEXT_WS_ADMIN_LONG', 'Das Verzeichnis, in welchem sich die Admin-Werkzeuge Ihres Shops befinden (vom Webserver root Verzeichnis), beispielsweise <i>/home/myname/public_html<b>/xtcModified/admin/</b></i>.');
 define('TEXT_WS_CATALOG', 'WWW Catalog Verzeichnis');
@@ -158,8 +158,8 @@ define('TITLE_CHECK_FILES', 'Bitte pr&uuml;fen Sie Ihre Datei Informationen');
 //BOF - web28 - 2010-03-02 - New SSL-PROXY info
 define('TEXT_SSL_PROXY_LONG', '<b>* Benutze SSL Proxy: </b><br />Bei Verwendung eines SLL Proxys ist der Pfad bei <b>HTTPS Server</b> anzupassen!');
 //BOF - GTB - 2010-08-31 - Layout correction
-define('TEXT_SSL_PROXY_EXP', '<b>SSL Proxy Beispiele für einige Provider: </b><br /><br /><div class="prov">Hosteurope: </div><div class="proxy">https://ssl.webpack.de/nureinbeispiel.de</div><div class="clear"></div><div class="prov">ALL-INKL.COM: </div><div class="proxy">https://ssl-account.com/nureinbeispiel.de</div><div class="clear"></div><div class="prov">1und1: </div><div class="proxy">https://ssl.kundenserver.de/nureinbeispiel.de</div><div class="clear"></div><div class="prov">Strato: </div><div class="proxy">https://www.ssl-id.de/nureinbeispiel.de</div><div class="clear"></div>');
-//define('TEXT_SSL_PROXY_EXP','<b>SSL Proxy Beispiele für einige Provider: </b><br /><span class="prov">Hosteurope: </span><span class="proxy">https://ssl.webpack.de/nureinbeispiel.de</span><br /><span class="prov">ALL-INKL.COM: </span><span class="proxy">https://ssl-account.com/nureinbeispiel.de</span><br /><span class="prov">1und1: </span><span class="proxy">https://ssl.kundenserver.de/nureinbeispiel.de</span><br /><span class="prov">Strato: </span><span class="proxy">https://www.ssl-id.de/nureinbeispiel.de</span>');
+define('TEXT_SSL_PROXY_EXP', '<b>SSL Proxy Beispiele fÃ¼r einige Provider: </b><br /><br /><div class="prov">Hosteurope: </div><div class="proxy">https://ssl.webpack.de/nureinbeispiel.de</div><div class="clear"></div><div class="prov">ALL-INKL.COM: </div><div class="proxy">https://ssl-account.com/nureinbeispiel.de</div><div class="clear"></div><div class="prov">1und1: </div><div class="proxy">https://ssl.kundenserver.de/nureinbeispiel.de</div><div class="clear"></div><div class="prov">Strato: </div><div class="proxy">https://www.ssl-id.de/nureinbeispiel.de</div><div class="clear"></div>');
+//define('TEXT_SSL_PROXY_EXP','<b>SSL Proxy Beispiele fÃ¼r einige Provider: </b><br /><span class="prov">Hosteurope: </span><span class="proxy">https://ssl.webpack.de/nureinbeispiel.de</span><br /><span class="prov">ALL-INKL.COM: </span><span class="proxy">https://ssl-account.com/nureinbeispiel.de</span><br /><span class="prov">1und1: </span><span class="proxy">https://ssl.kundenserver.de/nureinbeispiel.de</span><br /><span class="prov">Strato: </span><span class="proxy">https://www.ssl-id.de/nureinbeispiel.de</span>');
 //EOF - GTB - 2010-08-31 - Layout correction
 //EOF - web28 - 2010-03-02 - New SSL-PROXY info
 // install_step5.php
@@ -171,7 +171,7 @@ define('TEXT_FIRSTNAME', 'Vorname:');
 define('TEXT_LASTNAME', 'Nachname:');
 define('TEXT_EMAIL', 'E-Mail Adresse:');
 define('TEXT_EMAIL_LONG', 'E-Mail Adresse, an die eine separate Mail bei Bestellungen gesendet werden soll.');
-define('TEXT_STREET', 'Straße:');
+define('TEXT_STREET', 'StraÃŸe:');
 define('TEXT_POSTCODE', 'PLZ:');
 define('TEXT_CITY', 'Stadt:');
 define('TEXT_STATE', 'Bundesland/Province:');
@@ -196,7 +196,7 @@ define('ENTRY_FIRST_NAME_ERROR', 'Vorname ist zu kurz');
 define('ENTRY_LAST_NAME_ERROR', 'Nachname ist zu kurz');
 define('ENTRY_EMAIL_ADDRESS_ERROR', 'E-Mail Adresse ist zu kurz');
 define('ENTRY_EMAIL_ADDRESS_CHECK_ERROR', 'Bitte &uuml;berpr&uuml;fen Sie Ihre E-Mail Adresse');
-define('ENTRY_STREET_ADDRESS_ERROR', 'Straße ist zu kurz');
+define('ENTRY_STREET_ADDRESS_ERROR', 'StraÃŸe ist zu kurz');
 define('ENTRY_POST_CODE_ERROR', 'Postleitzahl ist zu kurz');
 define('ENTRY_CITY_ERROR', 'Stadt ist zu kurz');
 define('ENTRY_COUNTRY_ERROR', 'Bitte &uuml;berpr&uuml;fen Sie das Bundesland');
@@ -245,5 +245,5 @@ define('SELECT_PRICE_ERROR2', 'Show Price -Default');
 define('SELECT_TAX_ERROR2', 'Show Tax -Default');
 // install_fnished.php
 define('TEXT_SHOP_CONFIG_SUCCESS', '<strong>xtcModified</strong> Shop Konfiguration war erfolgreich');
-define('TEXT_TEAM', 'Vielen Dank, dass Sie sich f&uuml;r die xtcModified eCommerce Shopsoftware entschieden haben. Besuchen Sie uns auf der <a href="http://www.xtc-modified.org">xtcModified Supportseite</a>.<br /><br />Alles Gute und viel Erfolg w&uuml;nscht Ihnen das gesamte xtcModified Team.<br /><br />Wenn Sie uns unterst&uuml;tzen wollen, würden wir uns über eine kleine Spende freuen.<br />');
+define('TEXT_TEAM', 'Vielen Dank, dass Sie sich f&uuml;r die xtcModified eCommerce Shopsoftware entschieden haben. Besuchen Sie uns auf der <a href="http://www.xtc-modified.org">xtcModified Supportseite</a>.<br /><br />Alles Gute und viel Erfolg w&uuml;nscht Ihnen das gesamte xtcModified Team.<br /><br />Wenn Sie uns unterst&uuml;tzen wollen, wÃ¼rden wir uns Ã¼ber eine kleine Spende freuen.<br />');
 ?>

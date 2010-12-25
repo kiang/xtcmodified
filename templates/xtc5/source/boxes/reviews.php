@@ -48,7 +48,7 @@ if ($random_product) {
     //EOF - Dokuman - 2010-01-29 - show review stars in box
     
 } elseif ($product->isProduct()) {
-    // Verhindern das Gäste oder Spamer bewerten können. www.aranowa.de
+    // Verhindern das GÃ¤ste oder Spamer bewerten kÃ¶nnen. www.aranowa.de
     if (isset($_SESSION['customer_id'])) {
         // display 'write a review' box
         $box_content = '<table border="0" cellspacing="0" cellpadding="2"><tr><td align="left" class="infoBoxContents"><a href="' . xtc_href_link(FILENAME_PRODUCT_REVIEWS_WRITE, xtc_product_link($product->data['products_id'], $product->data['products_name'])) . '">' . BOX_REVIEWS_WRITE_REVIEW . '</a></td></tr></table>';

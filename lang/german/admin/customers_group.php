@@ -1,7 +1,7 @@
 <?php
 /**
- * Sprachdatei für globale Kundengruppenberechtigungen
- * @author André Estel
+ * Sprachdatei fÃŒr globale Kundengruppenberechtigungen
+ * @author AndrÃ© Estel
  * @copyright 2008 Estelco
  * @license GPLv2
  */

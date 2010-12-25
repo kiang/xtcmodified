@@ -16,7 +16,7 @@
    Released under the GNU General Public License
    --------------------------------------------------------------*/
 require ('includes/application_top.php');
-//Eingefügt um Fehler in CC Modul zu unterdrücken.
+//EingefÃ¼gt um Fehler in CC Modul zu unterdrÃ¼cken.
 require (DIR_FS_CATALOG . DIR_WS_CLASSES . 'xtcPrice.php');
 $xtPrice = new xtcPrice($_SESSION['currency'], '');
 $set = (isset($_GET['set']) ? $_GET['set'] : '');

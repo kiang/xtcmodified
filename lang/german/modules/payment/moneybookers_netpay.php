@@ -32,7 +32,7 @@ define('MODULE_PAYMENT_MONEYBOOKERS_NETPAY_ZONE_DESC', 'Wenn eine Zone ausgew&au
 define('MODULE_PAYMENT_MONEYBOOKERS_NETPAY_ALLOWED_TITLE', 'Erlaubte Zonen');
 define('MODULE_PAYMENT_MONEYBOOKERS_NETPAY_ALLOWED_DESC', 'Geben Sie <b>einzeln</b> die Zonen an, welche f&uuml;r dieses Modul erlaubt sein sollen. (z.B. AT,DE (wenn leer, werden alle Zonen erlaubt))');
 // BOF - Hendrik - 2010-08-11 - exlusion config for shipping modules
-define('MODULE_PAYMENT_MONEYBOOKERS_NETPAY_NEG_SHIPPING_TITLE', 'Ausschluﬂ bei Versandmodulen');
+define('MODULE_PAYMENT_MONEYBOOKERS_NETPAY_NEG_SHIPPING_TITLE', 'Ausschlu√ü bei Versandmodulen');
 define('MODULE_PAYMENT_MONEYBOOKERS_NETPAY_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
 // EOF - Hendrik - 2010-08-11 - exlusion config for shipping modules
 

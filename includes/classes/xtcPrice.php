@@ -505,7 +505,7 @@ class xtcPrice {
             //BOF - Dokuman - 2009-06-03 - show 'ab' / 'from' for the lowest price, not for the highest!
             //$price = '<span class="productOldPrice">'.INSTEAD.$this->xtcFormat($pPrice, $format).'</span><br />'.ONLY.$this->checkAttributes($pID).$this->xtcFormat($sPrice, $format).'<br />'.YOU_SAVE.$discount.'%';
             $price = '<span class="productOldPrice"><small>' . INSTEAD . '</small><del>' . $this->xtcFormat($pPrice, $format) . '</del></span><br />' . ONLY . $this->checkAttributes($pID) . $this->xtcFormat($sPrice, $format) . '<br /><small>' . YOU_SAVE . round(($pPrice - $sPrice) / $pPrice * 100) . ' % /' . $this->xtcFormat($pPrice - $sPrice, $format);
-            // Ausgabe des gültigen Kundengruppen-Rabatts (sofern vorhanden)
+            // Ausgabe des gÃ¼ltigen Kundengruppen-Rabatts (sofern vorhanden)
             if ($discount != 0) {
                 $price.= '<br />' . BOX_LOGINBOX_DISCOUNT . ': ' . round($discount) . ' %';
             }
@@ -561,7 +561,7 @@ class xtcPrice {
      * @return unknown
      */
     function xtcFormatSpecialGraduated($pID, $sPrice, $pPrice, $format, $vpeStatus = 0, $pID) {
-        //BOF - Dokuman - 2009-06-03 - show 'ab' / 'from' for the lowest price, not for the highest! - NEU HINZUGEFÜGT "Steuerklasse ermitteln"
+        //BOF - Dokuman - 2009-06-03 - show 'ab' / 'from' for the lowest price, not for the highest! - NEU HINZUGEFÃœGT "Steuerklasse ermitteln"
         $tQuery = xtc_db_query("SELECT products_tax_class_id FROM " . TABLE_PRODUCTS . " WHERE products_id='" . $pID . "'");
         $tQuery = xtc_db_fetch_array($tQuery);
         $tax_class = $tQuery['products_tax_class_id'];
@@ -578,7 +578,7 @@ class xtcPrice {
                           FROM " . TABLE_PERSONAL_OFFERS_BY . $this->actualGroup . "
                           WHERE products_id='" . $pID . "'");
             $sQuery = xtc_db_fetch_array($sQuery, true);
-            // NEU! Damit "UVP"-Anzeige wieder möglich ist
+            // NEU! Damit "UVP"-Anzeige wieder mÃ¶glich ist
             // if ( ($this->cStatus['customers_status_graduated_prices'] == '1') || ($sQuery['qty'] > 1) ) {
             if (($this->cStatus['customers_status_graduated_prices'] == '1') && ($sQuery['qty'] > 1)) {
                 $bestPrice = $this->xtcGetGraduatedPrice($pID, $sQuery['qty']);

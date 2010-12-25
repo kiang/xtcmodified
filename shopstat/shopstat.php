@@ -1,9 +1,9 @@
 <?php
 /*-----------------------------------------------------------------------
-    Description : xtC-ShopStat-Module by www.ShopStat.com (Hartmut König)
+    Description : xtC-ShopStat-Module by www.ShopStat.com (Hartmut KÃ¶nig)
     Url         : http://www.shopstat.com
     Email       : info@shopstat.com
-    Copyright   : © 2004 ShopStat.com All Rights Reserved.
+    Copyright   : Â© 2004 ShopStat.com All Rights Reserved.
     Version     : $Id: shopstat.php,v 1.2 2005/03/05 13:36:19 Administrator Exp $
 ------------------------------------------------------------------------*/
 //error_reporting(E_ALL);
@@ -228,8 +228,8 @@ elseif (isset($shoplog_method) && $shoplog_method == 'search') {
 elseif (isset($shoplog_method) && $shoplog_method == 'validate_and_send') {
     require_once (DIR_WS_CLASSES . 'order.php');
     //-- [1.2]
-    //-- Sicherheitsabfrage für die verschiedenen xtc-Versionen
-    //-- Diese MUSS mit $xtPrice bleiben, da rückwärtskompatibel
+    //-- Sicherheitsabfrage fÃ¼r die verschiedenen xtc-Versionen
+    //-- Diese MUSS mit $xtPrice bleiben, da rÃ¼ckwÃ¤rtskompatibel
     $order = new order('', $xtPrice);
     if (is_object($order)) {
         #-- Total & paymethod & shippingcosts ->

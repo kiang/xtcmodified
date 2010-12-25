@@ -110,7 +110,7 @@ define('TEXT_VALIDATING', 'Nicht best&auml;tigt');
 define('TEXT_PRODUCTS', 'Artikel');
 // EOF - Tomcraft - 2010-04-22 - Added a missing language definition
 //BOF - web28 - 2010-03-20 - Send Order by Admin
-define('COMMENT_SEND_ORDER_BY_ADMIN', 'Auftragsbest‰tigung gesendet'); //ACHTUNG hier  keine HTML-Entities verwenden
+define('COMMENT_SEND_ORDER_BY_ADMIN', 'Auftragsbest√§tigung gesendet'); //ACHTUNG hier  keine HTML-Entities verwenden
 define('BUTTON_ORDER_CONFIRMATION', 'Auftragsbest&auml;tigung senden');
 define('SUCCESS_ORDER_SEND', 'Auftragsbest&auml;tigung erfolgreich gesendet');
 //EOF - web28 - 2010-03-20 - Send Order by Admin

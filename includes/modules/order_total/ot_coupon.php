@@ -68,7 +68,7 @@ class ot_coupon {
     */
     function process() {
         global $order, $xtPrice;
-        $order_total = $this->get_order_total(); //Betrag,  der für die Kuponberechnung verwendet wird
+        $order_total = $this->get_order_total(); //Betrag,  der fÃ¼r die Kuponberechnung verwendet wird
         $od_amount = $this->calculate_credit($order_total); //Kuponbetrag berechnen
         $this->deduction = $od_amount;
         if ($od_amount > 0) {
@@ -438,7 +438,7 @@ class ot_coupon {
                 //Steuer neu berechnen
                 $t_flag = false;
                 //Wenn ein Kupon Steuersatz definiert ist, dann nur mit diesem Steuersatz die Steuer neu berechnen (DEAKTIVIERT)
-                //Testen ob Steuersätze übereinstimmen
+                //Testen ob SteuersÃ¤tze Ã¼bereinstimmen
                 //if ($tax_rate_amount > 0 && ($tax_rate_amount - $tax_rate_order < 0.0001)) $t_flag = true;
                 //Wenn kein Kupon Steuersatz definiert ist, dann Steuersatz automatisch zuordnen
                 if ($tax_rate_amount == 0) $t_flag = true;

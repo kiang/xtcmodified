@@ -1,6 +1,6 @@
 <?php
 ##
-## xt:booster #version# für xt:Commerce.
+## xt:booster #version# fÃŒr xt:Commerce.
 ## Copyright (c) 2008 xt:booster Limited
 ##
 ## Licensed under GNU/GPL

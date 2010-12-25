@@ -23,7 +23,7 @@
 function xtc_show_category($counter, $oldlevel = 1) {
     global $foo, $categories_string, $id, $cPath;
     $level = $foo[$counter]['level'] + 1;
-    //BOF +++ UL LI Verschachtelung  mit Quelltext Tab Einz¸gen +++
+    //BOF +++ UL LI Verschachtelung  mit Quelltext Tab Einz√ºgen +++
     $ul = $tab = '';
     for ($i = 1;$i <= $level;$i++) {
         $tab.= "\t";
@@ -33,10 +33,10 @@ function xtc_show_category($counter, $oldlevel = 1) {
         $categories_string = rtrim($categories_string, "\n"); //Zeilenumbruch entfernen
         $categories_string = substr($categories_string, 0, strlen($categories_string) - 5); //letztes  </li>  entfernen
         
-    } elseif ($level < $oldlevel) { //zur¸ck zur hˆheren Ebene
+    } elseif ($level < $oldlevel) { //zur√ºck zur h√∂heren Ebene
         $ul = close_ul_tags($level, $oldlevel);
     }
-    //EOF +++ UL LI Verschachtelung  mit Quelltext Tab Einz¸gen +++
+    //EOF +++ UL LI Verschachtelung  mit Quelltext Tab Einz√ºgen +++
     //BOF +++ Kategorien markieren +++
     $category_path = explode('_', $cPath); //Kategoriepfad in Array einlesen
     //Elternkategorie markieren
@@ -56,7 +56,7 @@ function xtc_show_category($counter, $oldlevel = 1) {
     $categories_string.= '<li class="level' . $level . $cat_active . $cat_active_parent . '">';
     $categories_string.= '<a href="' . xtc_href_link(FILENAME_DEFAULT, $cPath_new) . '" title="' . $foo[$counter]['name'] . '">';
     $categories_string.= $foo[$counter]['name'];
-    //Anzeige Anzahl der Produkte in Kategorie, f¸r bessere Performance im Admin deaktivieren
+    //Anzeige Anzahl der Produkte in Kategorie, f√ºr bessere Performance im Admin deaktivieren
     if (SHOW_COUNTS == 'true') {
         $products_in_category = xtc_count_products_in_category($counter);
         if ($products_in_category > 0) {
@@ -66,7 +66,7 @@ function xtc_show_category($counter, $oldlevel = 1) {
     $categories_string.= '</a></li>';
     $categories_string.= "\n"; //Zeilenschaltung Codedarstellung
     //EOF  +++ Kategorie Linkerstellung +++
-    //N‰chste Kategorie
+    //N√§chste Kategorie
     if ($foo[$counter]['next_id']) {
         xtc_show_category($foo[$counter]['next_id'], $level);
     } else {
@@ -74,11 +74,11 @@ function xtc_show_category($counter, $oldlevel = 1) {
         return;
     }
 }
-//Alle offenen UL LI Tags schlieﬂen
+//Alle offenen UL LI Tags schlie√üen
 function close_ul_tags($level, $oldlevel) {
     $count = 1;
     $ul = '';
-    while ($count <= $oldlevel - $level) { //f¸r jede Ebene die UL LI Tags schlieﬂen
+    while ($count <= $oldlevel - $level) { //f√ºr jede Ebene die UL LI Tags schlie√üen
         $tab_end = '';
         for ($i = 1;$i <= $oldlevel - $count;$i++) {
             $tab_end.= "\t";

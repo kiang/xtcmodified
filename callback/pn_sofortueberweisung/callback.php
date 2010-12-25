@@ -1,6 +1,6 @@
 <?php
 /**
- * @version sofortüberweisung.de 4.2.0 - $Date: 2010-08-11 13:27:03 +0200 (Mi, 11 Aug 2010) $
+ * @version sofortÃ¼berweisung.de 4.2.0 - $Date: 2010-08-11 13:27:03 +0200 (Mi, 11 Aug 2010) $
  * @author Payment Network AG (integration@payment-network.com)
  * @link http://www.payment-network.com/
  *

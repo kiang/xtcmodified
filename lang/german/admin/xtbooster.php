@@ -148,7 +148,7 @@ define('TXT_DISPATCHTIMEMAX', 'Maximale Dauer bis Versand');
 define('TXT_RETURNSWITHIN', 'R&uuml;cksendung innerhalb');
 define('TXT_OPTION_LOCATION', 'Artikelstandort &amp; R&uuml;cknahmebedingungen');
 define('TXT_VATPERCENT', 'Im Preis enthaltene MwSt.');
-define('TXT_VATPERCENT_DESCR', 'z.B. 19% in Deutschland. Kann nur von eBay Mitgliedern verwendet werden, die die Anmeldung als Unternehmer abgeschlossen haben.');
+define('TXT_VATPERCENT_DESCR', 'z.B. 19% in Deutschland. Kann nur von eBay Mitgliedern verwendet werden, die die AnmeldungÂ als Unternehmer abgeschlossen haben.');
 define('TXT_OPTION_PAYMENTMETHODS', 'Zahlarten');
 define('TXT_OPTION_TEMPLATES', 'Templates');
 define('TXT_OPTION_AFTERBUY', 'Nach dem Kauf');

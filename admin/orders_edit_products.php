@@ -97,7 +97,7 @@ for ($i = 0, $n = sizeof($order->products);$i < $n;$i++) {
 <br /><br />
 <!-- Artikelbearbeitung Ende //-->
 
-<!-- Artikel Einfügen Anfang //-->
+<!-- Artikel EinfÃŒgen Anfang //-->
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 
 <tr class="dataTableHeadingRow">
@@ -176,4 +176,4 @@ if ($_GET['action'] == 'product_search') {
 <?php
 } ?>
 <br /><br />
-<!-- Artikel Einfügen Ende //-->
+<!-- Artikel EinfÃŒgen Ende //-->

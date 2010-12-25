@@ -6,7 +6,7 @@
  * xt:Commerce - Shopsoftware
  * (c) 2003-2007 xt:Commerce (Winger/Zanier), http://www.xt-commerce.com
  *
- * xt:Commerce ist eine geschŸtzte Handelsmarke und wird vertreten durch die xt:Commerce GmbH (Austria)
+ * xt:Commerce ist eine geschÂŸtzte Handelsmarke und wird vertreten durch die xt:Commerce GmbH (Austria)
  * xt:Commerce is a protected trademark and represented by the xt:Commerce GmbH (Austria)
  *
  * @copyright Copyright 2003-2007 xt:Commerce (Winger/Zanier), www.xt-commerce.com
@@ -18,7 +18,7 @@
  * For questions, help, comments, discussion, etc., please join the
  * xt:Commerce Support Forums at www.xt-commerce.com
  *
- * ab 15.08.2008 Teile vom Hamburger-Internetdienst geändert
+ * ab 15.08.2008 Teile vom Hamburger-Internetdienst geÃ¤ndert
  * Hamburger-Internetdienst Support Forums at www.forum.hamburger-internetdienst.de
  * Stand: 16.05.2010
  */
@@ -119,16 +119,16 @@ class paypal_checkout {
         return;
     }
     /*************************************************************/
-    /******* fürs express als Zahlbedingung **********************/
+    /******* fÃ¼rs express als Zahlbedingung **********************/
     /*************************************************************/
     function paypal_auth_call() {
-        // aufruf aus paypal.php NICHT für PP Express aus Warenkorb
+        // aufruf aus paypal.php NICHT fÃ¼r PP Express aus Warenkorb
         // Daten aus der Cart - Order noch nicht gespeichert
         // 1. Call um die Token ID zu bekommen
-        // Daten mitgeben, da direkt bestätigung ohne nochmaliges Confirm im Shop
+        // Daten mitgeben, da direkt bestÃ¤tigung ohne nochmaliges Confirm im Shop
         // Stand: 05.01.2010
         global $xtPrice, $order;
-        // Session säubern
+        // Session sÃ¤ubern
         unset($_SESSION['reshash']);
         unset($_SESSION['nvpReqArray']);
         require (DIR_WS_CLASSES . 'order_total.php');
@@ -238,7 +238,7 @@ class paypal_checkout {
         }
     }
     /*************************************************************/
-    /******* fürs express aus dem warenkorb **********************/
+    /******* fÃ¼rs express aus dem warenkorb **********************/
     /*************************************************************/
     function paypal_express_auth_call() {
         // aufruf aus cart_actions.php
@@ -246,7 +246,7 @@ class paypal_checkout {
         // Steuer, Artikel usw bei eingeloggt
         // Stand: 05.01.2010
         global $xtPrice, $order;
-        // Session säubern
+        // Session sÃ¤ubern
         unset($_SESSION['reshash']);
         unset($_SESSION['nvpReqArray']);
         // Shipping:
@@ -309,7 +309,7 @@ class paypal_checkout {
         if ($_SESSION['customers_status']['customers_status_show_price_tax'] == 0 && $_SESSION['customers_status']['customers_status_add_tax_ot'] == 1):
             $order_tax = $_SESSION['cart']->show_tax(false);
         endif;
-        // Vorläufige Versandkosten
+        // VorlÃ¤ufige Versandkosten
         if (PAYPAL_EXP_VORL != '' AND PAYPAL_EXP_VERS != 0):
             $paymentAmount+= PAYPAL_EXP_VERS;
         endif;
@@ -369,7 +369,7 @@ class paypal_checkout {
         }
     }
     /*************************************************************/
-    /******* für abgelehnte Zahlungen **********************/
+    /******* fÃ¼r abgelehnte Zahlungen **********************/
     /*************************************************************/
     function paypal_second_auth_call($insert_id) {
         // aufruf aus shopping_cart.php
@@ -377,7 +377,7 @@ class paypal_checkout {
         // Daten aus der Order !
         // Stand: 29.04.2009
         global $xtPrice, $order;
-        // Session säubern
+        // Session sÃ¤ubern
         unset($_SESSION['reshash']);
         unset($_SESSION['nvpReqArray']);
         require (DIR_WS_CLASSES . 'order.php');
@@ -444,7 +444,7 @@ class paypal_checkout {
         }
     }
     /*************************************************************/
-    /******* für beide Versionen *********************************/
+    /******* fÃ¼r beide Versionen *********************************/
     /*************************************************************/
     function complete_ceckout($insert_id, $data = '') {
         // aufruf aus paypal.php oder paypalexpress.php aus Warenkorb
@@ -508,7 +508,7 @@ class paypal_checkout {
         }
     }
     /*************************************************************/
-    /******* funktionen nur für Warenkorb ************************/
+    /******* funktionen nur fÃ¼r Warenkorb ************************/
     /*************************************************************/
     function paypal_get_customer_data() {
         // Stand: 29.04.2009
@@ -693,13 +693,13 @@ class paypal_checkout {
         $_SESSION['sendto'] = $send_to;
     }
     /*************************************************************/
-    /******* funktionen für beide versionen **********************/
+    /******* funktionen fÃ¼r beide versionen **********************/
     /*************************************************************/
     //  hash_call: Function to perform the API call to PayPal using API signature
     //  @methodName is name of API  method.
     //  @nvpStr is nvp string.
     //  returns an associtive array containing the response from the server.
-    //  08.01.2009.ergänzt für PHP ohne cURL von Stefan Kl.
+    //  08.01.2009.ergÃ¤nzt fÃ¼r PHP ohne cURL von Stefan Kl.
     //  05.01.2010 Verbose auf 0 da bei einigen Hostern sonst zuviel angezeigt wird
     function hash_call($methodName, $nvpStr, $pp_token = '') {
         // Stand: 05.01.2010
@@ -808,9 +808,9 @@ class paypal_checkout {
     }
     /*************************************************************/
     function paypal_get_products($paymentAmount, $order_tax, $order_discount, $order_fee, $order_shipping, $order_gs, $express_call = False) {
-        // für beide PayPal Versionen
+        // fÃ¼r beide PayPal Versionen
         // Artikel Details mitgeben
-        // Für den Express Call Vermerk für den Versand + Vorläufige Kosten mitgeben
+        // FÃ¼r den Express Call Vermerk fÃ¼r den Versand + VorlÃ¤ufige Kosten mitgeben
         // Stand: 05.01.2010
         global $xtPrice, $order;
         $products_sum_amt = 0;
@@ -964,7 +964,7 @@ class paypal_checkout {
                     $verspos = $ipn_data['num_cart_items'];
                     for ($p = 1;$p <= $verspos;$p++):
                         if ($this->data['item_name' . $p] == substr(SUB_TITLE_OT_DISCOUNT, 0, 127) OR $this->data['item_name' . $p] == substr(PAYPAL_GS, 0, 127) OR $this->data['item_name' . $p] == "Handling" OR $this->data['item_name' . $p] == substr(PAYPAL_TAX, 0, 127) OR $this->data['item_name' . $p] == "Differenz")
-                        // Artikel Nummer aus den Details für Sonderzeilen
+                        // Artikel Nummer aus den Details fÃ¼r Sonderzeilen
                         $ipn_data['num_cart_items']--;
                         if ($this->data['item_name' . $p] == substr(SHIPPING_COSTS, 0, 127)):
                             // Versandkosten
@@ -1188,7 +1188,7 @@ class paypal_checkout {
         endif;
         /// Kein iconv im PHP
         if ($t2 == "UTF-8"):
-            // nur als Ersatz für das iconv und nur in eine richtung 1251 to UTF8
+            // nur als Ersatz fÃ¼r das iconv und nur in eine richtung 1251 to UTF8
             //ISO 8859-1 to UTF-8
             if (function_exists('utf8_encode')):
                 return utf8_encode($string);
@@ -1205,7 +1205,7 @@ class paypal_checkout {
                 return ($string);
             endif;
         else:
-            // keine Konvertierung möglich
+            // keine Konvertierung mÃ¶glich
             return ($string);
         endif;
     }

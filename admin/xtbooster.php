@@ -1,6 +1,6 @@
 <?php
 ##
-## xs:booster v1.0423 für xt:Commerce.
+## xs:booster v1.0423 fÃŒr xt:Commerce.
 ## Copyright (c) 2008-2009 xt:booster Ltd.
 ## http://www.xsbooster.com
 ##
@@ -81,7 +81,7 @@ else {
             else { # Einige Artikel verkauft
                 $RelistType = 1;
             }
-        } else { # Auktion läuft noch
+        } else { # Auktion lÃ€uft noch
             $RelistType = 0;
         }
         # API-Call "RelistItem" machen
@@ -138,7 +138,7 @@ else {
 								GALLERY_PICTUREURL, 
 								GALLERYTYPE
 					FROM xtb_auctions WHERE XTB_ITEM_ID='" . $ITEM_ID . "' LIMIT 1");
-            # Geänderte Daten ergänzen
+            # GeÃ€nderte Daten ergÃ€nzen
             xsb_db_query("UPDATE xtb_auctions 
 						SET _EBAY_ITEM_ID='" . $r['ITEMID'] . "',
 							_EBAY_START_TIME='" . $r['STARTTIME'] . "',
@@ -1633,7 +1633,7 @@ function sendTestMail()
 			var EBAY_SITE = $F('EBAY_SITE');
 			EBAY_SITE = EBAY_SITE.split(",");
 			
-			// Einstellungen für Kategorie 2 (mode=2) oder Kategorie 1 (sonst) setzen.
+			// Einstellungen fÃŒr Kategorie 2 (mode=2) oder Kategorie 1 (sonst) setzen.
 			if (mode==2)	{
 				var TableName = 'TABLE_ATTRIBUTES_2';
 				var AttributesListFieldName	= 'ATTRIBUTES2';
@@ -1672,7 +1672,7 @@ function sendTestMail()
 
 					var allAttributes = new Array();
 					var category_id = r[0];
-					// Überschriftenzeile erzeugen
+					// Ãberschriftenzeile erzeugen
 					if ((r.length>2) || ((r[1].length>0) && (r[1]!="1")))	{
 						var attributeHeaderRow = new Element('tr', {'class':'attributes-even'});
 						var attributeHeaderCol = new Element('td', {'class':'smallText','colspan':'2','style':'font-weight:bold;font-size:12px;color:white;padding:10px;background:#555'}).update("<?php echo EXTRA_ATTRIBUTES_FOR_CATEGORY ?> "+category_id+":");
@@ -1727,7 +1727,7 @@ function sendTestMail()
 						
 					// Tabelle einblenden
 if(c>0) {
-					// Attributliste anfügen
+					// Attributliste anfÃŒgen
 					var attributeListField = document.createElement('input');
 					attributeListField.setAttribute('name', AttributesListFieldName);
 					attributeListField.setAttribute('type', 'hidden');
@@ -2581,7 +2581,7 @@ var TXT_WARNING_NOT_ALL_AUCTIONS_SUBMITTED="<?php echo TXT_WARNING_NOT_ALL_AUCTI
             # 60 sek. spaeter fuer moegliche Zeitunterschiede zum eBay-Server
             xsb_db_query("UPDATE xtb_auctions SET _EBAY_STATUS='successful' WHERE DURATION!='GTC' AND _EBAY_END_TIME<=UNIX_TIMESTAMP(NOW())-60 AND _EBAY_QUANTITY_BUYED>0");
             xsb_db_query("UPDATE xtb_auctions SET _EBAY_STATUS='unsuccessful' WHERE DURATION!='GTC' AND _EBAY_END_TIME<=UNIX_TIMESTAMP(NOW())-60 AND _EBAY_QUANTITY_BUYED=0");
-            # Listenansicht ermöglichen
+            # Listenansicht ermÃ¶glichen
             if ($display_type == 'list') $items_per_site = 100000;
             else $items_per_site = 30;
             if (!isset($seite)) $seite = 1;
@@ -2787,7 +2787,7 @@ var TXT_WARNING_NOT_ALL_AUCTIONS_SUBMITTED="<?php echo TXT_WARNING_NOT_ALL_AUCTI
 	<td><?php if ($filter == 3) { ?><input type="checkbox" name="items[]" id="items_<?php echo (int)$CheckboxIndex ?>" value="<?php echo $x['XTB_ITEM_ID'] ?>"><?php
                 } ?></td>
 	<?php
-                // Checkboxname für die "Check All"-Funktion in einer Liste speichern
+                // Checkboxname fÃŒr die "Check All"-Funktion in einer Liste speichern
                 $CheckboxIndex++;
 ?>
 </tr>

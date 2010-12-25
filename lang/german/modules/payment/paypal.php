@@ -23,7 +23,7 @@ define('MODULE_PAYMENT_PAYPAL_SORT_ORDER_DESC', 'Reihenfolge der Anzeige. Kleins
 define('MODULE_PAYMENT_PAYPAL_ZONE_TITLE', 'Zahlungszone');
 define('MODULE_PAYMENT_PAYPAL_ZONE_DESC', 'Wenn eine Zone ausgew&auml;hlt ist, gilt die Zahlungsmethode nur f&uuml;r diese Zone.');
 // BOF - Hendrik - 2010-08-11 - exlusion config for shipping modules
-define('MODULE_PAYMENT_PAYPAL_NEG_SHIPPING_TITLE', 'Ausschluﬂ bei Versandmodulen');
+define('MODULE_PAYMENT_PAYPAL_NEG_SHIPPING_TITLE', 'Ausschlu√ü bei Versandmodulen');
 define('MODULE_PAYMENT_PAYPAL_NEG_SHIPPING_DESC', 'Dieses Zahlungsmodul deaktivieren wenn Versandmodul gew&auml;hlt (Komma separierte Liste)');
 // EOF - Hendrik - 2010-08-11 - exlusion config for shipping modules
 

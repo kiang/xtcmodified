@@ -6,7 +6,7 @@
     http://www.xt-commerce.com/
     
     H.H.G. group
-    Hasan H. Gürsoy
+    Hasan H. GÃŒrsoy
 	Updated for FCKEditor 2.6.x by Hetfield
 	 
     Copyright (c) 2005 XT-Commerce & H.H.G. group

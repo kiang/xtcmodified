@@ -211,10 +211,10 @@ function saveSpecialsData($products_id) {
         if ($_POST['specials_expires']) {
             $expires_date = str_replace("-", "", $_POST['specials_expires']);
         }
-        //BOF BUGFIX - Änderungen wurden bei Update nicht übernommen
+        //BOF BUGFIX - Ã„nderungen wurden bei Update nicht Ã¼bernommen
         //xtc_db_query("update " . TABLE_SPECIALS . " set specials_quantity = '" . $_POST['specials_quantity'] . "', specials_new_products_price = '" . $_POST['specials_price'] . "', specials_last_modified = now(), expires_date = '" . $expires_date . "' where specials_id = '" . $products_id  . "'");
         xtc_db_query("update " . TABLE_SPECIALS . " set specials_quantity = '" . $_POST['specials_quantity'] . "', specials_new_products_price = '" . $_POST['specials_price'] . "', specials_last_modified = now(), expires_date = '" . $expires_date . "' where specials_id = '" . xtc_db_input($_POST['specials_id']) . "'");
-        //BOF BUGFIX - Änderungen wurden bei Update nicht übernommen
+        //BOF BUGFIX - Ã„nderungen wurden bei Update nicht Ã¼bernommen
         
     }
     if (isset($_POST['specials_delete'])) {

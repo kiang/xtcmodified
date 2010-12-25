@@ -88,7 +88,7 @@ if (sizeof($module_content) >= 1) {
     $module_smarty->assign('language', $_SESSION['language']);
     $module_smarty->assign('module_content', $module_content);
     if ($_SESSION['language'] == "german") {
-        $fehler = array(404 => 'Fehler 404: Die gesuchte Seite wurde nicht gefunden!', 401 => "Fehler 401: Authentifizierungsfehler.", 400 => "Fehler 400: Die Anforderung war syntaktisch falsch.", 403 => "Fehler 403: Der Server verweigert die Ausführung.", 500 => "Fehler 500: Beim Server gab es einen internen Fehler.");
+        $fehler = array(404 => 'Fehler 404: Die gesuchte Seite wurde nicht gefunden!', 401 => "Fehler 401: Authentifizierungsfehler.", 400 => "Fehler 400: Die Anforderung war syntaktisch falsch.", 403 => "Fehler 403: Der Server verweigert die AusfÃ¼hrung.", 500 => "Fehler 500: Beim Server gab es einen internen Fehler.");
     } else {
         $fehler = array(404 => 'Error 404: Not Found!', 401 => "Error 401: Unauthorized.", 400 => "Error 400: Bad Request.", 403 => "Error 403: Forbidden.", 500 => "Error 500: Internal Server Error.");
     }

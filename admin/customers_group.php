@@ -1,6 +1,6 @@
 <?php
 /* --------------------------------------------------------------
-$Id: customers_group.php André Estel $
+$Id: customers_group.php AndrÃ© Estel $
 
 Estelco - Ebusiness & more
 http://www.estelco.de

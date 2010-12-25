@@ -1,7 +1,7 @@
 <?php
 /*******************************************************************************************
  *                                                                                          *
- *  CAO-Faktura für Windows Version 1.4 (http://www.cao-faktura.de)                         *
+ *  CAO-Faktura fÃ¼r Windows Version 1.4 (http://www.cao-faktura.de)                         *
  *  Copyright (C) 2009 Jan Pokrandt / Jan@JP-SOFT.de                                        *
  *                                                                                          *
  *  This program is free software; you can redistribute it and/or                           *
@@ -37,7 +37,7 @@
  *  based on:                                                                               *
  * (c) 2000 - 2001 The Exchange Project                                                     *
  * (c) 2001 - 2003 osCommerce, Open Source E-Commerce Solutions                             *
- * (c) 2001 - 2003 TheMedia, Dipl.-Ing Thomas Plänkers                                      *
+ * (c) 2001 - 2003 TheMedia, Dipl.-Ing Thomas PlÃ¤nkers                                      *
  * (c) 2003 JP-Soft, Jan Pokrandt                                                           *
  * (c) 2003 IN-Solution, Henri Schmidhuber                                                  *
  * (c) 2003 www.websl.de, Karl Langmann                                                     *
@@ -302,7 +302,7 @@ function SendOrders() {
         $schema .=  '<ORDER_COMMENTS>' . htmlspecialchars($comments['comments']) . '</ORDER_COMMENTS>' . "\n";
         }
         */
-        //Es werden jetzt alle Kommentare mit übertragen, nicht nur der letzte
+        //Es werden jetzt alle Kommentare mit Ã¼bertragen, nicht nur der letzte
         //JP 2008-12-15
         $comments_query = "SELECT comments FROM " . TABLE_ORDERS_STATUS_HISTORY . " WHERE orders_id = '" . $orders['orders_id'] . "'";
         $comments_result = xtc_db_query($comments_query);
@@ -755,14 +755,14 @@ function SendShopConfig() {
 }
 //--------------------------------------------------------------
 function SendXMLHeader() {
-    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // immer geändert
+    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // immer geÃ¤ndert
     header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
     header("Pragma: no-cache"); // HTTP/1.0
     header("Content-type: text/xml");
 }
 //--------------------------------------------------------------
 function SendHTMLHeader() {
-    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // immer geändert
+    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // immer geÃ¤ndert
     header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
     header("Pragma: no-cache"); // HTTP/1.0
     header("Content-type: text/html");
@@ -803,7 +803,7 @@ function UpdateTables() {
     global $version_nr, $version_datum;
     SendHTMLHeader;
     echo '<html><head></head><body>';
-    echo '<h3>Tabellen-Update / Erweiterung für CAO-Faktura</h3>';
+    echo '<h3>Tabellen-Update / Erweiterung fÃ¼r CAO-Faktura</h3>';
     echo '<h4>Version ' . $version_nr . ' Stand : ' . $version_datum . '</h4>';
     $sql[1] = 'ALTER TABLE ' . TABLE_PRODUCTS . ' ADD products_ean VARCHAR(128) AFTER products_id';
     $sql[2] = 'ALTER TABLE ' . TABLE_ORDERS . ' ADD payment_class VARCHAR(32) NOT NULL';
@@ -1513,18 +1513,18 @@ function OrderUpdate() {
     global $_POST, $LangID;
     $schema = '<?xml version="1.0" encoding="' . CHARSET . '"?>' . "\n" . "\n";
     if ((isset($_POST['order_id'])) && (isset($_POST['status']))) {
-        // Per Post übergebene Variablen
+        // Per Post Ã¼bergebene Variablen
         $oID = $_POST['order_id'];
         $status = $_POST['status'];
         $comments = xtc_db_prepare_input($_POST['comments']);
-        //Status überprüfen
+        //Status Ã¼berprÃ¼fen
         $check_status_query = xtc_db_query("select * from " . TABLE_ORDERS . " where orders_id = '" . xtc_db_input($oID) . "'");
         if ($check_status = xtc_db_fetch_array($check_status_query)) {
             if ($check_status['orders_status'] != $status || $comments != '') {
                 xtc_db_query("update " . TABLE_ORDERS . " set orders_status = '" . xtc_db_input($status) . "', last_modified = now() where orders_id = '" . xtc_db_input($oID) . "'");
                 $customer_notified = '0';
                 if ($_POST['notify'] == 'on') {
-                    // Falls eine Sprach ID zur Order existiert die Emailbestätigung in dieser Sprache ausführen
+                    // Falls eine Sprach ID zur Order existiert die EmailbestÃ¤tigung in dieser Sprache ausfÃ¼hren
                     if (isset($check_status['orders_language_id']) && $check_status['orders_language_id'] > 0) {
                         $orders_status_query = xtc_db_query("select orders_status_id, orders_status_name from " . TABLE_ORDERS_STATUS . " where language_id = '" . $check_status['orders_language_id'] . "'");
                         if (xtc_db_num_rows($orders_status_query) == 0) {

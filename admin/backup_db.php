@@ -9,13 +9,13 @@
 //#################################
 define('ANZAHL_ZEILEN', 10000); //Anzahl der Zeilen die pro Durchlauf bei der Wiederherstellung aus der SQL-Datei eingelesen werden sollen
 define('ANZAHL_ZEILEN_BKUP', 20000); //Anzahl der Zeilen die beim Backup pro Durchlauf maximal aus einer Tabelle  gelesen werden.
-define('RESTORE_TEST', false); //Standard: false - auf true ändern für Simulation für die Wiederherstellung, die SQL Befehle werden in eine Protokolldatei (log) im Backup-Verzeichnis geschrieben
+define('RESTORE_TEST', false); //Standard: false - auf true Ã¤ndern fÃ¼r Simulation fÃ¼r die Wiederherstellung, die SQL Befehle werden in eine Protokolldatei (log) im Backup-Verzeichnis geschrieben
 define('MAX_RELOADS', 600); //Anzahle der maximalen Seitenreloads beim Backup  - falls etwas nicht richtig funktioniert stoppt das Script nach 600 Seitenaufrufen
 //#################################
 define('VERSION', 'Database Backup Ver. 1.91f');
 require ('includes/application_top.php');
 include ('includes/functions/db_restore.php');
-//Dateiname für Selbstaufruf
+//Dateiname fÃ¼r Selbstaufruf
 $bk_filename = basename($_SERVER[PHP_SELF]);
 //Animierte Gif-Datei und Hinweistext
 $info_wait = '<img src="images/loading.gif"> ' . TEXT_INFO_WAIT;
@@ -43,7 +43,7 @@ if ($_GET['action'] == 'restorenow') {
     if (substr($vers, 0, 1) > 4) @mysql_query("SET SESSION sql_mode=''");
     //EOF Disable "STRICT" mode!
     $restore['file'] = DIR_FS_BACKUP . $_GET['file'];
-    //Protokollfatei löschen wenn sie schon existiert
+    //Protokollfatei lÃ¶schen wenn sie schon existiert
     $extension = substr($restore['file'], -3);
     if ($extension == '.gz') {
         $protdatei = substr($restore['file'], 0, -3) . '.log.gz';
@@ -102,7 +102,7 @@ if ($restore['file'] != '' && $_GET['action'] != 'restorenow') {
         $info_wait = '';
         $info_text = TEXT_INFO_DO_RESTORE_OK;
         $table_ok = 'Tabellen wiederhergestellt: ' . $tabellen_fertig . '<br><br>Seitenaufrufe: ' . $restore['aufruf'];
-        $button_back = '<a href="backup.php" class="button">Zurück</a>';
+        $button_back = '<a href="backup.php" class="button">ZurÃ¼ck</a>';
         $selbstaufruf = '';
         //echo $restore['test'];
         $restore = array();
@@ -145,7 +145,7 @@ function GetTableInfo($table) {
     $data.= "/*!40000 ALTER TABLE `$table` DISABLE KEYS */;\n";
     //EOF NEW TABLE  STRUCTURE  - LIKE MYSQLDUMPER
     WriteToDumpFile($data);
-    //Datensätze feststellen
+    //DatensÃ¤tze feststellen
     $sql = "SELECT count(*) as `count_records` FROM `" . $table . "`";
     $res = @mysql_query($sql);
     $res_array = mysql_fetch_array($res);
@@ -170,7 +170,7 @@ function GetTableData($table) {
                 //noch nicht fertig - neuen Startwert festlegen
                 $dump['zeilen_offset']+= $dump['anzahl_zeilen'];
             } else {
-                //Fertig - nächste Tabelle
+                //Fertig - nÃ¤chste Tabelle
                 $dump['nr']++;
                 $dump['table_offset'] = 0;
             }
@@ -291,10 +291,10 @@ if ($dump['num_tables'] > 0 && $_GET['action'] != 'backupnow') {
         $info_wait = '';
         $info_text = TEXT_INFO_DO_BACKUP_OK;
         $table_ok = 'Tabellen gesichert: ' . $dump['nr'] . '<br><br>Seitenaufrufe: ' . $dump['aufruf'];
-        $button_back = '<a href="backup.php" class="button">Zurück</a>';
+        $button_back = '<a href="backup.php" class="button">ZurÃ¼ck</a>';
         $selbstaufruf = '';
         unset($_SESSION['dump']);
-        $button_back = '<a href="backup.php" class="button">Zurück</a>';
+        $button_back = '<a href="backup.php" class="button">ZurÃ¼ck</a>';
         //$selbstaufruf='<script language="javascript" type="text/javascript">window.location.href = "backup.php";</script></div>';
         
     }

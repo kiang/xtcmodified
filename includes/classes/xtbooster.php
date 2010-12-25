@@ -1,6 +1,6 @@
 <?php
 ##
-## xt:booster v1.0423 für xt:Commerce und Gambio
+## xt:booster v1.0423 fÃŒr xt:Commerce und Gambio
 ## Copyright (c) 2008-2009 xt:booster Limited
 ##
 ## Licensed under GNU/GPL

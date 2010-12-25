@@ -17,8 +17,8 @@
 function xtc_php_mail($from_email_address, $from_email_name, $to_email_address, $to_name, $forwarding_to, $reply_address, $reply_address_name, $path_to_attachement, $path_to_more_attachements, $email_subject, $message_body_html, $message_body_plain) {
     global $mail_error;
     //*********************************************************************************************
-    // Signatur für E-Mails
-    // by Dipl.-Ing. Daniel Wallas für www.tuvino.de
+    // Signatur fÃ¼r E-Mails
+    // by Dipl.-Ing. Daniel Wallas fÃ¼r www.tuvino.de
     //*********************************************************************************************
     $mailsmarty = new Smarty;
     //BOF - Dokuman - 2010-12-09 - set correct path to DIR_FS_CATALOG for shops in subdirectories
@@ -117,14 +117,14 @@ function xtc_php_mail($from_email_address, $from_email_name, $to_email_address, 
     //BOF  - web28 - 2010-08-27 -  decode html2txt
     $html_array = array('<br />', '<br/>', '<br>');
     $txt_array = array(" \n", " \n", " \n");
-    $message_body_plain = str_replace($html_array, $txt_array, $message_body_plain . $txt_signatur); //DPW Signatur ergänzt.
+    $message_body_plain = str_replace($html_array, $txt_array, $message_body_plain . $txt_signatur); //DPW Signatur ergÃ¤nzt.
     // remove html tags
     $message_body_plain = strip_tags($message_body_plain);
     $message_body_plain = html_entity_decode($message_body_plain, ENT_NOQUOTES, $charset);
     //EOF  - web28 - 2010-08-27 -  decode html2txt
     if (EMAIL_USE_HTML == 'true') { // set email format to HTML
         $mail->IsHTML(true);
-        $mail->Body = $message_body_html . $html_signatur; //DPW Signatur ergänzt.
+        $mail->Body = $message_body_html . $html_signatur; //DPW Signatur ergÃ¤nzt.
         $mail->AltBody = $message_body_plain;
     } else {
         $mail->IsHTML(false);

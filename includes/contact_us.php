@@ -34,7 +34,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'send')) {
     //require (DIR_WS_LANGUAGES.$_SESSION['language'].'/contact_us.php');
     //EOF - web28 - 2010-07-17 - move language definition on top
     //BOF - web28 - 2010-04-03 - New error handling for required fileds
-    //jedes Feld kann hier auf die gewünschte Bedingung getestet und eine Fehlermeldung zugeordnet werden
+    //jedes Feld kann hier auf die gewÃ¼nschte Bedingung getestet und eine Fehlermeldung zugeordnet werden
     //BOF error handling
     $err_msg = '';
     if (!xtc_validate_email(trim($_POST['email']))) $err_msg.= ERROR_EMAIL;

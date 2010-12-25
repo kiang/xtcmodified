@@ -143,7 +143,7 @@ if ((GZIP_COMPRESSION == 'true') && ($ext_zlib_loaded = extension_loaded('zlib')
         ini_set('zlib.output_compression_level', GZIP_LEVEL);
     }
 }
-// Paypal API Modul Änderungen:
+// Paypal API Modul Ã„nderungen:
 require (DIR_WS_FUNCTIONS . 'sessions.php');
 // Include Template Engine
 require (DIR_WS_CLASSES . 'Smarty_2.6.26/Smarty.class.php');

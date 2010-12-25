@@ -27,7 +27,7 @@ require_once (DIR_FS_INC . 'xtc_get_products_mo_images.inc.php');
 require_once (DIR_FS_INC . 'xtc_get_vpe_name.inc.php');
 require_once (DIR_FS_INC . 'get_cross_sell_name.inc.php');
 // BOF  - DokuMan - 2010-08-13 - show expiry date of special products
-require_once (DIR_FS_INC . 'xtc_date_short.inc.php'); // Für Anzeige Sonderangebotsende (c) by Hetfield
+require_once (DIR_FS_INC . 'xtc_date_short.inc.php'); // FÃ¼r Anzeige Sonderangebotsende (c) by Hetfield
 // EOF  - DokuMan - 2010-08-13 - show expiry date of special products
 $info_smarty = new Smarty;
 //BOF - GTB - 2010-08-03 - Security Fix - Base
@@ -85,14 +85,14 @@ if (!is_object($product) || !$product->isProduct()) { // product not found in da
         }
     }
     // BOF  - DokuMan - 2010-08-13 - show expiry date of special products
-    // Anzeige des Ablaufdatums für Sonderangebote -- Anfang -- (c) by Hetfield
+    // Anzeige des Ablaufdatums fÃ¼r Sonderangebote -- Anfang -- (c) by Hetfield
     $special_expires_date_query = "SELECT expires_date FROM " . TABLE_SPECIALS . " WHERE products_id = '" . $product->data['products_id'] . "'";
     $special_expires_date_query = xtDBquery($special_expires_date_query);
     $sDate = xtc_db_fetch_array($special_expires_date_query, true);
     if ($sDate['expires_date'] != '0000-00-00 00:00:00') {
         $info_smarty->assign('PRODUCTS_EXPIRES', xtc_date_short($sDate['expires_date']));
     }
-    // Anzeige des Ablaufdatums für Sonderangebote -- Ende -- (c) by Hetfield
+    // Anzeige des Ablaufdatums fÃ¼r Sonderangebote -- Ende -- (c) by Hetfield
     // EOF  - DokuMan - 2010-08-13 - show expiry date of special products
     if ($product->data['products_fsk18'] == '1') {
         $info_smarty->assign('PRODUCTS_FSK18', 'true');

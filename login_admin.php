@@ -74,10 +74,10 @@ if (isset($_POST['repair'])) {
           SET    configuration_value = "False"
           WHERE  configuration_key   = "SESSION_RECREATE"
         ');
-                die('Report: Die Session-Einstellungen wurden auf die Standardwerte zurückgesetzt.');
+                die('Report: Die Session-Einstellungen wurden auf die Standardwerte zurÃ¼ckgesetzt.');
             break;
             default:
-                die('Report: repair-Befehl ungültig.');
+                die('Report: repair-Befehl ungÃ¼ltig.');
         }
     } else {
         die('Zugriff verweigert.');

@@ -32,23 +32,23 @@
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
 class AccountCheck {
-    /* Folgende Returncodes werden übergeben                                      */
+    /* Folgende Returncodes werden Ã¼bergeben                                      */
     /*                                                                            */
     /* 0 -> Kontonummer & BLZ OK                                                  */
     /* 1 -> Kontonummer & BLZ passen nicht                                        */
-    /* 2 -> Für diese Kontonummer ist kein Prüfziffernverfahren definiert         */
-    /* 3 -> Dieses Prüfziffernverfahren ist noch nicht implementiert              */
-    /* 4 -> Diese Kontonummer ist technisch nicht prüfbar                         */
+    /* 2 -> FÃ¼r diese Kontonummer ist kein PrÃ¼fziffernverfahren definiert         */
+    /* 3 -> Dieses PrÃ¼fziffernverfahren ist noch nicht implementiert              */
+    /* 4 -> Diese Kontonummer ist technisch nicht prÃ¼fbar                         */
     /* 5 -> BLZ nicht gefunden                                                    */
-    /* 8 -> Keine BLZ übergeben                                                   */
-    /* 9 -> Keine Kontonummer übergeben                                           */
-    /* 10 -> Kein Kontoinhaber übergeben                                          */
+    /* 8 -> Keine BLZ Ã¼bergeben                                                   */
+    /* 9 -> Keine Kontonummer Ã¼bergeben                                           */
+    /* 10 -> Kein Kontoinhaber Ã¼bergeben                                          */
     /* 128 -> interner Fehler,der zeigt, das eine Methode nicht implementiert ist */
     /*                                                                            */
-    var $Bankname; // Enthält den Namen der Bank bei der Suche nach BLZ
-    var $PRZ; //Enthält die Prüfziffer
+    var $Bankname; // EnthÃ¤lt den Namen der Bank bei der Suche nach BLZ
+    var $PRZ; //EnthÃ¤lt die PrÃ¼fziffer
     ////
-    // Diese function gibt die Bankinformationen aus der csv-Datei zurück*/
+    // Diese function gibt die Bankinformationen aus der csv-Datei zurÃ¼ck*/
     function csv_query($blz) {
         $cdata = - 1;
         $fp = fopen(DIR_WS_INCLUDES . 'data/blz.csv', 'r');
@@ -60,7 +60,7 @@ class AccountCheck {
         return $cdata;
     }
     ////
-    // Diese function gibt die Bankinformationen aus der Datenbank zurück*/
+    // Diese function gibt die Bankinformationen aus der Datenbank zurÃ¼ck*/
     function db_query($blz) {
         $blz_query = xtc_db_query("SELECT * from banktransfer_blz WHERE blz = '" . $blz . "'");
         if (xtc_db_num_rows($blz_query)) {
@@ -69,7 +69,7 @@ class AccountCheck {
         return $data;
     }
     ////
-    // Diese function gibt die Bankinformationen aus der Datenbank zurück*/
+    // Diese function gibt die Bankinformationen aus der Datenbank zurÃ¼ck*/
     function query($blz) {
         if (MODULE_PAYMENT_BANKTRANSFER_DATABASE_BLZ == 'true' && defined(MODULE_PAYMENT_BANKTRANSFER_DATABASE_BLZ)) $data = $this->db_query($blz);
         else $data = $this->csv_query($blz);
@@ -90,7 +90,7 @@ class AccountCheck {
         }
         return $CrossSum;
     } /* End of CrossSum */
-    // Auffüllen der Konto-Nr. mit '0' auf 10 Stellen.
+    // AuffÃ¼llen der Konto-Nr. mit '0' auf 10 Stellen.
     function ExpandAccount($AccountNo) {
         $AccountNo = str_pad($AccountNo, 10, "0", STR_PAD_LEFT);
         while (strlen($AccountNo) > 10) {
@@ -99,7 +99,7 @@ class AccountCheck {
         return $AccountNo;
     } /* End of ExpandAccount */
     // Erweiterte ExpandAccount fuer Methode C5:
-    // Entfernt die führenden Nullen einer Kontonummer
+    // Entfernt die fÃ¼hrenden Nullen einer Kontonummer
     // und gibt den Integer zusammen mit der Laenge zurueck.
     function ExpandAccountExtended($AccountNo) {
         $AccountNoLong = $this->ExpandAccount($AccountNo);
@@ -2036,7 +2036,7 @@ class AccountCheck {
     function MarkB9($AccountNo) {
         $AccountNo = $this->ExpandAccount($AccountNo);
         $RetVal = 1;
-        // Variante 1 - Zwei führende Nullen
+        // Variante 1 - Zwei fÃ¼hrende Nullen
         if ((substr($AccountNo, 0, 2) == "00") And (substr($AccountNo, 2, 1) != "0")) {
             $Significance = '1231231';
             for ($Run = 0;$Run < strlen($Significance);$Run++) {
@@ -2056,7 +2056,7 @@ class AccountCheck {
                     $RetVal = 0;
                 }
             }
-            // Variante 2 - Drei führende Nullen
+            // Variante 2 - Drei fÃ¼hrende Nullen
             
         } elseif ((substr($AccountNo, 0, 3) == "000") And (substr($AccountNo, 3, 1) != "0")) {
             $Significance = '654321';
@@ -2362,10 +2362,10 @@ class AccountCheck {
         $BLZ = ereg_replace('[^0-9]', '', $banktransfer_blz);
         $Result = 0;
         if ($BLZ == '' || strlen($BLZ) < 8) {
-            return 8; /* Keine BLZ übergeben */
+            return 8; /* Keine BLZ Ã¼bergeben */
         }
         if ($KontoNR == '') {
-            return 9; /* Keine Kontonummer übergeben */
+            return 9; /* Keine Kontonummer Ã¼bergeben */
         }
         /*     Beginn Implementierung */
         $adata = $this->query($BLZ);

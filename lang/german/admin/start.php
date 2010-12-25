@@ -98,7 +98,7 @@ define('TOTAL_TURNOVER', 'Umsatz gesamt');
 define('HEADING_TITLE', 'Willkommen im Adminbereich');
 // users online
 define('TABLE_CAPTION_USERS_ONLINE', 'User Online');
-define('TABLE_CAPTION_USERS_ONLINE_HINT', '***für Infos zu einem User - auf Namen des Users klicken***');
+define('TABLE_CAPTION_USERS_ONLINE_HINT', '***fÃ¼r Infos zu einem User - auf Namen des Users klicken***');
 define('TABLE_HEADING_USERS_ONLINE_SINCE', 'Online seit');
 define('TABLE_HEADING_USERS_ONLINE_NAME', 'Name');
 define('TABLE_HEADING_USERS_ONLINE_LAST_CLICK', 'Letzter Klick');

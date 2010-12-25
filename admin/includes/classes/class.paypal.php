@@ -13,7 +13,7 @@
    @copyright Porttions Copyright 2003-2007 Zen Cart Development Team
    @copyright Porttions Copyright 2004 DevosC.com
    @license http://www.xt-commerce.com.com/license/2_0.txt GNU Public License V2.0
-   ab 15.08.2008 Teile vom Hamburger-Internetdienst geändert
+   ab 15.08.2008 Teile vom Hamburger-Internetdienst geÃ¤ndert
    Hamburger-Internetdienst Support Forums at www.forum.hamburger-internetdienst.de
    Stand 29.04.2009
 */
@@ -366,7 +366,7 @@ function mn_iconv($t1, $t2, $string) {
     endif;
     /// Kein iconv im PHP
     if ($t2 == "UTF-8"):
-        // nur als Ersatz für das iconv und nur in eine richtung 1251 to UTF8
+        // nur als Ersatz fÃ¼r das iconv und nur in eine richtung 1251 to UTF8
         //ISO 8859-1 to UTF-8
         if (function_exists('utf8_encode')):
             return utf8_encode($string);
@@ -383,7 +383,7 @@ function mn_iconv($t1, $t2, $string) {
             return ($string);
         endif;
     else:
-        // keine Konvertierung möglich
+        // keine Konvertierung mÃ¶glich
         return ($string);
     endif;
 }

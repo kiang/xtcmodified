@@ -79,7 +79,7 @@ define('MODULE_PAYMENT_PAYPAL_IPN_TXT_EMAIL', "Pay now with Paypal. Please click
 define('MODULE_PAYMENT_PAYPAL_IPN_TXT_ORDER', " - Order: ");
 //PayPal Variablen
 define('MODULE_PAYMENT_PAYPAL_IPN_VAR_CBT', "Return to vendor"); //cbt
-//Style Schaltfl‰che
+//Style Schaltfl√§che
 define('MODULE_PAYMENT_PAYPAL_IPN_STYLE_LINK', 'style="padding:5px; color:#555555; background: #f8f8f8; border: 1px solid #8c8c8c; text-decoration: none; cursor: pointer;"'); //Tomcraft 2010-06-23 define link color
 define('MODULE_PAYMENT_PAYPAL_IPN_STYLE_TOP', '<div style="margin-top:25px;">');
 define('MODULE_PAYMENT_PAYPAL_IPN_STYLE_LOGO', '<div style="margin-top: 5px; float: left;">' . MODULE_PAYMENT_PAYPAL_IPN_LOGO . '</div>');

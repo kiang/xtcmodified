@@ -10,7 +10,7 @@
 //	web28 / http://www.rpa-com.de
 //	August 2010
 //
-//	Nähere Infos: http://www.rpa-com.de
+//	NÃ¤here Infos: http://www.rpa-com.de
 //
 //	v 0.10
 // -----------------------------------------------------------------------------------------

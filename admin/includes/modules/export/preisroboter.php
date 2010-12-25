@@ -5,12 +5,12 @@ $Id: preisroboter.php,v 0.1 2005/01/10 10:11:01 metulszki Exp $
 XT-Commerce - community made shopping
 http://www.xt-commerce.com
 
-Copyright © 2003 XT-Commerce
+Copyright Â© 2003 XT-Commerce
 -----------------------------------------------------------------------------------------
 based on:
-© 2000-2001 The Exchange Project (earlier name of osCommerce)
-© 2002-2003 osCommerce(cod.php,v 1.28 2003/02/14); www.oscommerce.com
-© 2003 nextcommerce (invoice.php,v 1.6 2003/08/24); www.nextcommerce.org
+Â© 2000-2001 The Exchange Project (earlier name of osCommerce)
+Â© 2002-2003 osCommerce(cod.php,v 1.28 2003/02/14); www.oscommerce.com
+Â© 2003 nextcommerce (invoice.php,v 1.6 2003/08/24); www.nextcommerce.org
 
 Released under the GNU General Public License
 ---------------------------------------------------------------------------------------*/
@@ -30,7 +30,7 @@ define('CURRENCY_DESC', 'W&auml;hrung in der Exportdatei');
 define('EXPORT', 'Bitte den Sicherungsprozess AUF KEINEN FALL unterbrechen. Dieser kann einige Minuten in Anspruch nehmen.');
 define('EXPORT_TYPE', '<hr noshade><strong>Speicherart:</strong>');
 define('EXPORT_STATUS_TYPE', '<hr noshade><strong>Kundengruppe:</strong>');
-define('EXPORT_STATUS', 'Bitte w&auml;hlen Sie die Kundengruppe, die Basis für den Exportierten Preis bildet. (Falls Sie keine Kundengruppenpreise haben, w&auml;hlen Sie <i>Gast</i>):</strong>');
+define('EXPORT_STATUS', 'Bitte w&auml;hlen Sie die Kundengruppe, die Basis fÃ¼r den Exportierten Preis bildet. (Falls Sie keine Kundengruppenpreise haben, w&auml;hlen Sie <i>Gast</i>):</strong>');
 define('DATE_FORMAT_EXPORT', '%d.%m.%Y'); // this is used for strftime()
 define('VERSANDKOSTENFREI_AB', 999999999);
 // include needed functions
@@ -53,7 +53,7 @@ class preisroboter {
         @xtc_set_time_limit(0);
         require (DIR_FS_CATALOG . DIR_WS_CLASSES . 'xtcPrice.php');
         $xtPrice = new xtcPrice($_POST['currencies'], $_POST['status']);
-        //$schema = 'Produktbezeichnung;Beschreibung;Preis;Url;Bild;Währung;Kategorie;Gültig bis;Gültig ab;FSK;Typ;Produkt ID;Hersteller;Bestellnummer;Suchbegriffe;Preistyp' . "\n";
+        //$schema = 'Produktbezeichnung;Beschreibung;Preis;Url;Bild;WÃ¤hrung;Kategorie;GÃ¼ltig bis;GÃ¼ltig ab;FSK;Typ;Produkt ID;Hersteller;Bestellnummer;Suchbegriffe;Preistyp' . "\n";
         $export_query = xtc_db_query("SELECT
 p.products_id,
 pd.products_name,

@@ -1,0 +1,20 @@
+<table  width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
+  <tr> 
+    <td style="border-bottom: 1px solid; border-color: #cccccc;"><div align="right"><img src="{$logo_path}logo.gif"></div></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>亲爱的顾客 , </strong><br>
+      <br>
+      你的订单处理进度已更新.<br> 
+      {if $NOTIFY_COMMENTS}<br>
+通知事项: 
+{$NOTIFY_COMMENTS}
+<br>
+{/if}
+<br>
+订单处理进度:
+<b>{$ORDER_STATUS}</b>
+<br>
+希望这封mail能让你获得所需要的资讯 </font></td>
+  </tr>
+</table>

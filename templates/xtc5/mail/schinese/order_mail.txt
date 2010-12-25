@@ -1,0 +1,43 @@
+
+{$address_label_customer}
+
+{if $PAYMENT_METHOD}付款方式: {$PAYMENT_METHOD}{/if}
+订单序号: {$oID}
+订单日期: {$DATE}
+{if $csID}客户 ID :{$csID}{/if}
+----------------------------------------------------------------------
+
+
+亲爱的 {$NAME} (先生/小姐),
+
+以下是您的付款资讯:
+
+{$PAYMENT_INFO_TXT}
+
+{if $COMMENTS}
+您的购物意见:
+{$COMMENTS}
+{/if}
+
+您所订购的商品列表如下: 
+----------------------------------------------------------------------
+{foreach name=aussen item=order_values from=$order_data} 
+{$order_values.PRODUCTS_QTY} x {$order_values.PRODUCTS_NAME} {$order_values.PRODUCTS_PRICE}
+{if $order_values.PRODUCTS_SHIPPING_TIME neq ''}出货时间: {$order_values.PRODUCTS_SHIPPING_TIME}<br />{/if}
+{if $order_values.PRODUCTS_ATTRIBUTES !=''}{$order_values.PRODUCTS_ATTRIBUTES}{/if}
+
+{/foreach}
+
+{foreach name=aussen item=order_total_values from=$order_total}
+{$order_total_values.TITLE}{$order_total_values.TEXT}
+{/foreach}
+
+
+{if $address_label_payment}
+帐单地址
+----------------------------------------------------------------------
+{$address_label_payment}
+{/if}
+出货地址 
+----------------------------------------------------------------------
+{$address_label_shipping}

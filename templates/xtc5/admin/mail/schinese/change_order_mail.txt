@@ -1,0 +1,12 @@
+
+亲爱的顾客 , 
+
+你的订单处理进度已更新.
+
+{if $NOTIFY_COMMENTS}通知事项: {$NOTIFY_COMMENTS}{/if}
+
+
+
+订单处理进度: {$ORDER_STATUS}
+
+希望这封mail能让你获得所需要的资讯

@@ -1,0 +1,34 @@
+<table  width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
+  <tr> 
+    <td style="border-bottom: 1px solid; border-color: #cccccc;"><div align="right"><img src="{$logo_path}logo.gif"></div></td>
+  </tr>
+  <tr> 
+    <td><p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>親愛的顧客 ,</strong></font> <br>
+        <br>
+        <font size="2" face="Verdana, Arial, Helvetica, sans-serif">您剛剛建立了你的會員帳號, 現在你可以在我們的商店中使用以下服務.</font><br> 
+        <br>
+        <font size="2"><b><font face="Verdana, Arial, Helvetica, sans-serif">-個人專屬購物車</font></b><font face="Verdana, Arial, Helvetica, sans-serif"> - 系統會記錄你放入購物車的每件商品，直到你完成了購買結帳的動作，或者你也可以在購物車內移除該項商品。<br>
+        <b>-完善的通訊錄</b> - 我們提供您將購買的商品，直接寄送給通訊錄裡的親友! 例如：當您有親友生日時，我們可以替您將購買的生日禮物直接送到壽星手上。<br>
+        <b>-回顧訂單記錄 </b> - 你可以隨時查閱過去的訂單記錄。<br>
+        <b>-商品評論</b> - 你可以分享對於我們所販售的商品的意見給其它的客戶參考。</font></font></p>
+      <p><br>
+        <font size="2" face="Verdana, Arial, Helvetica, sans-serif">如果你有其它問題，可以與我們的客服人員聯絡: 
+        {$content.MAIL_REPLY_ADDRESS}
+        . <br>
+        注意: 這個 e-Mail 電子郵件地址是本網路商店的客戶所提供，如果你並不是客戶本人，請與我們聯絡:      {$content.MAIL_REPLY_ADDRESS}
+    . <br>
+    <br>
+    {if $SEND_GIFT==true}
+      <br>
+為了感謝您加入本網路商店的會員, 我們特別提供了購物禮券給您: <b>{$GIFT_AMMOUNT}</b><br>
+<br>
+禮券的兌換編碼是: <b>{$GIFT_CODE}</b>, 當你在本商店購物結帳的同時，就可以利用這張禮券來兌換相關的優惠。<br>
+<br>
+ 你也可以直接點按以下連結兌換禮券: <a href="{$GIFT_LINK}">[redeem Voucher]</a>. {/if} 
+{if $SEND_COUPON==true} 恭禧, 為了讓您在本店的第1次消費就能有更深刻美好的體驗,我們特別只優惠給您這張折價券。<br>
+<br>
+購物折價券: <b>{$COUPON_DESC}</b> <br>
+<br>
+購物折價券的兌換編碼是: {$COUPON_CODE} 你可以在購物結帳的同時，利用這張折價券來兌換相關的優惠。 {/if} </font></p></td>
+  </tr>
+</table>

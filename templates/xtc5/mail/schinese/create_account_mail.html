@@ -1,0 +1,34 @@
+<table  width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
+  <tr> 
+    <td style="border-bottom: 1px solid; border-color: #cccccc;"><div align="right"><img src="{$logo_path}logo.gif"></div></td>
+  </tr>
+  <tr> 
+    <td><p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>亲爱的顾客 ,</strong></font> <br>
+        <br>
+        <font size="2" face="Verdana, Arial, Helvetica, sans-serif">您刚刚建立了你的会员帐号, 现在你可以在我们的商店中使用以下服务.</font><br> 
+        <br>
+        <font size="2"><b><font face="Verdana, Arial, Helvetica, sans-serif">-个人专属购物车</font></b><font face="Verdana, Arial, Helvetica, sans-serif"> - 系统会记录你放入购物车的每件商品，直到你完成了购买结帐的动作，或者你也可以在购物车内移除该项商品。<br>
+        <b>-完善的通讯录</b> - 我们提供您将购买的商品，直接寄送给通讯录里的亲友! 例如：当您有亲友生日时，我们可以替您将购买的生日礼物直接送到寿星手上。<br>
+        <b>-回顾订单记录 </b> - 你可以随时查阅过去的订单记录。<br>
+        <b>-商品评论</b> - 你可以分享对于我们所贩售的商品的意见给其它的客户参考。</font></font></p>
+      <p><br>
+        <font size="2" face="Verdana, Arial, Helvetica, sans-serif">如果你有其它问题，可以与我们的客服人员联络: 
+        {$content.MAIL_REPLY_ADDRESS}
+        . <br>
+        注意: 这个 e-Mail 电子邮件地址是本网路商店的客户所提供，如果你并不是客户本人，请与我们联络:      {$content.MAIL_REPLY_ADDRESS}
+    . <br>
+    <br>
+    {if $SEND_GIFT==true}
+      <br>
+为了感谢您加入本网路商店的会员, 我们特别提供了购物礼券给您: <b>{$GIFT_AMMOUNT}</b><br>
+<br>
+礼券的兑换编码是: <b>{$GIFT_CODE}</b>, 当你在本商店购物结帐的同时，就可以利用这张礼券来兑换相关的优惠。<br>
+<br>
+ 你也可以直接点按以下连结兑换礼券: <a href="{$GIFT_LINK}">[redeem Voucher]</a>. {/if} 
+{if $SEND_COUPON==true} 恭禧, 为了让您在本店的第1次消费就能有更深刻美好的体验,我们特别只优惠给您这张折价券。<br>
+<br>
+购物折价券: <b>{$COUPON_DESC}</b> <br>
+<br>
+购物折价券的兑换编码是: {$COUPON_CODE} 你可以在购物结帐的同时，利用这张折价券来兑换相关的优惠。 {/if} </font></p></td>
+  </tr>
+</table>

@@ -1,0 +1,27 @@
+<table  width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
+  <tr> 
+    <td style="border-bottom: 1px solid; border-color: #cccccc;"><div align="right"><img src="{$logo_path}logo.gif"></div></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>亲爱的顾客, </strong></font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><br />
+  <font size="2"><br />
+        我们为您建立了会员资料. <br />
+    <br />
+      </font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><font size="2">
+        {if $COMMENTS}
+通知事项:
+{$COMMENTS}
+<br />
+{/if}
+        </font></font><font size="2"><br />
+        <br />
+        以下是登入时的 帐号/密码:<br />
+        <br />
+帐号: 
+{$EMAIL}
+<br />
+密码: 
+{$PASSWORD} 
+        </font></font></td>
+  </tr>
+</table>

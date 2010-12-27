@@ -1,12 +1,11 @@
 <?php
 /* --------------------------------------------------------------
-   $Id: backup.php 30 2006-12-27 16:34:34Z sun $
+   $Id: backup.php 899 2005-04-29 02:40:57Z hhgag $
 
-   xt:Commerce - community made shopping
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    --------------------------------------------------------------
    based on:
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
@@ -14,15 +13,12 @@
    (c) 2003	 nextcommerce (backup.php,v 1.4 2003/08/14); www.nextcommerce.org
 
    Released under the GNU General Public License
-   -------------------------------------------------------------- */
-
+   --------------------------------------------------------------*/
 define('HEADING_TITLE', '資料備份總管');
-
 define('TABLE_HEADING_TITLE', '備份檔名');
 define('TABLE_HEADING_FILE_DATE', '日期');
 define('TABLE_HEADING_FILE_SIZE', '大小');
 define('TABLE_HEADING_ACTION', '動作');
-
 define('TEXT_INFO_HEADING_NEW_BACKUP', '新增備份');
 define('TEXT_INFO_HEADING_RESTORE_LOCAL', '本地主機回復');
 define('TEXT_INFO_NEW_BACKUP', '資料備份可能需要幾分鐘，請勿中斷');
@@ -38,18 +34,19 @@ define('TEXT_INFO_USE_ZIP', '使用ZIP');
 define('TEXT_INFO_USE_NO_COMPRESSION', '不壓縮 (純SQL資料庫檔)');
 define('TEXT_INFO_DOWNLOAD_ONLY', '只用下載 (不存放在 server 端)');
 define('TEXT_INFO_BEST_THROUGH_HTTPS', '最好經由 HTTPS 的連線方式');
+define('TEXT_DELETE_INTRO', '確定要刪除這個備份？');
 define('TEXT_NO_EXTENSION', '無');
 define('TEXT_BACKUP_DIRECTORY', '備份資料夾：');
 define('TEXT_LAST_RESTORATION', '最後一次回復資料庫：');
 define('TEXT_FORGET', '(<u>忽略</u>)');
-define('TEXT_DELETE_INTRO', '確定要刪除這個備份？');
-
 define('ERROR_BACKUP_DIRECTORY_DOES_NOT_EXIST', '錯誤：備份資料夾不存在，請檢查configure.php.');
 define('ERROR_BACKUP_DIRECTORY_NOT_WRITEABLE', '錯誤：備份資料夾無寫入權限');
 define('ERROR_DOWNLOAD_LINK_NOT_ACCEPTABLE', '錯誤：下載的連結錯誤');
-
 define('SUCCESS_LAST_RESTORE_CLEARED', '完成：最後一次回復資料庫資料已經清除');
 define('SUCCESS_DATABASE_SAVED', '完成：資料庫已經儲存');
 define('SUCCESS_DATABASE_RESTORED', '完成：資料庫已經回復');
 define('SUCCESS_BACKUP_DELETED', '完成：備份資料庫已經移除');
+define('SUCCESS_BACKUP_UPLOAD', '完成：備份資料庫已經上傳');
+//TEXT_COMPLETE_INSERTS
+define('TEXT_COMPLETE_INSERTS', "<b>Complete 'INSERT's</b><br> - field names are entered into each row INSERT (increased backup)");
 ?>

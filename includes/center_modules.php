@@ -16,5 +16,7 @@
    ---------------------------------------------------------------------------------------*/
 require (DIR_WS_MODULES . FILENAME_NEW_PRODUCTS);
 require (DIR_WS_MODULES . FILENAME_UPCOMING_PRODUCTS);
-return $module;
-?>
+if(isset($module)) {
+    return $module;
+}
+return '';

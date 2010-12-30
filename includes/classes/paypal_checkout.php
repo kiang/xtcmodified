@@ -22,6 +22,7 @@
  * Hamburger-Internetdienst Support Forums at www.forum.hamburger-internetdienst.de
  * Stand: 16.05.2010
  */
+if (defined('PAYPAL_API_VERSION')) {
 require_once (DIR_FS_INC . 'xtc_write_user_info.inc.php');
 define('PROXY_HOST', '127.0.0.1');
 define('PROXY_PORT', '808');
@@ -1210,4 +1211,4 @@ class paypal_checkout {
         endif;
     }
 }
-?>
+}

@@ -164,8 +164,12 @@ $shoplog_softwareid = PROJECT_VERSION;
 $shoplog_ip = $_SERVER['REMOTE_ADDR'];
 //shoplog_useragent : $HTTP_USER_AGENT
 $shoplog_useragent = $_SERVER['HTTP_USER_AGENT'];
+$sessionName = session_name();
 //shoplog_id : user-ID oder sess_id
-$shoplog_id = $_REQUEST[session_name() ]; //DokuMan - leave it as it is
+$shoplog_id = '';
+if(isset($_REQUEST[$sessionName])) {
+    $shoplog_id = $_REQUEST[$sessionName]; //DokuMan - leave it as it is
+}
 //shoplog_referer : $HTTP_REFERER
 if (isset($_SERVER['HTTP_REFERER'])) {
     //-- prevent (HTTP_REFERER) Hijacking as mentioned at:

@@ -1,30 +1,26 @@
 <?php
 /* --------------------------------------------------------------
-   $Id: tax_rates.php 36 2006-12-28 13:19:07Z sun $
+   $Id: tax_rates.php 899 2005-04-29 02:40:57Z hhgag $   
 
-   xt:Commerce - community made shopping
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    --------------------------------------------------------------
    based on: 
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
    (c) 2002-2003 osCommerce(tax_rates.php,v 1.9 2003/03/13); www.oscommerce.com 
    (c) 2003	 nextcommerce (tax_rates.php,v 1.4 2003/08/1); www.nextcommerce.org
 
-   Released under the GNU General Public License
-   -------------------------------------------------------------- */
-
+   Released under the GNU General Public License 
+   --------------------------------------------------------------*/
 define('HEADING_TITLE', '税率');
-
 define('TABLE_HEADING_TAX_RATE_PRIORITY', '优先权');
 define('TABLE_HEADING_TAX_CLASS_TITLE', '税别');
 define('TABLE_HEADING_COUNTRIES_NAME', '国家');
 define('TABLE_HEADING_ZONE', '地区');
 define('TABLE_HEADING_TAX_RATE', '税率');
 define('TABLE_HEADING_ACTION', '动作');
-
 define('TEXT_INFO_EDIT_INTRO', '请做适当的修改');
 define('TEXT_INFO_DATE_ADDED', '新增日期：');
 define('TEXT_INFO_LAST_MODIFIED', '最后修改：');

@@ -1,12 +1,11 @@
 <?php
-/* --------------------------------------------------------------
-   $Id: gv_sent.php 36 2006-12-28 13:19:07Z sun $
+/* -----------------------------------------------------------------------------------------
+   $Id: gv_sent.php 1502 2010-11-16 18:13:52Z dokuman $
 
-   xt:Commerce - community made shopping
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    -----------------------------------------------------------------------------------------
    based on:
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
@@ -24,16 +23,14 @@
    Copyright (c) 2001,2002 Ian C Wilson http://www.phesis.org
 
    Released under the GNU General Public License
-   --------------------------------------------------------------------------------------- */
-
+   ---------------------------------------------------------------------------------------*/
 define('HEADING_TITLE', '礼券/折价券邮寄统计');
-
+define('TABLE_HEADING_ID', 'cID');
 define('TABLE_HEADING_SENDERS_NAME', '寄件人名称');
 define('TABLE_HEADING_VOUCHER_VALUE', '礼券价值');
 define('TABLE_HEADING_VOUCHER_CODE', '礼券密码');
 define('TABLE_HEADING_DATE_SENT', '传送日期');
 define('TABLE_HEADING_ACTION', '动作');
-
 define('TEXT_INFO_SENDERS_ID', '寄件人 ID:');
 define('TEXT_INFO_AMOUNT_SENT', '传送总额:');
 define('TEXT_INFO_DATE_SENT', '传送日期:');
@@ -43,4 +40,13 @@ define('TEXT_INFO_DATE_REDEEMED', '兑换日期:');
 define('TEXT_INFO_IP_ADDRESS', 'IP 位置:');
 define('TEXT_INFO_CUSTOMERS_ID', '客户 Id:');
 define('TEXT_INFO_NOT_REDEEMED', '未兑换礼券');
+//BOF - DokuMan - 2010-08-10 - show customer's remaining credit
+define('TEXT_INFO_REMAINING_CREDIT', 'Remaining credit:');
+//EOF - DokuMan - 2010-08-10 - show customer's remaining credit
+define('TEXT_INFO_HEADING_DELETE_GV', 'Delete Voucher');
+define('TEXT_DELETE_INTRO', 'Would you like to delete the selected voucher?');
+define('TABLE_HEADING_ADDRESSEE', 'Addressee');
+define('TEXT_VOUCHER_STATUS', 'Status');
+define('STATUS_ICON_STATUS_GREEN', 'redeemed');
+define('STATUS_ICON_STATUS_RED', 'until today not redeemed');
 ?>

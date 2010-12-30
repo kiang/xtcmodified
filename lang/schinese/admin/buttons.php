@@ -1,12 +1,14 @@
 <?php
 /* --------------------------------------------------------------
-   $Id: buttons.php 30 2006-12-27 16:34:34Z sun $
-
-   xt:Commerce - community made shopping
+   $Id: buttons.php 1443 2010-10-30 10:50:51Z dokuman $   
+   
+   http://www.xtc-modified.org
+   Copyright (c) 2010 xtcModified   
+   --------------------------------------------------------------   
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    --------------------------------------------------------------
    based on: 
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
@@ -14,8 +16,7 @@
    (c) 2003	 nextcommerce (categories.php,v 1.10 2003/08/14); www.nextcommerce.org
 
    Released under the GNU General Public License 
-   -------------------------------------------------------------- */
-
+   --------------------------------------------------------------*/
 // buttons
 define('BUTTON_REVERSE_SELECTION', '反选');
 define('BUTTON_SWITCH_PRODUCTS', '选取所有商品');
@@ -34,7 +35,6 @@ define('BUTTON_STATUS_OFF', '下架');
 define('BUTTON_EDIT_ATTRIBUTES', '编辑规格属性');
 define('BUTTON_INSERT', '新增');
 define('BUTTON_UPDATE', '更新');
-define('BUTTON_EXPORT', '导出');
 define('BUTTON_REVIEW_APPROVE', '是');
 define('BUTTON_SEND_EMAIL', '寄 E-mail');
 define('BUTTON_SEND_COUPON', '寄送礼券或折价券');
@@ -75,6 +75,20 @@ define('BUTTON_DETAILS', '详述');
 define('BUTTON_NEW_TAX_CLASS', '新增税别');
 define('BUTTON_NEW_TAX_RATE', '新增税率');
 define('BUTTON_SEND', '送出');
-
+// BOF - Tomcraft - 2009-11-28 - Included xs:booster
+define('BUTTON_EDIT_XTBOOSTER', 'eBay-Product');
+define('BUTTON_XTBOOSTER_MULTI', 'eBay-Multi-Product');
+// EOF - Tomcraft - 2009-11-28 - Included xs:booster
+// BOF - Dokuman - 2010-02-04 - delete cache files in admin section
+define('BUTTON_DELETE_CACHE', 'Delete Cache');
+define('BUTTON_DELETE_TEMP_CACHE', 'Delete Templatecache');
+// EOF - Dokuman - 2010-02-04 - delete cache files in admin section
+//BOF - DokuMan - 2010-08-12 - added possibility to reset admin statistics
+define('BUTTON_RESET_PRODUCTS_PURCHASED', 'Reset all positions');
+define('BUTTON_RESET_PRODUCTS_VIEWED', 'Reset all positions');
+//EOF - DokuMan - 2010-08-12 - added possibility to reset admin statistics
+// BOF - web28 - 2010-08-21 - add  button view products
+define('BUTTON_VIEW_PRODUCT', 'View Product');
+// EOF - web28 - 2010-08-21 - add  button view products
 
 ?>

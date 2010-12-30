@@ -1,12 +1,11 @@
 <?php
-/* --------------------------------------------------------------
-   $Id: ot_discount.php 32 2006-12-28 13:15:17Z sun $
+/* -----------------------------------------------------------------------------------------
+   $Id: ot_discount.php 899 2005-04-29 02:40:57Z hhgag $   
 
-   xt:Commerce - community made shopping
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    -----------------------------------------------------------------------------------------
    based on: 
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
@@ -15,13 +14,10 @@
 
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
-  
-  define('MODULE_ORDER_TOTAL_DISCOUNT_TITLE', '折扣');
-  define('MODULE_ORDER_TOTAL_DISCOUNT_DESCRIPTION', '订单折扣');
-
-  define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_TITLE', '启动总计后折扣');
-  define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_DESC', '启动总计后折扣?');
-
-  define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_TITLE', '显示顺序');
-  define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_DESC', '显示时的顺序.');
+define('MODULE_ORDER_TOTAL_DISCOUNT_TITLE', '折扣');
+define('MODULE_ORDER_TOTAL_DISCOUNT_DESCRIPTION', '订单折扣');
+define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_TITLE', '启动总计后折扣');
+define('MODULE_ORDER_TOTAL_DISCOUNT_STATUS_DESC', '启动总计后折扣?');
+define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_TITLE', '显示顺序');
+define('MODULE_ORDER_TOTAL_DISCOUNT_SORT_ORDER_DESC', '显示时的顺序.');
 ?>

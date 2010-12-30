@@ -34,8 +34,10 @@ if (!class_exists("language")) {
             $this->language = '';
             if ((!empty($lng)) && (isset($this->catalog_languages[$lng]))) {
                 $this->language = $this->catalog_languages[$lng];
-            } else {
+            } elseif(isset($this->catalog_languages[DEFAULT_LANGUAGE])) {
                 $this->language = $this->catalog_languages[DEFAULT_LANGUAGE];
+            } else {
+                $this->language = $this->catalog_languages[key($this->catalog_languages)];
             }
         }
         function get_browser_language() {

@@ -384,9 +384,6 @@ if (!isset($_SESSION['language']) || isset($_GET['language'])) {
         $lng = new language(xtc_input_validation($_GET['language'], 'char', ''));
     }
     //EOF - DokuMan - 2010-09-17 - Undefined index: language on first request
-    if(empty($lng->language)) {
-        $lng->language = $lng->catalog_languages[key($lng->catalog_languages)];
-    }
     $_SESSION['language'] = $lng->language['directory'];
     $_SESSION['languages_id'] = $lng->language['id'];
     $_SESSION['language_charset'] = $lng->language['language_charset'];

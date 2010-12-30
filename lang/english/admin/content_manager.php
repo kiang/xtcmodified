@@ -43,7 +43,6 @@ define('TEXT_STATUS', 'Visible:');
 define('TEXT_STATUS_DESCRIPTION', 'If checked, a link will be displayed in the information box');
 define('TEXT_TITLE', 'Title:');
 define('TEXT_TITLE_FILE', 'Title/Filename:');
-define('TEXT_SELECT', '-Select-');
 define('TEXT_HEADING', 'Heading:');
 define('TEXT_CONTENT', 'Text:');
 define('TEXT_UPLOAD_FILE', 'Upload File:');

@@ -43,7 +43,6 @@ define('TEXT_STATUS', '显示:');
 define('TEXT_STATUS_DESCRIPTION', '如果勾选, 在区块中将会出现连结');
 define('TEXT_TITLE', '连结标题:');
 define('TEXT_TITLE_FILE', '标题/档名:');
-define('TEXT_SELECT', '-请选择-');
 define('TEXT_HEADING', '内容标题:');
 define('TEXT_CONTENT', '内容:');
 define('TEXT_UPLOAD_FILE', '上传文件:');

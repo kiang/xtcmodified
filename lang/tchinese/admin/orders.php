@@ -51,7 +51,7 @@ define('TABLE_HEADING_PRICE_INCLUDING_TAX', 'Price (inc)');
 define('TABLE_HEADING_TOTAL_EXCLUDING_TAX', 'Total (ex)');
 define('TABLE_HEADING_TOTAL_INCLUDING_TAX', 'Total');
 define('TABLE_HEADING_AFTERBUY', 'Afterbuy');
-define('TABLE_HEADING_STATUS', '狀態');define('TABLE_HEADING_ACTION', '動作');
+define('TABLE_HEADING_STATUS', 'Status');define('TABLE_HEADING_ACTION', '動作');
 define('TABLE_HEADING_QUANTITY', '數量');
 define('TABLE_HEADING_PRODUCTS_MODEL', '型號');
 define('TABLE_HEADING_PRODUCTS', '品名');
@@ -126,7 +126,7 @@ define('COMMENT_SEND_ORDER_BY_ADMIN', '訂單資訊已經送出'); //ACHTUNG hie
 define('BUTTON_ORDER_CONFIRMATION', '發送確認');
 define('SUCCESS_ORDER_SEND', '訂單確認已經送出');
 //EOF - web28 - 2010-03-20 - Send Order by Admin
-// web28 2010-12-07 add new define('s
+// web28 2010-12-07 add new defines
 define('ENTRY_CUSTOMERS_ADDRESS', 'Customers Address:');
 define('TEXT_ORDER', '訂單：');
 define('TEXT_ORDER_HISTORY', '訂單記錄：');

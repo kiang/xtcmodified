@@ -28,10 +28,10 @@
 define('MODULE_ORDER_TOTAL_GV_TITLE', '禮券');
 define('MODULE_ORDER_TOTAL_GV_HEADER', '禮券/折價券');
 define('MODULE_ORDER_TOTAL_GV_DESCRIPTION', '禮券');
-//BOF - DokuMan - 2010-08-31 - constants already define('d in english.php
+//BOF - DokuMan - 2010-08-31 - constants already defined in english.php
 //define('SHIPPING_NOT_INCLUDED', ' [Shipping not included]');
-//define('TAX_NOT_INCLUDED', ' [不包含稅金]');
-//EOF - DokuMan - 2010-08-31 - constants already define('d in english.php
+//define('TAX_NOT_INCLUDED', ' [Tax not included]');
+//EOF - DokuMan - 2010-08-31 - constants already defined in english.php
 define('MODULE_ORDER_TOTAL_GV_USER_PROMPT', '<strong>Tick to use Gift Voucher account balance</strong>');
 define('TEXT_ENTER_GV_CODE', '輸入兌換編號 &nbsp;&nbsp;');
 define('MODULE_ORDER_TOTAL_GV_STATUS_TITLE', '啟動禮券額度總計');

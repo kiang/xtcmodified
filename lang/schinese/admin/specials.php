@@ -23,7 +23,8 @@ define('TEXT_SPECIALS_PRODUCT', '商品：');
 define('TEXT_SPECIALS_SPECIAL_PRICE', '特价：');
 define('TEXT_SPECIALS_SPECIAL_QUANTITY', '数量：');
 // BOF - Tomcraft - 2009-11-06 - Use "iso 8601" for the date format
-//define('TEXT_SPECIALS_EXPIRES_DATE', '特价结束日：');
+//define('TEXT_SPECIALS_EXPIRES_DATE', 'G&uuml;ltig bis:<br /><small>(dd.mm.yyyy)</small>'
+define('TEXT_SPECIALS_EXPIRES_DATE', 'Expiry Date: <small>(YYYY-MM-DD)</small>');
 // EOF - Tomcraft - 2009-11-06 - Use "iso 8601" for the date format
 // BOF - Tomcraft - 2009-11-06 - extended description
 //define('TEXT_SPECIALS_PRICE_TIP', '<b>Specials Notes:</b><ul><li>You can enter a percentage to deduct in the Specials Price field, for example: <b>20%</b></li><li>If you enter a new price, the decimal separator must be a \'.\' (decimal-point), example: <b>49.99</b></li><li>Leave the expiry date empty for no expiration</li></ul>');

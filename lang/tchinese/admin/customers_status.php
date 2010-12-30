@@ -1,12 +1,11 @@
 <?php
 /* --------------------------------------------------------------
-   $Id: customers_status.php 36 2006-12-28 13:19:07Z sun $
+   $Id: customers_status.php 1062 2005-07-21 19:57:29Z gwinger $
 
-   xt:Commerce - community made shopping
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    --------------------------------------------------------------
    based on:
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
@@ -15,9 +14,7 @@
 
    Released under the GNU General Public License
    --------------------------------------------------------------*/
-
 define('HEADING_TITLE', '會員群組設定');
-
 define('ENTRY_CUSTOMERS_FSK18', '啟用未成年禁止購買機制?');
 define('ENTRY_CUSTOMERS_FSK18_DISPLAY', '顯示未成年禁止購買商品?');
 define('ENTRY_CUSTOMERS_STATUS_ADD_TAX', '訂單總計顯示稅額');
@@ -38,15 +35,10 @@ define('ENTRY_GRADUATED_PRICES', '累進價格');
 define('ENTRY_NO', '否');
 define('ENTRY_OT_XMEMBER', '購物總金額折扣 ? :');
 define('ENTRY_YES', '是');
-
 define('ERROR_REMOVE_DEFAULT_CUSTOMER_STATUS', '注意: 無法刪除系統預設會員群組. 請先設定其他會員群組為預設後再嘗試一次.');
 define('ERROR_REMOVE_DEFAULT_CUSTOMERS_STATUS', '注意! 無法刪除系統預設會員群組');
 define('ERROR_STATUS_USED_IN_CUSTOMERS', '注意: 這個會員群組仍有會員使用.');
 define('ERROR_STATUS_USED_IN_HISTORY', '注意: 這個會員群組仍有會員的歷史訂單紀錄.');
-
-define('YES', '是');
-define('NO', '否');
-
 define('TABLE_HEADING_ACTION', '動作');
 define('TABLE_HEADING_CUSTOMERS_GRADUATED', '累進價格');
 define('TABLE_HEADING_CUSTOMERS_STATUS', '會員群組');
@@ -54,12 +46,9 @@ define('TABLE_HEADING_CUSTOMERS_UNALLOW', '禁止的付款方式');
 define('TABLE_HEADING_CUSTOMERS_UNALLOW_SHIPPING', '禁止的出貨方式');
 define('TABLE_HEADING_DISCOUNT', '折扣');
 define('TABLE_HEADING_TAX_PRICE', '價格/稅');
-
 define('TAX_NO', '未稅');
 define('TAX_YES', '含稅');
-
 define('TEXT_DISPLAY_NUMBER_OF_CUSTOMERS_STATUS', '目前的會員群組:');
-
 define('TEXT_INFO_CUSTOMERS_FSK18_DISPLAY_INTRO', '<b>顯示未成年購買之商品</b>');
 define('TEXT_INFO_CUSTOMERS_FSK18_INTRO', '<b>禁止未成年購買商品</b>');
 define('TEXT_INFO_CUSTOMERS_STATUS_ADD_TAX_INTRO', '<b>如果價格含稅設定為"否"</b>');
@@ -82,16 +71,12 @@ define('TEXT_INFO_CUSTOMERS_STATUS_SHOW_PRICE_INTRO', '<b>商店顯示商品價�
 define('TEXT_INFO_CUSTOMERS_STATUS_SHOW_PRICE_TAX_INTRO', '<b>顯示價格含稅?</b>');
 define('TEXT_INFO_CUSTOMERS_STATUS_WRITE_REVIEWS_INTRO', '<b>撰寫產品評論</b>');
 define('TEXT_INFO_CUSTOMERS_STATUS_READ_REVIEWS_INTRO', '<b>閱讀產品評論</b>');
-
 define('TEXT_INFO_DELETE_INTRO', '確定刪除此會員群組?');
 define('TEXT_INFO_EDIT_INTRO', '請作適當修改');
 define('TEXT_INFO_INSERT_INTRO', '新增一個會員群組並填入下列資訊.');
-
 define('TEXT_INFO_HEADING_DELETE_CUSTOMERS_STATUS', '刪除會員群組');
 define('TEXT_INFO_HEADING_EDIT_CUSTOMERS_STATUS', '編輯會員群組');
 define('TEXT_INFO_HEADING_NEW_CUSTOMERS_STATUS', '新增會員群組');
-
 define('TEXT_INFO_CUSTOMERS_STATUS_BASE', '<b>會員群組的商品定價準則</b>');
 define('ENTRY_CUSTOMERS_STATUS_BASE', '為新會員的群組標價方式選擇一個準則，注意!如果你選擇了 Admin 管理員群組就沒法適用定價準則了.');
-
 ?>

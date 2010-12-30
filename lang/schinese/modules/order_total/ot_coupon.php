@@ -32,14 +32,14 @@ define('SHIPPING_NOT_INCLUDED', ' [不包含运费]');
 define('TAX_NOT_INCLUDED', ' [不包含税金]');
 define('MODULE_ORDER_TOTAL_COUPON_USER_PROMPT', '');
 define('ERROR_NO_INVALID_REDEEM_COUPON', '无效的折价券码');
-//BOF - DokuMan - 2010-08-31 - constants already define('d in english.php
+//BOF - DokuMan - 2010-08-31 - constants already defined in english.php
 //define('ERROR_INVALID_STARTDATE_COUPON', 'This coupon is not available yet');
-//define('ERROR_INVALID_FINISDATE_COUPON', '这个折价券有使用期限');
-//define('ERROR_INVALID_USES_COUPON', '这个折价券已经超过 ');
-//define('TIMES', ' 次使用限制.');
-//define('ERROR_INVALID_USES_USER_COUPON', '您使用折价券的次数,已经超过每一个客户使用次数的限制.');
-//define('REDEEMED_COUPON', '折价券值 ');
-//EOF - DokuMan - 2010-08-31 - constants already define('d in english.php
+//define('ERROR_INVALID_FINISDATE_COUPON', 'This coupon has expired');
+//define('ERROR_INVALID_USES_COUPON', 'This coupon could only be used ');
+//define('TIMES', ' times.');
+//define('ERROR_INVALID_USES_USER_COUPON', 'You have used the coupon the maximum number of times allowed per customer.');
+//define('REDEEMED_COUPON', 'a coupon worth ');
+//EOF - DokuMan - 2010-08-31 - constants already defined in english.php
 define('REDEEMED_MIN_ORDER', 'on orders over ');
 define('REDEEMED_RESTRICTIONS', ' [限制使用折价券商品/商品种类]');
 define('TEXT_ENTER_COUPON_CODE', '输入折价券兑换码&nbsp;&nbsp;');

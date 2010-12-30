@@ -29,7 +29,7 @@ define('TEXT_INFO_DELETE_REVIEW_INTRO', '确定要删除这个反应？');
 define('TEXT_INFO_DATE_ADDED', '新增日期：');
 define('TEXT_INFO_LAST_MODIFIED', '最后修改日期：');
 //BOF - DokuMan - 2010-02-15 - Change wrong constant-name
-//define('TEXT_INFO_IMAGE_NONEXISTENT', '图片不存在');
+//define('TEXT_INFO_IMAGE_NONEXISTENT', 'IMAGE DOES NOT EXIST');
 define('TEXT_IMAGE_NONEXISTENT', 'IMAGE DOES NOT EXIST');
 //EOF - DokuMan - 2010-02-15 - Change wrong constant-name
 define('TEXT_INFO_REVIEW_AUTHOR', '发表者：');

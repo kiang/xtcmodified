@@ -88,7 +88,7 @@ define('TYPE_REVERSED', '-Zahlung gesendet');
 define('TYPE_REFUNDED', 'Rückzahlung');define('TYPE_REVERSED', '-Zahlung gesendet');
 define('TYPE_REFUNDED', 'Rückzahlung');
 define('TEXT_DISPLAY_NUMBER_OF_PAYPAL_TRANSACTIONS', 'Angezeigt werden <b>%d</b> bis <b>%d</b> (von insgesamt <b>%d</b> Transaktionen)');
-// define('NOTES
+// define NOTES
 define('TEXT_PAYPAL_NOTE_REFUND_INFO', 'Until 60 days after sending the original payment can carry you out a complete or a partial restitution. If you receive a repayment to arrange, you from PayPal a refund of charges, including the partial fees for partial restitutions.
 <br /><br />In order to arrange a repayment too, you enter the amount into the field amount of repayment, and click you on far one.');
 define('TEXT_PAYPAL_NOTE_CAPTURE_INFO', '');

@@ -33,11 +33,11 @@ define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO_3', '<b>100%訊息保護</b> - �
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO_4', '<b>方便</b> – 一旦您擁有了一個Moneybookers帳戶您只需要電子郵件地址和密碼既可以進行一切未來交易');
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO_5', '<b>全球流通</b> – Moneybookers在超過2，500個在線商店中有效');
 define('MODULE_PAYMENT_AMONEYBOOKERS_TEXT_INFO_1', '<br /><br />Moneybookers接受以下付款方式:');
-//BOF - DokuMan - 2010-09-08 - already define('d in english.php
+//BOF - DokuMan - 2010-09-08 - already defined in english.php
 //define('MB_TEXT_MBDATE', 'Last Change:');
 //define('MB_TEXT_MBTID', 'TR ID:');
-//define('MB_TEXT_MBERRTXT', '狀態：');
-//BOF - DokuMan - 2010-09-08 - already define('d in english.php
+//define('MB_TEXT_MBERRTXT', 'Status:');
+//BOF - DokuMan - 2010-09-08 - already defined in english.php
 define('MODULE_PAYMENT_AMONEYBOOKERS_PROCESSED_STATUS_ID_TITLE', 'Order status - Processed');
 define('MODULE_PAYMENT_AMONEYBOOKERS_PROCESSED_STATUS_ID_DESC', '');
 define('MODULE_PAYMENT_AMONEYBOOKERS_PENDING_STATUS_ID_TITLE', '訂單狀態 - 處理中');

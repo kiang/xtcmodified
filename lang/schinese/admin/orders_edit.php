@@ -133,7 +133,7 @@ define('TEXT_SAVE', '存贮');
 define('TEXT_ACTUAL', '实际：');
 define('TEXT_NEW', '新增：');
 define('TEXT_PRICE', 'Costs: ');
-// web28 2010-12-07 add new define('s
+// web28 2010-12-07 add new defines
 define('TEXT_ADD_TAX', 'incl. ');
 define('TEXT_NO_TAX', 'plus ');
 define('TEXT_ORDERS_EDIT_INFO', '<b> Important Notes: </ b> <br>

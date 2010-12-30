@@ -95,46 +95,6 @@ define('TOTAL_TURNOVER', 'Total turnover');
 // EOF - Tomcraft - 2009-11-30 - Added missing definitions for /admin/start.php/
 // BOF - vr 2010-04-01 -  Added missing definitions
 // main heading
-define('HEADING_TITLE', '歡迎');define('HEADING_TITLE_SEARCH', 'Order-Nr.:');
-define('HEADING_TITLE_STATUS', 'Status:');
-define('TABLE_HEADING_AFTERBUY', 'Afterbuy'); //Dokuman - 2009-05-27 - added missing definition
-define('TABLE_HEADING_CUSTOMERS', 'Customers');
-define('TABLE_HEADING_ORDER_TOTAL', 'Total value');
-define('TABLE_HEADING_DATE_PURCHASED', 'Order Date');
-define('TABLE_HEADING_STATUS', 'Status');
-define('TABLE_HEADING_ACTION', 'Action');
-define('TABLE_HEADING_QUANTITY', 'Quantity');
-define('TABLE_HEADING_PRODUCTS_MODEL', 'Product-Nr.');
-define('TABLE_HEADING_PRODUCTS', 'Product');
-define('TABLE_HEADING_TAX', 'VAT');
-define('TABLE_HEADING_TOTAL', 'Total sum');
-define('TABLE_HEADING_DATE_ADDED', 'added on:');
-define('ENTRY_CUSTOMER', 'Customer:');
-define('TEXT_DATE_ORDER_CREATED', 'Order Date:');
-define('TEXT_INFO_PAYMENT_METHOD', 'Payment method:');
-define('TEXT_VALIDATING', 'Not validated');
-define('TEXT_ALL_ORDERS', 'All orders');
-define('TEXT_NO_ORDER_HISTORY', 'No order history available');
-define('TEXT_DATE_ORDER_LAST_MODIFIED', 'Last change');
-// BOF - Tomcraft - 2009-11-25 - Added missing definitions for /admin/start.php/
-define('TOTAL_CUSTOMERS', 'Customers total');
-define('TOTAL_SUBSCRIBERS', 'Newsletter 	subscriptions');
-define('TOTAL_PRODUCTS_ACTIVE', 'Active products');
-define('TOTAL_PRODUCTS_INACTIVE', 'Inactive products');
-define('TOTAL_PRODUCTS', 'Products total');
-define('TOTAL_SPECIALS', 'Specials');
-// EOF - Tomcraft - 2009-11-25 - Added missing definitions for /admin/start.php/
-// BOF - Tomcraft - 2009-11-30 - Added missing definitions for /admin/start.php/
-define('UNASSIGNED', 'Unassigned');
-define('TURNOVER_TODAY', 'Turnover today');
-define('TURNOVER_YESTERDAY', 'Turnover yesterday');
-define('TURNOVER_THIS_MONTH', 'this month');
-define('TURNOVER_LAST_MONTH', 'last month (all)');
-define('TURNOVER_LAST_MONTH_PAID', 'last month (paid)');
-define('TOTAL_TURNOVER', 'Total turnover');
-// EOF - Tomcraft - 2009-11-30 - Added missing definitions for /admin/start.php/
-// BOF - vr 2010-04-01 -  Added missing definitions
-// main heading
 define('HEADING_TITLE', 'Welcome to the Admin Area');
 // users online
 define('TABLE_CAPTION_USERS_ONLINE', 'Users Online');

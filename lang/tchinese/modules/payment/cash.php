@@ -1,13 +1,11 @@
 <?php
-/* --------------------------------------------------------------
-   $Id: cash.php 42 2007-01-02 08:16:29Z sun $
+/* -----------------------------------------------------------------------------------------
+   $Id: cash.php 1102 2005-07-24 15:05:38Z mz $
 
-   xt:Commerce - community made shopping
+   XT-Commerce - community made shopping
    http://www.xt-commerce.com
-   http://www.xt-commerce.tw   
-   http://www.xt-commerce.cn
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2003 XT-Commerce
    -----------------------------------------------------------------------------------------
    based on:
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
@@ -16,21 +14,22 @@
 
    Released under the GNU General Public License
    ---------------------------------------------------------------------------------------*/
-
 define('MODULE_PAYMENT_CASH_TEXT_DESCRIPTION', '現金交易');
 define('MODULE_PAYMENT_CASH_TEXT_TITLE', '現金交易');
 define('MODULE_PAYMENT_CASH_TEXT_INFO', '');
 define('MODULE_PAYMENT_CASH_STATUS_TITLE', '使用現金交易模組');
 define('MODULE_PAYMENT_CASH_STATUS_DESC', '您確定要使用現金交易付款？');
-
-define('MODULE_PAYMENT_CASH_COST_TITLE',_MODULES_PAYMENT_FEE_TITLE);
-define('MODULE_PAYMENT_CASH_COST_DESC',_MODULES_PAYMENT_FEE_DESC);
-define('MODULE_PAYMENT_CASH_ZONE_TITLE', _MODULES_ZONE_TITLE);
-define('MODULE_PAYMENT_CASH_ZONE_DESC', _MODULES_ZONE_DESC);
-define('MODULE_PAYMENT_CASH_ALLOWED_TITLE' , _MODULES_ZONE_ALLOWED_TITLE);
-define('MODULE_PAYMENT_CASH_ALLOWED_DESC' ,_MODULES_ZONE_ALLOWED_DESC);
+define('MODULE_PAYMENT_CASH_ORDER_STATUS_ID_TITLE', _MODULES_SET_ORDER_STATUS_TITLE);
+define('MODULE_PAYMENT_CASH_ORDER_STATUS_ID_DESC', _MODULES_SET_ORDER_STATUS_DESC);
 define('MODULE_PAYMENT_CASH_SORT_ORDER_TITLE', _MODULES_SORT_ORDER_TITLE);
 define('MODULE_PAYMENT_CASH_SORT_ORDER_DESC', _MODULES_SORT_ORDER_DESC);
-define('MODULE_PAYMENT_CASH_ORDER_STATUS_ID_TITLE' , _MODULES_SET_ORDER_STATUS_TITLE);
-define('MODULE_PAYMENT_CASH_ORDER_STATUS_ID_DESC' , _MODULES_SET_ORDER_STATUS_DESC);
+define('MODULE_PAYMENT_CASH_ZONE_TITLE', _MODULES_ZONE_TITLE);
+define('MODULE_PAYMENT_CASH_ZONE_DESC', _MODULES_ZONE_DESC);
+define('MODULE_PAYMENT_CASH_ALLOWED_TITLE', _MODULES_ZONE_ALLOWED_TITLE);
+define('MODULE_PAYMENT_CASH_ALLOWED_DESC', _MODULES_ZONE_ALLOWED_DESC);
+// BOF - Hendrik - 2010-07-15 - exlusion config for shipping modules
+define('MODULE_PAYMENT_CASH_NEG_SHIPPING_TITLE', 'Exclusion in case of shipping');
+define('MODULE_PAYMENT_CASH_NEG_SHIPPING_DESC', 'deactivate this payment if one of these shippingtypes are selected (list separated by comma)');
+// EOF - Hendrik - 2010-07-15 - exlusion config for shipping modules
+
 ?>

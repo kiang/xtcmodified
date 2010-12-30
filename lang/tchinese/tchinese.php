@@ -22,7 +22,7 @@
 */
 define('TITLE', STORE_NAME);
 define('HEADER_TITLE_TOP', '首頁');
-define('HEADER_TITLE_CATALOG', '目錄位置');
+define('HEADER_TITLE_CATALOG', '購物網站');
 define('HTML_PARAMS', 'dir="ltr" lang="zh-tw"');
 @setlocale(LC_TIME, 'en_GB@euro', 'en_GB', 'en-GB', 'en', 'en_GB.ISO_8859-1', 'English', 'en_GB.ISO_8859-15');
 //BOF - Dokuman - 2009-06-03 - correct english date format
@@ -91,8 +91,8 @@ define('ENTRY_FIRST_NAME_ERROR', '中文姓名的字數不可少於 ' . (ENTRY_F
 define('ENTRY_FIRST_NAME_TEXT', '*');
 define('ENTRY_LAST_NAME_ERROR', '暱稱的字數不得少於 ' . ENTRY_LAST_NAME_MIN_LENGTH . ' 個字');
 define('ENTRY_LAST_NAME_TEXT', '*');
-define('ENTRY_DATE_OF_BIRTH_ERROR', '請確認生日的格式 日.月.年 (範例： 22.05.1988) '); //Dokuman - 2009-06-03 - correct english date format
-define('ENTRY_DATE_OF_BIRTH_TEXT', '* 日.月.年(22.05.1988)'); //Dokuman - 2009-06-03 - correct english date format
+define('ENTRY_DATE_OF_BIRTH_ERROR', '請確認生日的格式 月/日/年(05/21/1970)'); //Dokuman - 2009-06-03 - correct english date format
+define('ENTRY_DATE_OF_BIRTH_TEXT', '* 月/日/年(05/21/1970)'); //Dokuman - 2009-06-03 - correct english date format
 define('ENTRY_EMAIL_ADDRESS_ERROR', '電子郵件不可少於 ' . ENTRY_EMAIL_ADDRESS_MIN_LENGTH . ' 個字');
 define('ENTRY_EMAIL_ADDRESS_CHECK_ERROR', '電子郵件格式錯誤 - 請重新輸入'); //changed by electronica 2009-09-06
 define('ENTRY_EMAIL_ERROR_NOT_MATCHING', '兩次輸入的電子郵件不一樣，請重新輸入'); // Hetfield - 2009-08-15 - confirm e-mail at registration
@@ -157,7 +157,7 @@ define('PREVNEXT_BUTTON_NEXT', '[往後&nbsp;&gt;&gt;]');
  *
 */
 define('IMAGE_BUTTON_ADD_ADDRESS', '新增地址');
-define('IMAGE_BUTTON_BACK', '回上一項');
+define('IMAGE_BUTTON_BACK', '回上頁');
 define('IMAGE_BUTTON_CHANGE_ADDRESS', '修改地址');
 define('IMAGE_BUTTON_CHECKOUT', '結帳');
 define('IMAGE_BUTTON_CONFIRM_ORDER', '訂單確認');
@@ -172,7 +172,7 @@ define('IMAGE_BUTTON_WRITE_REVIEW', 'Write evaluation'); //changed by electronic
 define('IMAGE_BUTTON_ADMIN', 'Admin');
 define('IMAGE_BUTTON_PRODUCT_EDIT', 'Edit product');
 // BOF - vr - 2010-02-20 removed double definition
-// define('IMAGE_BUTTON_LOGIN', '會員登入');define('IMAGE_BUTTON_IN_CART', '放到購物車'); //changed by electronica 2009-09-06
+// define('IMAGE_BUTTON_LOGIN', '登入');define('IMAGE_BUTTON_IN_CART', '放到購物車'); //changed by electronica 2009-09-06
 define('IMAGE_BUTTON_SEARCH', '搜尋');
 define('IMAGE_BUTTON_UPDATE', '上傳／更新');
 define('IMAGE_BUTTON_UPDATE_CART', '更改購物清單');
@@ -413,9 +413,9 @@ define('FROM', '特價 ');
 define('YOU_SAVE', '您節省了');
 define('INSTEAD', '原價 ');
 define('TXT_PER', ' 每筆 ');
-define('TAX_INFO_INCL', '含 %s 稅額');
+define('TAX_INFO_INCL', '內含 %s 稅額');
 define('TAX_INFO_EXCL', '不含 %s 稅額');
-define('TAX_INFO_ADD', 'plus. %s 稅額');
+define('TAX_INFO_ADD', '外加 %s 稅額');
 define('SHIPPING_EXCL', '不含');
 define('SHIPPING_COSTS', '運費');
 // changes 3.0.4 SP2
@@ -435,7 +435,7 @@ define('ERROR_VVCODE', '<p><b>驗證碼：</b> 不相符，請重試！</p>');
 define('ERROR_MSG_BODY', '<p><b>您的訊息：</b> 沒有輸入！</p>');
 // BOF - DokuMan - 2010-09-06 - combined contact form messages in one language file
 define('EMAIL_COMPANY', '公司：');
-define('EMAIL_STREET', '街道巷弄：');
+define('EMAIL_STREET', '地址：');
 define('EMAIL_POSTCODE', '郵遞區號：');
 define('EMAIL_CITY', '鄉鎮市區：');
 define('EMAIL_PHONE', '電話：');
@@ -467,7 +467,7 @@ define('PAYPAL_EXP_WARN', 'Note! Possibly resulting forwarding expenses are only
 define('PAYPAL_EXP_VORL', 'Provisional forwarding expenses');
 define('PAYPAL_EXP_VERS', '12.90');
 // EOF - web28 - 2010-05-07 - PayPal API Modul
-define('BASICPRICE_VPE_TEXT', 'in this volume only '); // Hetfield - 2009-11-26 - Added language definition for vpe at graduated prices
+define('BASICPRICE_VPE_TEXT', '只在這個階層 '); // Hetfield - 2009-11-26 - Added language definition for vpe at graduated prices
 //web - 2010-07-11 - Preisanzeige bei Staffelpreisen (größte Staffel)
-define('GRADUATED_PRICE_MAX_VALUE', 'from');
+define('GRADUATED_PRICE_MAX_VALUE', '來自');
 ?>

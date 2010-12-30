@@ -1,16 +1,16 @@
 <?php
-/* --------------------------------------------------------------
-   $Id: ot_coupon.php 32 2006-12-28 13:15:17Z sun $
+/* -----------------------------------------------------------------------------------------
+   $Id: ot_coupon.php 1243 2010-08-31 15:27:48Z dokuman $
 
-   xt:Commerce - community made shopping
-   http://www.xt-commerce.com
-   http://www.xt-commerce.cn
+   xtcModified - community made shopping
+   http://www.xtc-modified.org
 
-   Copyright (c) 2007 xt:Commerce Shopsoftware
+   Copyright (c) 2010 xtcModified
    -----------------------------------------------------------------------------------------
    based on:
    (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
    (c) 2002-2003 osCommerce(t_coupon.php,v 1.1.2.2 2003/05/15); www.oscommerce.com
+   (c) 2006 XT-Commerce (ot_coupon.php 899 2005-04-29)
 
    Released under the GNU General Public License
    -----------------------------------------------------------------------------------------
@@ -22,37 +22,42 @@
    Copyright (c  Nick Stanko of UkiDev.com, nick@ukidev.com
    Copyright (c) Andre ambidex@gmx.net
    Copyright (c) 2001,2002 Ian C Wilson http://www.phesis.org
-   
-   Released under the GNU General Public License    
-   ---------------------------------------------------------------------------------------*/
 
-  define('MODULE_ORDER_TOTAL_COUPON_TITLE', '折價券');
-  define('MODULE_ORDER_TOTAL_COUPON_HEADER', '禮券/折價券');
-  define('MODULE_ORDER_TOTAL_COUPON_DESCRIPTION', '折價券');
-  define('SHIPPING_NOT_INCLUDED', ' [不包含運費]');
-  define('TAX_NOT_INCLUDED', ' [不包含稅金]');
-  define('MODULE_ORDER_TOTAL_COUPON_USER_PROMPT', '');
-  define('ERROR_NO_INVALID_REDEEM_COUPON', '無效的折價券碼');
-  define('ERROR_INVALID_STARTDATE_COUPON', '這個折價券尚不能使用');
-  define('ERROR_INVALID_FINISDATE_COUPON', '這個折價券有使用期限');
-  define('ERROR_INVALID_USES_COUPON', '這個折價券已經超過 ');  
-  define('TIMES', ' 次使用限制.');
-  define('ERROR_INVALID_USES_USER_COUPON', '您使用折價券的次數,已經超過每一個客戶使用次數的限制.'); 
-  define('REDEEMED_COUPON', '折價券值 ');  
-  define('REDEEMED_MIN_ORDER', '訂單超過');  
-  define('REDEEMED_RESTRICTIONS', ' [限制使用折價券商品/商品種類]');  
-  define('TEXT_ENTER_COUPON_CODE', '輸入折價券兌換碼&nbsp;&nbsp;');
-  
-  define('MODULE_ORDER_TOTAL_COUPON_STATUS_TITLE', '顯示折價券總計');
-  define('MODULE_ORDER_TOTAL_COUPON_STATUS_DESC', '顯示折價券總計?');
-  define('MODULE_ORDER_TOTAL_COUPON_SORT_ORDER_TITLE', '顯示順序');
-  define('MODULE_ORDER_TOTAL_COUPON_SORT_ORDER_DESC', '顯示時的順序.');
-  define('MODULE_ORDER_TOTAL_COUPON_INC_SHIPPING_TITLE', '包含運費');
-  define('MODULE_ORDER_TOTAL_COUPON_INC_SHIPPING_DESC', '計算時包含運費');
-  define('MODULE_ORDER_TOTAL_COUPON_INC_TAX_TITLE', '包含稅金');
-  define('MODULE_ORDER_TOTAL_COUPON_INC_TAX_DESC', '計算時包含稅金.');
-  define('MODULE_ORDER_TOTAL_COUPON_CALC_TAX_TITLE', '稅金計算方式');
-  define('MODULE_ORDER_TOTAL_COUPON_CALC_TAX_DESC', '選擇稅金計算方式');
-  define('MODULE_ORDER_TOTAL_COUPON_TAX_CLASS_TITLE', '稅別');
-  define('MODULE_ORDER_TOTAL_COUPON_TAX_CLASS_DESC', '折價券使用稅別');
+   Released under the GNU General Public License
+   ---------------------------------------------------------------------------------------*/
+define('MODULE_ORDER_TOTAL_COUPON_TITLE', '折價券');
+define('MODULE_ORDER_TOTAL_COUPON_HEADER', '禮券/折價券');
+define('MODULE_ORDER_TOTAL_COUPON_DESCRIPTION', '折價券');
+define('SHIPPING_NOT_INCLUDED', ' [不包含運費]');
+define('TAX_NOT_INCLUDED', ' [不包含稅金]');
+define('MODULE_ORDER_TOTAL_COUPON_USER_PROMPT', '');
+define('ERROR_NO_INVALID_REDEEM_COUPON', '無效的折價券碼');
+//BOF - DokuMan - 2010-08-31 - constants already define('d in english.php
+//define('ERROR_INVALID_STARTDATE_COUPON', 'This coupon is not available yet');
+//define('ERROR_INVALID_FINISDATE_COUPON', '這個折價券有使用期限');
+//define('ERROR_INVALID_USES_COUPON', '這個折價券已經超過 ');
+//define('TIMES', ' 次使用限制.');
+//define('ERROR_INVALID_USES_USER_COUPON', '您使用折價券的次數,已經超過每一個客戶使用次數的限制.');
+//define('REDEEMED_COUPON', '折價券值 ');
+//EOF - DokuMan - 2010-08-31 - constants already define('d in english.php
+define('REDEEMED_MIN_ORDER', 'on orders over ');
+define('REDEEMED_RESTRICTIONS', ' [限制使用折價券商品/商品種類]');
+define('TEXT_ENTER_COUPON_CODE', '輸入折價券兌換碼&nbsp;&nbsp;');
+define('MODULE_ORDER_TOTAL_COUPON_STATUS_TITLE', '顯示折價券總計');
+define('MODULE_ORDER_TOTAL_COUPON_STATUS_DESC', '顯示折價券總計?');
+define('MODULE_ORDER_TOTAL_COUPON_SORT_ORDER_TITLE', '顯示順序');
+define('MODULE_ORDER_TOTAL_COUPON_SORT_ORDER_DESC', '顯示時的順序.');
+define('MODULE_ORDER_TOTAL_COUPON_INC_SHIPPING_TITLE', '包含運費');
+define('MODULE_ORDER_TOTAL_COUPON_INC_SHIPPING_DESC', '計算時包含運費');
+define('MODULE_ORDER_TOTAL_COUPON_INC_TAX_TITLE', '包含稅金');
+define('MODULE_ORDER_TOTAL_COUPON_INC_TAX_DESC', '計算時包含稅金.');
+define('MODULE_ORDER_TOTAL_COUPON_CALC_TAX_TITLE', '稅金計算方式');
+define('MODULE_ORDER_TOTAL_COUPON_CALC_TAX_DESC', '選擇稅金計算方式');
+define('MODULE_ORDER_TOTAL_COUPON_TAX_CLASS_TITLE', '稅別');
+define('MODULE_ORDER_TOTAL_COUPON_TAX_CLASS_DESC', '折價券使用稅別');
+//BOF - web28 - 2010-06-20 - no discount for special offers
+define('MODULE_ORDER_TOTAL_COUPON_SPECIAL_PRICES_TITLE', 'Discount for special offers');
+define('MODULE_ORDER_TOTAL_COUPON_SPECIAL_PRICES_DESC', 'Allowed discount for special offers');
+//EOF - web28 - 2010-06-20 - no discount for special offers
+
 ?>

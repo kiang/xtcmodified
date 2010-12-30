@@ -126,7 +126,9 @@ if (!$box_smarty->is_cached(CURRENT_TEMPLATE . '/boxes/box_categories.html', $ca
             }
         }
     }
-    xtc_show_category($first_element);
+    if(!empty($first_element)) {
+        xtc_show_category($first_element);
+    }
     $box_smarty->assign('BOX_CONTENT', $categories_string); //DokuMan - 2010-03-02 - BOX_CONTENT on wrong position
     
 }

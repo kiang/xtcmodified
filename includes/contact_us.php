@@ -142,13 +142,13 @@ if (isset($_GET['action']) && ($_GET['action'] == 'success')) {
     //if (trim($_GET['products_name'] != '')) {$products_info= trim($_GET['products_name']);}
     //if (trim($_GET['products_model'] != '')) {$products_info= trim($products_info . ' - ' . trim($_GET['products_model']));}
     //if ($products_info != '') {$products_info = trim($_GET['question'])."\n" . $products_info . "\n"; }
-    if (trim($_GET['products_name']) != '') {
+    if (!empty($_GET['products_name'])) {
         $products_info = trim($_GET['products_name']);
     }
-    if (trim($_GET['products_model']) != '') {
+    if (!empty($_GET['products_model'])) {
         $products_info = trim($products_info . ' - ' . trim($_GET['products_model']));
     }
-    if (trim($_GET['question']) != '') {
+    if (!empty($_GET['question'])) {
         $products_question = trim($_GET['products_name']) . "\n";
     }
     if ($products_info != '') {

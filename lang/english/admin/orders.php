@@ -54,14 +54,7 @@ define('TABLE_HEADING_CUSTOMER_NOTIFIED', 'Customer Notified');
 define('TABLE_HEADING_DATE_ADDED', 'Date Added');
 define('ENTRY_CUSTOMER', 'Customer:');
 define('ENTRY_SOLD_TO', 'SOLD TO:');
-define('ENTRY_STREET_ADDRESS', 'Street Address:');
-define('ENTRY_SUBURB', 'Suburb:');
-define('ENTRY_CITY', 'City:');
-define('ENTRY_POST_CODE', 'Post Code:');
-define('ENTRY_STATE', 'State:');
-define('ENTRY_COUNTRY', 'Country:');
 define('ENTRY_TELEPHONE', 'Telephone:');
-define('ENTRY_EMAIL_ADDRESS', 'E-Mail Address:');
 define('ENTRY_DELIVERY_TO', 'Delivery To:');
 define('ENTRY_SHIP_TO', 'SHIP TO:');
 define('ENTRY_SHIPPING_ADDRESS', 'Shipping Address:');
@@ -102,7 +95,6 @@ define('SUCCESS_ORDER_UPDATED', 'Success: Order has been successfully updated.')
 define('WARNING_ORDER_NOT_UPDATED', 'Warning: Nothing to change. The order was not updated.');
 define('TABLE_HEADING_DISCOUNT', 'Discount');
 define('ENTRY_CUSTOMERS_GROUP', 'Customers Group:');
-define('ENTRY_CUSTOMERS_VAT_ID', 'VAT Reg No:');
 define('TEXT_VALIDATING', 'Not validated');
 // BOF - Tomcraft - 2010-04-22 - Added a missing language definition
 define('TEXT_PRODUCTS', 'Products');

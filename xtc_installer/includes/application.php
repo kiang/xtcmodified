@@ -17,7 +17,8 @@
    --------------------------------------------------------------*/
 // Some FileSystem Directories
 if (!defined('DIR_FS_DOCUMENT_ROOT')) {
-    define('DIR_FS_CATALOG', substr(__FILE__, 0, strpos(__FILE__, 'xtc_installer')));
+    $baseFilePath = str_replace(DIRECTORY_SEPARATOR, '/', __FILE__);
+    define('DIR_FS_CATALOG', substr($baseFilePath, 0, strpos($baseFilePath, 'xtc_installer')));
     define('DIR_FS_DOCUMENT_ROOT', substr(DIR_FS_CATALOG, 0, strrpos(DIR_FS_CATALOG, DIRECTORY_SEPARATOR, -2)));
     $local_install_path = substr(DIR_FS_CATALOG, strlen(DIR_FS_DOCUMENT_ROOT));
 }

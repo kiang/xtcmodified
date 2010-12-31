@@ -53,6 +53,9 @@ class xtcPrice {
         while ($currencies = xtc_db_fetch_array($currencies_query, true)) {
             $this->currencies[$currencies['code']] = array('title' => $currencies['title'], 'symbol_left' => $currencies['symbol_left'], 'symbol_right' => $currencies['symbol_right'], 'decimal_point' => $currencies['decimal_point'], 'thousands_point' => $currencies['thousands_point'], 'decimal_places' => $currencies['decimal_places'], 'value' => $currencies['value']);
         }
+        if (!isset($this->currencies[$this->actualCurr])) {
+            $this->actualCurr = DEFAULT_CURRENCY;
+        }
         // select Customers Status data
         $customers_status_query = xtDBquery("SELECT *
                                 FROM " . TABLE_CUSTOMERS_STATUS . "

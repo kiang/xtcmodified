@@ -210,8 +210,8 @@ define('TEXT_UNKNOWN_TAX_RATE', '税率尚未定义');
  * WARNINGS
  *
 */
-define('WARNING_INSTALL_DIRECTORY_EXISTS', '警告： 安装目录仍未删除： ' . dirname($HTTP_SERVER_VARS['SCRIPT_FILENAME']) . '/xtc_installer. 基于安全的考量，请将这个目录删除');
-define('WARNING_CONFIG_FILE_WRITEABLE', '警告： 设置档的权限允许被写入： ' . dirname($HTTP_SERVER_VARS['SCRIPT_FILENAME']) . '/includes/configure.php. 这将具有潜在的系统安全风险 - 请将文件设置为正确的使用权限');
+define('WARNING_INSTALL_DIRECTORY_EXISTS', '警告： 安装目录仍未删除： ' . dirname($_SERVER['SCRIPT_FILENAME']) . '/xtc_installer. 基于安全的考量，请将这个目录删除');
+define('WARNING_CONFIG_FILE_WRITEABLE', '警告： 设置档的权限允许被写入： ' . dirname($_SERVER['SCRIPT_FILENAME']) . '/includes/configure.php. 这将具有潜在的系统安全风险 - 请将文件设置为正确的使用权限');
 define('WARNING_SESSION_DIRECTORY_NON_EXISTENT', '警告： sessions 资料夹不存在： ' . xtc_session_save_path() . '在这个目录未建立之前 Sessions 无法正常动作');
 define('WARNING_SESSION_DIRECTORY_NOT_WRITEABLE', '警告： 无法写入sessions 资料夹： ' . xtc_session_save_path() . '服务器使用者权限未正确设置之前 Sessions 无法正常动作，请作适度修改');
 define('WARNING_SESSION_AUTO_START', '警告： session.auto_start 已启动 - 请到 php.ini 内关闭这个功能，并重新启动网页主机！');

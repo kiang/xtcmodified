@@ -4,3 +4,4 @@ includes/configure.org.php
 includes/configure.php
 
 templates_c/*
+log/*

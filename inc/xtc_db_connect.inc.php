@@ -39,6 +39,8 @@ function xtc_db_connect($server = DB_SERVER, $username = DB_SERVER_USERNAME, $pa
         if (!@mysql_select_db($database, $$link)) {
             xtc_db_error('', mysql_errno($$link), mysql_error($$link));
             die();
+        } else {
+            mysql_query('SET NAMES utf8;');
         }
     } else {
         xtc_db_error('', mysql_errno(), mysql_error());

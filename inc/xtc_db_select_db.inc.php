@@ -15,6 +15,10 @@
    Released under the GNU General Public License 
    ---------------------------------------------------------------------------------------*/
 function xtc_db_select_db($database) {
-    return mysql_select_db($database);
+    $return = mysql_select_db($database);
+    if($return) {
+        mysql_query('SET NAMES utf8;');
+    }
+    return $return;
 }
 ?>

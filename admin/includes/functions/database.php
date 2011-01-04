@@ -22,7 +22,10 @@ function xtc_db_connect($server = DB_SERVER, $username = DB_SERVER_USERNAME, $pa
     } else {
         $$link = mysql_connect($server, $username, $password);
     }
-    if ($$link) mysql_select_db($database);
+    if ($$link) {
+        mysql_select_db($database);
+        mysql_query('SET NAMES utf8;');
+    }
     return $$link;
 }
 // db connection for Servicedatabase
@@ -33,7 +36,10 @@ function service_xtc_db_connect($server_service = SERVICE_DB_SERVER, $username_s
     } else {
         $$link_service = mysql_connect($server_service, $username_service, $password_service);
     }
-    if ($$link_service) mysql_select_db($database_service);
+    if ($$link_service) {
+        mysql_select_db($database_service);
+        mysql_query('SET NAMES utf8;');
+    }
     return $$link_service;
 }
 function xtc_db_close($link = 'db_link') {

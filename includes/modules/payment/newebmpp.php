@@ -136,14 +136,18 @@ class newebmpp {
         global $insert_id;
         if (!empty($this->order_status)) {
             xtc_db_query("UPDATE " . TABLE_ORDERS . "
-                SET orders_status='" . $this->order_status . "',
-                    orders_ident_key='" . $_SESSION['orders_ident_key'] . "'
+                SET orders_status='" . $this->order_status . "'
                     WHERE orders_id='" . $insert_id . "'");
             xtc_db_query("UPDATE " . TABLE_ORDERS_STATUS_HISTORY . "
                 SET orders_status_id='" . $this->order_status . "'
                     WHERE orders_id='" . $insert_id . "'");
         }
-        unset($_SESSION['orders_ident_key']);
+        if(!empty($_SESSION['orders_ident_key'])) {
+            xtc_db_query("UPDATE " . TABLE_ORDERS . "
+                SET orders_ident_key='" . $_SESSION['orders_ident_key'] . "'
+                    WHERE orders_id='" . $insert_id . "'");
+            unset($_SESSION['orders_ident_key']);
+        }
     }
 
     function get_error() {

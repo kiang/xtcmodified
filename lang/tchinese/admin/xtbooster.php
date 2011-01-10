@@ -6,13 +6,13 @@
 ##
 ## Licensed under GNU/GPL
 ##
-define('HEADING_TITLE', 'xs:booster eBay-Connector');
-define('TXT_CONFIG', 'Configuration');
-define('TXT_EBAYPRODUCTS_VIEW', 'View eBay products');
-define('TXT_EBAYPRODUCTS_ADD', 'Add eBay product');
+define('HEADING_TITLE', 'xs:booster eBay-整合精靈');
+define('TXT_CONFIG', '設定');
+define('TXT_EBAYPRODUCTS_VIEW', '檢視 eBay 產品');
+define('TXT_EBAYPRODUCTS_ADD', '新增 eBay 產品');
 define('TXT_SHOPKEY_DESCR', 'You\'ll receive your ShopKey after registering your shop with <a href="https://www.xsbooster.com/xtb/account-create?partner=#xtcModified#">https://www.xsbooster.com</a>');
-define('TXT_STDEBAYSITE', 'eBay Marketplace');
-define('TXT_STDEBAYCURRENCY', 'Default currency');
+define('TXT_STDEBAYSITE', 'eBay 市集');
+define('TXT_STDEBAYCURRENCY', '預設貨幣');
 define('TXT_NOT_YET_INSTALLED', 'xs:booster not yet installed. Please install as described in the installation guide.');
 define('TXT_SHOPKEY_DOESNT_EXISTS', 'couldn\'t find xs:booster ShopKey. Please lodge your ShopKey.');
 define('TXT_SHOPKEY_FAILURE', 'Your ShopKey is unknown');

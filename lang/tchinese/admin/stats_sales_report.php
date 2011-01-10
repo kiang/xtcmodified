@@ -14,7 +14,7 @@
 
    Released under the GNU General Public License 
    --------------------------------------------------------------*/
-define('REPORT_DATE_FORMAT', 'Y. m. d');
+define('REPORT_DATE_FORMAT', 'Y-m-d');
 define('HEADING_TITLE', '銷售統計報表');
 define('REPORT_TYPE_YEARLY', '年');
 define('REPORT_TYPE_MONTHLY', '月');

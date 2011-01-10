@@ -26,7 +26,7 @@
 setlocale(LC_TIME, 'en_GB@euro', 'en_GB', 'en-GB', 'en', 'en_GB.ISO_8859-1', 'English', 'en_GB.ISO_8859-15');
 define('DATE_FORMAT_SHORT', '%Y/%m/%d'); // this is used for strftime()
 define('DATE_FORMAT_LONG', '%Y年 %m月 %d日 %A'); // this is used for strftime()
-define('DATE_FORMAT', 'd.m.Y'); // this is used for strftime()
+define('DATE_FORMAT', 'Y/m/d'); // this is used for strftime()
 define('PHP_DATE_TIME_FORMAT', 'Y/m/d H:i:s'); // this is used for date()
 define('DATE_TIME_FORMAT', DATE_FORMAT_SHORT . ' %H:%M:%S');
 ////
@@ -50,8 +50,8 @@ define('HEADER_TITLE_SUPPORT_SITE', '支援網站');
 define('HEADER_TITLE_ONLINE_CATALOG', '線上目錄');
 define('HEADER_TITLE_ADMINISTRATION', '系統管理');
 // text for gender
-define('MALE', '男生');
-define('FEMALE', '女生');
+define('MALE', '先生');
+define('FEMALE', '小姐');
 // text for date of birth example
 define('DOB_FORMAT_STRING', 'yyyy/mm/dd');
 // configuration box text in includes/boxes/configuration.php
@@ -282,7 +282,7 @@ define('TEXT_TOP', '頂端');
 define('ERROR_DESTINATION_DOES_NOT_EXIST', '錯誤: 目的地不存在');
 define('ERROR_DESTINATION_NOT_WRITEABLE', '錯誤: 目的地無法寫入');
 define('ERROR_FILE_NOT_SAVED', '錯誤: 上傳檔案無法儲存');
-define('ERROR_FILETYPE_NOT_ALLOWED', '錯誤r: 不允許檔案上傳');
+define('ERROR_FILETYPE_NOT_ALLOWED', '錯誤: 不允許檔案上傳');
 define('SUCCESS_FILE_SAVED_SUCCESSFULLY', '完成: 檔案上傳完成');
 define('WARNING_NO_FILE_UPLOADED', '警告: 沒有檔案上傳');
 define('DELETE_ENTRY', '刪除輸入？');
@@ -349,7 +349,7 @@ define('ERROR_GIF_MERGE', '你的伺服器圖形處理函數(GDlib)有誤，無�
 define('ERROR_GIF_UPLOAD', '你的伺服器圖形處理函數(GDlib)有錯誤或是不支援，無法處理影像效果，請聯絡主機服務商');
 define('TEXT_REFERER', '參照: ');
 // BOF - Tomcraft - 2009-06-17 Google Sitemap
-define('BOX_GOOGLE_SITEMAP', 'Google Sitemap');
+define('BOX_GOOGLE_SITEMAP', 'Google 網站地圖');
 // EOF - Tomcraft - 2009-06-17 Google Sitemap
 // BOF - web28 - 2010-05-07 - PayPal API Modul
 define('BOX_PAYPAL', 'PayPal');

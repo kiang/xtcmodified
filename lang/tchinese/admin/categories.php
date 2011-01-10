@@ -110,7 +110,7 @@ define('TEXT_PRODUCTS_IMAGE', '商品圖片：');
 define('TEXT_PRODUCTS_URL', '商品廠商網址：');
 define('TEXT_PRODUCTS_URL_WITHOUT_HTTP', '<small>(不用打 http://)</small>');
 define('TEXT_PRODUCTS_PRICE', '商品價格：');
-define('TEXT_PRODUCTS_WEIGHT', '重量：');
+define('TEXT_PRODUCTS_WEIGHT', '商品重量：');
 define('TEXT_PRODUCTS_EAN', '條碼/EAN');
 define('TEXT_PRODUCT_LINKED_TO', '連結至:');
 define('TEXT_DELETE', '刪除');

@@ -55,7 +55,7 @@ define('TEXT_PRODUCT_OPTION', 'Attributes:');
 define('TEXT_PRODUCT_OPTION_VALUE', 'Option Value:');
 define('TEXT_PRICE', 'Price:');
 define('TEXT_PRICE_PREFIX', 'Price Prefix:');
-define('TEXT_SAVE_ORDER', 'Finish and Recalculate');define('TEXT_EDIT_ADDRESS', '編輯住址');
+define('TEXT_SAVE_ORDER', '完成並且重新計算');define('TEXT_EDIT_ADDRESS', '編輯住址');
 define('TEXT_EDIT_PRODUCTS', '編輯商品');
 define('TEXT_EDIT_SHIPPING', '編輯收貨資訊');
 define('TEXT_EDIT_GIFT', '編輯訂單內的折價券細節');
@@ -106,7 +106,7 @@ define('TEXT_ORDER_TOTAL', 'Total:');
 define('TEXT_SAVE', 'Save');
 define('TEXT_ACTUAL', 'actual:');
 define('TEXT_NEW', 'new:');
-define('TEXT_PRICE', 'Costs: ');define('TEXT_FINAL', '合計:');
+define('TEXT_PRICE', '成本:');define('TEXT_FINAL', '合計:');
 define('TEXT_PRODUCT_SEARCH', '搜尋商品:');
 define('TEXT_PRODUCT_OPTION', '商品選項:');
 define('TEXT_PRODUCT_OPTION_VALUE', '選項數值:');
@@ -120,7 +120,7 @@ define('TEXT_VALUE', 'Price');
 define('TEXT_DESC', 'insert');
 // Sonstiges
 define('TEXT_PAYMENT', 'Payment:');
-define('TEXT_SHIPPING', 'Shipping:');define('TEXT_COD_COSTS', '連繫成本');
+define('TEXT_SHIPPING', '運費');define('TEXT_COD_COSTS', '連繫成本');
 define('TEXT_VALUE', '價格');
 define('TEXT_DESC', '新增');
 // Sonstiges
@@ -134,7 +134,7 @@ define('TEXT_ACTUAL', '實際：');
 define('TEXT_NEW', '新增：');
 define('TEXT_PRICE', 'Costs: ');
 // web28 2010-12-07 add new defines
-define('TEXT_ADD_TAX', 'incl. ');
+define('TEXT_ADD_TAX', '內含');
 define('TEXT_NO_TAX', '外加');
 define('TEXT_ORDERS_EDIT_INFO', '<b> Important Notes: </ b> <br>
 Please check with the address/customer data, the right customer group choose <br>

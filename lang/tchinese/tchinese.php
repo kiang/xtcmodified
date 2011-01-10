@@ -163,8 +163,8 @@ define('IMAGE_BUTTON_CHECKOUT', '結帳');
 define('IMAGE_BUTTON_CONFIRM_ORDER', '訂單確認');
 define('IMAGE_BUTTON_CONTINUE', '下一項');
 define('IMAGE_BUTTON_DELETE', '刪除');
-define('IMAGE_BUTTON_LOGIN', 'Login');
-define('IMAGE_BUTTON_IN_CART', 'Add to cart'); //changed by electronica 2009-09-06
+define('IMAGE_BUTTON_LOGIN', '登入');
+define('IMAGE_BUTTON_IN_CART', '加入購物車'); //changed by electronica 2009-09-06
 define('IMAGE_BUTTON_SEARCH', '搜尋');
 define('IMAGE_BUTTON_UPDATE', '上傳／更新');
 define('IMAGE_BUTTON_UPDATE_CART', '更改購物清單');
@@ -210,8 +210,8 @@ define('TEXT_UNKNOWN_TAX_RATE', '稅率尚未定義');
  * WARNINGS
  *
 */
-define('WARNING_INSTALL_DIRECTORY_EXISTS', '警告： 安裝目錄仍未刪除： ' . dirname($_SERVER['SCRIPT_FILENAME']) . '/xtc_installer. 基於安全的考量，請將這個目錄刪除');
-define('WARNING_CONFIG_FILE_WRITEABLE', '警告： 設定檔的權限允許被寫入： ' . dirname($_SERVER['SCRIPT_FILENAME']) . '/includes/configure.php. 這將具有潛在的系統安全風險 - 請將檔案設定為正確的使用權限');
+define('WARNING_INSTALL_DIRECTORY_EXISTS', '警告： 安裝目錄仍未刪除： ' . dirname($HTTP_SERVER_VARS['SCRIPT_FILENAME']) . '/xtc_installer. 基於安全的考量，請將這個目錄刪除');
+define('WARNING_CONFIG_FILE_WRITEABLE', '警告： 設定檔的權限允許被寫入： ' . dirname($HTTP_SERVER_VARS['SCRIPT_FILENAME']) . '/includes/configure.php. 這將具有潛在的系統安全風險 - 請將檔案設定為正確的使用權限');
 define('WARNING_SESSION_DIRECTORY_NON_EXISTENT', '警告： sessions 資料夾不存在： ' . xtc_session_save_path() . '在這個目錄未建立之前 Sessions 無法正常動作');
 define('WARNING_SESSION_DIRECTORY_NOT_WRITEABLE', '警告： 無法寫入sessions 資料夾： ' . xtc_session_save_path() . '伺服器使用者權限未正確設定之前 Sessions 無法正常動作，請作適度修改');
 define('WARNING_SESSION_AUTO_START', '警告： session.auto_start 已啟動 - 請到 php.ini 內關閉這個功能，並重新啟動網頁主機！');
@@ -446,8 +446,8 @@ define('HEADER_SINGLE', '單一價格');
 define('HEADER_TOTAL', '總計');
 // EOF - DokuMan - 2010-09-06 - combined checkout_confirmation messages in one language file
 // BOF - web28 - 2010-05-07 - PayPal API Modul
-define('NAVBAR_TITLE_PAYPAL_CHECKOUT', 'PayPal-Checkout');
-define('PAYPAL_ERROR', 'PayPal abort');
+define('NAVBAR_TITLE_PAYPAL_CHECKOUT', 'PayPal 結帳');
+define('PAYPAL_ERROR', '關於 PayPal');
 define('PAYPAL_NOT_AVIABLE', 'PayPal Express is not available.<br />Please select another method of payment<br />or try again later.<br />');
 define('ERROR_ADDRESS_NOT_ACCEPTED', '如果您不接受住址，我們將無法處理您的訂單！');
 define('PAYPAL_FEHLER', 'PayPal announced an error to the completion..<br />Your order is stored, is however not implemented.<br />Please enter a new order.<br />Thanks for your understanding.<br />');

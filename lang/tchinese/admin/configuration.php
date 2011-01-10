@@ -189,8 +189,8 @@ define('PRODUCT_IMAGE_THUMBNAIL_MERGE_TITLE', '縮圖(小)：加浮水印<br /><
 define('PRODUCT_IMAGE_THUMBNAIL_MERGE_DESC', '小圖加上浮水印<br />預設值：(overlay.gif,10,-50,60,FF0000)<br /><br />設定方法：<br />(浮水印圖檔, x座標[正數:由左邊算起;負數:由右邊算起], y 座標[正數:由上面算起;負數:由下面算起], 容許度, 浮水印圖片透明顏色)<br />浮水印圖檔位置(overlay.gif)在/images/');
 define('PRODUCT_IMAGE_THUMBNAIL_FRAME_TITLE', '縮圖(小)：加外框<br /><br /><img src="images/config_frame.gif">');
 define('PRODUCT_IMAGE_THUMBNAIL_FRAME_DESC', '小圖加上邊緣浮雕的外框效果<br />預設值： (FFFFFF,000000,3,EEEEEE)<br /><br />設定方法：&nbsp;(亮部顏色,暗部顏色,尺寸,外框顏色[選項])<br />※[選項說明]～如果不設定外框顏色，則預設為亮部顏色與暗部顏色之中間色');
-define('PRODUCT_IMAGE_THUMBNAIL_DROP_SHADOW_TITLE', 'Product Thumbnails:Drop-Shadow<br /><img src="images/config_shadow.gif">');
-define('PRODUCT_IMAGE_THUMBNAIL_DROP_SHADOW_DESC', 'Product Thumbnails:Drop-Shadow<br /><br />Default-values: (3,333333,FFFFFF)<br /><br />more like a dodgy motion blur [semi buggy]<br />Usage:<br />(shadow width,hex shadow colour,hex background colour)');
+define('PRODUCT_IMAGE_THUMBNAIL_DROP_SHADOW_TITLE', '縮圖(小)：下陰影<br /><img src="images/config_shadow.gif">');
+define('PRODUCT_IMAGE_THUMBNAIL_DROP_SHADOW_DESC', '縮圖(小)：下陰影<br /><br />預設值： (3,333333,FFFFFF)<br /><br />more like a dodgy motion blur [semi buggy]<br />設定方法：<br />(陰影寬度, 陰影顏色, 背景顏色)');
 define('PRODUCT_IMAGE_THUMBNAIL_MOTION_BLUR_TITLE', '縮圖(小)：邊緣殘影效果<br /><br /><img src="images/config_motion.gif">');
 define('PRODUCT_IMAGE_THUMBNAIL_MOTION_BLUR_DESC', '小圖加上邊緣殘影的效果<br />預設值： (4,FFFFFF)<br /><br />平行漸層的殘影風動效果<br /><br />設定方法：&nbsp;(殘影數目, 背景顏色)');
 //And this is for the Images showing your products in single-view
@@ -206,8 +206,8 @@ define('PRODUCT_IMAGE_INFO_MERGE_TITLE', '內容圖(中)：加浮水印');
 define('PRODUCT_IMAGE_INFO_MERGE_DESC', '內容圖加上浮水印(可避免盜拷)<br />預設值：(overlay.gif,10,-50,60,FF0000)<br /><br />設定方法：<br />(浮水印圖檔, x座標[正數:由左邊算起;負數:由右邊算起], y 座標[正數:由上面算起;負數:由下面算起], 容許度, 浮水印圖片透明顏色)<br />浮水印圖檔位置(overlay.gif)在/images/');
 define('PRODUCT_IMAGE_INFO_FRAME_TITLE', '內容圖(中)：加外框');
 define('PRODUCT_IMAGE_INFO_FRAME_DESC', '內容圖加上邊緣浮雕的外框<br />預設值： (FFFFFF,000000,3,EEEEEE)<br /><br />設定方法：&nbsp;(亮部顏色,暗部顏色,尺寸,外框顏色[選項])<br />※[選項說明]～如果不設定外框顏色，則預設為亮部顏色與暗部顏色之中間色');
-define('PRODUCT_IMAGE_INFO_DROP_SHADOW_TITLE', 'Product Images:Drop-Shadow');
-define('PRODUCT_IMAGE_INFO_DROP_SHADOW_DESC', 'Product Images:Drop-Shadow<br /><br />Default-values: (3,333333,FFFFFF)<br /><br />more like a dodgy motion blur [semi buggy]<br />Usage:<br />(shadow width,hex shadow colour,hex background colour)');
+define('PRODUCT_IMAGE_INFO_DROP_SHADOW_TITLE', '內容圖(中)：下陰影');
+define('PRODUCT_IMAGE_INFO_DROP_SHADOW_DESC', '縮圖(中)：下陰影<br /><br />預設值： (3,333333,FFFFFF)<br /><br />more like a dodgy motion blur [semi buggy]<br />設定方法：<br />(陰影寬度, 陰影顏色, 背景顏色)');
 define('PRODUCT_IMAGE_INFO_MOTION_BLUR_TITLE', '內容圖(中)：邊緣殘影效果');
 define('PRODUCT_IMAGE_INFO_MOTION_BLUR_DESC', '內容圖加上邊緣殘影的效果<br />預設值： (4,FFFFFF)<br /><br />平行漸層的殘影風動效果<br /><br />設定方法：&nbsp;(殘影數目, 背景顏色)');
 //so this image is the biggest in the shop this
@@ -223,8 +223,8 @@ define('PRODUCT_IMAGE_POPUP_MERGE_TITLE', '彈出視窗圖(大)：加浮水印')
 define('PRODUCT_IMAGE_POPUP_MERGE_DESC', '彈出視窗圖加上浮水印(可避免盜拷)<br />預設值：(overlay.gif,10,-50,60,FF0000)<br /><br />設定方法：<br />(浮水印圖檔, x座標[正數:由左邊算起;負數:由右邊算起], y 座標[正數:由上面算起;負數:由下面算起], 容許度, 浮水印圖片透明顏色)<br />浮水印圖檔位置(overlay.gif)在/images/');
 define('PRODUCT_IMAGE_POPUP_FRAME_TITLE', '彈出視窗圖(大)：加外框');
 define('PRODUCT_IMAGE_POPUP_FRAME_DESC', '彈出視窗圖加上邊緣浮雕的外框<br />預設值： (FFFFFF,000000,3,EEEEEE)<br /><br />設定方法：&nbsp;(亮部顏色,暗部顏色,尺寸,外框顏色[選項])<br />※[選項說明]～如果不設定外框顏色，則預設為亮部顏色與暗部顏色之中間色');
-define('PRODUCT_IMAGE_POPUP_DROP_SHADOW_TITLE', 'Product Popup Images:Drop-Shadow');
-define('PRODUCT_IMAGE_POPUP_DROP_SHADOW_DESC', 'Product Popup Images:Drop-Shadow<br /><br />Default-values: (3,333333,FFFFFF)<br /><br />more like a dodgy motion blur [semi buggy]<br />Usage:<br />(shadow width,hex shadow colour,hex background colour)');
+define('PRODUCT_IMAGE_POPUP_DROP_SHADOW_TITLE', '彈出視窗圖(大)：下陰影');
+define('PRODUCT_IMAGE_POPUP_DROP_SHADOW_DESC', '彈出視窗圖(大)：下陰影<br /><br />預設值： (3,333333,FFFFFF)<br /><br />more like a dodgy motion blur [semi buggy]<br />設定方法：<br />(陰影寬度, 陰影顏色, 背景顏色)');
 define('PRODUCT_IMAGE_POPUP_MOTION_BLUR_TITLE', '彈出視窗圖(大)：邊緣殘影效果');
 define('PRODUCT_IMAGE_POPUP_MOTION_BLUR_DESC', '彈出視窗圖加上邊緣殘影的效果<br />預設值： (4,FFFFFF)<br /><br />平行漸層的殘影風動效果<br /><br />設定方法：&nbsp;(殘影數目, 背景顏色)');
 define('IMAGE_MANIPULATOR_TITLE', 'GDlib處理');
@@ -499,24 +499,24 @@ define('DISPLAY_REVOCATION_ON_CHECKOUT_TITLE', '顯示撤銷訂單的權利?');
 define('DISPLAY_REVOCATION_ON_CHECKOUT_DESC', '在最後結帳確認動作時顯示關於撤銷訂單的權利事項?');
 // BOF - web28 - 2010-05-07 - PayPal API Modul
 define('PAYPAL_MODE_TITLE', 'PayPal 模式：');
-define('PAYPAL_MODE_DESC', 'Live (Default) or Test (Sandbox)');
-define('PAYPAL_API_USER_TITLE', 'PayPal API-User (Live)');
-define('PAYPAL_API_USER_DESC', 'Enter user name (live)');
-define('PAYPAL_API_PWD_TITLE', 'PayPal API-Password (Live)');
-define('PAYPAL_API_PWD_DESC', 'Enter password (live)');
-define('PAYPAL_API_SIGNATURE_TITLE', 'PayPal API-Signature (Live)');
-define('PAYPAL_API_SIGNATURE_DESC', 'Enter API signature (live)');
-define('PAYPAL_API_SANDBOX_USER_TITLE', 'PayPal-API-User (Sandbox)');
-define('PAYPAL_API_SANDBOX_USER_DESC', 'Enter user name (sandbox)');
-define('PAYPAL_API_SANDBOX_PWD_TITLE', 'PayPal API-Password (Sandbox)');
-define('PAYPAL_API_SANDBOX_PWD_DESC', 'Enter password (sandbox)');
-define('PAYPAL_API_SANDBOX_SIGNATURE_TITLE', 'PayPal API-Signature (Sandbox)');
-define('PAYPAL_API_SANDBOX_SIGNATURE_DESC', 'Enter API signature (sandbox)');
-define('PAYPAL_API_VERSION_TITLE', 'PayPal API-Version');
-define('PAYPAL_API_VERSION_DESC', 'Enter PayPal API version, e.g. 62.0');
-define('PAYPAL_API_IMAGE_TITLE', 'PayPal Shop Logo');
-define('PAYPAL_API_IMAGE_DESC', 'Please enter the name of the logo file to be displayed with PayPal.<br />Note: Only displayed if the shop uses SSL.<br />Max. width: 750px, max. height: 90px.<br />The logo file is called from: ' . DIR_WS_CATALOG . 'templates/' . CURRENT_TEMPLATE . '/img/');
-define('PAYPAL_API_CO_BACK_TITLE', 'PayPal Background Colour');
+define('PAYPAL_MODE_DESC', '正式 (預設) 或 測試 (Sandbox)');
+define('PAYPAL_API_USER_TITLE', 'PayPal API 帳號 (正式)');
+define('PAYPAL_API_USER_DESC', '輸入 PayPal API 帳號 (正式)');
+define('PAYPAL_API_PWD_TITLE', 'PayPal API 密碼 (正式)');
+define('PAYPAL_API_PWD_DESC', '輸入 PayPal API 密碼 (正式)');
+define('PAYPAL_API_SIGNATURE_TITLE', 'PayPal API 簽名 (正式)');
+define('PAYPAL_API_SIGNATURE_DESC', '輸入 PayPal API 簽名 (正式)');
+define('PAYPAL_API_SANDBOX_USER_TITLE', 'PayPal API 帳號 (Sandbox)');
+define('PAYPAL_API_SANDBOX_USER_DESC', '輸入 PayPal API 帳號 (Sandbox)');
+define('PAYPAL_API_SANDBOX_PWD_TITLE', 'PayPal API 密碼 (Sandbox)');
+define('PAYPAL_API_SANDBOX_PWD_DESC', '輸入 PayPal API 密碼 (Sandbox)');
+define('PAYPAL_API_SANDBOX_SIGNATURE_TITLE', 'PayPal API 簽名 (Sandbox)');
+define('PAYPAL_API_SANDBOX_SIGNATURE_DESC', '輸入 PayPal API 簽名 (Sandbox)');
+define('PAYPAL_API_VERSION_TITLE', 'PayPal API 版本');
+define('PAYPAL_API_VERSION_DESC', '輸入 PayPal API 版本，例如 62.0');
+define('PAYPAL_API_IMAGE_TITLE', 'PayPal 商店圖示');
+define('PAYPAL_API_IMAGE_DESC', '請輸入要顯示在 PayPal 付款過程的商店圖示檔案名稱。<br />注意：只有在商店使用 SSL 時顯示<br />最大寬度： 750px, 最大高度： 90px.<br />商店圖示會透過 ' . DIR_WS_CATALOG . 'templates/' . CURRENT_TEMPLATE . '/img/ 目錄取得');
+define('PAYPAL_API_CO_BACK_TITLE', 'PayPal 背景顏色');
 define('PAYPAL_API_CO_BACK_DESC', 'Enter a background colour to be displayed with PayPal. e.g. FEE8B9');
 define('PAYPAL_API_CO_BORD_TITLE', 'PayPal Border Colour');
 define('PAYPAL_API_CO_BORD_DESC', 'Enter a border colour to be displayed with PayPal. e.g. E4C558');
@@ -554,8 +554,8 @@ define('USE_CONTACT_EMAIL_ADDRESS_TITLE', 'Contact Us - sending option');
 define('USE_CONTACT_EMAIL_ADDRESS_DESC', 'Use "Contact Us" e-mail address for sending contact form (important for some Hosters like Hosteurope)');
 // EOF - Tomcraft - 2009-11-05 - Advanced contact form
 // BOF - Dokuman - 2010-02-04 - delete cache files in admin section
-define('DELETE_CACHE_SUCCESSFUL', 'Cache deleted successfully.');
-define('DELETE_TEMP_CACHE_SUCCESSFUL', 'Templatecache deleted successfully.');
+define('DELETE_CACHE_SUCCESSFUL', '快取刪除成功');
+define('DELETE_TEMP_CACHE_SUCCESSFUL', '樣板快取刪除成功');
 // EOF - Dokuman - 2010-02-04 - delete cache files in admin section
 // BOF - DokuMan - 2010-08-13 - set Google RSS Feed in admin section
 define('GOOGLE_RSS_FEED_REFID_TITLE', 'Google RSS Feed - refID');

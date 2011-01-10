@@ -43,6 +43,7 @@ define('TEXT_STATUS', '顯示:');
 define('TEXT_STATUS_DESCRIPTION', '如果勾選, 在區塊中將會出現連結');
 define('TEXT_TITLE', '連結標題:');
 define('TEXT_TITLE_FILE', '標題/檔名:');
+define('TEXT_SELECT', '-請選擇-');
 define('TEXT_HEADING', '內容標題:');
 define('TEXT_CONTENT', '內容:');
 define('TEXT_UPLOAD_FILE', '上傳檔案:');
